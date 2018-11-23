@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="protected" author="true" classpath="target/test-classes;lib" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="no.uib.cipr.matrix.sparse,no.uib.cipr.matrix.io,no.uib.cipr.matrix" source="1.7" sourcepath="src/main/java;src/test/java" splitindex="true" use="true" version="true">
+            <link href="https://docs.oracle.com/javase/7/docs/api/"/>
+        </javadoc>
+    </target>
+</project>
