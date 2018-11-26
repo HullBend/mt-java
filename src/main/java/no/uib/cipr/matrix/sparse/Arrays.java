@@ -113,7 +113,7 @@ class Arrays {
      *            Start position in the index
      * @param end
      *            One past the end position in the index
-     * @return Integer index to key. -1 if not found
+     * @return Integer index to key. A negative integer if not found
      */
     @Deprecated
     public static int binarySearch(int[] index, int key, int begin, int end) {
@@ -173,5 +173,4 @@ class Arrays {
 
         return nz;
     }
-
 }

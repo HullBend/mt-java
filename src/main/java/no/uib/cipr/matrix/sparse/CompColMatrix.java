@@ -38,7 +38,11 @@ import no.uib.cipr.matrix.io.MatrixSize;
 import no.uib.cipr.matrix.io.MatrixVectorReader;
 
 /**
- * Compressed column storage (CCS) matrix
+ * Compressed column storage (CCS) matrix.
+ * 
+ * Only use this class if the matrix structure (the
+ * location of non-zeros) is known and static (does
+ * not change).
  */
 public class CompColMatrix extends AbstractMatrix {
 
@@ -371,7 +375,7 @@ public class CompColMatrix extends AbstractMatrix {
         int i = no.uib.cipr.matrix.sparse.Arrays.binarySearch(rowIndex, row,
                 columnPointer[column], columnPointer[column + 1]);
 
-        if (i != -1 && rowIndex[i] == row)
+        if (i >= 0 && rowIndex[i] == row)
             return i;
         else
             throw new IndexOutOfBoundsException("Entry (" + (row + 1) + ", "
