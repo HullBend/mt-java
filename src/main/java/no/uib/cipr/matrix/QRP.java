@@ -65,7 +65,7 @@ public class QRP {
     final DenseMatrix R;
 
     /**
-     * Constructs an empty QR decomposition
+     * Constructs an empty QR decomposition.
      * 
      * @param m
      *            the number of rows.
@@ -103,7 +103,7 @@ public class QRP {
     }
 
     /**
-     * Convenience method to compute a QR decomposition
+     * Convenience method to compute a QR decomposition.
      * 
      * @param A
      *            the matrix to decompose (not modified)
@@ -197,14 +197,14 @@ public class QRP {
     }
 
     /**
-     * Returns the upper triangular factor
+     * Returns the upper triangular factor.
      */
     public DenseMatrix getR() {
         return R;
     }
 
     /**
-     * Returns the orthogonal matrix
+     * Returns the orthogonal matrix.
      */
     public DenseMatrix getQ() {
         return Q;
@@ -220,7 +220,7 @@ public class QRP {
 
     /**
      * Returns the column pivoting matrix. This function allocates a new Matrix
-     * to be returned, a more cheap option is tu use {@link #getPVector()}.
+     * to be returned, a more cheap option is to use {@link #getPVector()}.
      */
     public Matrix getP() {
         Matrix P = new DenseMatrix(jpvt.length, jpvt.length);
@@ -231,9 +231,10 @@ public class QRP {
     }
 
     /**
-     * Returns the rank of the factored matrix
+     * Returns the rank of the factored matrix.
      */
     public int getRank() {
         return rank;
     }
 }
+

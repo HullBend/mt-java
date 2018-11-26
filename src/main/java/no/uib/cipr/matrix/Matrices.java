@@ -23,7 +23,7 @@ package no.uib.cipr.matrix;
 import java.util.Arrays;
 
 /**
- * Static utility methods for matrices and vectors
+ * Static utility methods for matrices and vectors.
  */
 public final class Matrices {
 
@@ -274,7 +274,7 @@ public final class Matrices {
     /**
      * Matrix backed by another matrix. Used by <code>getSubMatrix</code>
      */
-    private static class RefMatrix extends AbstractMatrix {
+    private static final class RefMatrix extends AbstractMatrix {
 
         private Matrix A;
 
@@ -306,14 +306,13 @@ public final class Matrices {
         public void set(int row, int column, double value) {
             A.set(this.row[row], this.column[column], value);
         }
-
     }
 
     /**
      * Vector backed by another vector. Used by <code>getSubVector</code>
      */
     @SuppressWarnings("serial")
-	private static class RefVector extends AbstractVector {
+	private static final class RefVector extends AbstractVector {
 
         private Vector x;
 
@@ -344,7 +343,6 @@ public final class Matrices {
         public void set(int index, double value) {
             x.set(this.index[index], value);
         }
-
     }
 
     /**
@@ -354,7 +352,7 @@ public final class Matrices {
      * since casting to the imbedded vector is not possible
      */
     @SuppressWarnings("serial")
-	private static class SynchronizedVector extends AbstractVector {
+	private static final class SynchronizedVector extends AbstractVector {
 
         private Vector x;
 
@@ -382,7 +380,6 @@ public final class Matrices {
         public Vector copy() {
             return Matrices.synchronizedVector(x.copy());
         }
-
     }
 
     /**
@@ -391,7 +388,7 @@ public final class Matrices {
      * possible to implement Matrix and delegate calls to the imbedded matrix,
      * since casting to the imbedded matrix is not possible
      */
-    private static class SynchronizedMatrix extends AbstractMatrix {
+    private static final class SynchronizedMatrix extends AbstractMatrix {
 
         private Matrix A;
 
@@ -419,7 +416,6 @@ public final class Matrices {
         public Matrix copy() {
             return Matrices.synchronizedMatrix(A.copy());
         }
-
     }
 
     /**
@@ -430,7 +426,7 @@ public final class Matrices {
      * <p>
      * Locks individual rows instead of the whole matrix
      */
-    private static class SynchronizedRowMatrix extends AbstractMatrix {
+    private static final class SynchronizedRowMatrix extends AbstractMatrix {
 
         private Matrix A;
 
@@ -467,17 +463,16 @@ public final class Matrices {
         public Matrix copy() {
             return Matrices.synchronizedMatrixByRows(A.copy());
         }
-
     }
 
     /**
      * Ensures correctness in the matrix assembly. Implements matrix instead of
      * subclassing the abstract matrix in order to correctly delegate every
-     * method to possbly overridden method in the encapsulated matrix.
+     * method to possibly overridden method in the encapsulated matrix.
      * <p>
      * Locks individual columns instead of the whole matrix
      */
-    private static class SynchronizedColumnMatrix extends AbstractMatrix {
+    private static final class SynchronizedColumnMatrix extends AbstractMatrix {
 
         private Matrix A;
 
@@ -514,7 +509,6 @@ public final class Matrices {
         public Matrix copy() {
             return Matrices.synchronizedMatrixByColumns(A.copy());
         }
-
     }
 
     /**
@@ -685,5 +679,4 @@ public final class Matrices {
         }
         return v;
     }
-
 }

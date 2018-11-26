@@ -21,6 +21,7 @@ package no.uib.cipr.matrix;
 
 /** When computing eigenvalues, this indicates which eigenvalues to locate. */
 enum JobEigRange {
+
     /** All eigenvalues will be computed */
     All,
 
@@ -44,5 +45,4 @@ enum JobEigRange {
                 return "V";
         }
     }
-
 }

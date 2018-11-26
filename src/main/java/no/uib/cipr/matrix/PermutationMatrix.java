@@ -22,7 +22,7 @@ public class PermutationMatrix extends AbstractMatrix {
      * for multiplication operations.
      * 
      * @param pivots
-     *            using fortran (1-indexed) notation.
+     *            using Fortran (1-indexed) notation.
      */
     public static PermutationMatrix fromPartialPivots(int[] pivots) {
         int[] permutations = new int[pivots.length];
@@ -54,7 +54,7 @@ public class PermutationMatrix extends AbstractMatrix {
     }
 
     // permutations - instantaneous (zero-indexed)
-    // pivots - sequential (fortran-indexed)
+    // pivots - sequential (Fortran-indexed)
     private PermutationMatrix(int[] permutations, int[] pivots) {
         super(permutations.length, permutations.length);
         this.permutations = permutations;
@@ -120,5 +120,4 @@ public class PermutationMatrix extends AbstractMatrix {
                 transposed ? 1 : -1);
         return C;
     }
-
 }

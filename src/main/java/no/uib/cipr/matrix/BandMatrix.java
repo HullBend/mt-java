@@ -107,7 +107,7 @@ import org.netlib.util.intW;
 public class BandMatrix extends AbstractBandMatrix {
 
     /**
-     * Constructor for BandMatrix
+     * Constructor for BandMatrix.
      * 
      * @param n
      *            Size of the matrix. Since the matrix must be square, this
@@ -122,7 +122,7 @@ public class BandMatrix extends AbstractBandMatrix {
     }
 
     /**
-     * Constructor for BandMatrix
+     * Constructor for BandMatrix.
      * 
      * @param A
      *            Matrix to copy contents from. Only the parts of <code>A</code>
@@ -138,7 +138,7 @@ public class BandMatrix extends AbstractBandMatrix {
     }
 
     /**
-     * Constructor for BandMatrix
+     * Constructor for BandMatrix.
      * 
      * @param A
      *            Matrix to copy contents from. Only the parts of <code>A</code>
@@ -211,7 +211,7 @@ public class BandMatrix extends AbstractBandMatrix {
         X.set(B);
 
         // Allocate factorization matrix. The factorization matrix will be
-        // large enough to accomodate any pivots
+        // large enough to accommodate any pivots
         BandMatrix Af = new BandMatrix(this, kl, ku + kl);
         int[] ipiv = new int[numRows];
 
@@ -251,5 +251,4 @@ public class BandMatrix extends AbstractBandMatrix {
 
         return this;
     }
-
 }

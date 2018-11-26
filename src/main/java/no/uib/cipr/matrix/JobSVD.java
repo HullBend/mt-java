@@ -21,9 +21,10 @@ package no.uib.cipr.matrix;
 
 /**
  * The job the singular value solvers are to do. This only limits which singular
- * vectors are computed, all the singular values are always computed
+ * vectors are computed, all the singular values are always computed.
  */
 enum JobSVD {
+
     /** Compute all of the singular vectors */
     All,
 
@@ -59,5 +60,4 @@ enum JobSVD {
                 return "N";
         }
     }
-
 }
