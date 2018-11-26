@@ -26,7 +26,7 @@ import no.uib.cipr.matrix.Vector;
 /**
  * Default iteration monitor. This tester checks declares convergence if the
  * absolute value of the residual norm is sufficiently small, or if the relative
- * decrease is small. Divergence is decleared if too many iterations are spent,
+ * decrease is small. Divergence is declared if too many iterations are spent,
  * or the residual has grown too much. NaNs will also cause divergence to be
  * flagged.
  */
@@ -58,7 +58,7 @@ public class DefaultIterationMonitor extends AbstractIterationMonitor {
     int maxIter;
 
     /**
-     * Constructor for DefaultIterationMonitor
+     * Constructor for DefaultIterationMonitor.
      * 
      * @param maxIter
      *            Maximum number of iterations
@@ -90,7 +90,7 @@ public class DefaultIterationMonitor extends AbstractIterationMonitor {
     }
 
     /**
-     * Sets maximum number of iterations to permit
+     * Sets maximum number of iterations to permit.
      * 
      * @param maxIter
      *            Maximum number of iterations
@@ -100,7 +100,7 @@ public class DefaultIterationMonitor extends AbstractIterationMonitor {
     }
 
     /**
-     * Sets the relative tolerance
+     * Sets the relative tolerance.
      * 
      * @param rtol
      *            Relative convergence tolerance (to initial residual)
@@ -110,7 +110,7 @@ public class DefaultIterationMonitor extends AbstractIterationMonitor {
     }
 
     /**
-     * Sets the absolute tolerance
+     * Sets the absolute tolerance.
      * 
      * @param atol
      *            Absolute convergence tolerance
@@ -120,7 +120,7 @@ public class DefaultIterationMonitor extends AbstractIterationMonitor {
     }
 
     /**
-     * Sets the divergence tolerance
+     * Sets the divergence tolerance.
      * 
      * @param dtol
      *            Relative divergence tolerance (to initial residual)
@@ -160,5 +160,4 @@ public class DefaultIterationMonitor extends AbstractIterationMonitor {
             throws IterativeSolverNotConvergedException {
         return convergedI(r);
     }
-
 }

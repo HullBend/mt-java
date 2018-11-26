@@ -32,7 +32,7 @@ import no.uib.cipr.matrix.VectorEntry;
 import no.uib.cipr.matrix.sparse.SuperIterator.SuperIteratorEntry;
 
 /**
- * Matrix stored row-wise into sparse vectors
+ * Matrix stored row-wise into sparse vectors.
  */
 public class FlexCompRowMatrix extends AbstractMatrix {
 
@@ -42,7 +42,7 @@ public class FlexCompRowMatrix extends AbstractMatrix {
     SparseVector[] rowD;
 
     /**
-     * Constructor for FlexCompRowMatrix
+     * Constructor for FlexCompRowMatrix.
      * 
      * @param numRows
      *            Number of rows
@@ -58,7 +58,7 @@ public class FlexCompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for FlexCompRowMatrix
+     * Constructor for FlexCompRowMatrix.
      * 
      * @param A
      *            Matrix to copy contents from
@@ -82,7 +82,7 @@ public class FlexCompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for FlexCompRowMatrix
+     * Constructor for FlexCompRowMatrix.
      * 
      * @param A
      *            Matrix to copy contents from. The copy will be deep
@@ -92,14 +92,14 @@ public class FlexCompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Returns the given row
+     * Returns the given row.
      */
     public SparseVector getRow(int i) {
         return rowD[i];
     }
 
     /**
-     * Sets the given row equal the passed vector
+     * Sets the given row equal the passed vector.
      */
     public void setRow(int i, SparseVector x) {
         if (x.size() != numColumns)
@@ -193,7 +193,7 @@ public class FlexCompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Tries to store the matrix as compactly as possible
+     * Tries to store the matrix as compactly as possible.
      */
     public void compact() {
         for (Vector v : rowD)
@@ -201,9 +201,9 @@ public class FlexCompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Iterator over a matrix stored vectorwise by rows
+     * Iterator over a matrix stored vector-wise by rows
      */
-    private class RowMatrixIterator implements Iterator<MatrixEntry> {
+    private final class RowMatrixIterator implements Iterator<MatrixEntry> {
 
         /**
          * Iterates over each row vector
@@ -229,13 +229,12 @@ public class FlexCompRowMatrix extends AbstractMatrix {
         public void remove() {
             iterator.remove();
         }
-
     }
 
     /**
-     * Entry of a matrix stored vectorwise by rows
+     * Entry of a matrix stored vector-wise by rows
      */
-    private static class RowMatrixEntry implements MatrixEntry {
+    private static final class RowMatrixEntry implements MatrixEntry {
 
         private int row;
 
@@ -261,7 +260,5 @@ public class FlexCompRowMatrix extends AbstractMatrix {
         public void set(double value) {
             entry.set(value);
         }
-
     }
-
 }

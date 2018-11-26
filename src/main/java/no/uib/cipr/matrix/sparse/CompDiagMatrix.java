@@ -53,7 +53,7 @@ public class CompDiagMatrix extends AbstractMatrix {
     int[] ind;
 
     /**
-     * Constructor for CompDiagMatrix
+     * Constructor for CompDiagMatrix.
      * 
      * @param r
      *            Reader to get sparse matrix from
@@ -138,7 +138,7 @@ public class CompDiagMatrix extends AbstractMatrix {
 
     /**
      * Creates a new sparse matrix with the given diagonals preallocated. A
-     * negative index is a subdiagonal, positive is superdiagonal
+     * negative index is a subdiagonal, positive is superdiagonal.
      */
     public CompDiagMatrix(int numRows, int numColumns, int[] diagonal) {
         super(numRows, numColumns);
@@ -161,7 +161,7 @@ public class CompDiagMatrix extends AbstractMatrix {
     }
 
     /**
-     * Creates a new sparse matrix without preallocation
+     * Creates a new sparse matrix without preallocation.
      */
     public CompDiagMatrix(int numRows, int numColumns) {
         this(numRows, numColumns, new int[0]);
@@ -188,7 +188,7 @@ public class CompDiagMatrix extends AbstractMatrix {
 
     /**
      * Creates a new sparse matrix copied from the given matrix. Takes a deep
-     * copy, with possibility to specify preallocation
+     * copy, with possibility to specify preallocation.
      */
     public CompDiagMatrix(Matrix A, int[] diagonal) {
         this(A, diagonal, true);
@@ -197,7 +197,7 @@ public class CompDiagMatrix extends AbstractMatrix {
     /**
      * Creates a new sparse matrix copied from the given matrix. Can take a deep
      * copy or a shallow copy. For the latter, the supplied matrix must be a
-     * CompDiagMatrix. No preallocation is done
+     * CompDiagMatrix. No preallocation is done.
      */
     public CompDiagMatrix(Matrix A, boolean deep) {
         this(A, new int[0], deep);
@@ -205,21 +205,21 @@ public class CompDiagMatrix extends AbstractMatrix {
 
     /**
      * Creates a new sparse matrix copied from the given matrix. Takes a deep
-     * copy without preallocation
+     * copy without preallocation.
      */
     public CompDiagMatrix(Matrix A) {
         this(A, new int[0], true);
     }
 
     /**
-     * Returns the internal diagonal storage
+     * Returns the internal diagonal storage.
      */
     public double[][] getDiagonals() {
         return diag;
     }
 
     /**
-     * Returns the diagonal offsets
+     * Returns the diagonal offsets.
      */
     public int[] getIndex() {
         return ind;
@@ -393,7 +393,7 @@ public class CompDiagMatrix extends AbstractMatrix {
     /**
      * Iterator over a compressed diagonal matrix
      */
-    private class CompDiagMatrixIterator implements Iterator<MatrixEntry> {
+    private final class CompDiagMatrixIterator implements Iterator<MatrixEntry> {
 
         private int diagonal, index;
 
@@ -422,13 +422,12 @@ public class CompDiagMatrix extends AbstractMatrix {
         public void remove() {
             entry.set(0);
         }
-
     }
 
     /**
      * Entry of a compressed diagonal matrix
      */
-    private class CompDiagMatrixEntry implements MatrixEntry {
+    private final class CompDiagMatrixEntry implements MatrixEntry {
 
         private int diagonal, index;
 
@@ -452,7 +451,5 @@ public class CompDiagMatrix extends AbstractMatrix {
         public void set(double value) {
             diag[diagonal][index] = value;
         }
-
     }
-
 }

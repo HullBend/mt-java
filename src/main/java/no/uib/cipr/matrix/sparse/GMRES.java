@@ -75,7 +75,7 @@ public class GMRES extends AbstractIterativeSolver {
      * Constructor for GMRES. Uses the given vector as template for creating
      * scratch vectors. Typically, the solution or the right hand side vector
      * can be passed, and the template is not modified. The iteration is
-     * restarted every 30 iterations
+     * restarted every 30 iterations.
      * 
      * @param template
      *            Vector to use as template for the work vectors needed in the
@@ -88,7 +88,7 @@ public class GMRES extends AbstractIterativeSolver {
     /**
      * Constructor for GMRES. Uses the given vector as template for creating
      * scratch vectors. Typically, the solution or the right hand side vector
-     * can be passed, and the template is not modified
+     * can be passed, and the template is not modified.
      * 
      * @param template
      *            Vector to use as template for the work vectors needed in the
@@ -104,7 +104,7 @@ public class GMRES extends AbstractIterativeSolver {
     }
 
     /**
-     * Sets the restart parameter
+     * Sets the restart parameter.
      * 
      * @param restart
      *            GMRES iteration is restarted after this number of iterations
@@ -174,5 +174,4 @@ public class GMRES extends AbstractIterativeSolver {
 
         return x;
     }
-
 }

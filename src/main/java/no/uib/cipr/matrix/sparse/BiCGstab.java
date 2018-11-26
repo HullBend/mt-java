@@ -28,7 +28,7 @@ import no.uib.cipr.matrix.NotConvergedException;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * BiCG stablized solver. BiCGstab solves the unsymmetric linear system
+ * BiCG stabilized solver. BiCGstab solves the unsymmetric linear system
  * <code>Ax = b</code> using the Preconditioned BiConjugate Gradient Stabilized
  * method
  * 
@@ -44,7 +44,7 @@ public class BiCGstab extends AbstractIterativeSolver {
     /**
      * Constructor for BiCGstab. Uses the given vector as template for creating
      * scratch vectors. Typically, the solution or the right hand side vector
-     * can be passed, and the template is not modified
+     * can be passed, and the template is not modified.
      * 
      * @param template
      *            Vector to use as template for the work vectors needed in the
@@ -114,5 +114,4 @@ public class BiCGstab extends AbstractIterativeSolver {
 
         return x;
     }
-
 }

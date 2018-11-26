@@ -43,7 +43,7 @@ public class BiCG extends AbstractIterativeSolver {
     /**
      * Constructor for BiCG. Uses the given vector as template for creating
      * scratch vectors. Typically, the solution or the right hand side vector
-     * can be passed, and the template is not modified
+     * can be passed, and the template is not modified.
      * 
      * @param template
      *            Vector to use as template for the work vectors needed in the
@@ -100,5 +100,4 @@ public class BiCG extends AbstractIterativeSolver {
 
         return x;
     }
-
 }

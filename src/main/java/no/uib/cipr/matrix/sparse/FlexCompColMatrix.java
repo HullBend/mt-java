@@ -32,7 +32,7 @@ import no.uib.cipr.matrix.VectorEntry;
 import no.uib.cipr.matrix.sparse.SuperIterator.SuperIteratorEntry;
 
 /**
- * Matrix stored column-wise into sparse vectors
+ * Matrix stored column-wise into sparse vectors.
  */
 public class FlexCompColMatrix extends AbstractMatrix {
 
@@ -42,7 +42,7 @@ public class FlexCompColMatrix extends AbstractMatrix {
     SparseVector[] colD;
 
     /**
-     * Constructor for FlexCompColMatrix
+     * Constructor for FlexCompColMatrix.
      * 
      * @param numRows
      *            Number of rows
@@ -58,7 +58,7 @@ public class FlexCompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for FlexCompColMatrix
+     * Constructor for FlexCompColMatrix.
      * 
      * @param A
      *            Matrix to copy contents from
@@ -82,7 +82,7 @@ public class FlexCompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for FlexCompColMatrix
+     * Constructor for FlexCompColMatrix.
      * 
      * @param A
      *            Matrix to copy contents from. The copy will be deep
@@ -92,14 +92,14 @@ public class FlexCompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Returns the given column
+     * Returns the given column.
      */
     public SparseVector getColumn(int i) {
         return colD[i];
     }
 
     /**
-     * Sets the given column equal the passed vector
+     * Sets the given column equal the passed vector.
      */
     public void setColumn(int i, SparseVector x) {
         if (x.size() != numRows)
@@ -179,7 +179,7 @@ public class FlexCompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Tries to store the matrix as compactly as possible
+     * Tries to store the matrix as compactly as possible.
      */
     public void compact() {
         for (Vector v : colD)
@@ -187,9 +187,9 @@ public class FlexCompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Iterator over a matrix stored vectorwise by columns
+     * Iterator over a matrix stored vector-wise by columns
      */
-    private class ColMatrixIterator implements Iterator<MatrixEntry> {
+    private final class ColMatrixIterator implements Iterator<MatrixEntry> {
 
         /**
          * Iterates over each column vector
@@ -215,13 +215,12 @@ public class FlexCompColMatrix extends AbstractMatrix {
         public void remove() {
             iterator.remove();
         }
-
     }
 
     /**
-     * Entry of a matrix stored vectorwise by columns
+     * Entry of a matrix stored vector-wise by columns.
      */
-    private static class ColMatrixEntry implements MatrixEntry {
+    private static final class ColMatrixEntry implements MatrixEntry {
 
         private int column;
 
@@ -247,7 +246,5 @@ public class FlexCompColMatrix extends AbstractMatrix {
         public void set(double value) {
             entry.set(value);
         }
-
     }
-
 }

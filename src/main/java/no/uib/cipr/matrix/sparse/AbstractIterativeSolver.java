@@ -24,7 +24,7 @@ import no.uib.cipr.matrix.Matrix;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * Partial implementation of an iterative solver
+ * Partial implementation of an iterative solver.
  */
 public abstract class AbstractIterativeSolver implements IterativeSolver {
 
@@ -77,7 +77,7 @@ public abstract class AbstractIterativeSolver implements IterativeSolver {
     }
 
     /**
-     * Identity preconditioner which does nothing
+     * Identity preconditioner which does nothing.
      */
     private static class IdentityPreconditioner implements Preconditioner {
 
@@ -94,5 +94,4 @@ public abstract class AbstractIterativeSolver implements IterativeSolver {
         }
 
     }
-
 }

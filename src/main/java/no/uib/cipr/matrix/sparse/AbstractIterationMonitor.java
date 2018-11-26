@@ -24,7 +24,7 @@ import no.uib.cipr.matrix.Vector;
 import no.uib.cipr.matrix.Vector.Norm;
 
 /**
- * Partial implementation of an iteration reporter
+ * Partial implementation of an iteration reporter.
  */
 public abstract class AbstractIterationMonitor implements IterationMonitor {
 
@@ -122,5 +122,4 @@ public abstract class AbstractIterationMonitor implements IterationMonitor {
     public double residual() {
         return residual;
     }
-
 }

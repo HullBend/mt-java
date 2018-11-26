@@ -233,7 +233,7 @@ public class CompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for CompColMatrix
+     * Constructor for CompColMatrix.
      * 
      * @param A
      *            Copies from this matrix
@@ -247,7 +247,7 @@ public class CompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for CompColMatrix
+     * Constructor for CompColMatrix.
      * 
      * @param A
      *            Copies from this matrix. The copy will be deep
@@ -257,21 +257,21 @@ public class CompColMatrix extends AbstractMatrix {
     }
 
     /**
-     * Returns the column pointers
+     * Returns the column pointers.
      */
     public int[] getColumnPointers() {
         return columnPointer;
     }
 
     /**
-     * Returns the row indices
+     * Returns the row indices.
      */
     public int[] getRowIndices() {
         return rowIndex;
     }
 
     /**
-     * Returns the internal data storage
+     * Returns the internal data storage.
      */
     public double[] getData() {
         return data;
@@ -401,7 +401,7 @@ public class CompColMatrix extends AbstractMatrix {
     /**
      * Iterator over a compressed column matrix
      */
-    private class CompColMatrixIterator implements Iterator<MatrixEntry> {
+    private final class CompColMatrixIterator implements Iterator<MatrixEntry> {
 
         private int column, cursor;
 
@@ -446,13 +446,12 @@ public class CompColMatrix extends AbstractMatrix {
         public void remove() {
             entry.set(0);
         }
-
     }
 
     /**
      * Entry of a compressed column matrix
      */
-    private class CompColMatrixEntry implements MatrixEntry {
+    private final class CompColMatrixEntry implements MatrixEntry {
 
         private int column, cursor;
 

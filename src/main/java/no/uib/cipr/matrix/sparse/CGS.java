@@ -29,7 +29,7 @@ import no.uib.cipr.matrix.Vector;
 
 /**
  * Conjugate Gradients squared solver. CGS solves the unsymmetric linear system
- * <code>Ax = b</code> using the Conjugate Gradient Squared method
+ * <code>Ax = b</code> using the Conjugate Gradient Squared method.
  * 
  * @author Templates
  */
@@ -43,7 +43,7 @@ public class CGS extends AbstractIterativeSolver {
     /**
      * Constructor for CGS. Uses the given vector as template for creating
      * scratch vectors. Typically, the solution or the right hand side vector
-     * can be passed, and the template is not modified
+     * can be passed, and the template is not modified.
      * 
      * @param template
      *            Vector to use as template for the work vectors needed in the
@@ -103,5 +103,4 @@ public class CGS extends AbstractIterativeSolver {
 
         return x;
     }
-
 }

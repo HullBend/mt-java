@@ -29,7 +29,7 @@ import no.uib.cipr.matrix.Vector;
 /**
  * Chebyshev solver. Solves the symmetric positive definite linear system
  * <code>Ax = b</code> using the Preconditioned Chebyshev Method. Chebyshev
- * requires an acurate estimate on the bounds of the spectrum of the matrix.
+ * requires an accurate estimate on the bounds of the spectrum of the matrix.
  * 
  * @author Templates
  */
@@ -49,7 +49,7 @@ public class Chebyshev extends AbstractIterativeSolver {
      * Constructor for Chebyshev. Uses the given vector as template for creating
      * scratch vectors. Typically, the solution or the right hand side vector
      * can be passed, and the template is not modified. Eigenvalue estimates
-     * must also be provided
+     * must also be provided.
      * 
      * @param template
      *            Vector to use as template for the work vectors needed in the
@@ -118,5 +118,4 @@ public class Chebyshev extends AbstractIterativeSolver {
 
         return x;
     }
-
 }

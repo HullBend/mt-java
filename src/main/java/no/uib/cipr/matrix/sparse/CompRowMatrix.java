@@ -62,7 +62,7 @@ public class CompRowMatrix extends AbstractMatrix {
     int[] rowPointer;
 
     /**
-     * Constructor for CompRowMatrix
+     * Constructor for CompRowMatrix.
      *
      * @param r
      *            Reader to get sparse matrix from
@@ -150,7 +150,7 @@ public class CompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for CompRowMatrix
+     * Constructor for CompRowMatrix.
      *
      * @param numRows
      *            Number of rows
@@ -234,7 +234,7 @@ public class CompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for CompRowMatrix
+     * Constructor for CompRowMatrix.
      *
      * @param A
      *            Copies from this matrix
@@ -248,7 +248,7 @@ public class CompRowMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for CompRowMatrix
+     * Constructor for CompRowMatrix.
      *
      * @param A
      *            Copies from this matrix. The copy will be deep
@@ -481,7 +481,7 @@ public class CompRowMatrix extends AbstractMatrix {
     /**
      * Iterator over a compressed row matrix
      */
-    private class CompRowMatrixIterator implements Iterator<MatrixEntry> {
+    private final class CompRowMatrixIterator implements Iterator<MatrixEntry> {
 
         private int row, cursor;
 
@@ -525,13 +525,12 @@ public class CompRowMatrix extends AbstractMatrix {
         public void remove() {
             entry.set(0);
         }
-
     }
 
     /**
      * Entry of a compressed row matrix
      */
-    private class CompRowMatrixEntry implements MatrixEntry {
+    private final class CompRowMatrixEntry implements MatrixEntry {
 
         private int row, cursor;
 
@@ -559,5 +558,4 @@ public class CompRowMatrix extends AbstractMatrix {
             data[cursor] = value;
         }
     }
-
 }

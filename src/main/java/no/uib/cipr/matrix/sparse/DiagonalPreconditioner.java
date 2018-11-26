@@ -25,7 +25,7 @@ import no.uib.cipr.matrix.Matrix;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * Diagonal preconditioner. Uses the inverse of the diagonal as preconditioner
+ * Diagonal preconditioner. Uses the inverse of the diagonal as preconditioner.
  */
 public class DiagonalPreconditioner implements Preconditioner {
 
@@ -74,5 +74,4 @@ public class DiagonalPreconditioner implements Preconditioner {
                 invdiag[i] = 1 / invdiag[i];
         }
     }
-
 }

@@ -41,7 +41,7 @@ class Arrays {
      * @param key
      *            Search for something equal or greater
      * @param begin
-     *            Start posisiton in the index
+     *            Start position in the index
      * @param end
      *            One past the end position in the index
      * @return end if nothing greater or equal was found, else an index
@@ -76,7 +76,7 @@ class Arrays {
      * @param key
      *            Search for something equal or greater
      * @param begin
-     *            Start posisiton in the index
+     *            Start position in the index
      * @param end
      *            One past the end position in the index
      * @return begin-1 if nothing smaller or equal was found, else an index

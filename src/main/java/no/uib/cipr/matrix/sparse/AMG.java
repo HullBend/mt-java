@@ -110,7 +110,7 @@ public class AMG implements Preconditioner {
     private boolean transpose;
 
     /**
-     * Sets up the algebraic multigrid preconditioner
+     * Sets up the algebraic multigrid preconditioner.
      * 
      * @param omegaPreF
      *            Overrelaxation parameter in the forward sweep of the
@@ -157,7 +157,7 @@ public class AMG implements Preconditioner {
 
     /**
      * Sets up the algebraic multigrid preconditioner. Uses an SOR method,
-     * without the backward sweep in SSOR
+     * without the backward sweep in SSOR.
      * 
      * @param omegaPre
      *            Overrelaxation parameter in the pre-smoothing
@@ -433,7 +433,7 @@ public class AMG implements Preconditioner {
         }
 
         /**
-         * Gets the aggregates
+         * Gets the aggregates.
          */
         public List<Set<Integer>> getAggregates() {
             return C;
@@ -441,7 +441,7 @@ public class AMG implements Preconditioner {
 
         /**
          * Returns the matrix diagonal indices. This is a by-product of the
-         * aggregation
+         * aggregation.
          */
         public int[] getDiagonalIndices() {
             return diagind;
@@ -449,14 +449,14 @@ public class AMG implements Preconditioner {
 
         /**
          * Returns the strongly coupled node neighborhoods of a given node. This
-         * is a by-product of the aggregation
+         * is a by-product of the aggregation.
          */
         public List<Set<Integer>> getNodeNeighborhoods() {
             return N;
         }
 
         /**
-         * Finds the diagonal indices of the matrix
+         * Finds the diagonal indices of the matrix.
          */
         private static int[] findDiagonalIndices(CompRowMatrix A) {
             int[] rowptr = A.getRowPointers();
@@ -477,7 +477,7 @@ public class AMG implements Preconditioner {
         }
 
         /**
-         * Finds the strongly coupled node neighborhoods
+         * Finds the strongly coupled node neighborhoods.
          */
         private List<Set<Integer>> findNodeNeighborhood(CompRowMatrix A,
                 int[] diagind, double eps) {
@@ -507,7 +507,7 @@ public class AMG implements Preconditioner {
         }
 
         /**
-         * Creates the initial R-set by including only the connected nodes
+         * Creates the initial R-set by including only the connected nodes.
          */
         private static boolean[] createInitialR(CompRowMatrix A) {
             boolean[] R = new boolean[A.numRows()];
@@ -643,9 +643,9 @@ public class AMG implements Preconditioner {
 
     /**
      * Creates interpolation (prolongation) operators using based on the
-     * aggregates. Can optionally smooth the aggregates
+     * aggregates. Can optionally smooth the aggregates.
      */
-    private static class Interpolator {
+    private static final class Interpolator {
 
         /**
          * The Galerkin coarse-space operator
@@ -658,7 +658,7 @@ public class AMG implements Preconditioner {
         private CompColMatrix I;
 
         /**
-         * Creates the interpolation (prolongation) and Galerkin operators
+         * Creates the interpolation (prolongation) and Galerkin operators.
          * 
          * @param aggregator
          *            Aggregates
@@ -669,7 +669,7 @@ public class AMG implements Preconditioner {
          *            smoothing is performed, and a faster algorithm for forming
          *            the Galerkin operator will be used.
          */
-        public Interpolator(Aggregator aggregator, CompRowMatrix A, double omega) {
+        Interpolator(Aggregator aggregator, CompRowMatrix A, double omega) {
             List<Set<Integer>> C = aggregator.getAggregates();
             List<Set<Integer>> N = aggregator.getNodeNeighborhoods();
             int[] diagind = aggregator.getDiagonalIndices();
@@ -921,9 +921,8 @@ public class AMG implements Preconditioner {
         /**
          * Gets the Galerkin operator
          */
-        public CompRowMatrix getGalerkinOperator() {
+        CompRowMatrix getGalerkinOperator() {
             return Ac;
         }
-
     }
 }
