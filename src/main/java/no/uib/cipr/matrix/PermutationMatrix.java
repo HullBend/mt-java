@@ -42,7 +42,8 @@ public class PermutationMatrix extends AbstractMatrix {
         return new PermutationMatrix(permutations, pivots);
     }
 
-    private int[] permutations, pivots;
+    private final int[] permutations;
+    private final int[] pivots;
 
     private boolean transposed;
 
