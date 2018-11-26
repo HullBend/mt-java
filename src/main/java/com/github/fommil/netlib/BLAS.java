@@ -60,7 +60,9 @@ public abstract class BLAS {
           impl = load(className);
           break;
         } catch (Throwable e) {
-          log.info("Couldn't load implementation from: " + className);
+          if (classNames.length < 2) {
+            log.warning("Couldn't load implementation from: " + className);
+          }
         }
       }
       if (impl == null) {
