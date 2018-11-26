@@ -21,7 +21,7 @@
 package no.uib.cipr.matrix;
 
 /**
- * Upper symmetrix dense matrix. It has the same storage layout as the
+ * Upper symmetric dense matrix. It has the same storage layout as the
  * {@link no.uib.cipr.matrix.DenseMatrix DenseMatrix}, but only refers to
  * elements above or on the main diagonal. The remaining elements are never
  * accessed nor changed, and is known only by symmetry.
@@ -29,7 +29,7 @@ package no.uib.cipr.matrix;
 public class UpperSymmDenseMatrix extends AbstractSymmDenseMatrix {
 
     /**
-     * Constructor for UpperSymmDenseMatrix
+     * Constructor for UpperSymmDenseMatrix.
      * 
      * @param n
      *            Size of the matrix. Since the matrix must be square, this
@@ -40,7 +40,7 @@ public class UpperSymmDenseMatrix extends AbstractSymmDenseMatrix {
     }
 
     /**
-     * Constructor for UpperSymmDenseMatrix
+     * Constructor for UpperSymmDenseMatrix.
      * 
      * @param A
      *            Matrix to copy. It must be a square matrix, and only the upper
@@ -51,7 +51,7 @@ public class UpperSymmDenseMatrix extends AbstractSymmDenseMatrix {
     }
 
     /**
-     * Constructor for UpperSymmDenseMatrix
+     * Constructor for UpperSymmDenseMatrix.
      * 
      * @param A
      *            Matrix to copy. It must be a square matrix, and only the upper
@@ -94,5 +94,4 @@ public class UpperSymmDenseMatrix extends AbstractSymmDenseMatrix {
             if (e.row() <= e.column())
                 set(e.row(), e.column(), e.get());
     }
-
 }

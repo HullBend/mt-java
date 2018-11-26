@@ -23,12 +23,12 @@ package no.uib.cipr.matrix;
 /**
  * Upper symmetrical banded matrix. The same storage as
  * {@link no.uib.cipr.matrix.BandMatrix BandMatrix}, but without subdiagonals.
- * Lower part of the matrix is implictly known by symmetry
+ * Lower part of the matrix is implicitly known by symmetry.
  */
 public class UpperSymmBandMatrix extends AbstractSymmBandMatrix {
 
     /**
-     * Constructor for UpperSymmBandMatrix
+     * Constructor for UpperSymmBandMatrix.
      * 
      * @param n
      *            Size of the matrix. Since the matrix must be square, this
@@ -41,7 +41,7 @@ public class UpperSymmBandMatrix extends AbstractSymmBandMatrix {
     }
 
     /**
-     * Constructor for UpperSymmBandMatrix
+     * Constructor for UpperSymmBandMatrix.
      * 
      * @param A
      *            Matrix to copy contents from. Only the parts of <code>A</code>
@@ -55,7 +55,7 @@ public class UpperSymmBandMatrix extends AbstractSymmBandMatrix {
     }
 
     /**
-     * Constructor for UpperSymmBandMatrix
+     * Constructor for UpperSymmBandMatrix.
      * 
      * @param A
      *            Matrix to copy contents from. Only the parts of <code>A</code>
@@ -94,5 +94,4 @@ public class UpperSymmBandMatrix extends AbstractSymmBandMatrix {
     public UpperSymmBandMatrix copy() {
         return new UpperSymmBandMatrix(this, kd);
     }
-
 }

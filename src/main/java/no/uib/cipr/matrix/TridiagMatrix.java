@@ -44,7 +44,7 @@ public class TridiagMatrix extends AbstractMatrix {
     private int n;
 
     /**
-     * Constructor for TridiagMatrix
+     * Constructor for TridiagMatrix.
      * 
      * @param n
      *            Size of the matrix. Since the matrix must be square, this
@@ -63,7 +63,7 @@ public class TridiagMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for TridiagMatrix
+     * Constructor for TridiagMatrix.
      * 
      * @param A
      *            Matrix to copy from. Only the tridiagonal part is copied
@@ -73,7 +73,7 @@ public class TridiagMatrix extends AbstractMatrix {
     }
 
     /**
-     * Constructor for TridiagMatrix
+     * Constructor for TridiagMatrix.
      * 
      * @param A
      *            Matrix to copy from. Only the tridiagonal part is copied
@@ -229,7 +229,7 @@ public class TridiagMatrix extends AbstractMatrix {
     /**
      * Iterator over a tridiagonal matrix
      */
-    private class TridiagMatrixIterator extends RefMatrixIterator {
+    private final class TridiagMatrixIterator extends RefMatrixIterator {
 
         /**
          * Current band, starting with the main diagonal
@@ -290,5 +290,4 @@ public class TridiagMatrix extends AbstractMatrix {
         }
 
     }
-
 }
