@@ -26,12 +26,12 @@ import java.io.Writer;
 import java.util.Locale;
 
 /**
- * Writes matrices and vectors
+ * Writes matrices and vectors.
  */
 public class MatrixVectorWriter extends PrintWriter {
 
     /**
-     * Constructor for MatrixVectorWriter
+     * Constructor for MatrixVectorWriter.
      * 
      * @param out
      */
@@ -40,7 +40,7 @@ public class MatrixVectorWriter extends PrintWriter {
     }
 
     /**
-     * Constructor for MatrixVectorWriter
+     * Constructor for MatrixVectorWriter.
      * 
      * @param out
      * @param autoFlush
@@ -50,7 +50,7 @@ public class MatrixVectorWriter extends PrintWriter {
     }
 
     /**
-     * Constructor for MatrixVectorWriter
+     * Constructor for MatrixVectorWriter.
      * 
      * @param out
      */
@@ -59,7 +59,7 @@ public class MatrixVectorWriter extends PrintWriter {
     }
 
     /**
-     * Constructor for MatrixVectorWriter
+     * Constructor for MatrixVectorWriter.
      * 
      * @param out
      * @param autoFlush
@@ -70,7 +70,7 @@ public class MatrixVectorWriter extends PrintWriter {
 
     /**
      * Shifts the indices. Useful for converting between 0- and 1-based
-     * indicing.
+     * indexing.
      * 
      * @param num
      *            Added to every index
@@ -192,7 +192,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index and
      * entry on each line. The offset is added to the index, typically, this can
-     * transform from a 0-based indicing to a 1-based.
+     * transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] index, float[] data, int offset) {
         int size = index.length;
@@ -206,7 +206,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index and
      * entry on each line. The offset is added to the index, typically, this can
-     * transform from a 0-based indicing to a 1-based.
+     * transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] index, double[] data, int offset) {
         int size = index.length;
@@ -220,7 +220,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index and
      * entry on each line. The offset is added to the index, typically, this can
-     * transform from a 0-based indicing to a 1-based.
+     * transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] index, int[] data, int offset) {
         int size = index.length;
@@ -234,7 +234,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index and
      * entry on each line. The offset is added to the index, typically, this can
-     * transform from a 0-based indicing to a 1-based.
+     * transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] index, long[] data, int offset) {
         int size = index.length;
@@ -248,7 +248,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index pair and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based.
+     * can transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] row, int[] column, float[] data,
             int offset) {
@@ -264,7 +264,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index pair and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based.
+     * can transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] row, int[] column, double[] data,
             int offset) {
@@ -280,7 +280,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based. The first float array
+     * can transform from a 0-based indexing to a 1-based. The first float array
      * specifies the real entries, and the second is the imaginary entries
      */
     public void printCoordinate(int[] index, float[] dataR, float[] dataI,
@@ -297,7 +297,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based. The first double
+     * can transform from a 0-based indexing to a 1-based. The first double
      * array specifies the real entries, and the second is the imaginary entries
      */
     public void printCoordinate(int[] index, double[] dataR, double[] dataI,
@@ -314,7 +314,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index pair and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based. The first float array
+     * can transform from a 0-based indexing to a 1-based. The first float array
      * specifies the real entries, and the second is the imaginary entries
      */
     public void printCoordinate(int[] row, int[] column, float[] dataR,
@@ -332,7 +332,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index pair and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based. The first double
+     * can transform from a 0-based indexing to a 1-based. The first double
      * array specifies the real entries, and the second is the imaginary entries
      */
     public void printCoordinate(int[] row, int[] column, double[] dataR,
@@ -350,7 +350,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index pair and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based.
+     * can transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] row, int[] column, int[] data, int offset) {
         int size = row.length;
@@ -365,7 +365,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinate format to the underlying stream. One index pair and
      * entry on each line. The offset is added to each index, typically, this
-     * can transform from a 0-based indicing to a 1-based.
+     * can transform from a 0-based indexing to a 1-based.
      */
     public void printCoordinate(int[] row, int[] column, long[] data, int offset) {
         int size = row.length;
@@ -380,7 +380,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinates to the underlying stream. One index pair on each
      * line. The offset is added to each index, typically, this can transform
-     * from a 0-based indicing to a 1-based.
+     * from a 0-based indexing to a 1-based.
      */
     public void printPattern(int[] row, int[] column, int offset) {
         int size = row.length;
@@ -395,7 +395,7 @@ public class MatrixVectorWriter extends PrintWriter {
     /**
      * Prints the coordinates to the underlying stream. One index on each line.
      * The offset is added to each index, typically, this can transform from a
-     * 0-based indicing to a 1-based.
+     * 0-based indexing to a 1-based.
      */
     public void printPattern(int[] index, int offset) {
         int size = index.length;
@@ -528,5 +528,4 @@ public class MatrixVectorWriter extends PrintWriter {
         for (String comment : comments)
             println("%" + comment);
     }
-
 }

@@ -27,7 +27,7 @@ import com.github.fommil.netlib.LAPACK;
 import org.netlib.util.intW;
 
 /**
- * Partial implementation of a symmetrical, banded matrix
+ * Partial implementation of a symmetrical, banded matrix.
  */
 abstract class AbstractSymmBandMatrix extends AbstractBandMatrix {
 
@@ -42,7 +42,7 @@ abstract class AbstractSymmBandMatrix extends AbstractBandMatrix {
     int kd;
 
     /**
-     * Constructor for AbstractSymmBandMatrix
+     * Constructor for AbstractSymmBandMatrix.
      */
     AbstractSymmBandMatrix(int n, int kl, int ku, UpLo uplo) {
         super(n, kl, ku);
@@ -51,14 +51,14 @@ abstract class AbstractSymmBandMatrix extends AbstractBandMatrix {
     }
 
     /**
-     * Constructor for AbstractSymmBandMatrix
+     * Constructor for AbstractSymmBandMatrix.
      */
     AbstractSymmBandMatrix(Matrix A, int kl, int ku, UpLo uplo) {
         this(A, kl, ku, true, uplo);
     }
 
     /**
-     * Constructor for AbstractSymmBandMatrix
+     * Constructor for AbstractSymmBandMatrix.
      */
     AbstractSymmBandMatrix(Matrix A, int kl, int ku, boolean deep, UpLo uplo) {
         super(A, kl, ku, deep);
@@ -104,7 +104,7 @@ abstract class AbstractSymmBandMatrix extends AbstractBandMatrix {
         X.set(B);
 
         // Allocate factorization matrix. The factorization matrix will be
-        // large enough to accomodate any pivots
+        // large enough to accommodate any pivots
         BandMatrix Af = new BandMatrix(this, kd, kd + kd);
         int[] ipiv = new int[numRows];
 
@@ -165,5 +165,4 @@ abstract class AbstractSymmBandMatrix extends AbstractBandMatrix {
     public Matrix transpose() {
         return this;
     }
-
 }

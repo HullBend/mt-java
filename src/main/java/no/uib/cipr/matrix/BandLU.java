@@ -27,7 +27,7 @@ import org.netlib.util.doubleW;
 import org.netlib.util.intW;
 
 /**
- * Banded LU decomposition
+ * Banded LU decomposition.
  */
 public class BandLU {
 
@@ -57,7 +57,7 @@ public class BandLU {
     private boolean singular;
 
     /**
-     * Constructor for BandLU
+     * Constructor for BandLU.
      * 
      * @param n
      *            Matrix size
@@ -77,7 +77,7 @@ public class BandLU {
     }
 
     /**
-     * Creates an LU decomposition of the given matrix
+     * Creates an LU decomposition of the given matrix.
      * 
      * @param A
      *            Matrix to decompose. Not modified
@@ -88,13 +88,13 @@ public class BandLU {
     }
 
     /**
-     * Creates an LU decomposition of the given matrix
+     * Creates an LU decomposition of the given matrix.
      * 
      * @param A
      *            Matrix to decompose. If the decomposition is in-place, its
      *            number of superdiagonals must equal <code>kl+ku</code>
      * @param inplace
-     *            Wheter or not the decomposition should overwrite the passed
+     *            Whether or not the decomposition should overwrite the passed
      *            matrix
      * @return The current decomposition
      */
@@ -106,7 +106,7 @@ public class BandLU {
     }
 
     /**
-     * Creates an LU decomposition of the given matrix
+     * Creates an LU decomposition of the given matrix.
      * 
      * @param A
      *            Matrix to decompose. It will be overwritten with the
@@ -139,35 +139,35 @@ public class BandLU {
     }
 
     /**
-     * Returns the lower triangular factor
+     * Returns the lower triangular factor.
      */
     public UnitLowerTriangBandMatrix getL() {
         return new UnitLowerTriangBandMatrix(LU, LU.numSubDiagonals(), false);
     }
 
     /**
-     * Returns the upper triangular factor
+     * Returns the upper triangular factor.
      */
     public UpperTriangBandMatrix getU() {
         return new UpperTriangBandMatrix(LU, LU.numSuperDiagonals(), false);
     }
 
     /**
-     * Returns the decomposition matrix
+     * Returns the decomposition matrix.
      */
     public BandMatrix getLU() {
         return LU;
     }
 
     /**
-     * Returns the row pivots
+     * Returns the row pivots.
      */
     public int[] getPivots() {
         return ipiv;
     }
 
     /**
-     * Checks for singularity
+     * Checks for singularity.
      */
     public boolean isSingular() {
         return singular;
