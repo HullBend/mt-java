@@ -110,7 +110,7 @@ class Arrays {
      * @param key
      *            Key to search for
      * @param begin
-     *            Start posisiton in the index
+     *            Start position in the index
      * @param end
      *            One past the end position in the index
      * @return Integer index to key. -1 if not found
