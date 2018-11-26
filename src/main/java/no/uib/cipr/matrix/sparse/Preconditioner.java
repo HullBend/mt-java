@@ -25,13 +25,13 @@ import no.uib.cipr.matrix.Vector;
 
 /**
  * Preconditioner interface. Before a preconditioner is used,
- * <code>setMatrix</code> must be called
+ * <code>setMatrix</code> must be called.
  */
 public interface Preconditioner {
 
     /**
      * Solves the approximate problem with the given right hand side. Result is
-     * stored in given solution vector
+     * stored in given solution vector.
      * 
      * @param b
      *            Right hand side of problem
@@ -43,7 +43,7 @@ public interface Preconditioner {
 
     /**
      * Solves the approximate transpose problem with the given right hand side.
-     * Result is stored in given solution vector
+     * Result is stored in given solution vector.
      * 
      * @param b
      *            Right hand side of problem
@@ -55,11 +55,10 @@ public interface Preconditioner {
 
     /**
      * Sets the operator matrix for the preconditioner. This method must be
-     * called before a preconditioner is used by an iterative solver
+     * called before a preconditioner is used by an iterative solver.
      * 
      * @param A
      *            Matrix to setup the preconditioner for. Not modified
      */
     void setMatrix(Matrix A);
-
 }

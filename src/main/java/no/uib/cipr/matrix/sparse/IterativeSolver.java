@@ -72,5 +72,4 @@ public interface IterativeSolver {
      * @return Current iteration monitor
      */
     IterationMonitor getIterationMonitor();
-
 }

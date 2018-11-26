@@ -23,7 +23,7 @@ package no.uib.cipr.matrix.sparse;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * Reports on the progress of an iterative solver
+ * Reports on the progress of an iterative solver.
  */
 public interface IterationReporter {
 
@@ -48,5 +48,4 @@ public interface IterationReporter {
      *            Current iteration number
      */
     void monitor(double r, int i);
-
 }

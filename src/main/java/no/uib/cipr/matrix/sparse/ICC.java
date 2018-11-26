@@ -28,7 +28,7 @@ import no.uib.cipr.matrix.Vector;
 
 /**
  * Incomplete Cholesky preconditioner without fill-in using a compressed row
- * matrix as internal storage
+ * matrix as internal storage.
  */
 public class ICC implements Preconditioner {
 
@@ -48,7 +48,7 @@ public class ICC implements Preconditioner {
     private final Vector y;
 
     /**
-     * Sets up the ICC preconditioner
+     * Sets up the ICC preconditioner.
      * 
      * @param R
      *            Matrix to use internally. For best performance, its non-zero

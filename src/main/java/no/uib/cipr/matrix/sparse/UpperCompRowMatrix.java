@@ -25,7 +25,7 @@ import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * Upper triangular CRS matrix. Only used for triangular solves
+ * Upper triangular CRS matrix. Only used for triangular solves.
  */
 class UpperCompRowMatrix extends AbstractMatrix {
 
@@ -88,5 +88,4 @@ class UpperCompRowMatrix extends AbstractMatrix {
 
         return x;
     }
-
 }

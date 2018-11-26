@@ -115,5 +115,4 @@ public interface IterationMonitor {
      * Returns the vector-norm in use
      */
     Norm getNormType();
-
 }

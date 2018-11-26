@@ -25,7 +25,7 @@ import no.uib.cipr.matrix.Matrix;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * SSOR preconditioner. Uses symmetrical sucessive overrelaxation as a
+ * SSOR preconditioner. Uses symmetrical successive overrelaxation as a
  * preconditioner. Meant for symmetrical, positive definite matrices. For best
  * performance, omega must be carefully chosen (between 0 and 2).
  */
@@ -63,7 +63,7 @@ public class SSOR implements Preconditioner {
     private final boolean reverse;
 
     /**
-     * Constructor for SSOR
+     * Constructor for SSOR.
      * 
      * @param F
      *            Matrix to use internally. It will not be modified, thus the
@@ -93,7 +93,7 @@ public class SSOR implements Preconditioner {
     }
 
     /**
-     * Constructor for SSOR. Uses <code>omega=1</code> with a backwards sweep
+     * Constructor for SSOR. Uses <code>omega=1</code> with a backwards sweep.
      * 
      * @param F
      *            Matrix to use internally. It will not be modified, thus the
@@ -104,7 +104,7 @@ public class SSOR implements Preconditioner {
     }
 
     /**
-     * Sets the overrelaxation parameters
+     * Sets the overrelaxation parameters.
      * 
      * @param omegaF
      *            Overrelaxation parameter for the forward sweep. Between 0 and
@@ -142,7 +142,7 @@ public class SSOR implements Preconditioner {
 
     public Vector apply(Vector b, Vector x) {
         if (!(b instanceof DenseVector) || !(x instanceof DenseVector))
-            throw new IllegalArgumentException("Vectors must be a DenseVectors");
+            throw new IllegalArgumentException("Vectors must be DenseVectors");
 
         int[] rowptr = F.getRowPointers();
         int[] colind = F.getColumnIndices();
@@ -175,7 +175,7 @@ public class SSOR implements Preconditioner {
             return x;
         }
 
-        // Backward sweep (xx oldest, xd halfiterate)
+        // Backward sweep (xx oldest, xd half-iterate)
         for (int i = n - 1; i >= 0; --i) {
 
             double sigma = 0;
@@ -197,5 +197,4 @@ public class SSOR implements Preconditioner {
         // Assume a symmetric matrix
         return apply(b, x);
     }
-
 }

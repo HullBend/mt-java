@@ -92,7 +92,7 @@ public class SparseVector extends AbstractVector implements ISparseVector {
 
     /**
      * Constructor for SparseVector, and copies the contents from the supplied
-     * vector. Zero initial pre-allocation
+     * vector. Zero initial pre-allocation.
      *
      * @param x
      *            Vector to copy from. A deep copy is made
@@ -102,7 +102,7 @@ public class SparseVector extends AbstractVector implements ISparseVector {
     }
 
     /**
-     * Constructor for SparseVector. Zero initial pre-allocation
+     * Constructor for SparseVector. Zero initial pre-allocation.
      *
      * @param size
      *            Size of the vector
@@ -112,7 +112,7 @@ public class SparseVector extends AbstractVector implements ISparseVector {
     }
 
     /**
-     * Constructor for SparseVector
+     * Constructor for SparseVector.
      *
      * @param size
      *            Size of the vector
@@ -142,7 +142,7 @@ public class SparseVector extends AbstractVector implements ISparseVector {
     }
 
     /**
-     * Constructor for SparseVector
+     * Constructor for SparseVector.
      *
      * @param size
      *            Size of the vector
@@ -326,7 +326,7 @@ public class SparseVector extends AbstractVector implements ISparseVector {
     }
 
     /**
-     * Returns the used indices
+     * Returns the used indices.
      */
     public int[] getIndex() {
         if (used == index.length)
@@ -370,14 +370,14 @@ public class SparseVector extends AbstractVector implements ISparseVector {
     }
 
     /**
-     * Number of entries used in the sparse structure
+     * Number of entries used in the sparse structure.
      */
     public int getUsed() {
         return used;
     }
 
     /**
-     * Compacts the vector
+     * Compacts the vector.
      */
     public void compact() {
         int nz = Matrices.cardinality(this); // catches zero entries
@@ -429,7 +429,7 @@ public class SparseVector extends AbstractVector implements ISparseVector {
     /**
      * Iterator over a sparse vector
      */
-    private class SparseVectorIterator implements Iterator<VectorEntry> {
+    private final class SparseVectorIterator implements Iterator<VectorEntry> {
 
         private int cursor;
 
@@ -450,13 +450,12 @@ public class SparseVector extends AbstractVector implements ISparseVector {
         public void remove() {
             entry.set(0);
         }
-
     }
 
     /**
      * Entry of a sparse vector
      */
-    private class SparseVectorEntry implements VectorEntry {
+    private final class SparseVectorEntry implements VectorEntry {
 
         private int cursor;
 
@@ -475,7 +474,5 @@ public class SparseVector extends AbstractVector implements ISparseVector {
         public void set(double value) {
             data[cursor] = value;
         }
-
     }
-
 }

@@ -25,7 +25,7 @@ import no.uib.cipr.matrix.DenseVector;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * Unit lower triangular CRS matrix. Only used for triangular solves
+ * Unit lower triangular CRS matrix. Only used for triangular solves.
  */
 class UnitLowerCompRowMatrix extends AbstractMatrix {
 
@@ -84,5 +84,4 @@ class UnitLowerCompRowMatrix extends AbstractMatrix {
 
         return x;
     }
-
 }

@@ -42,7 +42,7 @@ public class MatrixIterationMonitor extends DefaultIterationMonitor {
     private double normb;
 
     /**
-     * Constructor for MatrixIterationMonitor
+     * Constructor for MatrixIterationMonitor.
      * 
      * @param normA
      *            Norm of the matrix A
@@ -78,7 +78,7 @@ public class MatrixIterationMonitor extends DefaultIterationMonitor {
     }
 
     /**
-     * Sets the norm of the system matrix
+     * Sets the norm of the system matrix.
      * 
      * @param normA
      *            Norm of the matrix A
@@ -88,7 +88,7 @@ public class MatrixIterationMonitor extends DefaultIterationMonitor {
     }
 
     /**
-     * Sets the norm of the right hand side vector
+     * Sets the norm of the right hand side vector.
      * 
      * @param normb
      *            Norm of the vector b
@@ -127,5 +127,4 @@ public class MatrixIterationMonitor extends DefaultIterationMonitor {
     protected boolean convergedI(double r) {
         throw new UnsupportedOperationException();
     }
-
 }

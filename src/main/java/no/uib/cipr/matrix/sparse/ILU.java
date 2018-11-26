@@ -25,7 +25,7 @@ import no.uib.cipr.matrix.Matrix;
 import no.uib.cipr.matrix.Vector;
 
 /**
- * ILU(0) preconditioner using a compressed row matrix as internal storage
+ * ILU(0) preconditioner using a compressed row matrix as internal storage.
  */
 public class ILU implements Preconditioner {
 
@@ -45,7 +45,7 @@ public class ILU implements Preconditioner {
     private final Vector y;
 
     /**
-     * Sets up the ILU preconditioner
+     * Sets up the ILU preconditioner.
      * 
      * @param LU
      *            Matrix to use internally. For best performance, its non-zero

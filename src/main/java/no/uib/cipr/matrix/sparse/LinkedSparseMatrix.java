@@ -31,7 +31,7 @@ import java.util.Iterator;
  */
 public class LinkedSparseMatrix extends AbstractMatrix {
 
-    // java.util.LinkedList is doubly linked and therefore too heavyweight.
+    // java.util.LinkedList is doubly linked and therefore too heavy-weight.
     static class Node {
         final int row, col;
         double val;
@@ -53,7 +53,7 @@ public class LinkedSparseMatrix extends AbstractMatrix {
 		}
     }
 
-    // there is a lot of duplicated code in this class between
+    // There is a lot of duplicated code in this class between
     // row and col linkages, but subtle differences make it
     // extremely difficult to factor away.
     class Linked {
@@ -302,7 +302,6 @@ public class LinkedSparseMatrix extends AbstractMatrix {
         public String toString() {
             return row + "," + col + "=" + val;
         }
-
     }
 
     @Override
@@ -327,7 +326,7 @@ public class LinkedSparseMatrix extends AbstractMatrix {
 
             @Override
             public void remove() {
-                throw new UnsupportedOperationException("TODO");
+                throw new UnsupportedOperationException();
             }
         };
     }

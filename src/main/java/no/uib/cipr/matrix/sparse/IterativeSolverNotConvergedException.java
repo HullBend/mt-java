@@ -41,7 +41,7 @@ public class IterativeSolverNotConvergedException extends NotConvergedException 
     private final double r;
 
     /**
-     * Constructor for IterativeSolverNotConvergedException
+     * Constructor for IterativeSolverNotConvergedException.
      * 
      * @param reason
      *            Reason for this exception
@@ -59,7 +59,7 @@ public class IterativeSolverNotConvergedException extends NotConvergedException 
     }
 
     /**
-     * Constructor for IterativeSolverNotConvergedException
+     * Constructor for IterativeSolverNotConvergedException.
      * 
      * @param reason
      *            Reason for this exception
@@ -75,17 +75,16 @@ public class IterativeSolverNotConvergedException extends NotConvergedException 
     }
 
     /**
-     * Returns final computed residual
+     * Returns final computed residual.
      */
     public double getResidual() {
         return r;
     }
 
     /**
-     * Gets the number of iterations used when this exception was thrown
+     * Gets the number of iterations used when this exception was thrown.
      */
     public int getIterations() {
         return iterations;
     }
-
 }

@@ -76,7 +76,7 @@ public class ILUT implements Preconditioner {
     private final int p;
 
     /**
-     * Sets up the preconditioner for the given matrix
+     * Sets up the preconditioner for the given matrix.
      * 
      * @param LU
      *            Matrix to use internally. For best performance, its non-zero
@@ -107,7 +107,7 @@ public class ILUT implements Preconditioner {
     /**
      * Sets up the preconditioner for the given matrix. Uses a drop-tolerance of
      * 10<sup>-6</sup>, and keeps 50 entries on each row, including the main
-     * diagonal and any previous entries in the matrix structure
+     * diagonal and any previous entries in the matrix structure.
      * 
      * @param LU
      *            Matrix to use internally. For best performance, its non-zero
@@ -277,7 +277,7 @@ public class ILUT implements Preconditioner {
      * Stores an integer/value pair, sorted by descending order according to the
      * value
      */
-    private static class IntDoubleEntry implements Comparable<IntDoubleEntry> {
+    private static final class IntDoubleEntry implements Comparable<IntDoubleEntry> {
 
         public int index;
 
@@ -307,7 +307,7 @@ public class ILUT implements Preconditioner {
     /**
      * Unit lower triangular flex-CRS matrix. Only used for triangular solves
      */
-    private static class UnitLowerFlexCompRowMatrix extends AbstractMatrix {
+    private static final class UnitLowerFlexCompRowMatrix extends AbstractMatrix {
 
         private final FlexCompRowMatrix LU;
 
@@ -376,7 +376,7 @@ public class ILUT implements Preconditioner {
     /**
      * Upper triangular flex-CRS matrix. Only used for triangular solves
      */
-    private static class UpperFlexCompRowMatrix extends AbstractMatrix {
+    private static final class UpperFlexCompRowMatrix extends AbstractMatrix {
 
         private final FlexCompRowMatrix LU;
 
@@ -443,6 +443,5 @@ public class ILUT implements Preconditioner {
 
             return x;
         }
-
     }
 }

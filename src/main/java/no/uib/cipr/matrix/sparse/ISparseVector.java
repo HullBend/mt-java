@@ -13,12 +13,12 @@ import no.uib.cipr.matrix.Vector;
 public interface ISparseVector extends Vector {
 
     /**
-     * Returns the indices
+     * Returns the indices.
      */
     public int[] getIndex();
 
     /**
-     * Number of entries used in the sparse structure
+     * Number of entries used in the sparse structure.
      */
     public int getUsed();
 }

@@ -24,7 +24,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * An iterator over an array of iterable objects
+ * An iterator over an array of iterable objects.
  */
 class SuperIterator<T extends Iterable<E>, E>
         implements
@@ -46,7 +46,7 @@ class SuperIterator<T extends Iterable<E>, E>
     private SuperIteratorEntry<E> entry;
 
     /**
-     * Constructor for SuperIterator
+     * Constructor for SuperIterator.
      *
      * @param iterable
      *            Iterable objects to iterate over
@@ -57,8 +57,8 @@ class SuperIterator<T extends Iterable<E>, E>
 
         // Try to be somewhat fault tolerant
         if (iterable.isEmpty()) {
-            current = new DummyIterator();
-            next = new DummyIterator();
+            current = new DummyIterator<E>();
+            next = new DummyIterator<E>();
         } else {
 
             // This moves the next pointer to a non-empty iterable
@@ -111,7 +111,7 @@ class SuperIterator<T extends Iterable<E>, E>
     /**
      * Dummy iterator, for degenerate cases
      */
-    private class DummyIterator implements Iterator<E> {
+    private static final class DummyIterator<E> implements Iterator<E> {
 
         public boolean hasNext() {
             return false;
@@ -153,7 +153,5 @@ class SuperIterator<T extends Iterable<E>, E>
         public F get() {
             return o;
         }
-
     }
-
 }

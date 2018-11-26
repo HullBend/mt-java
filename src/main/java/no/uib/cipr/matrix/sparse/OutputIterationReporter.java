@@ -36,7 +36,7 @@ public class OutputIterationReporter implements IterationReporter {
     private PrintWriter out;
 
     /**
-     * Constructor for OutputIterationReporter
+     * Constructor for OutputIterationReporter.
      * 
      * @param out
      *            Writes iteration count and current residual here
@@ -60,5 +60,4 @@ public class OutputIterationReporter implements IterationReporter {
     public void monitor(double r, Vector x, int i) {
         monitor(r, i);
     }
-
 }

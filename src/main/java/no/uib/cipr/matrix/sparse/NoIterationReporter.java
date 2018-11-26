@@ -28,11 +28,10 @@ import no.uib.cipr.matrix.Vector;
 public class NoIterationReporter implements IterationReporter {
 
     public void monitor(double r, int i) {
-        // void
+        // no-op
     }
 
     public void monitor(double r, Vector x, int i) {
-        // void
+        // no-op
     }
-
 }
