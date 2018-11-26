@@ -131,8 +131,6 @@ public class ArpackGen {
      *    basis vectors.  The optimal "cross-over" with respect to CPU time
      *    is problem dependent and must be determined empirically.
      *    See Chapter 8 of Reference 2 for further information.
-     *
-     * @return
      */
     public Map<Double, DenseVectorSub> solve(int eigenvalues, Ritz ritz, double tolerance, int ncvModification) {
         if (eigenvalues <= 0)
