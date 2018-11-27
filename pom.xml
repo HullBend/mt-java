@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.hullbend</groupId>
 	<artifactId>mt-java</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6-SNAPSHOT</version>
 	<name>Matrix Toolkits for Java</name>
 	<description>Matrix data structures, linear solvers, least squares methods, eigenvalue, and singular value decompositions.</description>
 	<url>https://github.com/HullBend/mt-java/</url>
