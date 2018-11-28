@@ -652,25 +652,25 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native void dlacpy_offsets(java.lang.String uplo, int m, int n, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
 
-  @Override
-  public native void dlag2s(int m, int n, double[] a, int lda, float[] sa, int ldsa, org.netlib.util.intW info);
+//  @Override
+//  public native void dlag2s(int m, int n, double[] a, int lda, float[] sa, int ldsa, org.netlib.util.intW info);
 
-  @Override
-  public void dlag2s(int m, int n, double[] a, int _a_offset, int lda, float[] sa, int _sa_offset, int ldsa, org.netlib.util.intW info) {
-  dlag2s_offsets(m, n, a, _a_offset, lda, sa, _sa_offset, ldsa, info);
-  }
+//  @Override
+//  public void dlag2s(int m, int n, double[] a, int _a_offset, int lda, float[] sa, int _sa_offset, int ldsa, org.netlib.util.intW info) {
+//  dlag2s_offsets(m, n, a, _a_offset, lda, sa, _sa_offset, ldsa, info);
+//  }
 
-  public native void dlag2s_offsets(int m, int n, double[] a, int _a_offset, int lda, float[] sa, int _sa_offset, int ldsa, org.netlib.util.intW info);
+//  private native void dlag2s_offsets(int m, int n, double[] a, int _a_offset, int lda, float[] sa, int _sa_offset, int ldsa, org.netlib.util.intW info);
 
-  @Override
-  public native double dlange(java.lang.String norm, int m, int n, double[] a, int lda, double[] work);
+//  @Override
+//  public native double dlange(java.lang.String norm, int m, int n, double[] a, int lda, double[] work);
 
-  @Override
-  public double dlange(java.lang.String norm, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
-    return dlange_offsets(norm, m, n, a, _a_offset, lda, work, _work_offset);
-  }
+//  @Override
+//  public double dlange(java.lang.String norm, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
+//    return dlange_offsets(norm, m, n, a, _a_offset, lda, work, _work_offset);
+//  }
 
-  public native double dlange_offsets(java.lang.String norm, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
+//  private native double dlange_offsets(java.lang.String norm, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
 
   @Override
   public native double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int lda, double[] work);
