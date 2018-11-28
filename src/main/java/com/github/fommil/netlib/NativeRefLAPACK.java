@@ -682,21 +682,21 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native double dlansy_offsets(java.lang.String norm, java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
 
-  @Override
-  public native double dlantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int lda, double[] work);
+//  @Override
+//  public native double dlantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int lda, double[] work);
 
-  @Override
-  public double dlantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
-    return dlantr_offsets(norm, uplo, diag, m, n, a, _a_offset, lda, work, _work_offset);
-  }
+//  @Override
+//  public double dlantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
+//    return dlantr_offsets(norm, uplo, diag, m, n, a, _a_offset, lda, work, _work_offset);
+//  }
 
-  public native double dlantr_offsets(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
+//  private native double dlantr_offsets(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
 
-  @Override
-  public native double dlapy2(double x, double y);
+//  @Override
+//  public native double dlapy2(double x, double y);
 
-  @Override
-  public native double dlapy3(double x, double y, double z);
+//  @Override
+//  public native double dlapy3(double x, double y, double z);
 
   @Override
   public native void dlarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, double[] v, int ldv, double[] t, int ldt, double[] c, int Ldc, double[] work, int ldwork);
