@@ -83,7 +83,7 @@ public final class Dgegs {
 			if (intw.val == 0) {
 				int i6 = Ilaenv.ilaenv(1, "DGEQRF", " ", i, i, -1, -1);
 				int j6 = Ilaenv.ilaenv(1, "DORMQR", " ", i, i, i, -1);
-				int k6 = Ilaenv.ilaenv(1, "DORGQR", " ", i, i, i, -1);
+				int k6 = 32;
 				int l5 = Util.max(i6, j6, k6);
 				int i5 = 2 * i + i * (l5 + 1);
 				ad7[(1 - 1) + i3] = i5;

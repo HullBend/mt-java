@@ -25,7 +25,7 @@ public final class Dorghr {
 		else if ((l1 < Math.max(1, k3)) && flag ^ true)
 			intw.val = -8;
 		if (intw.val == 0) {
-			int j3 = Ilaenv.ilaenv(1, "DORGQR", " ", k3, k3, k3, -1);
+			int j3 = 32;
 			i3 = Math.max(1, k3) * j3;
 			ad2[(1 - 1) + k1] = i3;
 		}
