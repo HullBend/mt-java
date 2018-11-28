@@ -1,14 +1,16 @@
 package org.netlib.util;
 
-import java.util.Enumeration;
-import java.util.Formatter;
-import java.util.Vector;
+//import java.util.Enumeration;
+//import java.util.Formatter;
+//import java.util.Vector;
 
 public final class Util {
+
     public static double dsign(double d, double d1)
     {
         return d1 < 0.0D ? -Math.abs(d) : Math.abs(d);
     }
+
     public static int max(int i, int j, int k)
     {
         return Math.max(i <= j ? j : i, Math.max(j, k));
@@ -23,6 +25,7 @@ public final class Util {
     {
         return Math.max(d <= d1 ? d1 : d, Math.max(d1, d2));
     }
+
     public static int min(int i, int j, int k)
     {
         return Math.min(i >= j ? j : i, Math.min(j, k));
@@ -37,29 +40,32 @@ public final class Util {
     {
         return Math.min(d >= d1 ? d1 : d, Math.min(d1, d2));
     }
+
     public static double log10(double d)
     {
-        return Math.log(d) / 2.30258509D;
+        return Math.log10(d);
     }
 
     public static float log10(float f)
     {
-        return (float)(Math.log(f) / 2.30258509D);
+        return (float) Math.log10(f);
     }
+
     public static int nint(float f)
     {
         return (int)(f < 0.0F ? f - 0.5D : f + 0.5D);
     }
+
     public static String stringInsert(String s, String s1, int i, int j)
     {
-        String s2 = new String(s.substring(0, i - 1) + s1.substring(0, (j - i) + 1) + s.substring(j, s.length()));
-        return s2;
+        return new String(s.substring(0, i - 1) + s1.substring(0, (j - i) + 1) + s.substring(j, s.length()));
     }
 
     public static String stringInsert(String s, String s1, int i)
     {
         return stringInsert(s, s1, i, i);
     }
+
 //    public static void f77write(String s, Vector<?> vector)
 //    {
 //        if(s == null)
