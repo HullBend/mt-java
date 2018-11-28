@@ -17,7 +17,7 @@ public final class Dorgqr {
 		int i5 = 0;
 		int j5 = 0;
 		intw.val = 0;
-		l4 = Ilaenv.ilaenv(1, "DORGQR", " ", i, j, k, -1);
+		l4 = 32;
 		k4 = Math.max(1, j) * l4;
 		ad2[(1 - 1) + k1] = k4;
 		flag = l1 == -1;
@@ -45,14 +45,12 @@ public final class Dorgqr {
 		j5 = 0;
 		l2 = j;
 		if ((l4 > 1) && (l4 < k)) {
-			j5 = Math.max(0, Ilaenv.ilaenv(3, "DORGQR", " ", i, j, k, -1));
+			j5 = 128;
 			if (j5 < k) {
 				j4 = j;
 				l2 = j4 * l4;
 				if (l1 < l2) {
 					l4 = l1 / j4;
-					i5 = Math.max(2,
-							Ilaenv.ilaenv(2, "DORGQR", " ", i, j, k, -1));
 				}
 			}
 		}
