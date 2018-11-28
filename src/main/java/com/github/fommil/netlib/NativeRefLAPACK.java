@@ -672,15 +672,15 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native double dlange_offsets(java.lang.String norm, int m, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
 
-  @Override
-  public native double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int lda, double[] work);
+//  @Override
+//  public native double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int lda, double[] work);
 
-  @Override
-  public double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
-    return dlansy_offsets(norm, uplo, n, a, _a_offset, lda, work, _work_offset);
-  }
+//  @Override
+//  public double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
+//    return dlansy_offsets(norm, uplo, n, a, _a_offset, lda, work, _work_offset);
+//  }
 
-  public native double dlansy_offsets(java.lang.String norm, java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
+//  private native double dlansy_offsets(java.lang.String norm, java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset);
 
   @Override
   public native double dlantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int lda, double[] work);

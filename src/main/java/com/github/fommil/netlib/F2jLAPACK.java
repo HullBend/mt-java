@@ -1216,50 +1216,50 @@ public class F2jLAPACK extends com.github.fommil.netlib.LAPACK {
 //    return org.netlib.lapack.Dlansp.dlansp(norm, uplo, n, ap, 0, work, 0);
 //  }
 
-  @Override
-  public double dlansp(java.lang.String norm, java.lang.String uplo, int n, double[] ap, int _ap_offset, double[] work, int _work_offset) {
-    return org.netlib.lapack.Dlansp.dlansp(norm, uplo, n, ap, _ap_offset, work, _work_offset);
-  }
+//  @Override
+//  public double dlansp(java.lang.String norm, java.lang.String uplo, int n, double[] ap, int _ap_offset, double[] work, int _work_offset) {
+//    return org.netlib.lapack.Dlansp.dlansp(norm, uplo, n, ap, _ap_offset, work, _work_offset);
+//  }
 
-  @Override
-  public double dlanst(java.lang.String norm, int n, double[] d, double[] e) {
-    return org.netlib.lapack.Dlanst.dlanst(norm, n, d, 0, e, 0);
-  }
+//  @Override
+//  public double dlanst(java.lang.String norm, int n, double[] d, double[] e) {
+//    return org.netlib.lapack.Dlanst.dlanst(norm, n, d, 0, e, 0);
+//  }
 
-  @Override
-  public double dlanst(java.lang.String norm, int n, double[] d, int _d_offset, double[] e, int _e_offset) {
-    return org.netlib.lapack.Dlanst.dlanst(norm, n, d, _d_offset, e, _e_offset);
-  }
+//  @Override
+//  public double dlanst(java.lang.String norm, int n, double[] d, int _d_offset, double[] e, int _e_offset) {
+//    return org.netlib.lapack.Dlanst.dlanst(norm, n, d, _d_offset, e, _e_offset);
+//  }
 
-  @Override
-  public double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int lda, double[] work) {
-    return org.netlib.lapack.Dlansy.dlansy(norm, uplo, n, a, 0, lda, work, 0);
-  }
+//  @Override
+//  public double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int lda, double[] work) {
+//    return org.netlib.lapack.Dlansy.dlansy(norm, uplo, n, a, 0, lda, work, 0);
+//  }
 
-  @Override
-  public double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
-    return org.netlib.lapack.Dlansy.dlansy(norm, uplo, n, a, _a_offset, lda, work, _work_offset);
-  }
+//  @Override
+//  public double dlansy(java.lang.String norm, java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] work, int _work_offset) {
+//    return org.netlib.lapack.Dlansy.dlansy(norm, uplo, n, a, _a_offset, lda, work, _work_offset);
+//  }
 
-  @Override
-  public double dlantb(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, int k, double[] ab, int ldab, double[] work) {
-    return org.netlib.lapack.Dlantb.dlantb(norm, uplo, diag, n, k, ab, 0, ldab, work, 0);
-  }
+//  @Override
+//  public double dlantb(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, int k, double[] ab, int ldab, double[] work) {
+//    return org.netlib.lapack.Dlantb.dlantb(norm, uplo, diag, n, k, ab, 0, ldab, work, 0);
+//  }
 
-  @Override
-  public double dlantb(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, int k, double[] ab, int _ab_offset, int ldab, double[] work, int _work_offset) {
-    return org.netlib.lapack.Dlantb.dlantb(norm, uplo, diag, n, k, ab, _ab_offset, ldab, work, _work_offset);
-  }
+//  @Override
+//  public double dlantb(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, int k, double[] ab, int _ab_offset, int ldab, double[] work, int _work_offset) {
+//    return org.netlib.lapack.Dlantb.dlantb(norm, uplo, diag, n, k, ab, _ab_offset, ldab, work, _work_offset);
+//  }
 
-  @Override
-  public double dlantp(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, double[] ap, double[] work) {
-    return org.netlib.lapack.Dlantp.dlantp(norm, uplo, diag, n, ap, 0, work, 0);
-  }
+//  @Override
+//  public double dlantp(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, double[] ap, double[] work) {
+//    return org.netlib.lapack.Dlantp.dlantp(norm, uplo, diag, n, ap, 0, work, 0);
+//  }
 
-  @Override
-  public double dlantp(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] work, int _work_offset) {
-    return org.netlib.lapack.Dlantp.dlantp(norm, uplo, diag, n, ap, _ap_offset, work, _work_offset);
-  }
+//  @Override
+//  public double dlantp(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] work, int _work_offset) {
+//    return org.netlib.lapack.Dlantp.dlantp(norm, uplo, diag, n, ap, _ap_offset, work, _work_offset);
+//  }
 
   @Override
   public double dlantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, double[] a, int lda, double[] work) {
