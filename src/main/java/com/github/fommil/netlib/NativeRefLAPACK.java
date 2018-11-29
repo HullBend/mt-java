@@ -778,105 +778,105 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native void dlaswp_offsets(int n, double[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx);
 
-  @Override
-  public native void dlauum(java.lang.String uplo, int n, double[] a, int lda, org.netlib.util.intW info);
+//  @Override
+//  public native void dlauum(java.lang.String uplo, int n, double[] a, int lda, org.netlib.util.intW info);
 
-  @Override
-  public void dlauum(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-  dlauum_offsets(uplo, n, a, _a_offset, lda, info);
-  }
+//  @Override
+//  public void dlauum(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//  dlauum_offsets(uplo, n, a, _a_offset, lda, info);
+//  }
 
-  public native void dlauum_offsets(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, org.netlib.util.intW info);
+//  private native void dlauum_offsets(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, org.netlib.util.intW info);
 
-  @Override
-  public native void dopgtr(java.lang.String uplo, int n, double[] ap, double[] tau, double[] q, int ldq, double[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void dopgtr(java.lang.String uplo, int n, double[] ap, double[] tau, double[] q, int ldq, double[] work, org.netlib.util.intW info);
 
-  @Override
-  public void dopgtr(java.lang.String uplo, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] q, int _q_offset, int ldq, double[] work, int _work_offset, org.netlib.util.intW info) {
-  dopgtr_offsets(uplo, n, ap, _ap_offset, tau, _tau_offset, q, _q_offset, ldq, work, _work_offset, info);
-  }
+//  @Override
+//  public void dopgtr(java.lang.String uplo, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] q, int _q_offset, int ldq, double[] work, int _work_offset, org.netlib.util.intW info) {
+//  dopgtr_offsets(uplo, n, ap, _ap_offset, tau, _tau_offset, q, _q_offset, ldq, work, _work_offset, info);
+//  }
 
-  public native void dopgtr_offsets(java.lang.String uplo, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] q, int _q_offset, int ldq, double[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void dopgtr_offsets(java.lang.String uplo, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] q, int _q_offset, int ldq, double[] work, int _work_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void dopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, double[] ap, double[] tau, double[] c, int Ldc, double[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void dopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, double[] ap, double[] tau, double[] c, int Ldc, double[] work, org.netlib.util.intW info);
 
-  @Override
-  public void dopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, org.netlib.util.intW info) {
-  dopmtr_offsets(side, uplo, trans, m, n, ap, _ap_offset, tau, _tau_offset, c, _c_offset, Ldc, work, _work_offset, info);
-  }
+//  @Override
+//  public void dopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, org.netlib.util.intW info) {
+//  dopmtr_offsets(side, uplo, trans, m, n, ap, _ap_offset, tau, _tau_offset, c, _c_offset, Ldc, work, _work_offset, info);
+//  }
 
-  public native void dopmtr_offsets(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void dopmtr_offsets(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, double[] ap, int _ap_offset, double[] tau, int _tau_offset, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void dorgbr(java.lang.String vect, int m, int n, int k, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
+//  @Override
+//  public native void dorgbr(java.lang.String vect, int m, int n, int k, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public void dorgbr(java.lang.String vect, int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-  dorgbr_offsets(vect, m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void dorgbr(java.lang.String vect, int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//  dorgbr_offsets(vect, m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
+//  }
 
-  public native void dorgbr_offsets(java.lang.String vect, int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
+//  private native void dorgbr_offsets(java.lang.String vect, int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public native void dorghr(int n, int ilo, int ihi, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
+//  @Override
+//  public native void dorghr(int n, int ilo, int ihi, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public void dorghr(int n, int ilo, int ihi, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-  dorghr_offsets(n, ilo, ihi, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void dorghr(int n, int ilo, int ihi, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//  dorghr_offsets(n, ilo, ihi, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
+//  }
 
-  public native void dorghr_offsets(int n, int ilo, int ihi, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
+//  private native void dorghr_offsets(int n, int ilo, int ihi, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
   @Override
   public native void dorglq(int m, int n, int k, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public void dorglq(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-  dorglq_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void dorglq(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//  dorglq_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
+//  }
 
-  public native void dorglq_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
+//  private native void dorglq_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
   @Override
   public native void dorgql(int m, int n, int k, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public void dorgql(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-  dorgql_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void dorgql(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//  dorgql_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
+//  }
 
-  public native void dorgql_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
+//  private native void dorgql_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
   @Override
   public native void dorgqr(int m, int n, int k, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public void dorgqr(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-  dorgqr_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void dorgqr(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//  dorgqr_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
+//  }
 
-  public native void dorgqr_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
+//  private native void dorgqr_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
   @Override
   public native void dorgrq(int m, int n, int k, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public void dorgrq(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-  dorgrq_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void dorgrq(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//  dorgrq_offsets(m, n, k, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
+//  }
 
-  public native void dorgrq_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
+//  private native void dorgrq_offsets(int m, int n, int k, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public native void dorgtr(java.lang.String uplo, int n, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
+//  @Override
+//  public native void dorgtr(java.lang.String uplo, int n, double[] a, int lda, double[] tau, double[] work, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public void dorgtr(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-  dorgtr_offsets(uplo, n, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void dorgtr(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//  dorgtr_offsets(uplo, n, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
+//  }
 
-  public native void dorgtr_offsets(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
+//  private native void dorgtr_offsets(java.lang.String uplo, int n, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset, double[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
   @Override
   public native void dormbr(java.lang.String vect, java.lang.String side, java.lang.String trans, int m, int n, int k, double[] a, int lda, double[] tau, double[] c, int Ldc, double[] work, int lwork, org.netlib.util.intW info);
