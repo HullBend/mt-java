@@ -1,14 +1,11 @@
 package org.netlib.lapack;
 
-import org.netlib.util.Util;
-import org.netlib.util.booleanW;
-import org.netlib.util.doubleW;
-import org.netlib.util.intW;
+import org.netlib.util.*;
 
-public final class Dlamc2 {
+public final class Slamc2 {
 
-    public static void dlamc2(intW intw, intW intw1, booleanW booleanw, doubleW doublew, intW intw2, doubleW doublew1,
-            intW intw3, doubleW doublew2) {
+    public static void slamc2(intW intw, intW intw1, booleanW booleanw, floatW floatw, intW intw2, floatW floatw1,
+            intW intw3, floatW floatw2) {
         booleanW booleanw1 = new booleanW(false);
         booleanW booleanw2 = new booleanW(false);
         intW intw4 = new intW(0);
@@ -16,44 +13,44 @@ public final class Dlamc2 {
         intW intw6 = new intW(0);
         intW intw7 = new intW(0);
         if (first) {
-            double d21 = 0;
-            double d9 = 1;
-            double d19 = 2;
-            Dlamc1.dlamc1(lbeta, lt, booleanw2, booleanw1);
-            double d3 = lbeta.val;
-            double d1 = Math.pow(d3, -lt.val);
-            leps = d1;
-            d3 = d19 / 3;
-            double d7 = d9 / 2;
-            double d13 = Dlamc3.dlamc3(d3, -d7);
-            double d17 = Dlamc3.dlamc3(d13, d13);
-            d3 = Dlamc3.dlamc3(d17, -d7);
-            d3 = Dlamc3.dlamc3(d3, d13);
-            d3 = Math.abs(d3);
-            if (d3 < leps)
-                d3 = leps;
+            float f21 = 0;
+            float f9 = 1;
+            float f19 = 2;
+            Slamc1.slamc1(lbeta, lt, booleanw2, booleanw1);
+            float f3 = lbeta.val;
+            float f1 = (float) Math.pow(f3, -lt.val);
+            leps = f1;
+            f3 = f19 / (float) 3;
+            float f7 = f9 / (float) 2;
+            float f13 = Slamc3.slamc3(f3, -f7);
+            float f17 = Slamc3.slamc3(f13, f13);
+            f3 = Slamc3.slamc3(f17, -f7);
+            f3 = Slamc3.slamc3(f3, f13);
+            f3 = Math.abs(f3);
+            if (f3 < leps)
+                f3 = leps;
             leps = 1;
-            while ((leps <= d3) || (d3 <= d21)) {
-                leps = d3;
-                double d5 = Dlamc3.dlamc3(d7 * leps, Math.pow(d19, 5) * Math.pow(leps, 2));
-                d5 = Dlamc3.dlamc3(d7, -d5);
-                d3 = Dlamc3.dlamc3(d7, d5);
-                d5 = Dlamc3.dlamc3(d7, -d3);
-                d3 = Dlamc3.dlamc3(d7, d5);
+            while ((leps <= f3) || (f3 <= f21)) {
+                leps = f3;
+                float f5 = Slamc3.slamc3(f7 * leps, (float) Math.pow(f19, 5) * (float) Math.pow(leps, 2));
+                f5 = Slamc3.slamc3(f7, -f5);
+                f3 = Slamc3.slamc3(f7, f5);
+                f5 = Slamc3.slamc3(f7, -f3);
+                f3 = Slamc3.slamc3(f7, f5);
             }
-            if (d1 < leps)
-                leps = d1;
-            double d11 = d9 / lbeta.val;
-            double d15 = d9;
+            if (f1 < leps)
+                leps = f1;
+            float f11 = f9 / (float) lbeta.val;
+            float f15 = f9;
             for (int j = (3 - 1) + 1; j > 0; j--) {
-                d15 = Dlamc3.dlamc3(d15 * d11, d21);
+                f15 = Slamc3.slamc3(f15 * f11, f21);
             }
 
-            d1 = Dlamc3.dlamc3(d9, d15);
-            Dlamc4.dlamc4(intw7, d9, lbeta.val);
-            Dlamc4.dlamc4(intw6, -d9, lbeta.val);
-            Dlamc4.dlamc4(intw5, d1, lbeta.val);
-            Dlamc4.dlamc4(intw4, -d1, lbeta.val);
+            f1 = Slamc3.slamc3(f9, f15);
+            Slamc4.slamc4(intw7, f9, lbeta.val);
+            Slamc4.slamc4(intw6, -f9, lbeta.val);
+            Slamc4.slamc4(intw5, f1, lbeta.val);
+            Slamc4.slamc4(intw4, -f1, lbeta.val);
             boolean flag1 = false;
             if ((intw7.val == intw6.val) && (intw5.val == intw4.val)) {
                 if (intw7.val == intw5.val)
@@ -87,24 +84,24 @@ public final class Dlamc2 {
             if (iwarn) {
                 first = true;
                 System.err.println("WARNING. The value EMIN may be incorrect:  EMIN = '" + lemin
-                        + "'. If, after inspection, the value EMIN looks acceptable please comment out the IF block as marked within the code of routine 'DLAMC2' otherwise supply EMIN explicitly.");
+                        + "'. If, after inspection, the value EMIN looks acceptable please comment out the IF block as marked within the code of routine 'SLAMC2' otherwise supply EMIN explicitly.");
             }
             flag1 = flag1 || booleanw1.val;
             lrmin = 1;
             for (int k = (1 - lemin - 1) + 1; k > 0; k--) {
-                lrmin = Dlamc3.dlamc3(lrmin * d11, d21);
+                lrmin = Slamc3.slamc3(lrmin * f11, f21);
             }
 
-            Dlamc5.dlamc5(lbeta.val, lt.val, lemin, flag1, lemax, lrmax);
+            Slamc5.slamc5(lbeta.val, lt.val, lemin, flag1, lemax, lrmax);
         }
         intw.val = lbeta.val;
         intw1.val = lt.val;
         booleanw.val = booleanw2.val;
-        doublew.val = leps;
+        floatw.val = leps;
         intw2.val = lemin;
-        doublew1.val = lrmin;
+        floatw1.val = lrmin;
         intw3.val = lemax.val;
-        doublew2.val = lrmax.val;
+        floatw2.val = lrmax.val;
     }
 
     public static boolean first = true;
@@ -113,7 +110,7 @@ public final class Dlamc2 {
     public static intW lemax = new intW(0);
     public static int lemin = 0;
     public static intW lt = new intW(0);
-    public static double leps = 0.0D;
-    public static doubleW lrmax = new doubleW(0.0D);
-    public static double lrmin = 0.0D;
+    public static float leps = 0.0F;
+    public static floatW lrmax = new floatW(0.0F);
+    public static float lrmin = 0.0F;
 }
