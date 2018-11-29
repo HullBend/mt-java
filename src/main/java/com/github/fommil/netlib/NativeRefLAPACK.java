@@ -748,35 +748,35 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native void dlarnv_offsets(int idist, int[] iseed, int _iseed_offset, int n, double[] x, int _x_offset);
 
-  @Override
-  public native void dlaset(java.lang.String uplo, int m, int n, double alpha, double beta, double[] a, int lda);
+//  @Override
+//  public native void dlaset(java.lang.String uplo, int m, int n, double alpha, double beta, double[] a, int lda);
 
-  @Override
-  public void dlaset(java.lang.String uplo, int m, int n, double alpha, double beta, double[] a, int _a_offset, int lda) {
-  dlaset_offsets(uplo, m, n, alpha, beta, a, _a_offset, lda);
-  }
+//  @Override
+//  public void dlaset(java.lang.String uplo, int m, int n, double alpha, double beta, double[] a, int _a_offset, int lda) {
+//  dlaset_offsets(uplo, m, n, alpha, beta, a, _a_offset, lda);
+//  }
 
-  public native void dlaset_offsets(java.lang.String uplo, int m, int n, double alpha, double beta, double[] a, int _a_offset, int lda);
+//  private native void dlaset_offsets(java.lang.String uplo, int m, int n, double alpha, double beta, double[] a, int _a_offset, int lda);
 
-  @Override
-  public native void dlasrt(java.lang.String id, int n, double[] d, org.netlib.util.intW info);
+//  @Override
+//  public native void dlasrt(java.lang.String id, int n, double[] d, org.netlib.util.intW info);
 
-  @Override
-  public void dlasrt(java.lang.String id, int n, double[] d, int _d_offset, org.netlib.util.intW info) {
-  dlasrt_offsets(id, n, d, _d_offset, info);
-  }
+//  @Override
+//  public void dlasrt(java.lang.String id, int n, double[] d, int _d_offset, org.netlib.util.intW info) {
+//  dlasrt_offsets(id, n, d, _d_offset, info);
+//  }
 
-  public native void dlasrt_offsets(java.lang.String id, int n, double[] d, int _d_offset, org.netlib.util.intW info);
+//  private native void dlasrt_offsets(java.lang.String id, int n, double[] d, int _d_offset, org.netlib.util.intW info);
 
   @Override
   public native void dlaswp(int n, double[] a, int lda, int k1, int k2, int[] ipiv, int incx);
 
-  @Override
-  public void dlaswp(int n, double[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx) {
-  dlaswp_offsets(n, a, _a_offset, lda, k1, k2, ipiv, _ipiv_offset, incx);
-  }
+//  @Override
+//  public void dlaswp(int n, double[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx) {
+//  dlaswp_offsets(n, a, _a_offset, lda, k1, k2, ipiv, _ipiv_offset, incx);
+//  }
 
-  public native void dlaswp_offsets(int n, double[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx);
+//  private native void dlaswp_offsets(int n, double[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx);
 
   @Override
   public native void dlauum(java.lang.String uplo, int n, double[] a, int lda, org.netlib.util.intW info);
