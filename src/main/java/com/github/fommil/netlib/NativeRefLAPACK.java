@@ -698,55 +698,55 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 //  @Override
 //  public native double dlapy3(double x, double y, double z);
 
-  @Override
-  public native void dlarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, double[] v, int ldv, double[] t, int ldt, double[] c, int Ldc, double[] work, int ldwork);
+//  @Override
+//  public native void dlarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, double[] v, int ldv, double[] t, int ldt, double[] c, int Ldc, double[] work, int ldwork);
 
-  @Override
-  public void dlarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, double[] v, int _v_offset, int ldv, double[] t, int _t_offset, int ldt, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, int ldwork) {
-  dlarfb_offsets(side, trans, direct, storev, m, n, k, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
-  }
+//  @Override
+//  public void dlarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, double[] v, int _v_offset, int ldv, double[] t, int _t_offset, int ldt, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, int ldwork) {
+//  dlarfb_offsets(side, trans, direct, storev, m, n, k, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
+//  }
 
-  public native void dlarfb_offsets(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, double[] v, int _v_offset, int ldv, double[] t, int _t_offset, int ldt, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, int ldwork);
+//  private native void dlarfb_offsets(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, double[] v, int _v_offset, int ldv, double[] t, int _t_offset, int ldt, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset, int ldwork);
 
-  @Override
-  public native void dlarfg(int n, org.netlib.util.doubleW alpha, double[] x, int incx, org.netlib.util.doubleW tau);
+//  @Override
+//  public native void dlarfg(int n, org.netlib.util.doubleW alpha, double[] x, int incx, org.netlib.util.doubleW tau);
 
-  @Override
-  public void dlarfg(int n, org.netlib.util.doubleW alpha, double[] x, int _x_offset, int incx, org.netlib.util.doubleW tau) {
-  dlarfg_offsets(n, alpha, x, _x_offset, incx, tau);
-  }
+//  @Override
+//  public void dlarfg(int n, org.netlib.util.doubleW alpha, double[] x, int _x_offset, int incx, org.netlib.util.doubleW tau) {
+//  dlarfg_offsets(n, alpha, x, _x_offset, incx, tau);
+//  }
 
-  public native void dlarfg_offsets(int n, org.netlib.util.doubleW alpha, double[] x, int _x_offset, int incx, org.netlib.util.doubleW tau);
+//  private native void dlarfg_offsets(int n, org.netlib.util.doubleW alpha, double[] x, int _x_offset, int incx, org.netlib.util.doubleW tau);
 
-  @Override
-  public native void dlarft(java.lang.String direct, java.lang.String storev, int n, int k, double[] v, int ldv, double[] tau, double[] t, int ldt);
+//  @Override
+//  public native void dlarft(java.lang.String direct, java.lang.String storev, int n, int k, double[] v, int ldv, double[] tau, double[] t, int ldt);
 
-  @Override
-  public void dlarft(java.lang.String direct, java.lang.String storev, int n, int k, double[] v, int _v_offset, int ldv, double[] tau, int _tau_offset, double[] t, int _t_offset, int ldt) {
-  dlarft_offsets(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
-  }
+//  @Override
+//  public void dlarft(java.lang.String direct, java.lang.String storev, int n, int k, double[] v, int _v_offset, int ldv, double[] tau, int _tau_offset, double[] t, int _t_offset, int ldt) {
+//  dlarft_offsets(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
+//  }
 
-  public native void dlarft_offsets(java.lang.String direct, java.lang.String storev, int n, int k, double[] v, int _v_offset, int ldv, double[] tau, int _tau_offset, double[] t, int _t_offset, int ldt);
+//  private native void dlarft_offsets(java.lang.String direct, java.lang.String storev, int n, int k, double[] v, int _v_offset, int ldv, double[] tau, int _tau_offset, double[] t, int _t_offset, int ldt);
 
-  @Override
-  public native void dlarfx(java.lang.String side, int m, int n, double[] v, double tau, double[] c, int Ldc, double[] work);
+//  @Override
+//  public native void dlarfx(java.lang.String side, int m, int n, double[] v, double tau, double[] c, int Ldc, double[] work);
 
-  @Override
-  public void dlarfx(java.lang.String side, int m, int n, double[] v, int _v_offset, double tau, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset) {
-  dlarfx_offsets(side, m, n, v, _v_offset, tau, c, _c_offset, Ldc, work, _work_offset);
-  }
+//  @Override
+//  public void dlarfx(java.lang.String side, int m, int n, double[] v, int _v_offset, double tau, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset) {
+//  dlarfx_offsets(side, m, n, v, _v_offset, tau, c, _c_offset, Ldc, work, _work_offset);
+//  }
 
-  public native void dlarfx_offsets(java.lang.String side, int m, int n, double[] v, int _v_offset, double tau, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset);
+//  private native void dlarfx_offsets(java.lang.String side, int m, int n, double[] v, int _v_offset, double tau, double[] c, int _c_offset, int Ldc, double[] work, int _work_offset);
 
-  @Override
-  public native void dlarnv(int idist, int[] iseed, int n, double[] x);
+//  @Override
+//  public native void dlarnv(int idist, int[] iseed, int n, double[] x);
 
-  @Override
-  public void dlarnv(int idist, int[] iseed, int _iseed_offset, int n, double[] x, int _x_offset) {
-  dlarnv_offsets(idist, iseed, _iseed_offset, n, x, _x_offset);
-  }
+//  @Override
+//  public void dlarnv(int idist, int[] iseed, int _iseed_offset, int n, double[] x, int _x_offset) {
+//  dlarnv_offsets(idist, iseed, _iseed_offset, n, x, _x_offset);
+//  }
 
-  public native void dlarnv_offsets(int idist, int[] iseed, int _iseed_offset, int n, double[] x, int _x_offset);
+//  private native void dlarnv_offsets(int idist, int[] iseed, int _iseed_offset, int n, double[] x, int _x_offset);
 
   @Override
   public native void dlaset(java.lang.String uplo, int m, int n, double alpha, double beta, double[] a, int lda);
