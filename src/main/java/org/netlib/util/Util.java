@@ -2,7 +2,7 @@ package org.netlib.util;
 
 //import java.util.Enumeration;
 //import java.util.Formatter;
-//import java.util.Vector;
+import java.util.Vector;
 
 public final class Util {
 
@@ -66,45 +66,16 @@ public final class Util {
         return stringInsert(s, s1, i, i);
     }
 
-//    public static void f77write(String s, Vector<?> vector)
-//    {
-//        if(s == null)
-//        {
-//            f77write(vector);
-//            return;
-//        }
-//        try
-//        {
-//            Formatter formatter = new Formatter(s);
-//            Vector vector1 = processVector(vector);
-//            formatter.write(vector1, System.out);
-//            System.out.println();
-//        }
-//        catch(Exception exception)
-//        {
-//            String s1 = exception.getMessage();
-//            if(s1 != null)
-//                System.out.println(s1);
-//            else
-//                System.out.println();
-//        }
-//    }
-//
-//    public static void f77write(Vector<?> vector)
-//    {
-//        Vector<?> vector1 = processVector(vector);
-//        Enumeration<?> enumeration = vector1.elements();
-//        if(enumeration.hasMoreElements())
-//        {
-//            Object obj = enumeration.nextElement();
-//            if(obj instanceof String)
-//                System.out.print(" ");
-//            output_unformatted_element(obj);
-//        }
-//        for(; enumeration.hasMoreElements(); output_unformatted_element(enumeration.nextElement()));
-//        System.out.println();
-//    }
-//
+    public static void f77write(String s, Vector<?> vector)
+    {
+        // stub
+    }
+
+    public static void f77write(Vector<?> vector)
+    {
+        // stub
+    }
+
 //    static Vector<?> processVector(Vector<?> vector)
 //    {
 //        Vector<?> vector1 = new Vector();
@@ -118,23 +89,5 @@ public final class Util {
 //        }
 //
 //        return vector1;
-//    }
-//
-//    private static void output_unformatted_element(Object obj)
-//    {
-//        if(obj instanceof Boolean)
-//        {
-//            if(((Boolean)obj).booleanValue())
-//                System.out.print(" T");
-//            else
-//                System.out.print(" F");
-//        } else
-//        if((obj instanceof Float) || (obj instanceof Double))
-//            System.out.print("  " + obj);
-//        else
-//        if(obj instanceof String)
-//            System.out.print(obj);
-//        else
-//            System.out.print(" " + obj);
 //    }
 }
