@@ -1161,112 +1161,112 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 //  @Override
 //  public native void dppsvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, double[] ap, double[] afp, org.netlib.util.StringW equed, double[] s, double[] b, int ldb, double[] x, int ldx, org.netlib.util.doubleW rcond, double[] ferr, double[] berr, double[] work, int[] iwork, org.netlib.util.intW info);
 
-  @Override
-  public void dppsvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] afp, int _afp_offset, org.netlib.util.StringW equed, double[] s, int _s_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-  dppsvx_offsets(fact, uplo, n, nrhs, ap, _ap_offset, afp, _afp_offset, equed, s, _s_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void dppsvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] afp, int _afp_offset, org.netlib.util.StringW equed, double[] s, int _s_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//  dppsvx_offsets(fact, uplo, n, nrhs, ap, _ap_offset, afp, _afp_offset, equed, s, _s_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  public native void dppsvx_offsets(java.lang.String fact, java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] afp, int _afp_offset, org.netlib.util.StringW equed, double[] s, int _s_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info);
+//  private native void dppsvx_offsets(java.lang.String fact, java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] afp, int _afp_offset, org.netlib.util.StringW equed, double[] s, int _s_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info);
 
   @Override
   public native void dpptrf(java.lang.String uplo, int n, double[] ap, org.netlib.util.intW info);
 
-  @Override
-  public void dpptrf(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info) {
-  dpptrf_offsets(uplo, n, ap, _ap_offset, info);
-  }
+//  @Override
+//  public void dpptrf(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info) {
+//  dpptrf_offsets(uplo, n, ap, _ap_offset, info);
+//  }
 
-  public native void dpptrf_offsets(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info);
+//  private native void dpptrf_offsets(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void dpptri(java.lang.String uplo, int n, double[] ap, org.netlib.util.intW info);
+//  @Override
+//  public native void dpptri(java.lang.String uplo, int n, double[] ap, org.netlib.util.intW info);
 
-  @Override
-  public void dpptri(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info) {
-  dpptri_offsets(uplo, n, ap, _ap_offset, info);
-  }
+//  @Override
+//  public void dpptri(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info) {
+//  dpptri_offsets(uplo, n, ap, _ap_offset, info);
+//  }
 
-  public native void dpptri_offsets(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info);
+//  private native void dpptri_offsets(java.lang.String uplo, int n, double[] ap, int _ap_offset, org.netlib.util.intW info);
 
   @Override
   public native void dpptrs(java.lang.String uplo, int n, int nrhs, double[] ap, double[] b, int ldb, org.netlib.util.intW info);
 
-  @Override
-  public void dpptrs(java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-  dpptrs_offsets(uplo, n, nrhs, ap, _ap_offset, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void dpptrs(java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//  dpptrs_offsets(uplo, n, nrhs, ap, _ap_offset, b, _b_offset, ldb, info);
+//  }
 
-  public native void dpptrs_offsets(java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info);
+//  private native void dpptrs_offsets(java.lang.String uplo, int n, int nrhs, double[] ap, int _ap_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info);
 
-  @Override
-  public native void dptcon(int n, double[] d, double[] e, double anorm, org.netlib.util.doubleW rcond, double[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void dptcon(int n, double[] d, double[] e, double anorm, org.netlib.util.doubleW rcond, double[] work, org.netlib.util.intW info);
 
-  @Override
-  public void dptcon(int n, double[] d, int _d_offset, double[] e, int _e_offset, double anorm, org.netlib.util.doubleW rcond, double[] work, int _work_offset, org.netlib.util.intW info) {
-  dptcon_offsets(n, d, _d_offset, e, _e_offset, anorm, rcond, work, _work_offset, info);
-  }
+//  @Override
+//  public void dptcon(int n, double[] d, int _d_offset, double[] e, int _e_offset, double anorm, org.netlib.util.doubleW rcond, double[] work, int _work_offset, org.netlib.util.intW info) {
+//  dptcon_offsets(n, d, _d_offset, e, _e_offset, anorm, rcond, work, _work_offset, info);
+//  }
 
-  public native void dptcon_offsets(int n, double[] d, int _d_offset, double[] e, int _e_offset, double anorm, org.netlib.util.doubleW rcond, double[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void dptcon_offsets(int n, double[] d, int _d_offset, double[] e, int _e_offset, double anorm, org.netlib.util.doubleW rcond, double[] work, int _work_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void dpteqr(java.lang.String compz, int n, double[] d, double[] e, double[] z, int ldz, double[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void dpteqr(java.lang.String compz, int n, double[] d, double[] e, double[] z, int ldz, double[] work, org.netlib.util.intW info);
 
-  @Override
-  public void dpteqr(java.lang.String compz, int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, int ldz, double[] work, int _work_offset, org.netlib.util.intW info) {
-  dpteqr_offsets(compz, n, d, _d_offset, e, _e_offset, z, _z_offset, ldz, work, _work_offset, info);
-  }
+//  @Override
+//  public void dpteqr(java.lang.String compz, int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, int ldz, double[] work, int _work_offset, org.netlib.util.intW info) {
+//  dpteqr_offsets(compz, n, d, _d_offset, e, _e_offset, z, _z_offset, ldz, work, _work_offset, info);
+//  }
 
-  public native void dpteqr_offsets(java.lang.String compz, int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, int ldz, double[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void dpteqr_offsets(java.lang.String compz, int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, int ldz, double[] work, int _work_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void dptrfs(int n, int nrhs, double[] d, double[] e, double[] df, double[] ef, double[] b, int ldb, double[] x, int ldx, double[] ferr, double[] berr, double[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void dptrfs(int n, int nrhs, double[] d, double[] e, double[] df, double[] ef, double[] b, int ldb, double[] x, int ldx, double[] ferr, double[] berr, double[] work, org.netlib.util.intW info);
 
-  @Override
-  public void dptrfs(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info) {
-  dptrfs_offsets(n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
-  }
+//  @Override
+//  public void dptrfs(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info) {
+//  dptrfs_offsets(n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
+//  }
 
-  public native void dptrfs_offsets(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void dptrfs_offsets(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info);
 
   @Override
   public native void dptsv(int n, int nrhs, double[] d, double[] e, double[] b, int ldb, org.netlib.util.intW info);
 
-  @Override
-  public void dptsv(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-  dptsv_offsets(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void dptsv(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//  dptsv_offsets(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
+//  }
 
-  public native void dptsv_offsets(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info);
+//  private native void dptsv_offsets(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info);
 
-  @Override
-  public native void dptsvx(java.lang.String fact, int n, int nrhs, double[] d, double[] e, double[] df, double[] ef, double[] b, int ldb, double[] x, int ldx, org.netlib.util.doubleW rcond, double[] ferr, double[] berr, double[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void dptsvx(java.lang.String fact, int n, int nrhs, double[] d, double[] e, double[] df, double[] ef, double[] b, int ldb, double[] x, int ldx, org.netlib.util.doubleW rcond, double[] ferr, double[] berr, double[] work, org.netlib.util.intW info);
 
-  @Override
-  public void dptsvx(java.lang.String fact, int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info) {
-  dptsvx_offsets(fact, n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
-  }
+//  @Override
+//  public void dptsvx(java.lang.String fact, int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info) {
+//  dptsvx_offsets(fact, n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
+//  }
 
-  public native void dptsvx_offsets(java.lang.String fact, int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void dptsvx_offsets(java.lang.String fact, int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] df, int _df_offset, double[] ef, int _ef_offset, double[] b, int _b_offset, int ldb, double[] x, int _x_offset, int ldx, org.netlib.util.doubleW rcond, double[] ferr, int _ferr_offset, double[] berr, int _berr_offset, double[] work, int _work_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void dpttrf(int n, double[] d, double[] e, org.netlib.util.intW info);
+//  @Override
+//  public native void dpttrf(int n, double[] d, double[] e, org.netlib.util.intW info);
 
-  @Override
-  public void dpttrf(int n, double[] d, int _d_offset, double[] e, int _e_offset, org.netlib.util.intW info) {
-  dpttrf_offsets(n, d, _d_offset, e, _e_offset, info);
-  }
+//  @Override
+//  public void dpttrf(int n, double[] d, int _d_offset, double[] e, int _e_offset, org.netlib.util.intW info) {
+//  dpttrf_offsets(n, d, _d_offset, e, _e_offset, info);
+//  }
 
-  public native void dpttrf_offsets(int n, double[] d, int _d_offset, double[] e, int _e_offset, org.netlib.util.intW info);
+//  private native void dpttrf_offsets(int n, double[] d, int _d_offset, double[] e, int _e_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void dpttrs(int n, int nrhs, double[] d, double[] e, double[] b, int ldb, org.netlib.util.intW info);
+//  @Override
+//  public native void dpttrs(int n, int nrhs, double[] d, double[] e, double[] b, int ldb, org.netlib.util.intW info);
 
-  @Override
-  public void dpttrs(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-  dpttrs_offsets(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void dpttrs(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//  dpttrs_offsets(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
+//  }
 
-  public native void dpttrs_offsets(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info);
+//  private native void dpttrs_offsets(int n, int nrhs, double[] d, int _d_offset, double[] e, int _e_offset, double[] b, int _b_offset, int ldb, org.netlib.util.intW info);
 
   @Override
   public native void dsbev(java.lang.String jobz, java.lang.String uplo, int n, int kd, double[] ab, int ldab, double[] w, double[] z, int ldz, double[] work, org.netlib.util.intW info);
