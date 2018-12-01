@@ -4871,300 +4871,300 @@ public class F2jLAPACK extends com.github.fommil.netlib.LAPACK {
 //   org.netlib.lapack.Slaqr4.slaqr4(wantt, wantz, n, ilo, ihi, h, 0, ldh, wr, 0, wi, 0, iloz, ihiz, z, 0, ldz, work, 0, lwork, info);
 //  }
 
-  @Override
-  public void slaqr4(boolean wantt, boolean wantz, int n, int ilo, int ihi, float[] h, int _h_offset, int ldh, float[] wr, int _wr_offset, float[] wi, int _wi_offset, int iloz, int ihiz, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Slaqr4.slaqr4(wantt, wantz, n, ilo, ihi, h, _h_offset, ldh, wr, _wr_offset, wi, _wi_offset, iloz, ihiz, z, _z_offset, ldz, work, _work_offset, lwork, info);
-  }
+//  @Override
+//  public void slaqr4(boolean wantt, boolean wantz, int n, int ilo, int ihi, float[] h, int _h_offset, int ldh, float[] wr, int _wr_offset, float[] wi, int _wi_offset, int iloz, int ihiz, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, int lwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slaqr4.slaqr4(wantt, wantz, n, ilo, ihi, h, _h_offset, ldh, wr, _wr_offset, wi, _wi_offset, iloz, ihiz, z, _z_offset, ldz, work, _work_offset, lwork, info);
+//  }
 
-  @Override
-  public void slaqr5(boolean wantt, boolean wantz, int kacc22, int n, int ktop, int kbot, int nshfts, float[] sr, float[] si, float[] h, int ldh, int iloz, int ihiz, float[] z, int ldz, float[] v, int ldv, float[] u, int ldu, int nv, float[] wv, int ldwv, int nh, float[] wh, int ldwh) {
-   org.netlib.lapack.Slaqr5.slaqr5(wantt, wantz, kacc22, n, ktop, kbot, nshfts, sr, 0, si, 0, h, 0, ldh, iloz, ihiz, z, 0, ldz, v, 0, ldv, u, 0, ldu, nv, wv, 0, ldwv, nh, wh, 0, ldwh);
-  }
+//  @Override
+//  public void slaqr5(boolean wantt, boolean wantz, int kacc22, int n, int ktop, int kbot, int nshfts, float[] sr, float[] si, float[] h, int ldh, int iloz, int ihiz, float[] z, int ldz, float[] v, int ldv, float[] u, int ldu, int nv, float[] wv, int ldwv, int nh, float[] wh, int ldwh) {
+//   org.netlib.lapack.Slaqr5.slaqr5(wantt, wantz, kacc22, n, ktop, kbot, nshfts, sr, 0, si, 0, h, 0, ldh, iloz, ihiz, z, 0, ldz, v, 0, ldv, u, 0, ldu, nv, wv, 0, ldwv, nh, wh, 0, ldwh);
+//  }
 
-  @Override
-  public void slaqr5(boolean wantt, boolean wantz, int kacc22, int n, int ktop, int kbot, int nshfts, float[] sr, int _sr_offset, float[] si, int _si_offset, float[] h, int _h_offset, int ldh, int iloz, int ihiz, float[] z, int _z_offset, int ldz, float[] v, int _v_offset, int ldv, float[] u, int _u_offset, int ldu, int nv, float[] wv, int _wv_offset, int ldwv, int nh, float[] wh, int _wh_offset, int ldwh) {
-   org.netlib.lapack.Slaqr5.slaqr5(wantt, wantz, kacc22, n, ktop, kbot, nshfts, sr, _sr_offset, si, _si_offset, h, _h_offset, ldh, iloz, ihiz, z, _z_offset, ldz, v, _v_offset, ldv, u, _u_offset, ldu, nv, wv, _wv_offset, ldwv, nh, wh, _wh_offset, ldwh);
-  }
+//  @Override
+//  public void slaqr5(boolean wantt, boolean wantz, int kacc22, int n, int ktop, int kbot, int nshfts, float[] sr, int _sr_offset, float[] si, int _si_offset, float[] h, int _h_offset, int ldh, int iloz, int ihiz, float[] z, int _z_offset, int ldz, float[] v, int _v_offset, int ldv, float[] u, int _u_offset, int ldu, int nv, float[] wv, int _wv_offset, int ldwv, int nh, float[] wh, int _wh_offset, int ldwh) {
+//   org.netlib.lapack.Slaqr5.slaqr5(wantt, wantz, kacc22, n, ktop, kbot, nshfts, sr, _sr_offset, si, _si_offset, h, _h_offset, ldh, iloz, ihiz, z, _z_offset, ldz, v, _v_offset, ldv, u, _u_offset, ldu, nv, wv, _wv_offset, ldwv, nh, wh, _wh_offset, ldwh);
+//  }
 
-  @Override
-  public void slaqsb(java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] s, float scond, float amax, org.netlib.util.StringW equed) {
-   org.netlib.lapack.Slaqsb.slaqsb(uplo, n, kd, ab, 0, ldab, s, 0, scond, amax, equed);
-  }
+//  @Override
+//  public void slaqsb(java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] s, float scond, float amax, org.netlib.util.StringW equed) {
+//   org.netlib.lapack.Slaqsb.slaqsb(uplo, n, kd, ab, 0, ldab, s, 0, scond, amax, equed);
+//  }
 
-  @Override
-  public void slaqsb(java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] s, int _s_offset, float scond, float amax, org.netlib.util.StringW equed) {
-   org.netlib.lapack.Slaqsb.slaqsb(uplo, n, kd, ab, _ab_offset, ldab, s, _s_offset, scond, amax, equed);
-  }
+//  @Override
+//  public void slaqsb(java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] s, int _s_offset, float scond, float amax, org.netlib.util.StringW equed) {
+//   org.netlib.lapack.Slaqsb.slaqsb(uplo, n, kd, ab, _ab_offset, ldab, s, _s_offset, scond, amax, equed);
+//  }
 
-  @Override
-  public void slaqsp(java.lang.String uplo, int n, float[] ap, float[] s, float scond, float amax, org.netlib.util.StringW equed) {
-   org.netlib.lapack.Slaqsp.slaqsp(uplo, n, ap, 0, s, 0, scond, amax, equed);
-  }
+//  @Override
+//  public void slaqsp(java.lang.String uplo, int n, float[] ap, float[] s, float scond, float amax, org.netlib.util.StringW equed) {
+//   org.netlib.lapack.Slaqsp.slaqsp(uplo, n, ap, 0, s, 0, scond, amax, equed);
+//  }
 
-  @Override
-  public void slaqsp(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] s, int _s_offset, float scond, float amax, org.netlib.util.StringW equed) {
-   org.netlib.lapack.Slaqsp.slaqsp(uplo, n, ap, _ap_offset, s, _s_offset, scond, amax, equed);
-  }
+//  @Override
+//  public void slaqsp(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] s, int _s_offset, float scond, float amax, org.netlib.util.StringW equed) {
+//   org.netlib.lapack.Slaqsp.slaqsp(uplo, n, ap, _ap_offset, s, _s_offset, scond, amax, equed);
+//  }
 
-  @Override
-  public void slaqsy(java.lang.String uplo, int n, float[] a, int lda, float[] s, float scond, float amax, org.netlib.util.StringW equed) {
-   org.netlib.lapack.Slaqsy.slaqsy(uplo, n, a, 0, lda, s, 0, scond, amax, equed);
-  }
+//  @Override
+//  public void slaqsy(java.lang.String uplo, int n, float[] a, int lda, float[] s, float scond, float amax, org.netlib.util.StringW equed) {
+//   org.netlib.lapack.Slaqsy.slaqsy(uplo, n, a, 0, lda, s, 0, scond, amax, equed);
+//  }
 
-  @Override
-  public void slaqsy(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, float[] s, int _s_offset, float scond, float amax, org.netlib.util.StringW equed) {
-   org.netlib.lapack.Slaqsy.slaqsy(uplo, n, a, _a_offset, lda, s, _s_offset, scond, amax, equed);
-  }
+//  @Override
+//  public void slaqsy(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, float[] s, int _s_offset, float scond, float amax, org.netlib.util.StringW equed) {
+//   org.netlib.lapack.Slaqsy.slaqsy(uplo, n, a, _a_offset, lda, s, _s_offset, scond, amax, equed);
+//  }
 
-  @Override
-  public void slaqtr(boolean ltran, boolean lreal, int n, float[] t, int ldt, float[] b, float w, org.netlib.util.floatW scale, float[] x, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slaqtr.slaqtr(ltran, lreal, n, t, 0, ldt, b, 0, w, scale, x, 0, work, 0, info);
-  }
+//  @Override
+//  public void slaqtr(boolean ltran, boolean lreal, int n, float[] t, int ldt, float[] b, float w, org.netlib.util.floatW scale, float[] x, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slaqtr.slaqtr(ltran, lreal, n, t, 0, ldt, b, 0, w, scale, x, 0, work, 0, info);
+//  }
 
-  @Override
-  public void slaqtr(boolean ltran, boolean lreal, int n, float[] t, int _t_offset, int ldt, float[] b, int _b_offset, float w, org.netlib.util.floatW scale, float[] x, int _x_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slaqtr.slaqtr(ltran, lreal, n, t, _t_offset, ldt, b, _b_offset, w, scale, x, _x_offset, work, _work_offset, info);
-  }
+//  @Override
+//  public void slaqtr(boolean ltran, boolean lreal, int n, float[] t, int _t_offset, int ldt, float[] b, int _b_offset, float w, org.netlib.util.floatW scale, float[] x, int _x_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slaqtr.slaqtr(ltran, lreal, n, t, _t_offset, ldt, b, _b_offset, w, scale, x, _x_offset, work, _work_offset, info);
+//  }
 
-  @Override
-  public void slar1v(int n, int b1, int bn, float lambda, float[] d, float[] l, float[] ld, float[] lld, float pivmin, float gaptol, float[] z, boolean wantnc, org.netlib.util.intW negcnt, org.netlib.util.floatW ztz, org.netlib.util.floatW mingma, org.netlib.util.intW r, int[] isuppz, org.netlib.util.floatW nrminv, org.netlib.util.floatW resid, org.netlib.util.floatW rqcorr, float[] work) {
-   org.netlib.lapack.Slar1v.slar1v(n, b1, bn, lambda, d, 0, l, 0, ld, 0, lld, 0, pivmin, gaptol, z, 0, wantnc, negcnt, ztz, mingma, r, isuppz, 0, nrminv, resid, rqcorr, work, 0);
-  }
+//  @Override
+//  public void slar1v(int n, int b1, int bn, float lambda, float[] d, float[] l, float[] ld, float[] lld, float pivmin, float gaptol, float[] z, boolean wantnc, org.netlib.util.intW negcnt, org.netlib.util.floatW ztz, org.netlib.util.floatW mingma, org.netlib.util.intW r, int[] isuppz, org.netlib.util.floatW nrminv, org.netlib.util.floatW resid, org.netlib.util.floatW rqcorr, float[] work) {
+//   org.netlib.lapack.Slar1v.slar1v(n, b1, bn, lambda, d, 0, l, 0, ld, 0, lld, 0, pivmin, gaptol, z, 0, wantnc, negcnt, ztz, mingma, r, isuppz, 0, nrminv, resid, rqcorr, work, 0);
+//  }
 
-  @Override
-  public void slar1v(int n, int b1, int bn, float lambda, float[] d, int _d_offset, float[] l, int _l_offset, float[] ld, int _ld_offset, float[] lld, int _lld_offset, float pivmin, float gaptol, float[] z, int _z_offset, boolean wantnc, org.netlib.util.intW negcnt, org.netlib.util.floatW ztz, org.netlib.util.floatW mingma, org.netlib.util.intW r, int[] isuppz, int _isuppz_offset, org.netlib.util.floatW nrminv, org.netlib.util.floatW resid, org.netlib.util.floatW rqcorr, float[] work, int _work_offset) {
-   org.netlib.lapack.Slar1v.slar1v(n, b1, bn, lambda, d, _d_offset, l, _l_offset, ld, _ld_offset, lld, _lld_offset, pivmin, gaptol, z, _z_offset, wantnc, negcnt, ztz, mingma, r, isuppz, _isuppz_offset, nrminv, resid, rqcorr, work, _work_offset);
-  }
+//  @Override
+//  public void slar1v(int n, int b1, int bn, float lambda, float[] d, int _d_offset, float[] l, int _l_offset, float[] ld, int _ld_offset, float[] lld, int _lld_offset, float pivmin, float gaptol, float[] z, int _z_offset, boolean wantnc, org.netlib.util.intW negcnt, org.netlib.util.floatW ztz, org.netlib.util.floatW mingma, org.netlib.util.intW r, int[] isuppz, int _isuppz_offset, org.netlib.util.floatW nrminv, org.netlib.util.floatW resid, org.netlib.util.floatW rqcorr, float[] work, int _work_offset) {
+//   org.netlib.lapack.Slar1v.slar1v(n, b1, bn, lambda, d, _d_offset, l, _l_offset, ld, _ld_offset, lld, _lld_offset, pivmin, gaptol, z, _z_offset, wantnc, negcnt, ztz, mingma, r, isuppz, _isuppz_offset, nrminv, resid, rqcorr, work, _work_offset);
+//  }
 
-  @Override
-  public void slar2v(int n, float[] x, float[] y, float[] z, int incx, float[] c, float[] s, int incc) {
-   org.netlib.lapack.Slar2v.slar2v(n, x, 0, y, 0, z, 0, incx, c, 0, s, 0, incc);
-  }
+//  @Override
+//  public void slar2v(int n, float[] x, float[] y, float[] z, int incx, float[] c, float[] s, int incc) {
+//   org.netlib.lapack.Slar2v.slar2v(n, x, 0, y, 0, z, 0, incx, c, 0, s, 0, incc);
+//  }
 
-  @Override
-  public void slar2v(int n, float[] x, int _x_offset, float[] y, int _y_offset, float[] z, int _z_offset, int incx, float[] c, int _c_offset, float[] s, int _s_offset, int incc) {
-   org.netlib.lapack.Slar2v.slar2v(n, x, _x_offset, y, _y_offset, z, _z_offset, incx, c, _c_offset, s, _s_offset, incc);
-  }
+//  @Override
+//  public void slar2v(int n, float[] x, int _x_offset, float[] y, int _y_offset, float[] z, int _z_offset, int incx, float[] c, int _c_offset, float[] s, int _s_offset, int incc) {
+//   org.netlib.lapack.Slar2v.slar2v(n, x, _x_offset, y, _y_offset, z, _z_offset, incx, c, _c_offset, s, _s_offset, incc);
+//  }
 
-  @Override
-  public void slarf(java.lang.String side, int m, int n, float[] v, int incv, float tau, float[] c, int Ldc, float[] work) {
-   org.netlib.lapack.Slarf.slarf(side, m, n, v, 0, incv, tau, c, 0, Ldc, work, 0);
-  }
+//  @Override
+//  public void slarf(java.lang.String side, int m, int n, float[] v, int incv, float tau, float[] c, int Ldc, float[] work) {
+//   org.netlib.lapack.Slarf.slarf(side, m, n, v, 0, incv, tau, c, 0, Ldc, work, 0);
+//  }
 
-  @Override
-  public void slarf(java.lang.String side, int m, int n, float[] v, int _v_offset, int incv, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
-   org.netlib.lapack.Slarf.slarf(side, m, n, v, _v_offset, incv, tau, c, _c_offset, Ldc, work, _work_offset);
-  }
+//  @Override
+//  public void slarf(java.lang.String side, int m, int n, float[] v, int _v_offset, int incv, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
+//   org.netlib.lapack.Slarf.slarf(side, m, n, v, _v_offset, incv, tau, c, _c_offset, Ldc, work, _work_offset);
+//  }
 
-  @Override
-  public void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int ldv, float[] t, int ldt, float[] c, int Ldc, float[] work, int ldwork) {
-   org.netlib.lapack.Slarfb.slarfb(side, trans, direct, storev, m, n, k, v, 0, ldv, t, 0, ldt, c, 0, Ldc, work, 0, ldwork);
-  }
+//  @Override
+//  public void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int ldv, float[] t, int ldt, float[] c, int Ldc, float[] work, int ldwork) {
+//   org.netlib.lapack.Slarfb.slarfb(side, trans, direct, storev, m, n, k, v, 0, ldv, t, 0, ldt, c, 0, Ldc, work, 0, ldwork);
+//  }
 
-  @Override
-  public void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork) {
-   org.netlib.lapack.Slarfb.slarfb(side, trans, direct, storev, m, n, k, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
-  }
+//  @Override
+//  public void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork) {
+//   org.netlib.lapack.Slarfb.slarfb(side, trans, direct, storev, m, n, k, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
+//  }
 
-  @Override
-  public void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int incx, org.netlib.util.floatW tau) {
-   org.netlib.lapack.Slarfg.slarfg(n, alpha, x, 0, incx, tau);
-  }
+//  @Override
+//  public void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int incx, org.netlib.util.floatW tau) {
+//   org.netlib.lapack.Slarfg.slarfg(n, alpha, x, 0, incx, tau);
+//  }
 
-  @Override
-  public void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int _x_offset, int incx, org.netlib.util.floatW tau) {
-   org.netlib.lapack.Slarfg.slarfg(n, alpha, x, _x_offset, incx, tau);
-  }
+//  @Override
+//  public void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int _x_offset, int incx, org.netlib.util.floatW tau) {
+//   org.netlib.lapack.Slarfg.slarfg(n, alpha, x, _x_offset, incx, tau);
+//  }
 
-  @Override
-  public void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int ldv, float[] tau, float[] t, int ldt) {
-   org.netlib.lapack.Slarft.slarft(direct, storev, n, k, v, 0, ldv, tau, 0, t, 0, ldt);
-  }
+//  @Override
+//  public void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int ldv, float[] tau, float[] t, int ldt) {
+//   org.netlib.lapack.Slarft.slarft(direct, storev, n, k, v, 0, ldv, tau, 0, t, 0, ldt);
+//  }
 
-  @Override
-  public void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt) {
-   org.netlib.lapack.Slarft.slarft(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
-  }
+//  @Override
+//  public void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt) {
+//   org.netlib.lapack.Slarft.slarft(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
+//  }
 
-  @Override
-  public void slarfx(java.lang.String side, int m, int n, float[] v, float tau, float[] c, int Ldc, float[] work) {
-   org.netlib.lapack.Slarfx.slarfx(side, m, n, v, 0, tau, c, 0, Ldc, work, 0);
-  }
+//  @Override
+//  public void slarfx(java.lang.String side, int m, int n, float[] v, float tau, float[] c, int Ldc, float[] work) {
+//   org.netlib.lapack.Slarfx.slarfx(side, m, n, v, 0, tau, c, 0, Ldc, work, 0);
+//  }
 
-  @Override
-  public void slarfx(java.lang.String side, int m, int n, float[] v, int _v_offset, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
-   org.netlib.lapack.Slarfx.slarfx(side, m, n, v, _v_offset, tau, c, _c_offset, Ldc, work, _work_offset);
-  }
+//  @Override
+//  public void slarfx(java.lang.String side, int m, int n, float[] v, int _v_offset, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
+//   org.netlib.lapack.Slarfx.slarfx(side, m, n, v, _v_offset, tau, c, _c_offset, Ldc, work, _work_offset);
+//  }
 
-  @Override
-  public void slargv(int n, float[] x, int incx, float[] y, int incy, float[] c, int incc) {
-   org.netlib.lapack.Slargv.slargv(n, x, 0, incx, y, 0, incy, c, 0, incc);
-  }
+//  @Override
+//  public void slargv(int n, float[] x, int incx, float[] y, int incy, float[] c, int incc) {
+//   org.netlib.lapack.Slargv.slargv(n, x, 0, incx, y, 0, incy, c, 0, incc);
+//  }
 
-  @Override
-  public void slargv(int n, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] c, int _c_offset, int incc) {
-   org.netlib.lapack.Slargv.slargv(n, x, _x_offset, incx, y, _y_offset, incy, c, _c_offset, incc);
-  }
+//  @Override
+//  public void slargv(int n, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] c, int _c_offset, int incc) {
+//   org.netlib.lapack.Slargv.slargv(n, x, _x_offset, incx, y, _y_offset, incy, c, _c_offset, incc);
+//  }
 
-  @Override
-  public void slarnv(int idist, int[] iseed, int n, float[] x) {
-   org.netlib.lapack.Slarnv.slarnv(idist, iseed, 0, n, x, 0);
-  }
+//  @Override
+//  public void slarnv(int idist, int[] iseed, int n, float[] x) {
+//   org.netlib.lapack.Slarnv.slarnv(idist, iseed, 0, n, x, 0);
+//  }
 
-  @Override
-  public void slarnv(int idist, int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset) {
-   org.netlib.lapack.Slarnv.slarnv(idist, iseed, _iseed_offset, n, x, _x_offset);
-  }
+//  @Override
+//  public void slarnv(int idist, int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset) {
+//   org.netlib.lapack.Slarnv.slarnv(idist, iseed, _iseed_offset, n, x, _x_offset);
+//  }
 
-  @Override
-  public void slarra(int n, float[] d, float[] e, float[] e2, float spltol, float tnrm, org.netlib.util.intW nsplit, int[] isplit, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarra.slarra(n, d, 0, e, 0, e2, 0, spltol, tnrm, nsplit, isplit, 0, info);
-  }
+//  @Override
+//  public void slarra(int n, float[] d, float[] e, float[] e2, float spltol, float tnrm, org.netlib.util.intW nsplit, int[] isplit, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarra.slarra(n, d, 0, e, 0, e2, 0, spltol, tnrm, nsplit, isplit, 0, info);
+//  }
 
-  @Override
-  public void slarra(int n, float[] d, int _d_offset, float[] e, int _e_offset, float[] e2, int _e2_offset, float spltol, float tnrm, org.netlib.util.intW nsplit, int[] isplit, int _isplit_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarra.slarra(n, d, _d_offset, e, _e_offset, e2, _e2_offset, spltol, tnrm, nsplit, isplit, _isplit_offset, info);
-  }
+//  @Override
+//  public void slarra(int n, float[] d, int _d_offset, float[] e, int _e_offset, float[] e2, int _e2_offset, float spltol, float tnrm, org.netlib.util.intW nsplit, int[] isplit, int _isplit_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarra.slarra(n, d, _d_offset, e, _e_offset, e2, _e2_offset, spltol, tnrm, nsplit, isplit, _isplit_offset, info);
+//  }
 
-  @Override
-  public void slarrb(int n, float[] d, float[] lld, int ifirst, int ilast, float rtol1, float rtol2, int offset, float[] w, float[] wgap, float[] werr, float[] work, int[] iwork, float pivmin, float spdiam, int twist, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrb.slarrb(n, d, 0, lld, 0, ifirst, ilast, rtol1, rtol2, offset, w, 0, wgap, 0, werr, 0, work, 0, iwork, 0, pivmin, spdiam, twist, info);
-  }
+//  @Override
+//  public void slarrb(int n, float[] d, float[] lld, int ifirst, int ilast, float rtol1, float rtol2, int offset, float[] w, float[] wgap, float[] werr, float[] work, int[] iwork, float pivmin, float spdiam, int twist, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrb.slarrb(n, d, 0, lld, 0, ifirst, ilast, rtol1, rtol2, offset, w, 0, wgap, 0, werr, 0, work, 0, iwork, 0, pivmin, spdiam, twist, info);
+//  }
 
-  @Override
-  public void slarrb(int n, float[] d, int _d_offset, float[] lld, int _lld_offset, int ifirst, int ilast, float rtol1, float rtol2, int offset, float[] w, int _w_offset, float[] wgap, int _wgap_offset, float[] werr, int _werr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, float pivmin, float spdiam, int twist, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrb.slarrb(n, d, _d_offset, lld, _lld_offset, ifirst, ilast, rtol1, rtol2, offset, w, _w_offset, wgap, _wgap_offset, werr, _werr_offset, work, _work_offset, iwork, _iwork_offset, pivmin, spdiam, twist, info);
-  }
+//  @Override
+//  public void slarrb(int n, float[] d, int _d_offset, float[] lld, int _lld_offset, int ifirst, int ilast, float rtol1, float rtol2, int offset, float[] w, int _w_offset, float[] wgap, int _wgap_offset, float[] werr, int _werr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, float pivmin, float spdiam, int twist, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrb.slarrb(n, d, _d_offset, lld, _lld_offset, ifirst, ilast, rtol1, rtol2, offset, w, _w_offset, wgap, _wgap_offset, werr, _werr_offset, work, _work_offset, iwork, _iwork_offset, pivmin, spdiam, twist, info);
+//  }
 
-  @Override
-  public void slarrc(java.lang.String jobt, int n, float vl, float vu, float[] d, float[] e, float pivmin, org.netlib.util.intW eigcnt, org.netlib.util.intW lcnt, org.netlib.util.intW rcnt, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrc.slarrc(jobt, n, vl, vu, d, 0, e, 0, pivmin, eigcnt, lcnt, rcnt, info);
-  }
+//  @Override
+//  public void slarrc(java.lang.String jobt, int n, float vl, float vu, float[] d, float[] e, float pivmin, org.netlib.util.intW eigcnt, org.netlib.util.intW lcnt, org.netlib.util.intW rcnt, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrc.slarrc(jobt, n, vl, vu, d, 0, e, 0, pivmin, eigcnt, lcnt, rcnt, info);
+//  }
 
-  @Override
-  public void slarrc(java.lang.String jobt, int n, float vl, float vu, float[] d, int _d_offset, float[] e, int _e_offset, float pivmin, org.netlib.util.intW eigcnt, org.netlib.util.intW lcnt, org.netlib.util.intW rcnt, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrc.slarrc(jobt, n, vl, vu, d, _d_offset, e, _e_offset, pivmin, eigcnt, lcnt, rcnt, info);
-  }
+//  @Override
+//  public void slarrc(java.lang.String jobt, int n, float vl, float vu, float[] d, int _d_offset, float[] e, int _e_offset, float pivmin, org.netlib.util.intW eigcnt, org.netlib.util.intW lcnt, org.netlib.util.intW rcnt, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrc.slarrc(jobt, n, vl, vu, d, _d_offset, e, _e_offset, pivmin, eigcnt, lcnt, rcnt, info);
+//  }
 
-  @Override
-  public void slarrd(java.lang.String range, java.lang.String order, int n, float vl, float vu, int il, int iu, float[] gers, float reltol, float[] d, float[] e, float[] e2, float pivmin, int nsplit, int[] isplit, org.netlib.util.intW m, float[] w, float[] werr, org.netlib.util.floatW wl, org.netlib.util.floatW wu, int[] iblock, int[] indexw, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrd.slarrd(range, order, n, vl, vu, il, iu, gers, 0, reltol, d, 0, e, 0, e2, 0, pivmin, nsplit, isplit, 0, m, w, 0, werr, 0, wl, wu, iblock, 0, indexw, 0, work, 0, iwork, 0, info);
-  }
+//  @Override
+//  public void slarrd(java.lang.String range, java.lang.String order, int n, float vl, float vu, int il, int iu, float[] gers, float reltol, float[] d, float[] e, float[] e2, float pivmin, int nsplit, int[] isplit, org.netlib.util.intW m, float[] w, float[] werr, org.netlib.util.floatW wl, org.netlib.util.floatW wu, int[] iblock, int[] indexw, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrd.slarrd(range, order, n, vl, vu, il, iu, gers, 0, reltol, d, 0, e, 0, e2, 0, pivmin, nsplit, isplit, 0, m, w, 0, werr, 0, wl, wu, iblock, 0, indexw, 0, work, 0, iwork, 0, info);
+//  }
 
-  @Override
-  public void slarrd(java.lang.String range, java.lang.String order, int n, float vl, float vu, int il, int iu, float[] gers, int _gers_offset, float reltol, float[] d, int _d_offset, float[] e, int _e_offset, float[] e2, int _e2_offset, float pivmin, int nsplit, int[] isplit, int _isplit_offset, org.netlib.util.intW m, float[] w, int _w_offset, float[] werr, int _werr_offset, org.netlib.util.floatW wl, org.netlib.util.floatW wu, int[] iblock, int _iblock_offset, int[] indexw, int _indexw_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrd.slarrd(range, order, n, vl, vu, il, iu, gers, _gers_offset, reltol, d, _d_offset, e, _e_offset, e2, _e2_offset, pivmin, nsplit, isplit, _isplit_offset, m, w, _w_offset, werr, _werr_offset, wl, wu, iblock, _iblock_offset, indexw, _indexw_offset, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void slarrd(java.lang.String range, java.lang.String order, int n, float vl, float vu, int il, int iu, float[] gers, int _gers_offset, float reltol, float[] d, int _d_offset, float[] e, int _e_offset, float[] e2, int _e2_offset, float pivmin, int nsplit, int[] isplit, int _isplit_offset, org.netlib.util.intW m, float[] w, int _w_offset, float[] werr, int _werr_offset, org.netlib.util.floatW wl, org.netlib.util.floatW wu, int[] iblock, int _iblock_offset, int[] indexw, int _indexw_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrd.slarrd(range, order, n, vl, vu, il, iu, gers, _gers_offset, reltol, d, _d_offset, e, _e_offset, e2, _e2_offset, pivmin, nsplit, isplit, _isplit_offset, m, w, _w_offset, werr, _werr_offset, wl, wu, iblock, _iblock_offset, indexw, _indexw_offset, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  @Override
-  public void slarre(java.lang.String range, int n, org.netlib.util.floatW vl, org.netlib.util.floatW vu, int il, int iu, float[] d, float[] e, float[] e2, float rtol1, float rtol2, float spltol, org.netlib.util.intW nsplit, int[] isplit, org.netlib.util.intW m, float[] w, float[] werr, float[] wgap, int[] iblock, int[] indexw, float[] gers, org.netlib.util.floatW pivmin, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarre.slarre(range, n, vl, vu, il, iu, d, 0, e, 0, e2, 0, rtol1, rtol2, spltol, nsplit, isplit, 0, m, w, 0, werr, 0, wgap, 0, iblock, 0, indexw, 0, gers, 0, pivmin, work, 0, iwork, 0, info);
-  }
+//  @Override
+//  public void slarre(java.lang.String range, int n, org.netlib.util.floatW vl, org.netlib.util.floatW vu, int il, int iu, float[] d, float[] e, float[] e2, float rtol1, float rtol2, float spltol, org.netlib.util.intW nsplit, int[] isplit, org.netlib.util.intW m, float[] w, float[] werr, float[] wgap, int[] iblock, int[] indexw, float[] gers, org.netlib.util.floatW pivmin, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarre.slarre(range, n, vl, vu, il, iu, d, 0, e, 0, e2, 0, rtol1, rtol2, spltol, nsplit, isplit, 0, m, w, 0, werr, 0, wgap, 0, iblock, 0, indexw, 0, gers, 0, pivmin, work, 0, iwork, 0, info);
+//  }
 
-  @Override
-  public void slarre(java.lang.String range, int n, org.netlib.util.floatW vl, org.netlib.util.floatW vu, int il, int iu, float[] d, int _d_offset, float[] e, int _e_offset, float[] e2, int _e2_offset, float rtol1, float rtol2, float spltol, org.netlib.util.intW nsplit, int[] isplit, int _isplit_offset, org.netlib.util.intW m, float[] w, int _w_offset, float[] werr, int _werr_offset, float[] wgap, int _wgap_offset, int[] iblock, int _iblock_offset, int[] indexw, int _indexw_offset, float[] gers, int _gers_offset, org.netlib.util.floatW pivmin, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarre.slarre(range, n, vl, vu, il, iu, d, _d_offset, e, _e_offset, e2, _e2_offset, rtol1, rtol2, spltol, nsplit, isplit, _isplit_offset, m, w, _w_offset, werr, _werr_offset, wgap, _wgap_offset, iblock, _iblock_offset, indexw, _indexw_offset, gers, _gers_offset, pivmin, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void slarre(java.lang.String range, int n, org.netlib.util.floatW vl, org.netlib.util.floatW vu, int il, int iu, float[] d, int _d_offset, float[] e, int _e_offset, float[] e2, int _e2_offset, float rtol1, float rtol2, float spltol, org.netlib.util.intW nsplit, int[] isplit, int _isplit_offset, org.netlib.util.intW m, float[] w, int _w_offset, float[] werr, int _werr_offset, float[] wgap, int _wgap_offset, int[] iblock, int _iblock_offset, int[] indexw, int _indexw_offset, float[] gers, int _gers_offset, org.netlib.util.floatW pivmin, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarre.slarre(range, n, vl, vu, il, iu, d, _d_offset, e, _e_offset, e2, _e2_offset, rtol1, rtol2, spltol, nsplit, isplit, _isplit_offset, m, w, _w_offset, werr, _werr_offset, wgap, _wgap_offset, iblock, _iblock_offset, indexw, _indexw_offset, gers, _gers_offset, pivmin, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  @Override
-  public void slarrf(int n, float[] d, float[] l, float[] ld, int clstrt, int clend, float[] w, float[] wgap, float[] werr, float spdiam, float clgapl, float clgapr, float pivmin, org.netlib.util.floatW sigma, float[] dplus, float[] lplus, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrf.slarrf(n, d, 0, l, 0, ld, 0, clstrt, clend, w, 0, wgap, 0, werr, 0, spdiam, clgapl, clgapr, pivmin, sigma, dplus, 0, lplus, 0, work, 0, info);
-  }
+//  @Override
+//  public void slarrf(int n, float[] d, float[] l, float[] ld, int clstrt, int clend, float[] w, float[] wgap, float[] werr, float spdiam, float clgapl, float clgapr, float pivmin, org.netlib.util.floatW sigma, float[] dplus, float[] lplus, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrf.slarrf(n, d, 0, l, 0, ld, 0, clstrt, clend, w, 0, wgap, 0, werr, 0, spdiam, clgapl, clgapr, pivmin, sigma, dplus, 0, lplus, 0, work, 0, info);
+//  }
 
-  @Override
-  public void slarrf(int n, float[] d, int _d_offset, float[] l, int _l_offset, float[] ld, int _ld_offset, int clstrt, int clend, float[] w, int _w_offset, float[] wgap, int _wgap_offset, float[] werr, int _werr_offset, float spdiam, float clgapl, float clgapr, float pivmin, org.netlib.util.floatW sigma, float[] dplus, int _dplus_offset, float[] lplus, int _lplus_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrf.slarrf(n, d, _d_offset, l, _l_offset, ld, _ld_offset, clstrt, clend, w, _w_offset, wgap, _wgap_offset, werr, _werr_offset, spdiam, clgapl, clgapr, pivmin, sigma, dplus, _dplus_offset, lplus, _lplus_offset, work, _work_offset, info);
-  }
+//  @Override
+//  public void slarrf(int n, float[] d, int _d_offset, float[] l, int _l_offset, float[] ld, int _ld_offset, int clstrt, int clend, float[] w, int _w_offset, float[] wgap, int _wgap_offset, float[] werr, int _werr_offset, float spdiam, float clgapl, float clgapr, float pivmin, org.netlib.util.floatW sigma, float[] dplus, int _dplus_offset, float[] lplus, int _lplus_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrf.slarrf(n, d, _d_offset, l, _l_offset, ld, _ld_offset, clstrt, clend, w, _w_offset, wgap, _wgap_offset, werr, _werr_offset, spdiam, clgapl, clgapr, pivmin, sigma, dplus, _dplus_offset, lplus, _lplus_offset, work, _work_offset, info);
+//  }
 
-  @Override
-  public void slarrj(int n, float[] d, float[] e2, int ifirst, int ilast, float rtol, int offset, float[] w, float[] werr, float[] work, int[] iwork, float pivmin, float spdiam, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrj.slarrj(n, d, 0, e2, 0, ifirst, ilast, rtol, offset, w, 0, werr, 0, work, 0, iwork, 0, pivmin, spdiam, info);
-  }
+//  @Override
+//  public void slarrj(int n, float[] d, float[] e2, int ifirst, int ilast, float rtol, int offset, float[] w, float[] werr, float[] work, int[] iwork, float pivmin, float spdiam, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrj.slarrj(n, d, 0, e2, 0, ifirst, ilast, rtol, offset, w, 0, werr, 0, work, 0, iwork, 0, pivmin, spdiam, info);
+//  }
 
-  @Override
-  public void slarrj(int n, float[] d, int _d_offset, float[] e2, int _e2_offset, int ifirst, int ilast, float rtol, int offset, float[] w, int _w_offset, float[] werr, int _werr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, float pivmin, float spdiam, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrj.slarrj(n, d, _d_offset, e2, _e2_offset, ifirst, ilast, rtol, offset, w, _w_offset, werr, _werr_offset, work, _work_offset, iwork, _iwork_offset, pivmin, spdiam, info);
-  }
+//  @Override
+//  public void slarrj(int n, float[] d, int _d_offset, float[] e2, int _e2_offset, int ifirst, int ilast, float rtol, int offset, float[] w, int _w_offset, float[] werr, int _werr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, float pivmin, float spdiam, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrj.slarrj(n, d, _d_offset, e2, _e2_offset, ifirst, ilast, rtol, offset, w, _w_offset, werr, _werr_offset, work, _work_offset, iwork, _iwork_offset, pivmin, spdiam, info);
+//  }
 
-  @Override
-  public void slarrk(int n, int iw, float gl, float gu, float[] d, float[] e2, float pivmin, float reltol, org.netlib.util.floatW w, org.netlib.util.floatW werr, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrk.slarrk(n, iw, gl, gu, d, 0, e2, 0, pivmin, reltol, w, werr, info);
-  }
+//  @Override
+//  public void slarrk(int n, int iw, float gl, float gu, float[] d, float[] e2, float pivmin, float reltol, org.netlib.util.floatW w, org.netlib.util.floatW werr, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrk.slarrk(n, iw, gl, gu, d, 0, e2, 0, pivmin, reltol, w, werr, info);
+//  }
 
-  @Override
-  public void slarrk(int n, int iw, float gl, float gu, float[] d, int _d_offset, float[] e2, int _e2_offset, float pivmin, float reltol, org.netlib.util.floatW w, org.netlib.util.floatW werr, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrk.slarrk(n, iw, gl, gu, d, _d_offset, e2, _e2_offset, pivmin, reltol, w, werr, info);
-  }
+//  @Override
+//  public void slarrk(int n, int iw, float gl, float gu, float[] d, int _d_offset, float[] e2, int _e2_offset, float pivmin, float reltol, org.netlib.util.floatW w, org.netlib.util.floatW werr, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrk.slarrk(n, iw, gl, gu, d, _d_offset, e2, _e2_offset, pivmin, reltol, w, werr, info);
+//  }
 
-  @Override
-  public void slarrr(int n, float[] d, float[] e, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrr.slarrr(n, d, 0, e, 0, info);
-  }
+//  @Override
+//  public void slarrr(int n, float[] d, float[] e, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrr.slarrr(n, d, 0, e, 0, info);
+//  }
 
-  @Override
-  public void slarrr(int n, float[] d, int _d_offset, float[] e, int _e_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrr.slarrr(n, d, _d_offset, e, _e_offset, info);
-  }
+//  @Override
+//  public void slarrr(int n, float[] d, int _d_offset, float[] e, int _e_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrr.slarrr(n, d, _d_offset, e, _e_offset, info);
+//  }
 
-  @Override
-  public void slarrv(int n, float vl, float vu, float[] d, float[] l, float pivmin, int[] isplit, int m, int dol, int dou, float minrgp, org.netlib.util.floatW rtol1, org.netlib.util.floatW rtol2, float[] w, float[] werr, float[] wgap, int[] iblock, int[] indexw, float[] gers, float[] z, int ldz, int[] isuppz, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrv.slarrv(n, vl, vu, d, 0, l, 0, pivmin, isplit, 0, m, dol, dou, minrgp, rtol1, rtol2, w, 0, werr, 0, wgap, 0, iblock, 0, indexw, 0, gers, 0, z, 0, ldz, isuppz, 0, work, 0, iwork, 0, info);
-  }
+//  @Override
+//  public void slarrv(int n, float vl, float vu, float[] d, float[] l, float pivmin, int[] isplit, int m, int dol, int dou, float minrgp, org.netlib.util.floatW rtol1, org.netlib.util.floatW rtol2, float[] w, float[] werr, float[] wgap, int[] iblock, int[] indexw, float[] gers, float[] z, int ldz, int[] isuppz, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrv.slarrv(n, vl, vu, d, 0, l, 0, pivmin, isplit, 0, m, dol, dou, minrgp, rtol1, rtol2, w, 0, werr, 0, wgap, 0, iblock, 0, indexw, 0, gers, 0, z, 0, ldz, isuppz, 0, work, 0, iwork, 0, info);
+//  }
 
-  @Override
-  public void slarrv(int n, float vl, float vu, float[] d, int _d_offset, float[] l, int _l_offset, float pivmin, int[] isplit, int _isplit_offset, int m, int dol, int dou, float minrgp, org.netlib.util.floatW rtol1, org.netlib.util.floatW rtol2, float[] w, int _w_offset, float[] werr, int _werr_offset, float[] wgap, int _wgap_offset, int[] iblock, int _iblock_offset, int[] indexw, int _indexw_offset, float[] gers, int _gers_offset, float[] z, int _z_offset, int ldz, int[] isuppz, int _isuppz_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slarrv.slarrv(n, vl, vu, d, _d_offset, l, _l_offset, pivmin, isplit, _isplit_offset, m, dol, dou, minrgp, rtol1, rtol2, w, _w_offset, werr, _werr_offset, wgap, _wgap_offset, iblock, _iblock_offset, indexw, _indexw_offset, gers, _gers_offset, z, _z_offset, ldz, isuppz, _isuppz_offset, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void slarrv(int n, float vl, float vu, float[] d, int _d_offset, float[] l, int _l_offset, float pivmin, int[] isplit, int _isplit_offset, int m, int dol, int dou, float minrgp, org.netlib.util.floatW rtol1, org.netlib.util.floatW rtol2, float[] w, int _w_offset, float[] werr, int _werr_offset, float[] wgap, int _wgap_offset, int[] iblock, int _iblock_offset, int[] indexw, int _indexw_offset, float[] gers, int _gers_offset, float[] z, int _z_offset, int ldz, int[] isuppz, int _isuppz_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slarrv.slarrv(n, vl, vu, d, _d_offset, l, _l_offset, pivmin, isplit, _isplit_offset, m, dol, dou, minrgp, rtol1, rtol2, w, _w_offset, werr, _werr_offset, wgap, _wgap_offset, iblock, _iblock_offset, indexw, _indexw_offset, gers, _gers_offset, z, _z_offset, ldz, isuppz, _isuppz_offset, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  @Override
-  public void slartg(float f, float g, org.netlib.util.floatW cs, org.netlib.util.floatW sn, org.netlib.util.floatW r) {
-   org.netlib.lapack.Slartg.slartg(f, g, cs, sn, r);
-  }
+//  @Override
+//  public void slartg(float f, float g, org.netlib.util.floatW cs, org.netlib.util.floatW sn, org.netlib.util.floatW r) {
+//   org.netlib.lapack.Slartg.slartg(f, g, cs, sn, r);
+//  }
 
-  @Override
-  public void slartv(int n, float[] x, int incx, float[] y, int incy, float[] c, float[] s, int incc) {
-   org.netlib.lapack.Slartv.slartv(n, x, 0, incx, y, 0, incy, c, 0, s, 0, incc);
-  }
+//  @Override
+//  public void slartv(int n, float[] x, int incx, float[] y, int incy, float[] c, float[] s, int incc) {
+//   org.netlib.lapack.Slartv.slartv(n, x, 0, incx, y, 0, incy, c, 0, s, 0, incc);
+//  }
 
-  @Override
-  public void slartv(int n, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] c, int _c_offset, float[] s, int _s_offset, int incc) {
-   org.netlib.lapack.Slartv.slartv(n, x, _x_offset, incx, y, _y_offset, incy, c, _c_offset, s, _s_offset, incc);
-  }
+//  @Override
+//  public void slartv(int n, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] c, int _c_offset, float[] s, int _s_offset, int incc) {
+//   org.netlib.lapack.Slartv.slartv(n, x, _x_offset, incx, y, _y_offset, incy, c, _c_offset, s, _s_offset, incc);
+//  }
 
-  @Override
-  public void slaruv(int[] iseed, int n, float[] x) {
-   org.netlib.lapack.Slaruv.slaruv(iseed, 0, n, x, 0);
-  }
+//  @Override
+//  public void slaruv(int[] iseed, int n, float[] x) {
+//   org.netlib.lapack.Slaruv.slaruv(iseed, 0, n, x, 0);
+//  }
 
-  @Override
-  public void slaruv(int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset) {
-   org.netlib.lapack.Slaruv.slaruv(iseed, _iseed_offset, n, x, _x_offset);
-  }
+//  @Override
+//  public void slaruv(int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset) {
+//   org.netlib.lapack.Slaruv.slaruv(iseed, _iseed_offset, n, x, _x_offset);
+//  }
 
-  @Override
-  public void slarz(java.lang.String side, int m, int n, int l, float[] v, int incv, float tau, float[] c, int Ldc, float[] work) {
-   org.netlib.lapack.Slarz.slarz(side, m, n, l, v, 0, incv, tau, c, 0, Ldc, work, 0);
-  }
+//  @Override
+//  public void slarz(java.lang.String side, int m, int n, int l, float[] v, int incv, float tau, float[] c, int Ldc, float[] work) {
+//   org.netlib.lapack.Slarz.slarz(side, m, n, l, v, 0, incv, tau, c, 0, Ldc, work, 0);
+//  }
 
-  @Override
-  public void slarz(java.lang.String side, int m, int n, int l, float[] v, int _v_offset, int incv, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
-   org.netlib.lapack.Slarz.slarz(side, m, n, l, v, _v_offset, incv, tau, c, _c_offset, Ldc, work, _work_offset);
-  }
+//  @Override
+//  public void slarz(java.lang.String side, int m, int n, int l, float[] v, int _v_offset, int incv, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
+//   org.netlib.lapack.Slarz.slarz(side, m, n, l, v, _v_offset, incv, tau, c, _c_offset, Ldc, work, _work_offset);
+//  }
 
-  @Override
-  public void slarzb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, int l, float[] v, int ldv, float[] t, int ldt, float[] c, int Ldc, float[] work, int ldwork) {
-   org.netlib.lapack.Slarzb.slarzb(side, trans, direct, storev, m, n, k, l, v, 0, ldv, t, 0, ldt, c, 0, Ldc, work, 0, ldwork);
-  }
+//  @Override
+//  public void slarzb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, int l, float[] v, int ldv, float[] t, int ldt, float[] c, int Ldc, float[] work, int ldwork) {
+//   org.netlib.lapack.Slarzb.slarzb(side, trans, direct, storev, m, n, k, l, v, 0, ldv, t, 0, ldt, c, 0, Ldc, work, 0, ldwork);
+//  }
 
-  @Override
-  public void slarzb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, int l, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork) {
-   org.netlib.lapack.Slarzb.slarzb(side, trans, direct, storev, m, n, k, l, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
-  }
+//  @Override
+//  public void slarzb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, int l, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork) {
+//   org.netlib.lapack.Slarzb.slarzb(side, trans, direct, storev, m, n, k, l, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
+//  }
 
-  @Override
-  public void slarzt(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int ldv, float[] tau, float[] t, int ldt) {
-   org.netlib.lapack.Slarzt.slarzt(direct, storev, n, k, v, 0, ldv, tau, 0, t, 0, ldt);
-  }
+//  @Override
+//  public void slarzt(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int ldv, float[] tau, float[] t, int ldt) {
+//   org.netlib.lapack.Slarzt.slarzt(direct, storev, n, k, v, 0, ldv, tau, 0, t, 0, ldt);
+//  }
 
   @Override
   public void slarzt(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt) {

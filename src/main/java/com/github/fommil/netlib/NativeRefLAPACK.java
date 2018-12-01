@@ -2664,55 +2664,55 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 //  @Override
 //  public native float slapy3(float x, float y, float z);
 
-  @Override
-  public native void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int ldv, float[] t, int ldt, float[] c, int Ldc, float[] work, int ldwork);
+//  @Override
+//  public native void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int ldv, float[] t, int ldt, float[] c, int Ldc, float[] work, int ldwork);
 
-  @Override
-  public void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork) {
-  slarfb_offsets(side, trans, direct, storev, m, n, k, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
-  }
+//  @Override
+//  public void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork) {
+//  slarfb_offsets(side, trans, direct, storev, m, n, k, v, _v_offset, ldv, t, _t_offset, ldt, c, _c_offset, Ldc, work, _work_offset, ldwork);
+//  }
 
-  public native void slarfb_offsets(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork);
+//  private native void slarfb_offsets(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int _v_offset, int ldv, float[] t, int _t_offset, int ldt, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, int ldwork);
 
-  @Override
-  public native void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int incx, org.netlib.util.floatW tau);
+//  @Override
+//  public native void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int incx, org.netlib.util.floatW tau);
 
-  @Override
-  public void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int _x_offset, int incx, org.netlib.util.floatW tau) {
-  slarfg_offsets(n, alpha, x, _x_offset, incx, tau);
-  }
+//  @Override
+//  public void slarfg(int n, org.netlib.util.floatW alpha, float[] x, int _x_offset, int incx, org.netlib.util.floatW tau) {
+//  slarfg_offsets(n, alpha, x, _x_offset, incx, tau);
+//  }
 
-  public native void slarfg_offsets(int n, org.netlib.util.floatW alpha, float[] x, int _x_offset, int incx, org.netlib.util.floatW tau);
+//  private native void slarfg_offsets(int n, org.netlib.util.floatW alpha, float[] x, int _x_offset, int incx, org.netlib.util.floatW tau);
 
-  @Override
-  public native void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int ldv, float[] tau, float[] t, int ldt);
+//  @Override
+//  public native void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int ldv, float[] tau, float[] t, int ldt);
 
-  @Override
-  public void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt) {
-  slarft_offsets(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
-  }
+//  @Override
+//  public void slarft(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt) {
+//  slarft_offsets(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
+//  }
 
-  public native void slarft_offsets(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt);
+//  private native void slarft_offsets(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt);
 
-  @Override
-  public native void slarfx(java.lang.String side, int m, int n, float[] v, float tau, float[] c, int Ldc, float[] work);
+//  @Override
+//  public native void slarfx(java.lang.String side, int m, int n, float[] v, float tau, float[] c, int Ldc, float[] work);
 
-  @Override
-  public void slarfx(java.lang.String side, int m, int n, float[] v, int _v_offset, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
-  slarfx_offsets(side, m, n, v, _v_offset, tau, c, _c_offset, Ldc, work, _work_offset);
-  }
+//  @Override
+//  public void slarfx(java.lang.String side, int m, int n, float[] v, int _v_offset, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset) {
+//  slarfx_offsets(side, m, n, v, _v_offset, tau, c, _c_offset, Ldc, work, _work_offset);
+//  }
 
-  public native void slarfx_offsets(java.lang.String side, int m, int n, float[] v, int _v_offset, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset);
+//  private native void slarfx_offsets(java.lang.String side, int m, int n, float[] v, int _v_offset, float tau, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset);
 
-  @Override
-  public native void slarnv(int idist, int[] iseed, int n, float[] x);
+//  @Override
+//  public native void slarnv(int idist, int[] iseed, int n, float[] x);
 
-  @Override
-  public void slarnv(int idist, int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset) {
-  slarnv_offsets(idist, iseed, _iseed_offset, n, x, _x_offset);
-  }
+//  @Override
+//  public void slarnv(int idist, int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset) {
+//  slarnv_offsets(idist, iseed, _iseed_offset, n, x, _x_offset);
+//  }
 
-  public native void slarnv_offsets(int idist, int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset);
+//  private native void slarnv_offsets(int idist, int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset);
 
   @Override
   public native void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int lda);
