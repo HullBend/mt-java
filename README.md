@@ -1,6 +1,6 @@
 # mt-java
 
-Uber-jar of the Heimsund-Halliday Matrix Toolkit for Java
+Uber-jar of the Heimsund-Halliday Matrix Toolkit for Java: https://github.com/fommil/matrix-toolkits-java
 
 ### Maven:
 
