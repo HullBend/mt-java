@@ -2618,51 +2618,51 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native void slacpy_offsets(java.lang.String uplo, int m, int n, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb);
 
-  @Override
-  public native void slag2d(int m, int n, float[] sa, int ldsa, double[] a, int lda, org.netlib.util.intW info);
+//  @Override
+//  public native void slag2d(int m, int n, float[] sa, int ldsa, double[] a, int lda, org.netlib.util.intW info);
 
-  @Override
-  public void slag2d(int m, int n, float[] sa, int _sa_offset, int ldsa, double[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-  slag2d_offsets(m, n, sa, _sa_offset, ldsa, a, _a_offset, lda, info);
-  }
+//  @Override
+//  public void slag2d(int m, int n, float[] sa, int _sa_offset, int ldsa, double[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//  slag2d_offsets(m, n, sa, _sa_offset, ldsa, a, _a_offset, lda, info);
+//  }
 
-  public native void slag2d_offsets(int m, int n, float[] sa, int _sa_offset, int ldsa, double[] a, int _a_offset, int lda, org.netlib.util.intW info);
+//  private native void slag2d_offsets(int m, int n, float[] sa, int _sa_offset, int ldsa, double[] a, int _a_offset, int lda, org.netlib.util.intW info);
 
-  @Override
-  public native float slange(java.lang.String norm, int m, int n, float[] a, int lda, float[] work);
+//  @Override
+//  public native float slange(java.lang.String norm, int m, int n, float[] a, int lda, float[] work);
 
-  @Override
-  public float slange(java.lang.String norm, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset) {
-    return slange_offsets(norm, m, n, a, _a_offset, lda, work, _work_offset);
-  }
+//  @Override
+//  public float slange(java.lang.String norm, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset) {
+//    return slange_offsets(norm, m, n, a, _a_offset, lda, work, _work_offset);
+//  }
 
-  public native float slange_offsets(java.lang.String norm, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset);
+//  private native float slange_offsets(java.lang.String norm, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset);
 
-  @Override
-  public native float slansy(java.lang.String norm, java.lang.String uplo, int n, float[] a, int lda, float[] work);
+//  @Override
+//  public native float slansy(java.lang.String norm, java.lang.String uplo, int n, float[] a, int lda, float[] work);
 
-  @Override
-  public float slansy(java.lang.String norm, java.lang.String uplo, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset) {
-    return slansy_offsets(norm, uplo, n, a, _a_offset, lda, work, _work_offset);
-  }
+//  @Override
+//  public float slansy(java.lang.String norm, java.lang.String uplo, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset) {
+//    return slansy_offsets(norm, uplo, n, a, _a_offset, lda, work, _work_offset);
+//  }
 
-  public native float slansy_offsets(java.lang.String norm, java.lang.String uplo, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset);
+//  private native float slansy_offsets(java.lang.String norm, java.lang.String uplo, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset);
 
-  @Override
-  public native float slantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, float[] a, int lda, float[] work);
+//  @Override
+//  public native float slantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, float[] a, int lda, float[] work);
 
-  @Override
-  public float slantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset) {
-    return slantr_offsets(norm, uplo, diag, m, n, a, _a_offset, lda, work, _work_offset);
-  }
+//  @Override
+//  public float slantr(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset) {
+//    return slantr_offsets(norm, uplo, diag, m, n, a, _a_offset, lda, work, _work_offset);
+//  }
 
-  public native float slantr_offsets(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset);
+//  private native float slantr_offsets(java.lang.String norm, java.lang.String uplo, java.lang.String diag, int m, int n, float[] a, int _a_offset, int lda, float[] work, int _work_offset);
 
-  @Override
-  public native float slapy2(float x, float y);
+//  @Override
+//  public native float slapy2(float x, float y);
 
-  @Override
-  public native float slapy3(float x, float y, float z);
+//  @Override
+//  public native float slapy3(float x, float y, float z);
 
   @Override
   public native void slarfb(java.lang.String side, java.lang.String trans, java.lang.String direct, java.lang.String storev, int m, int n, int k, float[] v, int ldv, float[] t, int ldt, float[] c, int Ldc, float[] work, int ldwork);
