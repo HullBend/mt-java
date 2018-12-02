@@ -5931,290 +5931,290 @@ public class F2jLAPACK extends com.github.fommil.netlib.LAPACK {
 //   org.netlib.lapack.Sporfs.sporfs(uplo, n, nrhs, a, _a_offset, lda, af, _af_offset, ldaf, b, _b_offset, ldb, x, _x_offset, ldx, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
 //  }
 
-  @Override
-  public void sposv(java.lang.String uplo, int n, int nrhs, float[] a, int lda, float[] b, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Sposv.sposv(uplo, n, nrhs, a, 0, lda, b, 0, ldb, info);
-  }
+//  @Override
+//  public void sposv(java.lang.String uplo, int n, int nrhs, float[] a, int lda, float[] b, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sposv.sposv(uplo, n, nrhs, a, 0, lda, b, 0, ldb, info);
+//  }
 
-  @Override
-  public void sposv(java.lang.String uplo, int n, int nrhs, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Sposv.sposv(uplo, n, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void sposv(java.lang.String uplo, int n, int nrhs, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sposv.sposv(uplo, n, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
+//  }
 
-  @Override
-  public void sposvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] a, int lda, float[] af, int ldaf, org.netlib.util.StringW equed, float[] s, float[] b, int ldb, float[] x, int ldx, org.netlib.util.floatW rcond, float[] ferr, float[] berr, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Sposvx.sposvx(fact, uplo, n, nrhs, a, 0, lda, af, 0, ldaf, equed, s, 0, b, 0, ldb, x, 0, ldx, rcond, ferr, 0, berr, 0, work, 0, iwork, 0, info);
-  }
+//  @Override
+//  public void sposvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] a, int lda, float[] af, int ldaf, org.netlib.util.StringW equed, float[] s, float[] b, int ldb, float[] x, int ldx, org.netlib.util.floatW rcond, float[] ferr, float[] berr, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sposvx.sposvx(fact, uplo, n, nrhs, a, 0, lda, af, 0, ldaf, equed, s, 0, b, 0, ldb, x, 0, ldx, rcond, ferr, 0, berr, 0, work, 0, iwork, 0, info);
+//  }
 
-  @Override
-  public void sposvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] a, int _a_offset, int lda, float[] af, int _af_offset, int ldaf, org.netlib.util.StringW equed, float[] s, int _s_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, org.netlib.util.floatW rcond, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sposvx.sposvx(fact, uplo, n, nrhs, a, _a_offset, lda, af, _af_offset, ldaf, equed, s, _s_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void sposvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] a, int _a_offset, int lda, float[] af, int _af_offset, int ldaf, org.netlib.util.StringW equed, float[] s, int _s_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, org.netlib.util.floatW rcond, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sposvx.sposvx(fact, uplo, n, nrhs, a, _a_offset, lda, af, _af_offset, ldaf, equed, s, _s_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  @Override
-  public void spotf2(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotf2.spotf2(uplo, n, a, 0, lda, info);
-  }
+//  @Override
+//  public void spotf2(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotf2.spotf2(uplo, n, a, 0, lda, info);
+//  }
 
-  @Override
-  public void spotf2(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotf2.spotf2(uplo, n, a, _a_offset, lda, info);
-  }
+//  @Override
+//  public void spotf2(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotf2.spotf2(uplo, n, a, _a_offset, lda, info);
+//  }
 
-  @Override
-  public void spotrf(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotrf.spotrf(uplo, n, a, 0, lda, info);
-  }
+//  @Override
+//  public void spotrf(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotrf.spotrf(uplo, n, a, 0, lda, info);
+//  }
 
-  @Override
-  public void spotrf(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotrf.spotrf(uplo, n, a, _a_offset, lda, info);
-  }
+//  @Override
+//  public void spotrf(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotrf.spotrf(uplo, n, a, _a_offset, lda, info);
+//  }
 
-  @Override
-  public void spotri(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotri.spotri(uplo, n, a, 0, lda, info);
-  }
+//  @Override
+//  public void spotri(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotri.spotri(uplo, n, a, 0, lda, info);
+//  }
 
-  @Override
-  public void spotri(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotri.spotri(uplo, n, a, _a_offset, lda, info);
-  }
+//  @Override
+//  public void spotri(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotri.spotri(uplo, n, a, _a_offset, lda, info);
+//  }
 
-  @Override
-  public void spotrs(java.lang.String uplo, int n, int nrhs, float[] a, int lda, float[] b, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotrs.spotrs(uplo, n, nrhs, a, 0, lda, b, 0, ldb, info);
-  }
+//  @Override
+//  public void spotrs(java.lang.String uplo, int n, int nrhs, float[] a, int lda, float[] b, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotrs.spotrs(uplo, n, nrhs, a, 0, lda, b, 0, ldb, info);
+//  }
 
-  @Override
-  public void spotrs(java.lang.String uplo, int n, int nrhs, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Spotrs.spotrs(uplo, n, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void spotrs(java.lang.String uplo, int n, int nrhs, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spotrs.spotrs(uplo, n, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
+//  }
 
-  @Override
-  public void sppcon(java.lang.String uplo, int n, float[] ap, float anorm, org.netlib.util.floatW rcond, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppcon.sppcon(uplo, n, ap, 0, anorm, rcond, work, 0, iwork, 0, info);
-  }
+//  @Override
+//  public void sppcon(java.lang.String uplo, int n, float[] ap, float anorm, org.netlib.util.floatW rcond, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppcon.sppcon(uplo, n, ap, 0, anorm, rcond, work, 0, iwork, 0, info);
+//  }
 
-  @Override
-  public void sppcon(java.lang.String uplo, int n, float[] ap, int _ap_offset, float anorm, org.netlib.util.floatW rcond, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppcon.sppcon(uplo, n, ap, _ap_offset, anorm, rcond, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void sppcon(java.lang.String uplo, int n, float[] ap, int _ap_offset, float anorm, org.netlib.util.floatW rcond, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppcon.sppcon(uplo, n, ap, _ap_offset, anorm, rcond, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  @Override
-  public void sppequ(java.lang.String uplo, int n, float[] ap, float[] s, org.netlib.util.floatW scond, org.netlib.util.floatW amax, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppequ.sppequ(uplo, n, ap, 0, s, 0, scond, amax, info);
-  }
+//  @Override
+//  public void sppequ(java.lang.String uplo, int n, float[] ap, float[] s, org.netlib.util.floatW scond, org.netlib.util.floatW amax, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppequ.sppequ(uplo, n, ap, 0, s, 0, scond, amax, info);
+//  }
 
-  @Override
-  public void sppequ(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] s, int _s_offset, org.netlib.util.floatW scond, org.netlib.util.floatW amax, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppequ.sppequ(uplo, n, ap, _ap_offset, s, _s_offset, scond, amax, info);
-  }
+//  @Override
+//  public void sppequ(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] s, int _s_offset, org.netlib.util.floatW scond, org.netlib.util.floatW amax, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppequ.sppequ(uplo, n, ap, _ap_offset, s, _s_offset, scond, amax, info);
+//  }
 
-  @Override
-  public void spprfs(java.lang.String uplo, int n, int nrhs, float[] ap, float[] afp, float[] b, int ldb, float[] x, int ldx, float[] ferr, float[] berr, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Spprfs.spprfs(uplo, n, nrhs, ap, 0, afp, 0, b, 0, ldb, x, 0, ldx, ferr, 0, berr, 0, work, 0, iwork, 0, info);
-  }
+//  @Override
+//  public void spprfs(java.lang.String uplo, int n, int nrhs, float[] ap, float[] afp, float[] b, int ldb, float[] x, int ldx, float[] ferr, float[] berr, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spprfs.spprfs(uplo, n, nrhs, ap, 0, afp, 0, b, 0, ldb, x, 0, ldx, ferr, 0, berr, 0, work, 0, iwork, 0, info);
+//  }
 
-  @Override
-  public void spprfs(java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] afp, int _afp_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Spprfs.spprfs(uplo, n, nrhs, ap, _ap_offset, afp, _afp_offset, b, _b_offset, ldb, x, _x_offset, ldx, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void spprfs(java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] afp, int _afp_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spprfs.spprfs(uplo, n, nrhs, ap, _ap_offset, afp, _afp_offset, b, _b_offset, ldb, x, _x_offset, ldx, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  @Override
-  public void sppsv(java.lang.String uplo, int n, int nrhs, float[] ap, float[] b, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppsv.sppsv(uplo, n, nrhs, ap, 0, b, 0, ldb, info);
-  }
+//  @Override
+//  public void sppsv(java.lang.String uplo, int n, int nrhs, float[] ap, float[] b, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppsv.sppsv(uplo, n, nrhs, ap, 0, b, 0, ldb, info);
+//  }
 
-  @Override
-  public void sppsv(java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppsv.sppsv(uplo, n, nrhs, ap, _ap_offset, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void sppsv(java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppsv.sppsv(uplo, n, nrhs, ap, _ap_offset, b, _b_offset, ldb, info);
+//  }
 
-  @Override
-  public void sppsvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] ap, float[] afp, org.netlib.util.StringW equed, float[] s, float[] b, int ldb, float[] x, int ldx, org.netlib.util.floatW rcond, float[] ferr, float[] berr, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppsvx.sppsvx(fact, uplo, n, nrhs, ap, 0, afp, 0, equed, s, 0, b, 0, ldb, x, 0, ldx, rcond, ferr, 0, berr, 0, work, 0, iwork, 0, info);
-  }
+//  @Override
+//  public void sppsvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] ap, float[] afp, org.netlib.util.StringW equed, float[] s, float[] b, int ldb, float[] x, int ldx, org.netlib.util.floatW rcond, float[] ferr, float[] berr, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppsvx.sppsvx(fact, uplo, n, nrhs, ap, 0, afp, 0, equed, s, 0, b, 0, ldb, x, 0, ldx, rcond, ferr, 0, berr, 0, work, 0, iwork, 0, info);
+//  }
 
-  @Override
-  public void sppsvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] afp, int _afp_offset, org.netlib.util.StringW equed, float[] s, int _s_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, org.netlib.util.floatW rcond, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sppsvx.sppsvx(fact, uplo, n, nrhs, ap, _ap_offset, afp, _afp_offset, equed, s, _s_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
-  }
+//  @Override
+//  public void sppsvx(java.lang.String fact, java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] afp, int _afp_offset, org.netlib.util.StringW equed, float[] s, int _s_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, org.netlib.util.floatW rcond, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sppsvx.sppsvx(fact, uplo, n, nrhs, ap, _ap_offset, afp, _afp_offset, equed, s, _s_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, iwork, _iwork_offset, info);
+//  }
 
-  @Override
-  public void spptrf(java.lang.String uplo, int n, float[] ap, org.netlib.util.intW info) {
-   org.netlib.lapack.Spptrf.spptrf(uplo, n, ap, 0, info);
-  }
+//  @Override
+//  public void spptrf(java.lang.String uplo, int n, float[] ap, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spptrf.spptrf(uplo, n, ap, 0, info);
+//  }
 
-  @Override
-  public void spptrf(java.lang.String uplo, int n, float[] ap, int _ap_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Spptrf.spptrf(uplo, n, ap, _ap_offset, info);
-  }
+//  @Override
+//  public void spptrf(java.lang.String uplo, int n, float[] ap, int _ap_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spptrf.spptrf(uplo, n, ap, _ap_offset, info);
+//  }
 
-  @Override
-  public void spptri(java.lang.String uplo, int n, float[] ap, org.netlib.util.intW info) {
-   org.netlib.lapack.Spptri.spptri(uplo, n, ap, 0, info);
-  }
+//  @Override
+//  public void spptri(java.lang.String uplo, int n, float[] ap, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spptri.spptri(uplo, n, ap, 0, info);
+//  }
 
-  @Override
-  public void spptri(java.lang.String uplo, int n, float[] ap, int _ap_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Spptri.spptri(uplo, n, ap, _ap_offset, info);
-  }
+//  @Override
+//  public void spptri(java.lang.String uplo, int n, float[] ap, int _ap_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spptri.spptri(uplo, n, ap, _ap_offset, info);
+//  }
 
-  @Override
-  public void spptrs(java.lang.String uplo, int n, int nrhs, float[] ap, float[] b, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Spptrs.spptrs(uplo, n, nrhs, ap, 0, b, 0, ldb, info);
-  }
+//  @Override
+//  public void spptrs(java.lang.String uplo, int n, int nrhs, float[] ap, float[] b, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spptrs.spptrs(uplo, n, nrhs, ap, 0, b, 0, ldb, info);
+//  }
 
-  @Override
-  public void spptrs(java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Spptrs.spptrs(uplo, n, nrhs, ap, _ap_offset, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void spptrs(java.lang.String uplo, int n, int nrhs, float[] ap, int _ap_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spptrs.spptrs(uplo, n, nrhs, ap, _ap_offset, b, _b_offset, ldb, info);
+//  }
 
-  @Override
-  public void sptcon(int n, float[] d, float[] e, float anorm, org.netlib.util.floatW rcond, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptcon.sptcon(n, d, 0, e, 0, anorm, rcond, work, 0, info);
-  }
+//  @Override
+//  public void sptcon(int n, float[] d, float[] e, float anorm, org.netlib.util.floatW rcond, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptcon.sptcon(n, d, 0, e, 0, anorm, rcond, work, 0, info);
+//  }
 
-  @Override
-  public void sptcon(int n, float[] d, int _d_offset, float[] e, int _e_offset, float anorm, org.netlib.util.floatW rcond, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptcon.sptcon(n, d, _d_offset, e, _e_offset, anorm, rcond, work, _work_offset, info);
-  }
+//  @Override
+//  public void sptcon(int n, float[] d, int _d_offset, float[] e, int _e_offset, float anorm, org.netlib.util.floatW rcond, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptcon.sptcon(n, d, _d_offset, e, _e_offset, anorm, rcond, work, _work_offset, info);
+//  }
 
-  @Override
-  public void spteqr(java.lang.String compz, int n, float[] d, float[] e, float[] z, int ldz, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Spteqr.spteqr(compz, n, d, 0, e, 0, z, 0, ldz, work, 0, info);
-  }
+//  @Override
+//  public void spteqr(java.lang.String compz, int n, float[] d, float[] e, float[] z, int ldz, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spteqr.spteqr(compz, n, d, 0, e, 0, z, 0, ldz, work, 0, info);
+//  }
 
-  @Override
-  public void spteqr(java.lang.String compz, int n, float[] d, int _d_offset, float[] e, int _e_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Spteqr.spteqr(compz, n, d, _d_offset, e, _e_offset, z, _z_offset, ldz, work, _work_offset, info);
-  }
+//  @Override
+//  public void spteqr(java.lang.String compz, int n, float[] d, int _d_offset, float[] e, int _e_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spteqr.spteqr(compz, n, d, _d_offset, e, _e_offset, z, _z_offset, ldz, work, _work_offset, info);
+//  }
 
-  @Override
-  public void sptrfs(int n, int nrhs, float[] d, float[] e, float[] df, float[] ef, float[] b, int ldb, float[] x, int ldx, float[] ferr, float[] berr, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptrfs.sptrfs(n, nrhs, d, 0, e, 0, df, 0, ef, 0, b, 0, ldb, x, 0, ldx, ferr, 0, berr, 0, work, 0, info);
-  }
+//  @Override
+//  public void sptrfs(int n, int nrhs, float[] d, float[] e, float[] df, float[] ef, float[] b, int ldb, float[] x, int ldx, float[] ferr, float[] berr, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptrfs.sptrfs(n, nrhs, d, 0, e, 0, df, 0, ef, 0, b, 0, ldb, x, 0, ldx, ferr, 0, berr, 0, work, 0, info);
+//  }
 
-  @Override
-  public void sptrfs(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] df, int _df_offset, float[] ef, int _ef_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptrfs.sptrfs(n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
-  }
+//  @Override
+//  public void sptrfs(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] df, int _df_offset, float[] ef, int _ef_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptrfs.sptrfs(n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
+//  }
 
-  @Override
-  public void sptsv(int n, int nrhs, float[] d, float[] e, float[] b, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptsv.sptsv(n, nrhs, d, 0, e, 0, b, 0, ldb, info);
-  }
+//  @Override
+//  public void sptsv(int n, int nrhs, float[] d, float[] e, float[] b, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptsv.sptsv(n, nrhs, d, 0, e, 0, b, 0, ldb, info);
+//  }
 
-  @Override
-  public void sptsv(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptsv.sptsv(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void sptsv(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptsv.sptsv(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
+//  }
 
-  @Override
-  public void sptsvx(java.lang.String fact, int n, int nrhs, float[] d, float[] e, float[] df, float[] ef, float[] b, int ldb, float[] x, int ldx, org.netlib.util.floatW rcond, float[] ferr, float[] berr, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptsvx.sptsvx(fact, n, nrhs, d, 0, e, 0, df, 0, ef, 0, b, 0, ldb, x, 0, ldx, rcond, ferr, 0, berr, 0, work, 0, info);
-  }
+//  @Override
+//  public void sptsvx(java.lang.String fact, int n, int nrhs, float[] d, float[] e, float[] df, float[] ef, float[] b, int ldb, float[] x, int ldx, org.netlib.util.floatW rcond, float[] ferr, float[] berr, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptsvx.sptsvx(fact, n, nrhs, d, 0, e, 0, df, 0, ef, 0, b, 0, ldb, x, 0, ldx, rcond, ferr, 0, berr, 0, work, 0, info);
+//  }
 
-  @Override
-  public void sptsvx(java.lang.String fact, int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] df, int _df_offset, float[] ef, int _ef_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, org.netlib.util.floatW rcond, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sptsvx.sptsvx(fact, n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
-  }
+//  @Override
+//  public void sptsvx(java.lang.String fact, int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] df, int _df_offset, float[] ef, int _ef_offset, float[] b, int _b_offset, int ldb, float[] x, int _x_offset, int ldx, org.netlib.util.floatW rcond, float[] ferr, int _ferr_offset, float[] berr, int _berr_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sptsvx.sptsvx(fact, n, nrhs, d, _d_offset, e, _e_offset, df, _df_offset, ef, _ef_offset, b, _b_offset, ldb, x, _x_offset, ldx, rcond, ferr, _ferr_offset, berr, _berr_offset, work, _work_offset, info);
+//  }
 
-  @Override
-  public void spttrf(int n, float[] d, float[] e, org.netlib.util.intW info) {
-   org.netlib.lapack.Spttrf.spttrf(n, d, 0, e, 0, info);
-  }
+//  @Override
+//  public void spttrf(int n, float[] d, float[] e, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spttrf.spttrf(n, d, 0, e, 0, info);
+//  }
 
-  @Override
-  public void spttrf(int n, float[] d, int _d_offset, float[] e, int _e_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Spttrf.spttrf(n, d, _d_offset, e, _e_offset, info);
-  }
+//  @Override
+//  public void spttrf(int n, float[] d, int _d_offset, float[] e, int _e_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spttrf.spttrf(n, d, _d_offset, e, _e_offset, info);
+//  }
 
-  @Override
-  public void spttrs(int n, int nrhs, float[] d, float[] e, float[] b, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Spttrs.spttrs(n, nrhs, d, 0, e, 0, b, 0, ldb, info);
-  }
+//  @Override
+//  public void spttrs(int n, int nrhs, float[] d, float[] e, float[] b, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spttrs.spttrs(n, nrhs, d, 0, e, 0, b, 0, ldb, info);
+//  }
 
-  @Override
-  public void spttrs(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
-   org.netlib.lapack.Spttrs.spttrs(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
-  }
+//  @Override
+//  public void spttrs(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] b, int _b_offset, int ldb, org.netlib.util.intW info) {
+//   org.netlib.lapack.Spttrs.spttrs(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb, info);
+//  }
 
-  @Override
-  public void sptts2(int n, int nrhs, float[] d, float[] e, float[] b, int ldb) {
-   org.netlib.lapack.Sptts2.sptts2(n, nrhs, d, 0, e, 0, b, 0, ldb);
-  }
+//  @Override
+//  public void sptts2(int n, int nrhs, float[] d, float[] e, float[] b, int ldb) {
+//   org.netlib.lapack.Sptts2.sptts2(n, nrhs, d, 0, e, 0, b, 0, ldb);
+//  }
 
-  @Override
-  public void sptts2(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] b, int _b_offset, int ldb) {
-   org.netlib.lapack.Sptts2.sptts2(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb);
-  }
+//  @Override
+//  public void sptts2(int n, int nrhs, float[] d, int _d_offset, float[] e, int _e_offset, float[] b, int _b_offset, int ldb) {
+//   org.netlib.lapack.Sptts2.sptts2(n, nrhs, d, _d_offset, e, _e_offset, b, _b_offset, ldb);
+//  }
 
-  @Override
-  public void srscl(int n, float sa, float[] sx, int incx) {
-   org.netlib.lapack.Srscl.srscl(n, sa, sx, 0, incx);
-  }
+//  @Override
+//  public void srscl(int n, float sa, float[] sx, int incx) {
+//   org.netlib.lapack.Srscl.srscl(n, sa, sx, 0, incx);
+//  }
 
-  @Override
-  public void srscl(int n, float sa, float[] sx, int _sx_offset, int incx) {
-   org.netlib.lapack.Srscl.srscl(n, sa, sx, _sx_offset, incx);
-  }
+//  @Override
+//  public void srscl(int n, float sa, float[] sx, int _sx_offset, int incx) {
+//   org.netlib.lapack.Srscl.srscl(n, sa, sx, _sx_offset, incx);
+//  }
 
-  @Override
-  public void ssbev(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] w, float[] z, int ldz, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbev.ssbev(jobz, uplo, n, kd, ab, 0, ldab, w, 0, z, 0, ldz, work, 0, info);
-  }
+//  @Override
+//  public void ssbev(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] w, float[] z, int ldz, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbev.ssbev(jobz, uplo, n, kd, ab, 0, ldab, w, 0, z, 0, ldz, work, 0, info);
+//  }
 
-  @Override
-  public void ssbev(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbev.ssbev(jobz, uplo, n, kd, ab, _ab_offset, ldab, w, _w_offset, z, _z_offset, ldz, work, _work_offset, info);
-  }
+//  @Override
+//  public void ssbev(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbev.ssbev(jobz, uplo, n, kd, ab, _ab_offset, ldab, w, _w_offset, z, _z_offset, ldz, work, _work_offset, info);
+//  }
 
-  @Override
-  public void ssbevd(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] w, float[] z, int ldz, float[] work, int lwork, int[] iwork, int liwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbevd.ssbevd(jobz, uplo, n, kd, ab, 0, ldab, w, 0, z, 0, ldz, work, 0, lwork, iwork, 0, liwork, info);
-  }
+//  @Override
+//  public void ssbevd(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] w, float[] z, int ldz, float[] work, int lwork, int[] iwork, int liwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbevd.ssbevd(jobz, uplo, n, kd, ab, 0, ldab, w, 0, z, 0, ldz, work, 0, lwork, iwork, 0, liwork, info);
+//  }
 
-  @Override
-  public void ssbevd(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, int lwork, int[] iwork, int _iwork_offset, int liwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbevd.ssbevd(jobz, uplo, n, kd, ab, _ab_offset, ldab, w, _w_offset, z, _z_offset, ldz, work, _work_offset, lwork, iwork, _iwork_offset, liwork, info);
-  }
+//  @Override
+//  public void ssbevd(java.lang.String jobz, java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, int lwork, int[] iwork, int _iwork_offset, int liwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbevd.ssbevd(jobz, uplo, n, kd, ab, _ab_offset, ldab, w, _w_offset, z, _z_offset, ldz, work, _work_offset, lwork, iwork, _iwork_offset, liwork, info);
+//  }
 
-  @Override
-  public void ssbevx(java.lang.String jobz, java.lang.String range, java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] q, int ldq, float vl, float vu, int il, int iu, float abstol, org.netlib.util.intW m, float[] w, float[] z, int ldz, float[] work, int[] iwork, int[] ifail, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbevx.ssbevx(jobz, range, uplo, n, kd, ab, 0, ldab, q, 0, ldq, vl, vu, il, iu, abstol, m, w, 0, z, 0, ldz, work, 0, iwork, 0, ifail, 0, info);
-  }
+//  @Override
+//  public void ssbevx(java.lang.String jobz, java.lang.String range, java.lang.String uplo, int n, int kd, float[] ab, int ldab, float[] q, int ldq, float vl, float vu, int il, int iu, float abstol, org.netlib.util.intW m, float[] w, float[] z, int ldz, float[] work, int[] iwork, int[] ifail, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbevx.ssbevx(jobz, range, uplo, n, kd, ab, 0, ldab, q, 0, ldq, vl, vu, il, iu, abstol, m, w, 0, z, 0, ldz, work, 0, iwork, 0, ifail, 0, info);
+//  }
 
-  @Override
-  public void ssbevx(java.lang.String jobz, java.lang.String range, java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] q, int _q_offset, int ldq, float vl, float vu, int il, int iu, float abstol, org.netlib.util.intW m, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, int[] iwork, int _iwork_offset, int[] ifail, int _ifail_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbevx.ssbevx(jobz, range, uplo, n, kd, ab, _ab_offset, ldab, q, _q_offset, ldq, vl, vu, il, iu, abstol, m, w, _w_offset, z, _z_offset, ldz, work, _work_offset, iwork, _iwork_offset, ifail, _ifail_offset, info);
-  }
+//  @Override
+//  public void ssbevx(java.lang.String jobz, java.lang.String range, java.lang.String uplo, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] q, int _q_offset, int ldq, float vl, float vu, int il, int iu, float abstol, org.netlib.util.intW m, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, int[] iwork, int _iwork_offset, int[] ifail, int _ifail_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbevx.ssbevx(jobz, range, uplo, n, kd, ab, _ab_offset, ldab, q, _q_offset, ldq, vl, vu, il, iu, abstol, m, w, _w_offset, z, _z_offset, ldz, work, _work_offset, iwork, _iwork_offset, ifail, _ifail_offset, info);
+//  }
 
-  @Override
-  public void ssbgst(java.lang.String vect, java.lang.String uplo, int n, int ka, int kb, float[] ab, int ldab, float[] bb, int ldbb, float[] x, int ldx, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbgst.ssbgst(vect, uplo, n, ka, kb, ab, 0, ldab, bb, 0, ldbb, x, 0, ldx, work, 0, info);
-  }
+//  @Override
+//  public void ssbgst(java.lang.String vect, java.lang.String uplo, int n, int ka, int kb, float[] ab, int ldab, float[] bb, int ldbb, float[] x, int ldx, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbgst.ssbgst(vect, uplo, n, ka, kb, ab, 0, ldab, bb, 0, ldbb, x, 0, ldx, work, 0, info);
+//  }
 
-  @Override
-  public void ssbgst(java.lang.String vect, java.lang.String uplo, int n, int ka, int kb, float[] ab, int _ab_offset, int ldab, float[] bb, int _bb_offset, int ldbb, float[] x, int _x_offset, int ldx, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbgst.ssbgst(vect, uplo, n, ka, kb, ab, _ab_offset, ldab, bb, _bb_offset, ldbb, x, _x_offset, ldx, work, _work_offset, info);
-  }
+//  @Override
+//  public void ssbgst(java.lang.String vect, java.lang.String uplo, int n, int ka, int kb, float[] ab, int _ab_offset, int ldab, float[] bb, int _bb_offset, int ldbb, float[] x, int _x_offset, int ldx, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbgst.ssbgst(vect, uplo, n, ka, kb, ab, _ab_offset, ldab, bb, _bb_offset, ldbb, x, _x_offset, ldx, work, _work_offset, info);
+//  }
 
-  @Override
-  public void ssbgv(java.lang.String jobz, java.lang.String uplo, int n, int ka, int kb, float[] ab, int ldab, float[] bb, int ldbb, float[] w, float[] z, int ldz, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbgv.ssbgv(jobz, uplo, n, ka, kb, ab, 0, ldab, bb, 0, ldbb, w, 0, z, 0, ldz, work, 0, info);
-  }
+//  @Override
+//  public void ssbgv(java.lang.String jobz, java.lang.String uplo, int n, int ka, int kb, float[] ab, int ldab, float[] bb, int ldbb, float[] w, float[] z, int ldz, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbgv.ssbgv(jobz, uplo, n, ka, kb, ab, 0, ldab, bb, 0, ldbb, w, 0, z, 0, ldz, work, 0, info);
+//  }
 
-  @Override
-  public void ssbgv(java.lang.String jobz, java.lang.String uplo, int n, int ka, int kb, float[] ab, int _ab_offset, int ldab, float[] bb, int _bb_offset, int ldbb, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbgv.ssbgv(jobz, uplo, n, ka, kb, ab, _ab_offset, ldab, bb, _bb_offset, ldbb, w, _w_offset, z, _z_offset, ldz, work, _work_offset, info);
-  }
+//  @Override
+//  public void ssbgv(java.lang.String jobz, java.lang.String uplo, int n, int ka, int kb, float[] ab, int _ab_offset, int ldab, float[] bb, int _bb_offset, int ldbb, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbgv.ssbgv(jobz, uplo, n, ka, kb, ab, _ab_offset, ldab, bb, _bb_offset, ldbb, w, _w_offset, z, _z_offset, ldz, work, _work_offset, info);
+//  }
 
-  @Override
-  public void ssbgvd(java.lang.String jobz, java.lang.String uplo, int n, int ka, int kb, float[] ab, int ldab, float[] bb, int ldbb, float[] w, float[] z, int ldz, float[] work, int lwork, int[] iwork, int liwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Ssbgvd.ssbgvd(jobz, uplo, n, ka, kb, ab, 0, ldab, bb, 0, ldbb, w, 0, z, 0, ldz, work, 0, lwork, iwork, 0, liwork, info);
-  }
+//  @Override
+//  public void ssbgvd(java.lang.String jobz, java.lang.String uplo, int n, int ka, int kb, float[] ab, int ldab, float[] bb, int ldbb, float[] w, float[] z, int ldz, float[] work, int lwork, int[] iwork, int liwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Ssbgvd.ssbgvd(jobz, uplo, n, ka, kb, ab, 0, ldab, bb, 0, ldbb, w, 0, z, 0, ldz, work, 0, lwork, iwork, 0, liwork, info);
+//  }
 
   @Override
   public void ssbgvd(java.lang.String jobz, java.lang.String uplo, int n, int ka, int kb, float[] ab, int _ab_offset, int ldab, float[] bb, int _bb_offset, int ldbb, float[] w, int _w_offset, float[] z, int _z_offset, int ldz, float[] work, int _work_offset, int lwork, int[] iwork, int _iwork_offset, int liwork, org.netlib.util.intW info) {
