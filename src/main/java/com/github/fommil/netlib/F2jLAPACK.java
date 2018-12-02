@@ -5166,415 +5166,415 @@ public class F2jLAPACK extends com.github.fommil.netlib.LAPACK {
 //   org.netlib.lapack.Slarzt.slarzt(direct, storev, n, k, v, 0, ldv, tau, 0, t, 0, ldt);
 //  }
 
-  @Override
-  public void slarzt(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt) {
-   org.netlib.lapack.Slarzt.slarzt(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
-  }
-
-  @Override
-  public void slas2(float f, float g, float h, org.netlib.util.floatW ssmin, org.netlib.util.floatW ssmax) {
-   org.netlib.lapack.Slas2.slas2(f, g, h, ssmin, ssmax);
-  }
-
-  @Override
-  public void slascl(java.lang.String type, int kl, int ku, float cfrom, float cto, int m, int n, float[] a, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Slascl.slascl(type, kl, ku, cfrom, cto, m, n, a, 0, lda, info);
-  }
-
-  @Override
-  public void slascl(java.lang.String type, int kl, int ku, float cfrom, float cto, int m, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Slascl.slascl(type, kl, ku, cfrom, cto, m, n, a, _a_offset, lda, info);
-  }
-
-  @Override
-  public void slasd0(int n, int sqre, float[] d, float[] e, float[] u, int ldu, float[] vt, int ldvt, int smlsiz, int[] iwork, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd0.slasd0(n, sqre, d, 0, e, 0, u, 0, ldu, vt, 0, ldvt, smlsiz, iwork, 0, work, 0, info);
-  }
-
-  @Override
-  public void slasd0(int n, int sqre, float[] d, int _d_offset, float[] e, int _e_offset, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int ldvt, int smlsiz, int[] iwork, int _iwork_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd0.slasd0(n, sqre, d, _d_offset, e, _e_offset, u, _u_offset, ldu, vt, _vt_offset, ldvt, smlsiz, iwork, _iwork_offset, work, _work_offset, info);
-  }
-
-  @Override
-  public void slasd1(int nl, int nr, int sqre, float[] d, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, float[] u, int ldu, float[] vt, int ldvt, int[] idxq, int[] iwork, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd1.slasd1(nl, nr, sqre, d, 0, alpha, beta, u, 0, ldu, vt, 0, ldvt, idxq, 0, iwork, 0, work, 0, info);
-  }
-
-  @Override
-  public void slasd1(int nl, int nr, int sqre, float[] d, int _d_offset, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int ldvt, int[] idxq, int _idxq_offset, int[] iwork, int _iwork_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd1.slasd1(nl, nr, sqre, d, _d_offset, alpha, beta, u, _u_offset, ldu, vt, _vt_offset, ldvt, idxq, _idxq_offset, iwork, _iwork_offset, work, _work_offset, info);
-  }
-
-  @Override
-  public void slasd2(int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, float[] z, float alpha, float beta, float[] u, int ldu, float[] vt, int ldvt, float[] dsigma, float[] u2, int ldu2, float[] vt2, int ldvt2, int[] idxp, int[] idx, int[] idxc, int[] idxq, int[] coltyp, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd2.slasd2(nl, nr, sqre, k, d, 0, z, 0, alpha, beta, u, 0, ldu, vt, 0, ldvt, dsigma, 0, u2, 0, ldu2, vt2, 0, ldvt2, idxp, 0, idx, 0, idxc, 0, idxq, 0, coltyp, 0, info);
-  }
-
-  @Override
-  public void slasd2(int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, int _d_offset, float[] z, int _z_offset, float alpha, float beta, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int ldvt, float[] dsigma, int _dsigma_offset, float[] u2, int _u2_offset, int ldu2, float[] vt2, int _vt2_offset, int ldvt2, int[] idxp, int _idxp_offset, int[] idx, int _idx_offset, int[] idxc, int _idxc_offset, int[] idxq, int _idxq_offset, int[] coltyp, int _coltyp_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd2.slasd2(nl, nr, sqre, k, d, _d_offset, z, _z_offset, alpha, beta, u, _u_offset, ldu, vt, _vt_offset, ldvt, dsigma, _dsigma_offset, u2, _u2_offset, ldu2, vt2, _vt2_offset, ldvt2, idxp, _idxp_offset, idx, _idx_offset, idxc, _idxc_offset, idxq, _idxq_offset, coltyp, _coltyp_offset, info);
-  }
-
-  @Override
-  public void slasd3(int nl, int nr, int sqre, int k, float[] d, float[] q, int ldq, float[] dsigma, float[] u, int ldu, float[] u2, int ldu2, float[] vt, int ldvt, float[] vt2, int ldvt2, int[] idxc, int[] ctot, float[] z, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd3.slasd3(nl, nr, sqre, k, d, 0, q, 0, ldq, dsigma, 0, u, 0, ldu, u2, 0, ldu2, vt, 0, ldvt, vt2, 0, ldvt2, idxc, 0, ctot, 0, z, 0, info);
-  }
-
-  @Override
-  public void slasd3(int nl, int nr, int sqre, int k, float[] d, int _d_offset, float[] q, int _q_offset, int ldq, float[] dsigma, int _dsigma_offset, float[] u, int _u_offset, int ldu, float[] u2, int _u2_offset, int ldu2, float[] vt, int _vt_offset, int ldvt, float[] vt2, int _vt2_offset, int ldvt2, int[] idxc, int _idxc_offset, int[] ctot, int _ctot_offset, float[] z, int _z_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd3.slasd3(nl, nr, sqre, k, d, _d_offset, q, _q_offset, ldq, dsigma, _dsigma_offset, u, _u_offset, ldu, u2, _u2_offset, ldu2, vt, _vt_offset, ldvt, vt2, _vt2_offset, ldvt2, idxc, _idxc_offset, ctot, _ctot_offset, z, _z_offset, info);
-  }
-
-  @Override
-  public void slasd4(int n, int i, float[] d, float[] z, float[] delta, float rho, org.netlib.util.floatW sigma, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd4.slasd4(n, i, d, 0, z, 0, delta, 0, rho, sigma, work, 0, info);
-  }
-
-  @Override
-  public void slasd4(int n, int i, float[] d, int _d_offset, float[] z, int _z_offset, float[] delta, int _delta_offset, float rho, org.netlib.util.floatW sigma, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd4.slasd4(n, i, d, _d_offset, z, _z_offset, delta, _delta_offset, rho, sigma, work, _work_offset, info);
-  }
-
-  @Override
-  public void slasd5(int i, float[] d, float[] z, float[] delta, float rho, org.netlib.util.floatW dsigma, float[] work) {
-   org.netlib.lapack.Slasd5.slasd5(i, d, 0, z, 0, delta, 0, rho, dsigma, work, 0);
-  }
-
-  @Override
-  public void slasd5(int i, float[] d, int _d_offset, float[] z, int _z_offset, float[] delta, int _delta_offset, float rho, org.netlib.util.floatW dsigma, float[] work, int _work_offset) {
-   org.netlib.lapack.Slasd5.slasd5(i, d, _d_offset, z, _z_offset, delta, _delta_offset, rho, dsigma, work, _work_offset);
-  }
-
-  @Override
-  public void slasd6(int icompq, int nl, int nr, int sqre, float[] d, float[] vf, float[] vl, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, int[] idxq, int[] perm, org.netlib.util.intW givptr, int[] givcol, int ldgcol, float[] givnum, int ldgnum, float[] poles, float[] difl, float[] difr, float[] z, org.netlib.util.intW k, org.netlib.util.floatW c, org.netlib.util.floatW s, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd6.slasd6(icompq, nl, nr, sqre, d, 0, vf, 0, vl, 0, alpha, beta, idxq, 0, perm, 0, givptr, givcol, 0, ldgcol, givnum, 0, ldgnum, poles, 0, difl, 0, difr, 0, z, 0, k, c, s, work, 0, iwork, 0, info);
-  }
-
-  @Override
-  public void slasd6(int icompq, int nl, int nr, int sqre, float[] d, int _d_offset, float[] vf, int _vf_offset, float[] vl, int _vl_offset, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, int[] idxq, int _idxq_offset, int[] perm, int _perm_offset, org.netlib.util.intW givptr, int[] givcol, int _givcol_offset, int ldgcol, float[] givnum, int _givnum_offset, int ldgnum, float[] poles, int _poles_offset, float[] difl, int _difl_offset, float[] difr, int _difr_offset, float[] z, int _z_offset, org.netlib.util.intW k, org.netlib.util.floatW c, org.netlib.util.floatW s, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd6.slasd6(icompq, nl, nr, sqre, d, _d_offset, vf, _vf_offset, vl, _vl_offset, alpha, beta, idxq, _idxq_offset, perm, _perm_offset, givptr, givcol, _givcol_offset, ldgcol, givnum, _givnum_offset, ldgnum, poles, _poles_offset, difl, _difl_offset, difr, _difr_offset, z, _z_offset, k, c, s, work, _work_offset, iwork, _iwork_offset, info);
-  }
-
-  @Override
-  public void slasd7(int icompq, int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, float[] z, float[] zw, float[] vf, float[] vfw, float[] vl, float[] vlw, float alpha, float beta, float[] dsigma, int[] idx, int[] idxp, int[] idxq, int[] perm, org.netlib.util.intW givptr, int[] givcol, int ldgcol, float[] givnum, int ldgnum, org.netlib.util.floatW c, org.netlib.util.floatW s, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd7.slasd7(icompq, nl, nr, sqre, k, d, 0, z, 0, zw, 0, vf, 0, vfw, 0, vl, 0, vlw, 0, alpha, beta, dsigma, 0, idx, 0, idxp, 0, idxq, 0, perm, 0, givptr, givcol, 0, ldgcol, givnum, 0, ldgnum, c, s, info);
-  }
-
-  @Override
-  public void slasd7(int icompq, int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, int _d_offset, float[] z, int _z_offset, float[] zw, int _zw_offset, float[] vf, int _vf_offset, float[] vfw, int _vfw_offset, float[] vl, int _vl_offset, float[] vlw, int _vlw_offset, float alpha, float beta, float[] dsigma, int _dsigma_offset, int[] idx, int _idx_offset, int[] idxp, int _idxp_offset, int[] idxq, int _idxq_offset, int[] perm, int _perm_offset, org.netlib.util.intW givptr, int[] givcol, int _givcol_offset, int ldgcol, float[] givnum, int _givnum_offset, int ldgnum, org.netlib.util.floatW c, org.netlib.util.floatW s, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd7.slasd7(icompq, nl, nr, sqre, k, d, _d_offset, z, _z_offset, zw, _zw_offset, vf, _vf_offset, vfw, _vfw_offset, vl, _vl_offset, vlw, _vlw_offset, alpha, beta, dsigma, _dsigma_offset, idx, _idx_offset, idxp, _idxp_offset, idxq, _idxq_offset, perm, _perm_offset, givptr, givcol, _givcol_offset, ldgcol, givnum, _givnum_offset, ldgnum, c, s, info);
-  }
-
-  @Override
-  public void slasd8(int icompq, int k, float[] d, float[] z, float[] vf, float[] vl, float[] difl, float[] difr, int lddifr, float[] dsigma, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd8.slasd8(icompq, k, d, 0, z, 0, vf, 0, vl, 0, difl, 0, difr, 0, lddifr, dsigma, 0, work, 0, info);
-  }
-
-  @Override
-  public void slasd8(int icompq, int k, float[] d, int _d_offset, float[] z, int _z_offset, float[] vf, int _vf_offset, float[] vl, int _vl_offset, float[] difl, int _difl_offset, float[] difr, int _difr_offset, int lddifr, float[] dsigma, int _dsigma_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasd8.slasd8(icompq, k, d, _d_offset, z, _z_offset, vf, _vf_offset, vl, _vl_offset, difl, _difl_offset, difr, _difr_offset, lddifr, dsigma, _dsigma_offset, work, _work_offset, info);
-  }
-
-  @Override
-  public void slasda(int icompq, int smlsiz, int n, int sqre, float[] d, float[] e, float[] u, int ldu, float[] vt, int[] k, float[] difl, float[] difr, float[] z, float[] poles, int[] givptr, int[] givcol, int ldgcol, int[] perm, float[] givnum, float[] c, float[] s, float[] work, int[] iwork, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasda.slasda(icompq, smlsiz, n, sqre, d, 0, e, 0, u, 0, ldu, vt, 0, k, 0, difl, 0, difr, 0, z, 0, poles, 0, givptr, 0, givcol, 0, ldgcol, perm, 0, givnum, 0, c, 0, s, 0, work, 0, iwork, 0, info);
-  }
-
-  @Override
-  public void slasda(int icompq, int smlsiz, int n, int sqre, float[] d, int _d_offset, float[] e, int _e_offset, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int[] k, int _k_offset, float[] difl, int _difl_offset, float[] difr, int _difr_offset, float[] z, int _z_offset, float[] poles, int _poles_offset, int[] givptr, int _givptr_offset, int[] givcol, int _givcol_offset, int ldgcol, int[] perm, int _perm_offset, float[] givnum, int _givnum_offset, float[] c, int _c_offset, float[] s, int _s_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasda.slasda(icompq, smlsiz, n, sqre, d, _d_offset, e, _e_offset, u, _u_offset, ldu, vt, _vt_offset, k, _k_offset, difl, _difl_offset, difr, _difr_offset, z, _z_offset, poles, _poles_offset, givptr, _givptr_offset, givcol, _givcol_offset, ldgcol, perm, _perm_offset, givnum, _givnum_offset, c, _c_offset, s, _s_offset, work, _work_offset, iwork, _iwork_offset, info);
-  }
-
-  @Override
-  public void slasdq(java.lang.String uplo, int sqre, int n, int ncvt, int nru, int ncc, float[] d, float[] e, float[] vt, int ldvt, float[] u, int ldu, float[] c, int Ldc, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasdq.slasdq(uplo, sqre, n, ncvt, nru, ncc, d, 0, e, 0, vt, 0, ldvt, u, 0, ldu, c, 0, Ldc, work, 0, info);
-  }
-
-  @Override
-  public void slasdq(java.lang.String uplo, int sqre, int n, int ncvt, int nru, int ncc, float[] d, int _d_offset, float[] e, int _e_offset, float[] vt, int _vt_offset, int ldvt, float[] u, int _u_offset, int ldu, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasdq.slasdq(uplo, sqre, n, ncvt, nru, ncc, d, _d_offset, e, _e_offset, vt, _vt_offset, ldvt, u, _u_offset, ldu, c, _c_offset, Ldc, work, _work_offset, info);
-  }
-
-  @Override
-  public void slasdt(int n, org.netlib.util.intW lvl, org.netlib.util.intW nd, int[] inode, int[] ndiml, int[] ndimr, int msub) {
-   org.netlib.lapack.Slasdt.slasdt(n, lvl, nd, inode, 0, ndiml, 0, ndimr, 0, msub);
-  }
-
-  @Override
-  public void slasdt(int n, org.netlib.util.intW lvl, org.netlib.util.intW nd, int[] inode, int _inode_offset, int[] ndiml, int _ndiml_offset, int[] ndimr, int _ndimr_offset, int msub) {
-   org.netlib.lapack.Slasdt.slasdt(n, lvl, nd, inode, _inode_offset, ndiml, _ndiml_offset, ndimr, _ndimr_offset, msub);
-  }
-
-  @Override
-  public void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int lda) {
-   org.netlib.lapack.Slaset.slaset(uplo, m, n, alpha, beta, a, 0, lda);
-  }
-
-  @Override
-  public void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int _a_offset, int lda) {
-   org.netlib.lapack.Slaset.slaset(uplo, m, n, alpha, beta, a, _a_offset, lda);
-  }
-
-  @Override
-  public void slasq1(int n, float[] d, float[] e, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasq1.slasq1(n, d, 0, e, 0, work, 0, info);
-  }
-
-  @Override
-  public void slasq1(int n, float[] d, int _d_offset, float[] e, int _e_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasq1.slasq1(n, d, _d_offset, e, _e_offset, work, _work_offset, info);
-  }
-
-  @Override
-  public void slasq2(int n, float[] z, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasq2.slasq2(n, z, 0, info);
-  }
-
-  @Override
-  public void slasq2(int n, float[] z, int _z_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasq2.slasq2(n, z, _z_offset, info);
-  }
-
-  @Override
-  public void slasq3(int i0, org.netlib.util.intW n0, float[] z, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee) {
-   org.netlib.lapack.Slasq3.slasq3(i0, n0, z, 0, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee);
-  }
-
-  @Override
-  public void slasq3(int i0, org.netlib.util.intW n0, float[] z, int _z_offset, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee) {
-   org.netlib.lapack.Slasq3.slasq3(i0, n0, z, _z_offset, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee);
-  }
-
-  @Override
-  public void slasq4(int i0, int n0, float[] z, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype) {
-   org.netlib.lapack.Slasq4.slasq4(i0, n0, z, 0, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype);
-  }
-
-  @Override
-  public void slasq4(int i0, int n0, float[] z, int _z_offset, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype) {
-   org.netlib.lapack.Slasq4.slasq4(i0, n0, z, _z_offset, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype);
-  }
-
-  @Override
-  public void slasq5(int i0, int n0, float[] z, int pp, float tau, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2, boolean ieee) {
-   org.netlib.lapack.Slasq5.slasq5(i0, n0, z, 0, pp, tau, dmin, dmin1, dmin2, dn, dnm1, dnm2, ieee);
-  }
-
-  @Override
-  public void slasq5(int i0, int n0, float[] z, int _z_offset, int pp, float tau, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2, boolean ieee) {
-   org.netlib.lapack.Slasq5.slasq5(i0, n0, z, _z_offset, pp, tau, dmin, dmin1, dmin2, dn, dnm1, dnm2, ieee);
-  }
-
-  @Override
-  public void slasq6(int i0, int n0, float[] z, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2) {
-   org.netlib.lapack.Slasq6.slasq6(i0, n0, z, 0, pp, dmin, dmin1, dmin2, dn, dnm1, dnm2);
-  }
-
-  @Override
-  public void slasq6(int i0, int n0, float[] z, int _z_offset, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2) {
-   org.netlib.lapack.Slasq6.slasq6(i0, n0, z, _z_offset, pp, dmin, dmin1, dmin2, dn, dnm1, dnm2);
-  }
-
-  @Override
-  public void slasr(java.lang.String side, java.lang.String pivot, java.lang.String direct, int m, int n, float[] c, float[] s, float[] a, int lda) {
-   org.netlib.lapack.Slasr.slasr(side, pivot, direct, m, n, c, 0, s, 0, a, 0, lda);
-  }
-
-  @Override
-  public void slasr(java.lang.String side, java.lang.String pivot, java.lang.String direct, int m, int n, float[] c, int _c_offset, float[] s, int _s_offset, float[] a, int _a_offset, int lda) {
-   org.netlib.lapack.Slasr.slasr(side, pivot, direct, m, n, c, _c_offset, s, _s_offset, a, _a_offset, lda);
-  }
-
-  @Override
-  public void slasrt(java.lang.String id, int n, float[] d, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasrt.slasrt(id, n, d, 0, info);
-  }
-
-  @Override
-  public void slasrt(java.lang.String id, int n, float[] d, int _d_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasrt.slasrt(id, n, d, _d_offset, info);
-  }
-
-  @Override
-  public void slassq(int n, float[] x, int incx, org.netlib.util.floatW scale, org.netlib.util.floatW sumsq) {
-   org.netlib.lapack.Slassq.slassq(n, x, 0, incx, scale, sumsq);
-  }
-
-  @Override
-  public void slassq(int n, float[] x, int _x_offset, int incx, org.netlib.util.floatW scale, org.netlib.util.floatW sumsq) {
-   org.netlib.lapack.Slassq.slassq(n, x, _x_offset, incx, scale, sumsq);
-  }
-
-  @Override
-  public void slasv2(float f, float g, float h, org.netlib.util.floatW ssmin, org.netlib.util.floatW ssmax, org.netlib.util.floatW snr, org.netlib.util.floatW csr, org.netlib.util.floatW snl, org.netlib.util.floatW csl) {
-   org.netlib.lapack.Slasv2.slasv2(f, g, h, ssmin, ssmax, snr, csr, snl, csl);
-  }
-
-  @Override
-  public void slaswp(int n, float[] a, int lda, int k1, int k2, int[] ipiv, int incx) {
-   org.netlib.lapack.Slaswp.slaswp(n, a, 0, lda, k1, k2, ipiv, 0, incx);
-  }
-
-  @Override
-  public void slaswp(int n, float[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx) {
-   org.netlib.lapack.Slaswp.slaswp(n, a, _a_offset, lda, k1, k2, ipiv, _ipiv_offset, incx);
-  }
-
-  @Override
-  public void slasy2(boolean ltranl, boolean ltranr, int isgn, int n1, int n2, float[] tl, int ldtl, float[] tr, int ldtr, float[] b, int ldb, org.netlib.util.floatW scale, float[] x, int ldx, org.netlib.util.floatW xnorm, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasy2.slasy2(ltranl, ltranr, isgn, n1, n2, tl, 0, ldtl, tr, 0, ldtr, b, 0, ldb, scale, x, 0, ldx, xnorm, info);
-  }
-
-  @Override
-  public void slasy2(boolean ltranl, boolean ltranr, int isgn, int n1, int n2, float[] tl, int _tl_offset, int ldtl, float[] tr, int _tr_offset, int ldtr, float[] b, int _b_offset, int ldb, org.netlib.util.floatW scale, float[] x, int _x_offset, int ldx, org.netlib.util.floatW xnorm, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasy2.slasy2(ltranl, ltranr, isgn, n1, n2, tl, _tl_offset, ldtl, tr, _tr_offset, ldtr, b, _b_offset, ldb, scale, x, _x_offset, ldx, xnorm, info);
-  }
-
-  @Override
-  public void slasyf(java.lang.String uplo, int n, int nb, org.netlib.util.intW kb, float[] a, int lda, int[] ipiv, float[] w, int ldw, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasyf.slasyf(uplo, n, nb, kb, a, 0, lda, ipiv, 0, w, 0, ldw, info);
-  }
-
-  @Override
-  public void slasyf(java.lang.String uplo, int n, int nb, org.netlib.util.intW kb, float[] a, int _a_offset, int lda, int[] ipiv, int _ipiv_offset, float[] w, int _w_offset, int ldw, org.netlib.util.intW info) {
-   org.netlib.lapack.Slasyf.slasyf(uplo, n, nb, kb, a, _a_offset, lda, ipiv, _ipiv_offset, w, _w_offset, ldw, info);
-  }
-
-  @Override
-  public void slatbs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, int kd, float[] ab, int ldab, float[] x, org.netlib.util.floatW scale, float[] cnorm, org.netlib.util.intW info) {
-   org.netlib.lapack.Slatbs.slatbs(uplo, trans, diag, normin, n, kd, ab, 0, ldab, x, 0, scale, cnorm, 0, info);
-  }
-
-  @Override
-  public void slatbs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] x, int _x_offset, org.netlib.util.floatW scale, float[] cnorm, int _cnorm_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slatbs.slatbs(uplo, trans, diag, normin, n, kd, ab, _ab_offset, ldab, x, _x_offset, scale, cnorm, _cnorm_offset, info);
-  }
-
-  @Override
-  public void slatdf(int ijob, int n, float[] z, int ldz, float[] rhs, org.netlib.util.floatW rdsum, org.netlib.util.floatW rdscal, int[] ipiv, int[] jpiv) {
-   org.netlib.lapack.Slatdf.slatdf(ijob, n, z, 0, ldz, rhs, 0, rdsum, rdscal, ipiv, 0, jpiv, 0);
-  }
-
-  @Override
-  public void slatdf(int ijob, int n, float[] z, int _z_offset, int ldz, float[] rhs, int _rhs_offset, org.netlib.util.floatW rdsum, org.netlib.util.floatW rdscal, int[] ipiv, int _ipiv_offset, int[] jpiv, int _jpiv_offset) {
-   org.netlib.lapack.Slatdf.slatdf(ijob, n, z, _z_offset, ldz, rhs, _rhs_offset, rdsum, rdscal, ipiv, _ipiv_offset, jpiv, _jpiv_offset);
-  }
-
-  @Override
-  public void slatps(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] ap, float[] x, org.netlib.util.floatW scale, float[] cnorm, org.netlib.util.intW info) {
-   org.netlib.lapack.Slatps.slatps(uplo, trans, diag, normin, n, ap, 0, x, 0, scale, cnorm, 0, info);
-  }
-
-  @Override
-  public void slatps(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] ap, int _ap_offset, float[] x, int _x_offset, org.netlib.util.floatW scale, float[] cnorm, int _cnorm_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slatps.slatps(uplo, trans, diag, normin, n, ap, _ap_offset, x, _x_offset, scale, cnorm, _cnorm_offset, info);
-  }
-
-  @Override
-  public void slatrd(java.lang.String uplo, int n, int nb, float[] a, int lda, float[] e, float[] tau, float[] w, int ldw) {
-   org.netlib.lapack.Slatrd.slatrd(uplo, n, nb, a, 0, lda, e, 0, tau, 0, w, 0, ldw);
-  }
-
-  @Override
-  public void slatrd(java.lang.String uplo, int n, int nb, float[] a, int _a_offset, int lda, float[] e, int _e_offset, float[] tau, int _tau_offset, float[] w, int _w_offset, int ldw) {
-   org.netlib.lapack.Slatrd.slatrd(uplo, n, nb, a, _a_offset, lda, e, _e_offset, tau, _tau_offset, w, _w_offset, ldw);
-  }
-
-  @Override
-  public void slatrs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] a, int lda, float[] x, org.netlib.util.floatW scale, float[] cnorm, org.netlib.util.intW info) {
-   org.netlib.lapack.Slatrs.slatrs(uplo, trans, diag, normin, n, a, 0, lda, x, 0, scale, cnorm, 0, info);
-  }
-
-  @Override
-  public void slatrs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] a, int _a_offset, int lda, float[] x, int _x_offset, org.netlib.util.floatW scale, float[] cnorm, int _cnorm_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Slatrs.slatrs(uplo, trans, diag, normin, n, a, _a_offset, lda, x, _x_offset, scale, cnorm, _cnorm_offset, info);
-  }
-
-  @Override
-  public void slatrz(int m, int n, int l, float[] a, int lda, float[] tau, float[] work) {
-   org.netlib.lapack.Slatrz.slatrz(m, n, l, a, 0, lda, tau, 0, work, 0);
-  }
-
-  @Override
-  public void slatrz(int m, int n, int l, float[] a, int _a_offset, int lda, float[] tau, int _tau_offset, float[] work, int _work_offset) {
-   org.netlib.lapack.Slatrz.slatrz(m, n, l, a, _a_offset, lda, tau, _tau_offset, work, _work_offset);
-  }
-
-  @Override
-  public void slatzm(java.lang.String side, int m, int n, float[] v, int incv, float tau, float[] c1, float[] c2, int Ldc, float[] work) {
-   org.netlib.lapack.Slatzm.slatzm(side, m, n, v, 0, incv, tau, c1, 0, c2, 0, Ldc, work, 0);
-  }
-
-  @Override
-  public void slatzm(java.lang.String side, int m, int n, float[] v, int _v_offset, int incv, float tau, float[] c1, int _c1_offset, float[] c2, int _c2_offset, int Ldc, float[] work, int _work_offset) {
-   org.netlib.lapack.Slatzm.slatzm(side, m, n, v, _v_offset, incv, tau, c1, _c1_offset, c2, _c2_offset, Ldc, work, _work_offset);
-  }
-
-  @Override
-  public void slauu2(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Slauu2.slauu2(uplo, n, a, 0, lda, info);
-  }
-
-  @Override
-  public void slauu2(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Slauu2.slauu2(uplo, n, a, _a_offset, lda, info);
-  }
-
-  @Override
-  public void slauum(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Slauum.slauum(uplo, n, a, 0, lda, info);
-  }
-
-  @Override
-  public void slauum(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-   org.netlib.lapack.Slauum.slauum(uplo, n, a, _a_offset, lda, info);
-  }
-
-  @Override
-  public void slazq3(int i0, org.netlib.util.intW n0, float[] z, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee, org.netlib.util.intW ttype, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dn1, org.netlib.util.floatW dn2, org.netlib.util.floatW tau) {
-   org.netlib.lapack.Slazq3.slazq3(i0, n0, z, 0, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee, ttype, dmin1, dmin2, dn, dn1, dn2, tau);
-  }
-
-  @Override
-  public void slazq3(int i0, org.netlib.util.intW n0, float[] z, int _z_offset, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee, org.netlib.util.intW ttype, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dn1, org.netlib.util.floatW dn2, org.netlib.util.floatW tau) {
-   org.netlib.lapack.Slazq3.slazq3(i0, n0, z, _z_offset, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee, ttype, dmin1, dmin2, dn, dn1, dn2, tau);
-  }
-
-  @Override
-  public void slazq4(int i0, int n0, float[] z, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype, org.netlib.util.floatW g) {
-   org.netlib.lapack.Slazq4.slazq4(i0, n0, z, 0, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype, g);
-  }
-
-  @Override
-  public void slazq4(int i0, int n0, float[] z, int _z_offset, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype, org.netlib.util.floatW g) {
-   org.netlib.lapack.Slazq4.slazq4(i0, n0, z, _z_offset, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype, g);
-  }
-
-  @Override
-  public void sopgtr(java.lang.String uplo, int n, float[] ap, float[] tau, float[] q, int ldq, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Sopgtr.sopgtr(uplo, n, ap, 0, tau, 0, q, 0, ldq, work, 0, info);
-  }
-
-  @Override
-  public void sopgtr(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] q, int _q_offset, int ldq, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sopgtr.sopgtr(uplo, n, ap, _ap_offset, tau, _tau_offset, q, _q_offset, ldq, work, _work_offset, info);
-  }
-
-  @Override
-  public void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, float[] tau, float[] c, int Ldc, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Sopmtr.sopmtr(side, uplo, trans, m, n, ap, 0, tau, 0, c, 0, Ldc, work, 0, info);
-  }
-
-  @Override
-  public void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.lapack.Sopmtr.sopmtr(side, uplo, trans, m, n, ap, _ap_offset, tau, _tau_offset, c, _c_offset, Ldc, work, _work_offset, info);
-  }
-
-  @Override
-  public void sorg2l(int m, int n, int k, float[] a, int lda, float[] tau, float[] work, org.netlib.util.intW info) {
-   org.netlib.lapack.Sorg2l.sorg2l(m, n, k, a, 0, lda, tau, 0, work, 0, info);
-  }
+//  @Override
+//  public void slarzt(java.lang.String direct, java.lang.String storev, int n, int k, float[] v, int _v_offset, int ldv, float[] tau, int _tau_offset, float[] t, int _t_offset, int ldt) {
+//   org.netlib.lapack.Slarzt.slarzt(direct, storev, n, k, v, _v_offset, ldv, tau, _tau_offset, t, _t_offset, ldt);
+//  }
+
+//  @Override
+//  public void slas2(float f, float g, float h, org.netlib.util.floatW ssmin, org.netlib.util.floatW ssmax) {
+//   org.netlib.lapack.Slas2.slas2(f, g, h, ssmin, ssmax);
+//  }
+
+//  @Override
+//  public void slascl(java.lang.String type, int kl, int ku, float cfrom, float cto, int m, int n, float[] a, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slascl.slascl(type, kl, ku, cfrom, cto, m, n, a, 0, lda, info);
+//  }
+
+//  @Override
+//  public void slascl(java.lang.String type, int kl, int ku, float cfrom, float cto, int m, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slascl.slascl(type, kl, ku, cfrom, cto, m, n, a, _a_offset, lda, info);
+//  }
+
+//  @Override
+//  public void slasd0(int n, int sqre, float[] d, float[] e, float[] u, int ldu, float[] vt, int ldvt, int smlsiz, int[] iwork, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd0.slasd0(n, sqre, d, 0, e, 0, u, 0, ldu, vt, 0, ldvt, smlsiz, iwork, 0, work, 0, info);
+//  }
+
+//  @Override
+//  public void slasd0(int n, int sqre, float[] d, int _d_offset, float[] e, int _e_offset, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int ldvt, int smlsiz, int[] iwork, int _iwork_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd0.slasd0(n, sqre, d, _d_offset, e, _e_offset, u, _u_offset, ldu, vt, _vt_offset, ldvt, smlsiz, iwork, _iwork_offset, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void slasd1(int nl, int nr, int sqre, float[] d, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, float[] u, int ldu, float[] vt, int ldvt, int[] idxq, int[] iwork, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd1.slasd1(nl, nr, sqre, d, 0, alpha, beta, u, 0, ldu, vt, 0, ldvt, idxq, 0, iwork, 0, work, 0, info);
+//  }
+
+//  @Override
+//  public void slasd1(int nl, int nr, int sqre, float[] d, int _d_offset, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int ldvt, int[] idxq, int _idxq_offset, int[] iwork, int _iwork_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd1.slasd1(nl, nr, sqre, d, _d_offset, alpha, beta, u, _u_offset, ldu, vt, _vt_offset, ldvt, idxq, _idxq_offset, iwork, _iwork_offset, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void slasd2(int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, float[] z, float alpha, float beta, float[] u, int ldu, float[] vt, int ldvt, float[] dsigma, float[] u2, int ldu2, float[] vt2, int ldvt2, int[] idxp, int[] idx, int[] idxc, int[] idxq, int[] coltyp, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd2.slasd2(nl, nr, sqre, k, d, 0, z, 0, alpha, beta, u, 0, ldu, vt, 0, ldvt, dsigma, 0, u2, 0, ldu2, vt2, 0, ldvt2, idxp, 0, idx, 0, idxc, 0, idxq, 0, coltyp, 0, info);
+//  }
+
+//  @Override
+//  public void slasd2(int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, int _d_offset, float[] z, int _z_offset, float alpha, float beta, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int ldvt, float[] dsigma, int _dsigma_offset, float[] u2, int _u2_offset, int ldu2, float[] vt2, int _vt2_offset, int ldvt2, int[] idxp, int _idxp_offset, int[] idx, int _idx_offset, int[] idxc, int _idxc_offset, int[] idxq, int _idxq_offset, int[] coltyp, int _coltyp_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd2.slasd2(nl, nr, sqre, k, d, _d_offset, z, _z_offset, alpha, beta, u, _u_offset, ldu, vt, _vt_offset, ldvt, dsigma, _dsigma_offset, u2, _u2_offset, ldu2, vt2, _vt2_offset, ldvt2, idxp, _idxp_offset, idx, _idx_offset, idxc, _idxc_offset, idxq, _idxq_offset, coltyp, _coltyp_offset, info);
+//  }
+
+//  @Override
+//  public void slasd3(int nl, int nr, int sqre, int k, float[] d, float[] q, int ldq, float[] dsigma, float[] u, int ldu, float[] u2, int ldu2, float[] vt, int ldvt, float[] vt2, int ldvt2, int[] idxc, int[] ctot, float[] z, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd3.slasd3(nl, nr, sqre, k, d, 0, q, 0, ldq, dsigma, 0, u, 0, ldu, u2, 0, ldu2, vt, 0, ldvt, vt2, 0, ldvt2, idxc, 0, ctot, 0, z, 0, info);
+//  }
+
+//  @Override
+//  public void slasd3(int nl, int nr, int sqre, int k, float[] d, int _d_offset, float[] q, int _q_offset, int ldq, float[] dsigma, int _dsigma_offset, float[] u, int _u_offset, int ldu, float[] u2, int _u2_offset, int ldu2, float[] vt, int _vt_offset, int ldvt, float[] vt2, int _vt2_offset, int ldvt2, int[] idxc, int _idxc_offset, int[] ctot, int _ctot_offset, float[] z, int _z_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd3.slasd3(nl, nr, sqre, k, d, _d_offset, q, _q_offset, ldq, dsigma, _dsigma_offset, u, _u_offset, ldu, u2, _u2_offset, ldu2, vt, _vt_offset, ldvt, vt2, _vt2_offset, ldvt2, idxc, _idxc_offset, ctot, _ctot_offset, z, _z_offset, info);
+//  }
+
+//  @Override
+//  public void slasd4(int n, int i, float[] d, float[] z, float[] delta, float rho, org.netlib.util.floatW sigma, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd4.slasd4(n, i, d, 0, z, 0, delta, 0, rho, sigma, work, 0, info);
+//  }
+
+//  @Override
+//  public void slasd4(int n, int i, float[] d, int _d_offset, float[] z, int _z_offset, float[] delta, int _delta_offset, float rho, org.netlib.util.floatW sigma, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd4.slasd4(n, i, d, _d_offset, z, _z_offset, delta, _delta_offset, rho, sigma, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void slasd5(int i, float[] d, float[] z, float[] delta, float rho, org.netlib.util.floatW dsigma, float[] work) {
+//   org.netlib.lapack.Slasd5.slasd5(i, d, 0, z, 0, delta, 0, rho, dsigma, work, 0);
+//  }
+
+//  @Override
+//  public void slasd5(int i, float[] d, int _d_offset, float[] z, int _z_offset, float[] delta, int _delta_offset, float rho, org.netlib.util.floatW dsigma, float[] work, int _work_offset) {
+//   org.netlib.lapack.Slasd5.slasd5(i, d, _d_offset, z, _z_offset, delta, _delta_offset, rho, dsigma, work, _work_offset);
+//  }
+
+//  @Override
+//  public void slasd6(int icompq, int nl, int nr, int sqre, float[] d, float[] vf, float[] vl, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, int[] idxq, int[] perm, org.netlib.util.intW givptr, int[] givcol, int ldgcol, float[] givnum, int ldgnum, float[] poles, float[] difl, float[] difr, float[] z, org.netlib.util.intW k, org.netlib.util.floatW c, org.netlib.util.floatW s, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd6.slasd6(icompq, nl, nr, sqre, d, 0, vf, 0, vl, 0, alpha, beta, idxq, 0, perm, 0, givptr, givcol, 0, ldgcol, givnum, 0, ldgnum, poles, 0, difl, 0, difr, 0, z, 0, k, c, s, work, 0, iwork, 0, info);
+//  }
+
+//  @Override
+//  public void slasd6(int icompq, int nl, int nr, int sqre, float[] d, int _d_offset, float[] vf, int _vf_offset, float[] vl, int _vl_offset, org.netlib.util.floatW alpha, org.netlib.util.floatW beta, int[] idxq, int _idxq_offset, int[] perm, int _perm_offset, org.netlib.util.intW givptr, int[] givcol, int _givcol_offset, int ldgcol, float[] givnum, int _givnum_offset, int ldgnum, float[] poles, int _poles_offset, float[] difl, int _difl_offset, float[] difr, int _difr_offset, float[] z, int _z_offset, org.netlib.util.intW k, org.netlib.util.floatW c, org.netlib.util.floatW s, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd6.slasd6(icompq, nl, nr, sqre, d, _d_offset, vf, _vf_offset, vl, _vl_offset, alpha, beta, idxq, _idxq_offset, perm, _perm_offset, givptr, givcol, _givcol_offset, ldgcol, givnum, _givnum_offset, ldgnum, poles, _poles_offset, difl, _difl_offset, difr, _difr_offset, z, _z_offset, k, c, s, work, _work_offset, iwork, _iwork_offset, info);
+//  }
+
+//  @Override
+//  public void slasd7(int icompq, int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, float[] z, float[] zw, float[] vf, float[] vfw, float[] vl, float[] vlw, float alpha, float beta, float[] dsigma, int[] idx, int[] idxp, int[] idxq, int[] perm, org.netlib.util.intW givptr, int[] givcol, int ldgcol, float[] givnum, int ldgnum, org.netlib.util.floatW c, org.netlib.util.floatW s, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd7.slasd7(icompq, nl, nr, sqre, k, d, 0, z, 0, zw, 0, vf, 0, vfw, 0, vl, 0, vlw, 0, alpha, beta, dsigma, 0, idx, 0, idxp, 0, idxq, 0, perm, 0, givptr, givcol, 0, ldgcol, givnum, 0, ldgnum, c, s, info);
+//  }
+
+//  @Override
+//  public void slasd7(int icompq, int nl, int nr, int sqre, org.netlib.util.intW k, float[] d, int _d_offset, float[] z, int _z_offset, float[] zw, int _zw_offset, float[] vf, int _vf_offset, float[] vfw, int _vfw_offset, float[] vl, int _vl_offset, float[] vlw, int _vlw_offset, float alpha, float beta, float[] dsigma, int _dsigma_offset, int[] idx, int _idx_offset, int[] idxp, int _idxp_offset, int[] idxq, int _idxq_offset, int[] perm, int _perm_offset, org.netlib.util.intW givptr, int[] givcol, int _givcol_offset, int ldgcol, float[] givnum, int _givnum_offset, int ldgnum, org.netlib.util.floatW c, org.netlib.util.floatW s, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd7.slasd7(icompq, nl, nr, sqre, k, d, _d_offset, z, _z_offset, zw, _zw_offset, vf, _vf_offset, vfw, _vfw_offset, vl, _vl_offset, vlw, _vlw_offset, alpha, beta, dsigma, _dsigma_offset, idx, _idx_offset, idxp, _idxp_offset, idxq, _idxq_offset, perm, _perm_offset, givptr, givcol, _givcol_offset, ldgcol, givnum, _givnum_offset, ldgnum, c, s, info);
+//  }
+
+//  @Override
+//  public void slasd8(int icompq, int k, float[] d, float[] z, float[] vf, float[] vl, float[] difl, float[] difr, int lddifr, float[] dsigma, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd8.slasd8(icompq, k, d, 0, z, 0, vf, 0, vl, 0, difl, 0, difr, 0, lddifr, dsigma, 0, work, 0, info);
+//  }
+
+//  @Override
+//  public void slasd8(int icompq, int k, float[] d, int _d_offset, float[] z, int _z_offset, float[] vf, int _vf_offset, float[] vl, int _vl_offset, float[] difl, int _difl_offset, float[] difr, int _difr_offset, int lddifr, float[] dsigma, int _dsigma_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasd8.slasd8(icompq, k, d, _d_offset, z, _z_offset, vf, _vf_offset, vl, _vl_offset, difl, _difl_offset, difr, _difr_offset, lddifr, dsigma, _dsigma_offset, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void slasda(int icompq, int smlsiz, int n, int sqre, float[] d, float[] e, float[] u, int ldu, float[] vt, int[] k, float[] difl, float[] difr, float[] z, float[] poles, int[] givptr, int[] givcol, int ldgcol, int[] perm, float[] givnum, float[] c, float[] s, float[] work, int[] iwork, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasda.slasda(icompq, smlsiz, n, sqre, d, 0, e, 0, u, 0, ldu, vt, 0, k, 0, difl, 0, difr, 0, z, 0, poles, 0, givptr, 0, givcol, 0, ldgcol, perm, 0, givnum, 0, c, 0, s, 0, work, 0, iwork, 0, info);
+//  }
+
+//  @Override
+//  public void slasda(int icompq, int smlsiz, int n, int sqre, float[] d, int _d_offset, float[] e, int _e_offset, float[] u, int _u_offset, int ldu, float[] vt, int _vt_offset, int[] k, int _k_offset, float[] difl, int _difl_offset, float[] difr, int _difr_offset, float[] z, int _z_offset, float[] poles, int _poles_offset, int[] givptr, int _givptr_offset, int[] givcol, int _givcol_offset, int ldgcol, int[] perm, int _perm_offset, float[] givnum, int _givnum_offset, float[] c, int _c_offset, float[] s, int _s_offset, float[] work, int _work_offset, int[] iwork, int _iwork_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasda.slasda(icompq, smlsiz, n, sqre, d, _d_offset, e, _e_offset, u, _u_offset, ldu, vt, _vt_offset, k, _k_offset, difl, _difl_offset, difr, _difr_offset, z, _z_offset, poles, _poles_offset, givptr, _givptr_offset, givcol, _givcol_offset, ldgcol, perm, _perm_offset, givnum, _givnum_offset, c, _c_offset, s, _s_offset, work, _work_offset, iwork, _iwork_offset, info);
+//  }
+
+//  @Override
+//  public void slasdq(java.lang.String uplo, int sqre, int n, int ncvt, int nru, int ncc, float[] d, float[] e, float[] vt, int ldvt, float[] u, int ldu, float[] c, int Ldc, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasdq.slasdq(uplo, sqre, n, ncvt, nru, ncc, d, 0, e, 0, vt, 0, ldvt, u, 0, ldu, c, 0, Ldc, work, 0, info);
+//  }
+
+//  @Override
+//  public void slasdq(java.lang.String uplo, int sqre, int n, int ncvt, int nru, int ncc, float[] d, int _d_offset, float[] e, int _e_offset, float[] vt, int _vt_offset, int ldvt, float[] u, int _u_offset, int ldu, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasdq.slasdq(uplo, sqre, n, ncvt, nru, ncc, d, _d_offset, e, _e_offset, vt, _vt_offset, ldvt, u, _u_offset, ldu, c, _c_offset, Ldc, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void slasdt(int n, org.netlib.util.intW lvl, org.netlib.util.intW nd, int[] inode, int[] ndiml, int[] ndimr, int msub) {
+//   org.netlib.lapack.Slasdt.slasdt(n, lvl, nd, inode, 0, ndiml, 0, ndimr, 0, msub);
+//  }
+
+//  @Override
+//  public void slasdt(int n, org.netlib.util.intW lvl, org.netlib.util.intW nd, int[] inode, int _inode_offset, int[] ndiml, int _ndiml_offset, int[] ndimr, int _ndimr_offset, int msub) {
+//   org.netlib.lapack.Slasdt.slasdt(n, lvl, nd, inode, _inode_offset, ndiml, _ndiml_offset, ndimr, _ndimr_offset, msub);
+//  }
+
+//  @Override
+//  public void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int lda) {
+//   org.netlib.lapack.Slaset.slaset(uplo, m, n, alpha, beta, a, 0, lda);
+//  }
+
+//  @Override
+//  public void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int _a_offset, int lda) {
+//   org.netlib.lapack.Slaset.slaset(uplo, m, n, alpha, beta, a, _a_offset, lda);
+//  }
+
+//  @Override
+//  public void slasq1(int n, float[] d, float[] e, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasq1.slasq1(n, d, 0, e, 0, work, 0, info);
+//  }
+
+//  @Override
+//  public void slasq1(int n, float[] d, int _d_offset, float[] e, int _e_offset, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasq1.slasq1(n, d, _d_offset, e, _e_offset, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void slasq2(int n, float[] z, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasq2.slasq2(n, z, 0, info);
+//  }
+
+//  @Override
+//  public void slasq2(int n, float[] z, int _z_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasq2.slasq2(n, z, _z_offset, info);
+//  }
+
+//  @Override
+//  public void slasq3(int i0, org.netlib.util.intW n0, float[] z, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee) {
+//   org.netlib.lapack.Slasq3.slasq3(i0, n0, z, 0, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee);
+//  }
+
+//  @Override
+//  public void slasq3(int i0, org.netlib.util.intW n0, float[] z, int _z_offset, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee) {
+//   org.netlib.lapack.Slasq3.slasq3(i0, n0, z, _z_offset, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee);
+//  }
+
+//  @Override
+//  public void slasq4(int i0, int n0, float[] z, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype) {
+//   org.netlib.lapack.Slasq4.slasq4(i0, n0, z, 0, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype);
+//  }
+
+//  @Override
+//  public void slasq4(int i0, int n0, float[] z, int _z_offset, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype) {
+//   org.netlib.lapack.Slasq4.slasq4(i0, n0, z, _z_offset, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype);
+//  }
+
+//  @Override
+//  public void slasq5(int i0, int n0, float[] z, int pp, float tau, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2, boolean ieee) {
+//   org.netlib.lapack.Slasq5.slasq5(i0, n0, z, 0, pp, tau, dmin, dmin1, dmin2, dn, dnm1, dnm2, ieee);
+//  }
+
+//  @Override
+//  public void slasq5(int i0, int n0, float[] z, int _z_offset, int pp, float tau, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2, boolean ieee) {
+//   org.netlib.lapack.Slasq5.slasq5(i0, n0, z, _z_offset, pp, tau, dmin, dmin1, dmin2, dn, dnm1, dnm2, ieee);
+//  }
+
+//  @Override
+//  public void slasq6(int i0, int n0, float[] z, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2) {
+//   org.netlib.lapack.Slasq6.slasq6(i0, n0, z, 0, pp, dmin, dmin1, dmin2, dn, dnm1, dnm2);
+//  }
+
+//  @Override
+//  public void slasq6(int i0, int n0, float[] z, int _z_offset, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dnm1, org.netlib.util.floatW dnm2) {
+//   org.netlib.lapack.Slasq6.slasq6(i0, n0, z, _z_offset, pp, dmin, dmin1, dmin2, dn, dnm1, dnm2);
+//  }
+
+//  @Override
+//  public void slasr(java.lang.String side, java.lang.String pivot, java.lang.String direct, int m, int n, float[] c, float[] s, float[] a, int lda) {
+//   org.netlib.lapack.Slasr.slasr(side, pivot, direct, m, n, c, 0, s, 0, a, 0, lda);
+//  }
+
+//  @Override
+//  public void slasr(java.lang.String side, java.lang.String pivot, java.lang.String direct, int m, int n, float[] c, int _c_offset, float[] s, int _s_offset, float[] a, int _a_offset, int lda) {
+//   org.netlib.lapack.Slasr.slasr(side, pivot, direct, m, n, c, _c_offset, s, _s_offset, a, _a_offset, lda);
+//  }
+
+//  @Override
+//  public void slasrt(java.lang.String id, int n, float[] d, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasrt.slasrt(id, n, d, 0, info);
+//  }
+
+//  @Override
+//  public void slasrt(java.lang.String id, int n, float[] d, int _d_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasrt.slasrt(id, n, d, _d_offset, info);
+//  }
+
+//  @Override
+//  public void slassq(int n, float[] x, int incx, org.netlib.util.floatW scale, org.netlib.util.floatW sumsq) {
+//   org.netlib.lapack.Slassq.slassq(n, x, 0, incx, scale, sumsq);
+//  }
+
+//  @Override
+//  public void slassq(int n, float[] x, int _x_offset, int incx, org.netlib.util.floatW scale, org.netlib.util.floatW sumsq) {
+//   org.netlib.lapack.Slassq.slassq(n, x, _x_offset, incx, scale, sumsq);
+//  }
+
+//  @Override
+//  public void slasv2(float f, float g, float h, org.netlib.util.floatW ssmin, org.netlib.util.floatW ssmax, org.netlib.util.floatW snr, org.netlib.util.floatW csr, org.netlib.util.floatW snl, org.netlib.util.floatW csl) {
+//   org.netlib.lapack.Slasv2.slasv2(f, g, h, ssmin, ssmax, snr, csr, snl, csl);
+//  }
+
+//  @Override
+//  public void slaswp(int n, float[] a, int lda, int k1, int k2, int[] ipiv, int incx) {
+//   org.netlib.lapack.Slaswp.slaswp(n, a, 0, lda, k1, k2, ipiv, 0, incx);
+//  }
+
+//  @Override
+//  public void slaswp(int n, float[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx) {
+//   org.netlib.lapack.Slaswp.slaswp(n, a, _a_offset, lda, k1, k2, ipiv, _ipiv_offset, incx);
+//  }
+
+//  @Override
+//  public void slasy2(boolean ltranl, boolean ltranr, int isgn, int n1, int n2, float[] tl, int ldtl, float[] tr, int ldtr, float[] b, int ldb, org.netlib.util.floatW scale, float[] x, int ldx, org.netlib.util.floatW xnorm, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasy2.slasy2(ltranl, ltranr, isgn, n1, n2, tl, 0, ldtl, tr, 0, ldtr, b, 0, ldb, scale, x, 0, ldx, xnorm, info);
+//  }
+
+//  @Override
+//  public void slasy2(boolean ltranl, boolean ltranr, int isgn, int n1, int n2, float[] tl, int _tl_offset, int ldtl, float[] tr, int _tr_offset, int ldtr, float[] b, int _b_offset, int ldb, org.netlib.util.floatW scale, float[] x, int _x_offset, int ldx, org.netlib.util.floatW xnorm, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasy2.slasy2(ltranl, ltranr, isgn, n1, n2, tl, _tl_offset, ldtl, tr, _tr_offset, ldtr, b, _b_offset, ldb, scale, x, _x_offset, ldx, xnorm, info);
+//  }
+
+//  @Override
+//  public void slasyf(java.lang.String uplo, int n, int nb, org.netlib.util.intW kb, float[] a, int lda, int[] ipiv, float[] w, int ldw, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasyf.slasyf(uplo, n, nb, kb, a, 0, lda, ipiv, 0, w, 0, ldw, info);
+//  }
+
+//  @Override
+//  public void slasyf(java.lang.String uplo, int n, int nb, org.netlib.util.intW kb, float[] a, int _a_offset, int lda, int[] ipiv, int _ipiv_offset, float[] w, int _w_offset, int ldw, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slasyf.slasyf(uplo, n, nb, kb, a, _a_offset, lda, ipiv, _ipiv_offset, w, _w_offset, ldw, info);
+//  }
+
+//  @Override
+//  public void slatbs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, int kd, float[] ab, int ldab, float[] x, org.netlib.util.floatW scale, float[] cnorm, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slatbs.slatbs(uplo, trans, diag, normin, n, kd, ab, 0, ldab, x, 0, scale, cnorm, 0, info);
+//  }
+
+//  @Override
+//  public void slatbs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, int kd, float[] ab, int _ab_offset, int ldab, float[] x, int _x_offset, org.netlib.util.floatW scale, float[] cnorm, int _cnorm_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slatbs.slatbs(uplo, trans, diag, normin, n, kd, ab, _ab_offset, ldab, x, _x_offset, scale, cnorm, _cnorm_offset, info);
+//  }
+
+//  @Override
+//  public void slatdf(int ijob, int n, float[] z, int ldz, float[] rhs, org.netlib.util.floatW rdsum, org.netlib.util.floatW rdscal, int[] ipiv, int[] jpiv) {
+//   org.netlib.lapack.Slatdf.slatdf(ijob, n, z, 0, ldz, rhs, 0, rdsum, rdscal, ipiv, 0, jpiv, 0);
+//  }
+
+//  @Override
+//  public void slatdf(int ijob, int n, float[] z, int _z_offset, int ldz, float[] rhs, int _rhs_offset, org.netlib.util.floatW rdsum, org.netlib.util.floatW rdscal, int[] ipiv, int _ipiv_offset, int[] jpiv, int _jpiv_offset) {
+//   org.netlib.lapack.Slatdf.slatdf(ijob, n, z, _z_offset, ldz, rhs, _rhs_offset, rdsum, rdscal, ipiv, _ipiv_offset, jpiv, _jpiv_offset);
+//  }
+
+//  @Override
+//  public void slatps(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] ap, float[] x, org.netlib.util.floatW scale, float[] cnorm, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slatps.slatps(uplo, trans, diag, normin, n, ap, 0, x, 0, scale, cnorm, 0, info);
+//  }
+
+//  @Override
+//  public void slatps(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] ap, int _ap_offset, float[] x, int _x_offset, org.netlib.util.floatW scale, float[] cnorm, int _cnorm_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slatps.slatps(uplo, trans, diag, normin, n, ap, _ap_offset, x, _x_offset, scale, cnorm, _cnorm_offset, info);
+//  }
+
+//  @Override
+//  public void slatrd(java.lang.String uplo, int n, int nb, float[] a, int lda, float[] e, float[] tau, float[] w, int ldw) {
+//   org.netlib.lapack.Slatrd.slatrd(uplo, n, nb, a, 0, lda, e, 0, tau, 0, w, 0, ldw);
+//  }
+
+//  @Override
+//  public void slatrd(java.lang.String uplo, int n, int nb, float[] a, int _a_offset, int lda, float[] e, int _e_offset, float[] tau, int _tau_offset, float[] w, int _w_offset, int ldw) {
+//   org.netlib.lapack.Slatrd.slatrd(uplo, n, nb, a, _a_offset, lda, e, _e_offset, tau, _tau_offset, w, _w_offset, ldw);
+//  }
+
+//  @Override
+//  public void slatrs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] a, int lda, float[] x, org.netlib.util.floatW scale, float[] cnorm, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slatrs.slatrs(uplo, trans, diag, normin, n, a, 0, lda, x, 0, scale, cnorm, 0, info);
+//  }
+
+//  @Override
+//  public void slatrs(java.lang.String uplo, java.lang.String trans, java.lang.String diag, java.lang.String normin, int n, float[] a, int _a_offset, int lda, float[] x, int _x_offset, org.netlib.util.floatW scale, float[] cnorm, int _cnorm_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slatrs.slatrs(uplo, trans, diag, normin, n, a, _a_offset, lda, x, _x_offset, scale, cnorm, _cnorm_offset, info);
+//  }
+
+//  @Override
+//  public void slatrz(int m, int n, int l, float[] a, int lda, float[] tau, float[] work) {
+//   org.netlib.lapack.Slatrz.slatrz(m, n, l, a, 0, lda, tau, 0, work, 0);
+//  }
+
+//  @Override
+//  public void slatrz(int m, int n, int l, float[] a, int _a_offset, int lda, float[] tau, int _tau_offset, float[] work, int _work_offset) {
+//   org.netlib.lapack.Slatrz.slatrz(m, n, l, a, _a_offset, lda, tau, _tau_offset, work, _work_offset);
+//  }
+
+//  @Override
+//  public void slatzm(java.lang.String side, int m, int n, float[] v, int incv, float tau, float[] c1, float[] c2, int Ldc, float[] work) {
+//   org.netlib.lapack.Slatzm.slatzm(side, m, n, v, 0, incv, tau, c1, 0, c2, 0, Ldc, work, 0);
+//  }
+
+//  @Override
+//  public void slatzm(java.lang.String side, int m, int n, float[] v, int _v_offset, int incv, float tau, float[] c1, int _c1_offset, float[] c2, int _c2_offset, int Ldc, float[] work, int _work_offset) {
+//   org.netlib.lapack.Slatzm.slatzm(side, m, n, v, _v_offset, incv, tau, c1, _c1_offset, c2, _c2_offset, Ldc, work, _work_offset);
+//  }
+
+//  @Override
+//  public void slauu2(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slauu2.slauu2(uplo, n, a, 0, lda, info);
+//  }
+
+//  @Override
+//  public void slauu2(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slauu2.slauu2(uplo, n, a, _a_offset, lda, info);
+//  }
+
+//  @Override
+//  public void slauum(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slauum.slauum(uplo, n, a, 0, lda, info);
+//  }
+
+//  @Override
+//  public void slauum(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//   org.netlib.lapack.Slauum.slauum(uplo, n, a, _a_offset, lda, info);
+//  }
+
+//  @Override
+//  public void slazq3(int i0, org.netlib.util.intW n0, float[] z, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee, org.netlib.util.intW ttype, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dn1, org.netlib.util.floatW dn2, org.netlib.util.floatW tau) {
+//   org.netlib.lapack.Slazq3.slazq3(i0, n0, z, 0, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee, ttype, dmin1, dmin2, dn, dn1, dn2, tau);
+//  }
+
+//  @Override
+//  public void slazq3(int i0, org.netlib.util.intW n0, float[] z, int _z_offset, int pp, org.netlib.util.floatW dmin, org.netlib.util.floatW sigma, org.netlib.util.floatW desig, org.netlib.util.floatW qmax, org.netlib.util.intW nfail, org.netlib.util.intW iter, org.netlib.util.intW ndiv, boolean ieee, org.netlib.util.intW ttype, org.netlib.util.floatW dmin1, org.netlib.util.floatW dmin2, org.netlib.util.floatW dn, org.netlib.util.floatW dn1, org.netlib.util.floatW dn2, org.netlib.util.floatW tau) {
+//   org.netlib.lapack.Slazq3.slazq3(i0, n0, z, _z_offset, pp, dmin, sigma, desig, qmax, nfail, iter, ndiv, ieee, ttype, dmin1, dmin2, dn, dn1, dn2, tau);
+//  }
+
+//  @Override
+//  public void slazq4(int i0, int n0, float[] z, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype, org.netlib.util.floatW g) {
+//   org.netlib.lapack.Slazq4.slazq4(i0, n0, z, 0, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype, g);
+//  }
+
+//  @Override
+//  public void slazq4(int i0, int n0, float[] z, int _z_offset, int pp, int n0in, float dmin, float dmin1, float dmin2, float dn, float dn1, float dn2, org.netlib.util.floatW tau, org.netlib.util.intW ttype, org.netlib.util.floatW g) {
+//   org.netlib.lapack.Slazq4.slazq4(i0, n0, z, _z_offset, pp, n0in, dmin, dmin1, dmin2, dn, dn1, dn2, tau, ttype, g);
+//  }
+
+//  @Override
+//  public void sopgtr(java.lang.String uplo, int n, float[] ap, float[] tau, float[] q, int ldq, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sopgtr.sopgtr(uplo, n, ap, 0, tau, 0, q, 0, ldq, work, 0, info);
+//  }
+
+//  @Override
+//  public void sopgtr(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] q, int _q_offset, int ldq, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sopgtr.sopgtr(uplo, n, ap, _ap_offset, tau, _tau_offset, q, _q_offset, ldq, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, float[] tau, float[] c, int Ldc, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sopmtr.sopmtr(side, uplo, trans, m, n, ap, 0, tau, 0, c, 0, Ldc, work, 0, info);
+//  }
+
+//  @Override
+//  public void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sopmtr.sopmtr(side, uplo, trans, m, n, ap, _ap_offset, tau, _tau_offset, c, _c_offset, Ldc, work, _work_offset, info);
+//  }
+
+//  @Override
+//  public void sorg2l(int m, int n, int k, float[] a, int lda, float[] tau, float[] work, org.netlib.util.intW info) {
+//   org.netlib.lapack.Sorg2l.sorg2l(m, n, k, a, 0, lda, tau, 0, work, 0, info);
+//  }
 
   @Override
   public void sorg2l(int m, int n, int k, float[] a, int _a_offset, int lda, float[] tau, int _tau_offset, float[] work, int _work_offset, org.netlib.util.intW info) {

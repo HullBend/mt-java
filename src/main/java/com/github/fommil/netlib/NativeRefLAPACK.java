@@ -2714,65 +2714,65 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native void slarnv_offsets(int idist, int[] iseed, int _iseed_offset, int n, float[] x, int _x_offset);
 
-  @Override
-  public native void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int lda);
+//  @Override
+//  public native void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int lda);
 
-  @Override
-  public void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int _a_offset, int lda) {
-  slaset_offsets(uplo, m, n, alpha, beta, a, _a_offset, lda);
-  }
+//  @Override
+//  public void slaset(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int _a_offset, int lda) {
+//  slaset_offsets(uplo, m, n, alpha, beta, a, _a_offset, lda);
+//  }
 
-  public native void slaset_offsets(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int _a_offset, int lda);
+//  private native void slaset_offsets(java.lang.String uplo, int m, int n, float alpha, float beta, float[] a, int _a_offset, int lda);
 
-  @Override
-  public native void slasrt(java.lang.String id, int n, float[] d, org.netlib.util.intW info);
+//  @Override
+//  public native void slasrt(java.lang.String id, int n, float[] d, org.netlib.util.intW info);
 
-  @Override
-  public void slasrt(java.lang.String id, int n, float[] d, int _d_offset, org.netlib.util.intW info) {
-  slasrt_offsets(id, n, d, _d_offset, info);
-  }
+//  @Override
+//  public void slasrt(java.lang.String id, int n, float[] d, int _d_offset, org.netlib.util.intW info) {
+//  slasrt_offsets(id, n, d, _d_offset, info);
+//  }
 
-  public native void slasrt_offsets(java.lang.String id, int n, float[] d, int _d_offset, org.netlib.util.intW info);
+//  private native void slasrt_offsets(java.lang.String id, int n, float[] d, int _d_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void slaswp(int n, float[] a, int lda, int k1, int k2, int[] ipiv, int incx);
+//  @Override
+//  public native void slaswp(int n, float[] a, int lda, int k1, int k2, int[] ipiv, int incx);
 
-  @Override
-  public void slaswp(int n, float[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx) {
-  slaswp_offsets(n, a, _a_offset, lda, k1, k2, ipiv, _ipiv_offset, incx);
-  }
+//  @Override
+//  public void slaswp(int n, float[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx) {
+//  slaswp_offsets(n, a, _a_offset, lda, k1, k2, ipiv, _ipiv_offset, incx);
+//  }
 
-  public native void slaswp_offsets(int n, float[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx);
+//  private native void slaswp_offsets(int n, float[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset, int incx);
 
-  @Override
-  public native void slauum(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info);
+//  @Override
+//  public native void slauum(java.lang.String uplo, int n, float[] a, int lda, org.netlib.util.intW info);
 
-  @Override
-  public void slauum(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
-  slauum_offsets(uplo, n, a, _a_offset, lda, info);
-  }
+//  @Override
+//  public void slauum(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info) {
+//  slauum_offsets(uplo, n, a, _a_offset, lda, info);
+//  }
 
-  public native void slauum_offsets(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info);
+//  private native void slauum_offsets(java.lang.String uplo, int n, float[] a, int _a_offset, int lda, org.netlib.util.intW info);
 
-  @Override
-  public native void sopgtr(java.lang.String uplo, int n, float[] ap, float[] tau, float[] q, int ldq, float[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void sopgtr(java.lang.String uplo, int n, float[] ap, float[] tau, float[] q, int ldq, float[] work, org.netlib.util.intW info);
 
-  @Override
-  public void sopgtr(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] q, int _q_offset, int ldq, float[] work, int _work_offset, org.netlib.util.intW info) {
-  sopgtr_offsets(uplo, n, ap, _ap_offset, tau, _tau_offset, q, _q_offset, ldq, work, _work_offset, info);
-  }
+//  @Override
+//  public void sopgtr(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] q, int _q_offset, int ldq, float[] work, int _work_offset, org.netlib.util.intW info) {
+//  sopgtr_offsets(uplo, n, ap, _ap_offset, tau, _tau_offset, q, _q_offset, ldq, work, _work_offset, info);
+//  }
 
-  public native void sopgtr_offsets(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] q, int _q_offset, int ldq, float[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void sopgtr_offsets(java.lang.String uplo, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] q, int _q_offset, int ldq, float[] work, int _work_offset, org.netlib.util.intW info);
 
-  @Override
-  public native void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, float[] tau, float[] c, int Ldc, float[] work, org.netlib.util.intW info);
+//  @Override
+//  public native void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, float[] tau, float[] c, int Ldc, float[] work, org.netlib.util.intW info);
 
-  @Override
-  public void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info) {
-  sopmtr_offsets(side, uplo, trans, m, n, ap, _ap_offset, tau, _tau_offset, c, _c_offset, Ldc, work, _work_offset, info);
-  }
+//  @Override
+//  public void sopmtr(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info) {
+//  sopmtr_offsets(side, uplo, trans, m, n, ap, _ap_offset, tau, _tau_offset, c, _c_offset, Ldc, work, _work_offset, info);
+//  }
 
-  public native void sopmtr_offsets(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info);
+//  private native void sopmtr_offsets(java.lang.String side, java.lang.String uplo, java.lang.String trans, int m, int n, float[] ap, int _ap_offset, float[] tau, int _tau_offset, float[] c, int _c_offset, int Ldc, float[] work, int _work_offset, org.netlib.util.intW info);
 
   @Override
   public native void sorgbr(java.lang.String vect, int m, int n, int k, float[] a, int lda, float[] tau, float[] work, int lwork, org.netlib.util.intW info);
