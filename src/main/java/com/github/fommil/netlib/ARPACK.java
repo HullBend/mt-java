@@ -210,7 +210,7 @@ public abstract class ARPACK {
    * @param value
    * @return
    */
-  abstract public int icnteq(int n, int[] array, int value);
+//  abstract public int icnteq(int n, int[] array, int value);
 
   /**
    * <pre><code>
@@ -224,7 +224,7 @@ public abstract class ARPACK {
    * @param value
    * @return
    */
-  abstract public int icnteq(int n, int[] array, int _array_offset, int value);
+//  abstract public int icnteq(int n, int[] array, int _array_offset, int value);
 
   /**
    * <pre><code>
@@ -259,7 +259,7 @@ public abstract class ARPACK {
    * @param incy
    *
    */
-  abstract public void icopy(int n, int[] lx, int incx, int[] ly, int incy);
+//  abstract public void icopy(int n, int[] lx, int incx, int[] ly, int incy);
 
   /**
    * <pre><code>
@@ -296,7 +296,7 @@ public abstract class ARPACK {
    * @param incy
    *
    */
-  abstract public void icopy(int n, int[] lx, int _lx_offset, int incx, int[] ly, int _ly_offset, int incy);
+//  abstract public void icopy(int n, int[] lx, int _lx_offset, int incx, int[] ly, int _ly_offset, int incy);
 
   /**
    * <pre><code>
@@ -310,7 +310,7 @@ public abstract class ARPACK {
    * @param inc
    *
    */
-  abstract public void iset(int n, int value, int[] array, int inc);
+//  abstract public void iset(int n, int value, int[] array, int inc);
 
   /**
    * <pre><code>
@@ -325,7 +325,7 @@ public abstract class ARPACK {
    * @param inc
    *
    */
-  abstract public void iset(int n, int value, int[] array, int _array_offset, int inc);
+//  abstract public void iset(int n, int value, int[] array, int _array_offset, int inc);
 
   /**
    * <pre><code>
@@ -341,7 +341,7 @@ public abstract class ARPACK {
    * @param incy
    *
    */
-  abstract public void iswap(int n, int[] sx, int incx, int[] sy, int incy);
+//  abstract public void iswap(int n, int[] sx, int incx, int[] sy, int incy);
 
   /**
    * <pre><code>
@@ -359,7 +359,7 @@ public abstract class ARPACK {
    * @param incy
    *
    */
-  abstract public void iswap(int n, int[] sx, int _sx_offset, int incx, int[] sy, int _sy_offset, int incy);
+//  abstract public void iswap(int n, int[] sx, int _sx_offset, int incx, int[] sy, int _sy_offset, int incy);
 
   /**
    * <pre><code>
@@ -384,7 +384,7 @@ public abstract class ARPACK {
    * @param ifmt
    *
    */
-  abstract public void ivout(int lout, int n, int[] ix, int idigit, java.lang.String ifmt);
+//  abstract public void ivout(int lout, int n, int[] ix, int idigit, java.lang.String ifmt);
 
   /**
    * <pre><code>
@@ -410,7 +410,7 @@ public abstract class ARPACK {
    * @param ifmt
    *
    */
-  abstract public void ivout(int lout, int n, int[] ix, int _ix_offset, int idigit, java.lang.String ifmt);
+//  abstract public void ivout(int lout, int n, int[] ix, int _ix_offset, int idigit, java.lang.String ifmt);
 
   /**
    * <pre><code>
@@ -428,7 +428,7 @@ public abstract class ARPACK {
    * @param t
    *
    */
-  abstract public void second(org.netlib.util.floatW t);
+//  abstract public void second(org.netlib.util.floatW t);
 
   /**
    * <pre><code>
@@ -458,7 +458,7 @@ public abstract class ARPACK {
    * @param ifmt
    *
    */
-  abstract public void smout(int lout, int m, int n, float[] a, int lda, int idigit, java.lang.String ifmt);
+//  abstract public void smout(int lout, int m, int n, float[] a, int lda, int idigit, java.lang.String ifmt);
 
   /**
    * <pre><code>
@@ -489,7 +489,7 @@ public abstract class ARPACK {
    * @param ifmt
    *
    */
-  abstract public void smout(int lout, int m, int n, float[] a, int _a_offset, int lda, int idigit, java.lang.String ifmt);
+//  abstract public void smout(int lout, int m, int n, float[] a, int _a_offset, int lda, int idigit, java.lang.String ifmt);
 
   /**
    * <pre><code>
@@ -514,7 +514,7 @@ public abstract class ARPACK {
    * @param ifmt
    *
    */
-  abstract public void svout(int lout, int n, float[] sx, int idigit, java.lang.String ifmt);
+//  abstract public void svout(int lout, int n, float[] sx, int idigit, java.lang.String ifmt);
 
   /**
    * <pre><code>
@@ -540,7 +540,7 @@ public abstract class ARPACK {
    * @param ifmt
    *
    */
-  abstract public void svout(int lout, int n, float[] sx, int _sx_offset, int idigit, java.lang.String ifmt);
+//  abstract public void svout(int lout, int n, float[] sx, int _sx_offset, int idigit, java.lang.String ifmt);
 
   /**
    * <pre><code>
@@ -5580,7 +5580,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
+//  abstract public void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -6407,7 +6407,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
+//  abstract public void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
 
   /**
    * <pre><code>

@@ -56,80 +56,80 @@ public class F2jARPACK extends com.github.fommil.netlib.ARPACK {
    org.netlib.arpack.Dvout.dvout(lout, n, sx, _sx_offset, idigit, ifmt);
   }
 
-  @Override
-  public int icnteq(int n, int[] array, int value) {
-    return org.netlib.arpack.Icnteq.icnteq(n, array, 0, value);
-  }
+//  @Override
+//  public int icnteq(int n, int[] array, int value) {
+//    return org.netlib.arpack.Icnteq.icnteq(n, array, 0, value);
+//  }
 
-  @Override
-  public int icnteq(int n, int[] array, int _array_offset, int value) {
-    return org.netlib.arpack.Icnteq.icnteq(n, array, _array_offset, value);
-  }
+//  @Override
+//  public int icnteq(int n, int[] array, int _array_offset, int value) {
+//    return org.netlib.arpack.Icnteq.icnteq(n, array, _array_offset, value);
+//  }
 
-  @Override
-  public void icopy(int n, int[] lx, int incx, int[] ly, int incy) {
-   org.netlib.arpack.Icopy.icopy(n, lx, 0, incx, ly, 0, incy);
-  }
+//  @Override
+//  public void icopy(int n, int[] lx, int incx, int[] ly, int incy) {
+//   org.netlib.arpack.Icopy.icopy(n, lx, 0, incx, ly, 0, incy);
+//  }
 
-  @Override
-  public void icopy(int n, int[] lx, int _lx_offset, int incx, int[] ly, int _ly_offset, int incy) {
-   org.netlib.arpack.Icopy.icopy(n, lx, _lx_offset, incx, ly, _ly_offset, incy);
-  }
+//  @Override
+//  public void icopy(int n, int[] lx, int _lx_offset, int incx, int[] ly, int _ly_offset, int incy) {
+//   org.netlib.arpack.Icopy.icopy(n, lx, _lx_offset, incx, ly, _ly_offset, incy);
+//  }
 
-  @Override
-  public void iset(int n, int value, int[] array, int inc) {
-   org.netlib.arpack.Iset.iset(n, value, array, 0, inc);
-  }
+//  @Override
+//  public void iset(int n, int value, int[] array, int inc) {
+//   org.netlib.arpack.Iset.iset(n, value, array, 0, inc);
+//  }
 
-  @Override
-  public void iset(int n, int value, int[] array, int _array_offset, int inc) {
-   org.netlib.arpack.Iset.iset(n, value, array, _array_offset, inc);
-  }
+//  @Override
+//  public void iset(int n, int value, int[] array, int _array_offset, int inc) {
+//   org.netlib.arpack.Iset.iset(n, value, array, _array_offset, inc);
+//  }
 
-  @Override
-  public void iswap(int n, int[] sx, int incx, int[] sy, int incy) {
-   org.netlib.arpack.Iswap.iswap(n, sx, 0, incx, sy, 0, incy);
-  }
+//  @Override
+//  public void iswap(int n, int[] sx, int incx, int[] sy, int incy) {
+//   org.netlib.arpack.Iswap.iswap(n, sx, 0, incx, sy, 0, incy);
+//  }
 
-  @Override
-  public void iswap(int n, int[] sx, int _sx_offset, int incx, int[] sy, int _sy_offset, int incy) {
-   org.netlib.arpack.Iswap.iswap(n, sx, _sx_offset, incx, sy, _sy_offset, incy);
-  }
+//  @Override
+//  public void iswap(int n, int[] sx, int _sx_offset, int incx, int[] sy, int _sy_offset, int incy) {
+//   org.netlib.arpack.Iswap.iswap(n, sx, _sx_offset, incx, sy, _sy_offset, incy);
+//  }
 
-  @Override
-  public void ivout(int lout, int n, int[] ix, int idigit, java.lang.String ifmt) {
-   org.netlib.arpack.Ivout.ivout(lout, n, ix, 0, idigit, ifmt);
-  }
+//  @Override
+//  public void ivout(int lout, int n, int[] ix, int idigit, java.lang.String ifmt) {
+//   org.netlib.arpack.Ivout.ivout(lout, n, ix, 0, idigit, ifmt);
+//  }
 
-  @Override
-  public void ivout(int lout, int n, int[] ix, int _ix_offset, int idigit, java.lang.String ifmt) {
-   org.netlib.arpack.Ivout.ivout(lout, n, ix, _ix_offset, idigit, ifmt);
-  }
+//  @Override
+//  public void ivout(int lout, int n, int[] ix, int _ix_offset, int idigit, java.lang.String ifmt) {
+//   org.netlib.arpack.Ivout.ivout(lout, n, ix, _ix_offset, idigit, ifmt);
+//  }
 
-  @Override
-  public void second(org.netlib.util.floatW t) {
-   org.netlib.arpack.Second.second(t);
-  }
+//  @Override
+//  public void second(org.netlib.util.floatW t) {
+//   org.netlib.arpack.Second.second(t);
+//  }
 
-  @Override
-  public void smout(int lout, int m, int n, float[] a, int lda, int idigit, java.lang.String ifmt) {
-   org.netlib.arpack.Smout.smout(lout, m, n, a, 0, lda, idigit, ifmt);
-  }
+//  @Override
+//  public void smout(int lout, int m, int n, float[] a, int lda, int idigit, java.lang.String ifmt) {
+//   org.netlib.arpack.Smout.smout(lout, m, n, a, 0, lda, idigit, ifmt);
+//  }
 
-  @Override
-  public void smout(int lout, int m, int n, float[] a, int _a_offset, int lda, int idigit, java.lang.String ifmt) {
-   org.netlib.arpack.Smout.smout(lout, m, n, a, _a_offset, lda, idigit, ifmt);
-  }
+//  @Override
+//  public void smout(int lout, int m, int n, float[] a, int _a_offset, int lda, int idigit, java.lang.String ifmt) {
+//   org.netlib.arpack.Smout.smout(lout, m, n, a, _a_offset, lda, idigit, ifmt);
+//  }
 
-  @Override
-  public void svout(int lout, int n, float[] sx, int idigit, java.lang.String ifmt) {
-   org.netlib.arpack.Svout.svout(lout, n, sx, 0, idigit, ifmt);
-  }
+//  @Override
+//  public void svout(int lout, int n, float[] sx, int idigit, java.lang.String ifmt) {
+//   org.netlib.arpack.Svout.svout(lout, n, sx, 0, idigit, ifmt);
+//  }
 
-  @Override
-  public void svout(int lout, int n, float[] sx, int _sx_offset, int idigit, java.lang.String ifmt) {
-   org.netlib.arpack.Svout.svout(lout, n, sx, _sx_offset, idigit, ifmt);
-  }
+//  @Override
+//  public void svout(int lout, int n, float[] sx, int _sx_offset, int idigit, java.lang.String ifmt) {
+//   org.netlib.arpack.Svout.svout(lout, n, sx, _sx_offset, idigit, ifmt);
+//  }
 
   @Override
   public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int ldv, double[] resid, org.netlib.util.doubleW rnorm, int[] ipntr, double[] workd, org.netlib.util.intW ierr) {
@@ -266,10 +266,10 @@ public class F2jARPACK extends com.github.fommil.netlib.ARPACK {
    org.netlib.arpack.Dsaupd.dsaupd(ido, bmat, n, which, nev, tol, resid, 0, ncv, v, 0, ldv, iparam, 0, ipntr, 0, workd, 0, workl, 0, lworkl, info);
   }
 
-  @Override
-  public void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
-   org.netlib.arpack.Dsaupd.dsaupd(ido, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
-  }
+//  @Override
+//  public void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dsaupd.dsaupd(ido, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
+//  }
 
   @Override
   public void dsconv(int n, double[] ritz, double[] bounds, double tol, org.netlib.util.intW nconv) {
@@ -306,10 +306,10 @@ public class F2jARPACK extends com.github.fommil.netlib.ARPACK {
    org.netlib.arpack.Dseupd.dseupd(rvec, howmny, select, 0, d, 0, z, 0, ldz, sigma, bmat, n, which, nev, tol, resid, 0, ncv, v, 0, ldv, iparam, 0, ipntr, 0, workd, 0, workl, 0, lworkl, info);
   }
 
-  @Override
-  public void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
-   org.netlib.arpack.Dseupd.dseupd(rvec, howmny, select, _select_offset, d, _d_offset, z, _z_offset, ldz, sigma, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
-  }
+//  @Override
+//  public void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dseupd.dseupd(rvec, howmny, select, _select_offset, d, _d_offset, z, _z_offset, ldz, sigma, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
+//  }
 
   @Override
   public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, double[] bounds, double[] shifts) {

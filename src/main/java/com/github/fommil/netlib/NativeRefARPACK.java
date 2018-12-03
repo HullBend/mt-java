@@ -65,22 +65,22 @@ public class NativeRefARPACK extends com.github.fommil.netlib.F2jARPACK {
   @Override
   public native void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int ncv, double[] v, int ldv, int[] iparam, int[] ipntr, double[] workd, double[] workl, int lworkl, org.netlib.util.intW info);
 
-  @Override
-  public void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
-  dsaupd_offsets(ido, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
-  }
+//  @Override
+//  public void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
+//  dsaupd_offsets(ido, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
+//  }
 
-  public native void dsaupd_offsets(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
+//  private native void dsaupd_offsets(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
 
   @Override
   public native void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, double[] d, double[] z, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int ncv, double[] v, int ldv, int[] iparam, int[] ipntr, double[] workd, double[] workl, int lworkl, org.netlib.util.intW info);
 
-  @Override
-  public void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
-  dseupd_offsets(rvec, howmny, select, _select_offset, d, _d_offset, z, _z_offset, ldz, sigma, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
-  }
+//  @Override
+//  public void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
+//  dseupd_offsets(rvec, howmny, select, _select_offset, d, _d_offset, z, _z_offset, ldz, sigma, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
+//  }
 
-  public native void dseupd_offsets(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
+//  private native void dseupd_offsets(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] d, int _d_offset, double[] z, int _z_offset, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
 
   @Override
   public native void snaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.floatW tol, float[] resid, int ncv, float[] v, int ldv, int[] iparam, int[] ipntr, float[] workd, float[] workl, int lworkl, org.netlib.util.intW info);
