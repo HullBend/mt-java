@@ -98,14 +98,14 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
   public native void dgbmv_offsets(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   @Override
-  public native void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int Ldc);
+  public native void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int ldc);
 
   @Override
-  public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc) {
-  dgemm_offsets(transa, transb, m, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, Ldc);
+  public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc) {
+  dgemm_offsets(transa, transb, m, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, ldc);
   }
 
-  public native void dgemm_offsets(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
+  public native void dgemm_offsets(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc);
 
   @Override
   public native void dgemv(java.lang.String trans, int m, int n, double alpha, double[] a, int lda, double[] x, int incx, double beta, double[] y, int incy);

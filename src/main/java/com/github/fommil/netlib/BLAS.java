@@ -714,10 +714,10 @@ public abstract class BLAS {
    * @param ldb
    * @param beta
    * @param c
-   * @param Ldc
+   * @param ldc
    *
    */
-  abstract public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int Ldc);
+  abstract public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int ldc);
 
   /**
    * <pre><code>
@@ -861,10 +861,10 @@ public abstract class BLAS {
    * @param beta
    * @param c
    * @param _c_offset
-   * @param Ldc
+   * @param ldc
    *
    */
-  abstract public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
+  abstract public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc);
 
   /**
    * <pre><code>
