@@ -652,7 +652,7 @@ public abstract class ARPACK {
    * @param ierr
    *
    */
-  abstract public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int ldv, double[] resid, org.netlib.util.doubleW rnorm, int[] ipntr, double[] workd, org.netlib.util.intW ierr);
+//  abstract public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int ldv, double[] resid, org.netlib.util.doubleW rnorm, int[] ipntr, double[] workd, org.netlib.util.intW ierr);
 
   /**
    * <pre><code>
@@ -768,7 +768,7 @@ public abstract class ARPACK {
    * @param ierr
    *
    */
-  abstract public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int _v_offset, int ldv, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW ierr);
+//  abstract public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int _v_offset, int ldv, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW ierr);
 
   /**
    * <pre><code>
@@ -873,7 +873,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int ldh, double[] wr, double[] wi, double[] z, org.netlib.util.intW info);
+//  abstract public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int ldh, double[] wr, double[] wi, double[] z, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -982,7 +982,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int _h_offset, int ldh, double[] wr, int _wr_offset, double[] wi, int _wi_offset, double[] z, int _z_offset, org.netlib.util.intW info);
+//  abstract public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int _h_offset, int ldh, double[] wr, int _wr_offset, double[] wi, int _wi_offset, double[] z, int _z_offset, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -1178,7 +1178,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info);
+//  abstract public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -1379,7 +1379,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
+//  abstract public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -1509,7 +1509,7 @@ public abstract class ARPACK {
    * @param workd
    *
    */
-  abstract public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, double[] shifti, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workl, double[] workd);
+//  abstract public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, double[] shifti, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workl, double[] workd);
 
   /**
    * <pre><code>
@@ -1647,7 +1647,7 @@ public abstract class ARPACK {
    * @param _workd_offset
    *
    */
-  abstract public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, double[] workd, int _workd_offset);
+//  abstract public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, double[] workd, int _workd_offset);
 
   /**
    * <pre><code>
@@ -1823,7 +1823,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info);
+//  abstract public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -2009,7 +2009,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
+//  abstract public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -2755,7 +2755,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dnaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
+//  abstract public void dnaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -2814,7 +2814,7 @@ public abstract class ARPACK {
    * @param nconv
    *
    */
-  abstract public void dnconv(int n, double[] ritzr, double[] ritzi, double[] bounds, double tol, org.netlib.util.intW nconv);
+//  abstract public void dnconv(int n, double[] ritzr, double[] ritzi, double[] bounds, double tol, org.netlib.util.intW nconv);
 
   /**
    * <pre><code>
@@ -2876,7 +2876,7 @@ public abstract class ARPACK {
    * @param nconv
    *
    */
-  abstract public void dnconv(int n, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv);
+//  abstract public void dnconv(int n, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv);
 
   /**
    * <pre><code>
@@ -2969,7 +2969,7 @@ public abstract class ARPACK {
    * @param ierr
    *
    */
-  abstract public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, org.netlib.util.intW ierr);
+//  abstract public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, org.netlib.util.intW ierr);
 
   /**
    * <pre><code>
@@ -3068,7 +3068,7 @@ public abstract class ARPACK {
    * @param ierr
    *
    */
-  abstract public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, org.netlib.util.intW ierr);
+//  abstract public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, org.netlib.util.intW ierr);
 
   /**
    * <pre><code>
@@ -3645,7 +3645,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dneupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] dr, int _dr_offset, double[] di, int _di_offset, double[] z, int _z_offset, int ldz, double sigmar, double sigmai, double[] workev, int _workev_offset, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
+//  abstract public void dneupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] dr, int _dr_offset, double[] di, int _di_offset, double[] z, int _z_offset, int ldz, double sigmar, double sigmai, double[] workev, int _workev_offset, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -3733,7 +3733,7 @@ public abstract class ARPACK {
    * @param shifti
    *
    */
-  abstract public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, double[] ritzi, double[] bounds, double[] shiftr, double[] shifti);
+//  abstract public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, double[] ritzi, double[] bounds, double[] shiftr, double[] shifti);
 
   /**
    * <pre><code>
@@ -3826,7 +3826,7 @@ public abstract class ARPACK {
    * @param _shifti_offset
    *
    */
-  abstract public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset);
+//  abstract public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset);
 
   /**
    * <pre><code>
@@ -4018,7 +4018,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info);
+//  abstract public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -4215,7 +4215,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
+//  abstract public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -4332,7 +4332,7 @@ public abstract class ARPACK {
    * @param workd
    *
    */
-  abstract public void dsapps(int n, int kev, int np, double[] shift, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workd);
+//  abstract public void dsapps(int n, int kev, int np, double[] shift, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workd);
 
   /**
    * <pre><code>
@@ -4455,7 +4455,7 @@ public abstract class ARPACK {
    * @param _workd_offset
    *
    */
-  abstract public void dsapps(int n, int kev, int np, double[] shift, int _shift_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workd, int _workd_offset);
+//  abstract public void dsapps(int n, int kev, int np, double[] shift, int _shift_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workd, int _workd_offset);
 
   /**
    * <pre><code>
@@ -4639,7 +4639,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritz, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info);
+//  abstract public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritz, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -4832,7 +4832,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
+//  abstract public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -5633,7 +5633,7 @@ public abstract class ARPACK {
    * @param nconv
    *
    */
-  abstract public void dsconv(int n, double[] ritz, double[] bounds, double tol, org.netlib.util.intW nconv);
+//  abstract public void dsconv(int n, double[] ritz, double[] bounds, double tol, org.netlib.util.intW nconv);
 
   /**
    * <pre><code>
@@ -5688,7 +5688,7 @@ public abstract class ARPACK {
    * @param nconv
    *
    */
-  abstract public void dsconv(int n, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv);
+//  abstract public void dsconv(int n, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv);
 
   /**
    * <pre><code>
@@ -5767,7 +5767,7 @@ public abstract class ARPACK {
    * @param ierr
    *
    */
-  abstract public void dseigt(double rnorm, int n, double[] h, int ldh, double[] eig, double[] bounds, double[] workl, org.netlib.util.intW ierr);
+//  abstract public void dseigt(double rnorm, int n, double[] h, int ldh, double[] eig, double[] bounds, double[] workl, org.netlib.util.intW ierr);
 
   /**
    * <pre><code>
@@ -5850,7 +5850,7 @@ public abstract class ARPACK {
    * @param ierr
    *
    */
-  abstract public void dseigt(double rnorm, int n, double[] h, int _h_offset, int ldh, double[] eig, int _eig_offset, double[] bounds, int _bounds_offset, double[] workl, int _workl_offset, org.netlib.util.intW ierr);
+//  abstract public void dseigt(double rnorm, int n, double[] h, int _h_offset, int ldh, double[] eig, int _eig_offset, double[] bounds, int _bounds_offset, double[] workl, int _workl_offset, org.netlib.util.intW ierr);
 
   /**
    * <pre><code>
@@ -5913,7 +5913,7 @@ public abstract class ARPACK {
    * @param lda
    *
    */
-  abstract public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int na, double[] a, int lda);
+//  abstract public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int na, double[] a, int lda);
 
   /**
    * <pre><code>
@@ -5978,7 +5978,7 @@ public abstract class ARPACK {
    * @param lda
    *
    */
-  abstract public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int _x_offset, int na, double[] a, int _a_offset, int lda);
+//  abstract public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int _x_offset, int na, double[] a, int _a_offset, int lda);
 
   /**
    * <pre><code>
@@ -6491,7 +6491,7 @@ public abstract class ARPACK {
    * @param shifts
    *
    */
-  abstract public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, double[] bounds, double[] shifts);
+//  abstract public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, double[] bounds, double[] shifts);
 
   /**
    * <pre><code>
@@ -6578,7 +6578,7 @@ public abstract class ARPACK {
    * @param _shifts_offset
    *
    */
-  abstract public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] shifts, int _shifts_offset);
+//  abstract public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] shifts, int _shifts_offset);
 
   /**
    * <pre><code>
@@ -6640,7 +6640,7 @@ public abstract class ARPACK {
    * @param y
    *
    */
-  abstract public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, double[] ximag, double[] y);
+//  abstract public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, double[] ximag, double[] y);
 
   /**
    * <pre><code>
@@ -6705,7 +6705,7 @@ public abstract class ARPACK {
    * @param _y_offset
    *
    */
-  abstract public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, int _xreal_offset, double[] ximag, int _ximag_offset, double[] y, int _y_offset);
+//  abstract public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, int _xreal_offset, double[] ximag, int _ximag_offset, double[] y, int _y_offset);
 
   /**
    * <pre><code>
@@ -6759,7 +6759,7 @@ public abstract class ARPACK {
    * @param x2
    *
    */
-  abstract public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, double[] x2);
+//  abstract public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, double[] x2);
 
   /**
    * <pre><code>
@@ -6815,7 +6815,7 @@ public abstract class ARPACK {
    * @param _x2_offset
    *
    */
-  abstract public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, int _x1_offset, double[] x2, int _x2_offset);
+//  abstract public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, int _x1_offset, double[] x2, int _x2_offset);
 
   /**
    * <pre><code>
@@ -6827,7 +6827,7 @@ public abstract class ARPACK {
    *
    *
    */
-  abstract public void dstatn();
+//  abstract public void dstatn();
 
   /**
    * <pre><code>
@@ -6839,7 +6839,7 @@ public abstract class ARPACK {
    *
    *
    */
-  abstract public void dstats();
+//  abstract public void dstats();
 
   /**
    * <pre><code>
@@ -6936,7 +6936,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dstqrb(int n, double[] d, double[] e, double[] z, double[] work, org.netlib.util.intW info);
+//  abstract public void dstqrb(int n, double[] d, double[] e, double[] z, double[] work, org.netlib.util.intW info);
 
   /**
    * <pre><code>
@@ -7037,7 +7037,7 @@ public abstract class ARPACK {
    * @param info
    *
    */
-  abstract public void dstqrb(int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, double[] work, int _work_offset, org.netlib.util.intW info);
+//  abstract public void dstqrb(int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, double[] work, int _work_offset, org.netlib.util.intW info);
 
   /**
    * <pre><code>

@@ -131,135 +131,135 @@ public class F2jARPACK extends com.github.fommil.netlib.ARPACK {
 //   org.netlib.arpack.Svout.svout(lout, n, sx, _sx_offset, idigit, ifmt);
 //  }
 
-  @Override
-  public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int ldv, double[] resid, org.netlib.util.doubleW rnorm, int[] ipntr, double[] workd, org.netlib.util.intW ierr) {
-   org.netlib.arpack.Dgetv0.dgetv0(ido, bmat, itry, initv, n, j, v, 0, ldv, resid, 0, rnorm, ipntr, 0, workd, 0, ierr);
-  }
+//  @Override
+//  public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int ldv, double[] resid, org.netlib.util.doubleW rnorm, int[] ipntr, double[] workd, org.netlib.util.intW ierr) {
+//   org.netlib.arpack.Dgetv0.dgetv0(ido, bmat, itry, initv, n, j, v, 0, ldv, resid, 0, rnorm, ipntr, 0, workd, 0, ierr);
+//  }
 
-  @Override
-  public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int _v_offset, int ldv, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW ierr) {
-   org.netlib.arpack.Dgetv0.dgetv0(ido, bmat, itry, initv, n, j, v, _v_offset, ldv, resid, _resid_offset, rnorm, ipntr, _ipntr_offset, workd, _workd_offset, ierr);
-  }
+//  @Override
+//  public void dgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, double[] v, int _v_offset, int ldv, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW ierr) {
+//   org.netlib.arpack.Dgetv0.dgetv0(ido, bmat, itry, initv, n, j, v, _v_offset, ldv, resid, _resid_offset, rnorm, ipntr, _ipntr_offset, workd, _workd_offset, ierr);
+//  }
 
-  @Override
-  public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int ldh, double[] wr, double[] wi, double[] z, org.netlib.util.intW info) {
-   org.netlib.arpack.Dlaqrb.dlaqrb(wantt, n, ilo, ihi, h, 0, ldh, wr, 0, wi, 0, z, 0, info);
-  }
+//  @Override
+//  public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int ldh, double[] wr, double[] wi, double[] z, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dlaqrb.dlaqrb(wantt, n, ilo, ihi, h, 0, ldh, wr, 0, wi, 0, z, 0, info);
+//  }
 
-  @Override
-  public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int _h_offset, int ldh, double[] wr, int _wr_offset, double[] wi, int _wi_offset, double[] z, int _z_offset, org.netlib.util.intW info) {
-   org.netlib.arpack.Dlaqrb.dlaqrb(wantt, n, ilo, ihi, h, _h_offset, ldh, wr, _wr_offset, wi, _wi_offset, z, _z_offset, info);
-  }
+//  @Override
+//  public void dlaqrb(boolean wantt, int n, int ilo, int ihi, double[] h, int _h_offset, int ldh, double[] wr, int _wr_offset, double[] wi, int _wi_offset, double[] z, int _z_offset, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dlaqrb.dlaqrb(wantt, n, ilo, ihi, h, _h_offset, ldh, wr, _wr_offset, wi, _wi_offset, z, _z_offset, info);
+//  }
 
-  @Override
-  public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info) {
-   org.netlib.arpack.Dnaitr.dnaitr(ido, bmat, n, k, np, nb, resid, 0, rnorm, v, 0, ldv, h, 0, ldh, ipntr, 0, workd, 0, info);
-  }
+//  @Override
+//  public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dnaitr.dnaitr(ido, bmat, n, k, np, nb, resid, 0, rnorm, v, 0, ldv, h, 0, ldh, ipntr, 0, workd, 0, info);
+//  }
 
-  @Override
-  public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
-   org.netlib.arpack.Dnaitr.dnaitr(ido, bmat, n, k, np, nb, resid, _resid_offset, rnorm, v, _v_offset, ldv, h, _h_offset, ldh, ipntr, _ipntr_offset, workd, _workd_offset, info);
-  }
+//  @Override
+//  public void dnaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int nb, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dnaitr.dnaitr(ido, bmat, n, k, np, nb, resid, _resid_offset, rnorm, v, _v_offset, ldv, h, _h_offset, ldh, ipntr, _ipntr_offset, workd, _workd_offset, info);
+//  }
 
-  @Override
-  public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, double[] shifti, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workl, double[] workd) {
-   org.netlib.arpack.Dnapps.dnapps(n, kev, np, shiftr, 0, shifti, 0, v, 0, ldv, h, 0, ldh, resid, 0, q, 0, ldq, workl, 0, workd, 0);
-  }
+//  @Override
+//  public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, double[] shifti, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workl, double[] workd) {
+//   org.netlib.arpack.Dnapps.dnapps(n, kev, np, shiftr, 0, shifti, 0, v, 0, ldv, h, 0, ldh, resid, 0, q, 0, ldq, workl, 0, workd, 0);
+//  }
 
-  @Override
-  public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, double[] workd, int _workd_offset) {
-   org.netlib.arpack.Dnapps.dnapps(n, kev, np, shiftr, _shiftr_offset, shifti, _shifti_offset, v, _v_offset, ldv, h, _h_offset, ldh, resid, _resid_offset, q, _q_offset, ldq, workl, _workl_offset, workd, _workd_offset);
-  }
+//  @Override
+//  public void dnapps(int n, org.netlib.util.intW kev, int np, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, double[] workd, int _workd_offset) {
+//   org.netlib.arpack.Dnapps.dnapps(n, kev, np, shiftr, _shiftr_offset, shifti, _shifti_offset, v, _v_offset, ldv, h, _h_offset, ldh, resid, _resid_offset, q, _q_offset, ldq, workl, _workl_offset, workd, _workd_offset);
+//  }
 
-  @Override
-  public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info) {
-   org.netlib.arpack.Dnaup2.dnaup2(ido, bmat, n, which, nev, np, tol, resid, 0, mode, iupd, ishift, mxiter, v, 0, ldv, h, 0, ldh, ritzr, 0, ritzi, 0, bounds, 0, q, 0, ldq, workl, 0, ipntr, 0, workd, 0, info);
-  }
+//  @Override
+//  public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dnaup2.dnaup2(ido, bmat, n, which, nev, np, tol, resid, 0, mode, iupd, ishift, mxiter, v, 0, ldv, h, 0, ldh, ritzr, 0, ritzi, 0, bounds, 0, q, 0, ldq, workl, 0, ipntr, 0, workd, 0, info);
+//  }
 
-  @Override
-  public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
-   org.netlib.arpack.Dnaup2.dnaup2(ido, bmat, n, which, nev, np, tol, resid, _resid_offset, mode, iupd, ishift, mxiter, v, _v_offset, ldv, h, _h_offset, ldh, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, q, _q_offset, ldq, workl, _workl_offset, ipntr, _ipntr_offset, workd, _workd_offset, info);
-  }
+//  @Override
+//  public void dnaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dnaup2.dnaup2(ido, bmat, n, which, nev, np, tol, resid, _resid_offset, mode, iupd, ishift, mxiter, v, _v_offset, ldv, h, _h_offset, ldh, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, q, _q_offset, ldq, workl, _workl_offset, ipntr, _ipntr_offset, workd, _workd_offset, info);
+//  }
 
   @Override
   public void dnaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int ncv, double[] v, int ldv, int[] iparam, int[] ipntr, double[] workd, double[] workl, int lworkl, org.netlib.util.intW info) {
    org.netlib.arpack.Dnaupd.dnaupd(ido, bmat, n, which, nev, tol, resid, 0, ncv, v, 0, ldv, iparam, 0, ipntr, 0, workd, 0, workl, 0, lworkl, info);
   }
 
-  @Override
-  public void dnaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
-   org.netlib.arpack.Dnaupd.dnaupd(ido, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
-  }
+//  @Override
+//  public void dnaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dnaupd.dnaupd(ido, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
+//  }
 
-  @Override
-  public void dnconv(int n, double[] ritzr, double[] ritzi, double[] bounds, double tol, org.netlib.util.intW nconv) {
-   org.netlib.arpack.Dnconv.dnconv(n, ritzr, 0, ritzi, 0, bounds, 0, tol, nconv);
-  }
+//  @Override
+//  public void dnconv(int n, double[] ritzr, double[] ritzi, double[] bounds, double tol, org.netlib.util.intW nconv) {
+//   org.netlib.arpack.Dnconv.dnconv(n, ritzr, 0, ritzi, 0, bounds, 0, tol, nconv);
+//  }
 
-  @Override
-  public void dnconv(int n, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv) {
-   org.netlib.arpack.Dnconv.dnconv(n, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, tol, nconv);
-  }
+//  @Override
+//  public void dnconv(int n, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv) {
+//   org.netlib.arpack.Dnconv.dnconv(n, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, tol, nconv);
+//  }
 
-  @Override
-  public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, org.netlib.util.intW ierr) {
-   org.netlib.arpack.Dneigh.dneigh(rnorm, n, h, 0, ldh, ritzr, 0, ritzi, 0, bounds, 0, q, 0, ldq, workl, 0, ierr);
-  }
+//  @Override
+//  public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int ldh, double[] ritzr, double[] ritzi, double[] bounds, double[] q, int ldq, double[] workl, org.netlib.util.intW ierr) {
+//   org.netlib.arpack.Dneigh.dneigh(rnorm, n, h, 0, ldh, ritzr, 0, ritzi, 0, bounds, 0, q, 0, ldq, workl, 0, ierr);
+//  }
 
-  @Override
-  public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, org.netlib.util.intW ierr) {
-   org.netlib.arpack.Dneigh.dneigh(rnorm, n, h, _h_offset, ldh, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, q, _q_offset, ldq, workl, _workl_offset, ierr);
-  }
+//  @Override
+//  public void dneigh(double rnorm, org.netlib.util.intW n, double[] h, int _h_offset, int ldh, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, org.netlib.util.intW ierr) {
+//   org.netlib.arpack.Dneigh.dneigh(rnorm, n, h, _h_offset, ldh, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, q, _q_offset, ldq, workl, _workl_offset, ierr);
+//  }
 
   @Override
   public void dneupd(boolean rvec, java.lang.String howmny, boolean[] select, double[] dr, double[] di, double[] z, int ldz, double sigmar, double sigmai, double[] workev, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int ncv, double[] v, int ldv, int[] iparam, int[] ipntr, double[] workd, double[] workl, int lworkl, org.netlib.util.intW info) {
    org.netlib.arpack.Dneupd.dneupd(rvec, howmny, select, 0, dr, 0, di, 0, z, 0, ldz, sigmar, sigmai, workev, 0, bmat, n, which, nev, tol, resid, 0, ncv, v, 0, ldv, iparam, 0, ipntr, 0, workd, 0, workl, 0, lworkl, info);
   }
 
-  @Override
-  public void dneupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] dr, int _dr_offset, double[] di, int _di_offset, double[] z, int _z_offset, int ldz, double sigmar, double sigmai, double[] workev, int _workev_offset, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
-   org.netlib.arpack.Dneupd.dneupd(rvec, howmny, select, _select_offset, dr, _dr_offset, di, _di_offset, z, _z_offset, ldz, sigmar, sigmai, workev, _workev_offset, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
-  }
+//  @Override
+//  public void dneupd(boolean rvec, java.lang.String howmny, boolean[] select, int _select_offset, double[] dr, int _dr_offset, double[] di, int _di_offset, double[] z, int _z_offset, int ldz, double sigmar, double sigmai, double[] workev, int _workev_offset, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int _resid_offset, int ncv, double[] v, int _v_offset, int ldv, int[] iparam, int _iparam_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, double[] workl, int _workl_offset, int lworkl, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dneupd.dneupd(rvec, howmny, select, _select_offset, dr, _dr_offset, di, _di_offset, z, _z_offset, ldz, sigmar, sigmai, workev, _workev_offset, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
+//  }
 
-  @Override
-  public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, double[] ritzi, double[] bounds, double[] shiftr, double[] shifti) {
-   org.netlib.arpack.Dngets.dngets(ishift, which, kev, np, ritzr, 0, ritzi, 0, bounds, 0, shiftr, 0, shifti, 0);
-  }
+//  @Override
+//  public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, double[] ritzi, double[] bounds, double[] shiftr, double[] shifti) {
+//   org.netlib.arpack.Dngets.dngets(ishift, which, kev, np, ritzr, 0, ritzi, 0, bounds, 0, shiftr, 0, shifti, 0);
+//  }
 
-  @Override
-  public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset) {
-   org.netlib.arpack.Dngets.dngets(ishift, which, kev, np, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, shiftr, _shiftr_offset, shifti, _shifti_offset);
-  }
+//  @Override
+//  public void dngets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritzr, int _ritzr_offset, double[] ritzi, int _ritzi_offset, double[] bounds, int _bounds_offset, double[] shiftr, int _shiftr_offset, double[] shifti, int _shifti_offset) {
+//   org.netlib.arpack.Dngets.dngets(ishift, which, kev, np, ritzr, _ritzr_offset, ritzi, _ritzi_offset, bounds, _bounds_offset, shiftr, _shiftr_offset, shifti, _shifti_offset);
+//  }
 
-  @Override
-  public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info) {
-   org.netlib.arpack.Dsaitr.dsaitr(ido, bmat, n, k, np, mode, resid, 0, rnorm, v, 0, ldv, h, 0, ldh, ipntr, 0, workd, 0, info);
-  }
+//  @Override
+//  public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, org.netlib.util.doubleW rnorm, double[] v, int ldv, double[] h, int ldh, int[] ipntr, double[] workd, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dsaitr.dsaitr(ido, bmat, n, k, np, mode, resid, 0, rnorm, v, 0, ldv, h, 0, ldh, ipntr, 0, workd, 0, info);
+//  }
 
-  @Override
-  public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
-   org.netlib.arpack.Dsaitr.dsaitr(ido, bmat, n, k, np, mode, resid, _resid_offset, rnorm, v, _v_offset, ldv, h, _h_offset, ldh, ipntr, _ipntr_offset, workd, _workd_offset, info);
-  }
+//  @Override
+//  public void dsaitr(org.netlib.util.intW ido, java.lang.String bmat, int n, int k, int np, int mode, double[] resid, int _resid_offset, org.netlib.util.doubleW rnorm, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dsaitr.dsaitr(ido, bmat, n, k, np, mode, resid, _resid_offset, rnorm, v, _v_offset, ldv, h, _h_offset, ldh, ipntr, _ipntr_offset, workd, _workd_offset, info);
+//  }
 
-  @Override
-  public void dsapps(int n, int kev, int np, double[] shift, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workd) {
-   org.netlib.arpack.Dsapps.dsapps(n, kev, np, shift, 0, v, 0, ldv, h, 0, ldh, resid, 0, q, 0, ldq, workd, 0);
-  }
+//  @Override
+//  public void dsapps(int n, int kev, int np, double[] shift, double[] v, int ldv, double[] h, int ldh, double[] resid, double[] q, int ldq, double[] workd) {
+//   org.netlib.arpack.Dsapps.dsapps(n, kev, np, shift, 0, v, 0, ldv, h, 0, ldh, resid, 0, q, 0, ldq, workd, 0);
+//  }
 
-  @Override
-  public void dsapps(int n, int kev, int np, double[] shift, int _shift_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workd, int _workd_offset) {
-   org.netlib.arpack.Dsapps.dsapps(n, kev, np, shift, _shift_offset, v, _v_offset, ldv, h, _h_offset, ldh, resid, _resid_offset, q, _q_offset, ldq, workd, _workd_offset);
-  }
+//  @Override
+//  public void dsapps(int n, int kev, int np, double[] shift, int _shift_offset, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] resid, int _resid_offset, double[] q, int _q_offset, int ldq, double[] workd, int _workd_offset) {
+//   org.netlib.arpack.Dsapps.dsapps(n, kev, np, shift, _shift_offset, v, _v_offset, ldv, h, _h_offset, ldh, resid, _resid_offset, q, _q_offset, ldq, workd, _workd_offset);
+//  }
 
-  @Override
-  public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritz, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info) {
-   org.netlib.arpack.Dsaup2.dsaup2(ido, bmat, n, which, nev, np, tol, resid, 0, mode, iupd, ishift, mxiter, v, 0, ldv, h, 0, ldh, ritz, 0, bounds, 0, q, 0, ldq, workl, 0, ipntr, 0, workd, 0, info);
-  }
+//  @Override
+//  public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int ldv, double[] h, int ldh, double[] ritz, double[] bounds, double[] q, int ldq, double[] workl, int[] ipntr, double[] workd, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dsaup2.dsaup2(ido, bmat, n, which, nev, np, tol, resid, 0, mode, iupd, ishift, mxiter, v, 0, ldv, h, 0, ldh, ritz, 0, bounds, 0, q, 0, ldq, workl, 0, ipntr, 0, workd, 0, info);
+//  }
 
-  @Override
-  public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
-   org.netlib.arpack.Dsaup2.dsaup2(ido, bmat, n, which, nev, np, tol, resid, _resid_offset, mode, iupd, ishift, mxiter, v, _v_offset, ldv, h, _h_offset, ldh, ritz, _ritz_offset, bounds, _bounds_offset, q, _q_offset, ldq, workl, _workl_offset, ipntr, _ipntr_offset, workd, _workd_offset, info);
-  }
+//  @Override
+//  public void dsaup2(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, org.netlib.util.intW np, double tol, double[] resid, int _resid_offset, int mode, int iupd, int ishift, org.netlib.util.intW mxiter, double[] v, int _v_offset, int ldv, double[] h, int _h_offset, int ldh, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] q, int _q_offset, int ldq, double[] workl, int _workl_offset, int[] ipntr, int _ipntr_offset, double[] workd, int _workd_offset, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dsaup2.dsaup2(ido, bmat, n, which, nev, np, tol, resid, _resid_offset, mode, iupd, ishift, mxiter, v, _v_offset, ldv, h, _h_offset, ldh, ritz, _ritz_offset, bounds, _bounds_offset, q, _q_offset, ldq, workl, _workl_offset, ipntr, _ipntr_offset, workd, _workd_offset, info);
+//  }
 
   @Override
   public void dsaupd(org.netlib.util.intW ido, java.lang.String bmat, int n, java.lang.String which, int nev, org.netlib.util.doubleW tol, double[] resid, int ncv, double[] v, int ldv, int[] iparam, int[] ipntr, double[] workd, double[] workl, int lworkl, org.netlib.util.intW info) {
@@ -271,35 +271,35 @@ public class F2jARPACK extends com.github.fommil.netlib.ARPACK {
 //   org.netlib.arpack.Dsaupd.dsaupd(ido, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
 //  }
 
-  @Override
-  public void dsconv(int n, double[] ritz, double[] bounds, double tol, org.netlib.util.intW nconv) {
-   org.netlib.arpack.Dsconv.dsconv(n, ritz, 0, bounds, 0, tol, nconv);
-  }
+//  @Override
+//  public void dsconv(int n, double[] ritz, double[] bounds, double tol, org.netlib.util.intW nconv) {
+//   org.netlib.arpack.Dsconv.dsconv(n, ritz, 0, bounds, 0, tol, nconv);
+//  }
 
-  @Override
-  public void dsconv(int n, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv) {
-   org.netlib.arpack.Dsconv.dsconv(n, ritz, _ritz_offset, bounds, _bounds_offset, tol, nconv);
-  }
+//  @Override
+//  public void dsconv(int n, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double tol, org.netlib.util.intW nconv) {
+//   org.netlib.arpack.Dsconv.dsconv(n, ritz, _ritz_offset, bounds, _bounds_offset, tol, nconv);
+//  }
 
-  @Override
-  public void dseigt(double rnorm, int n, double[] h, int ldh, double[] eig, double[] bounds, double[] workl, org.netlib.util.intW ierr) {
-   org.netlib.arpack.Dseigt.dseigt(rnorm, n, h, 0, ldh, eig, 0, bounds, 0, workl, 0, ierr);
-  }
+//  @Override
+//  public void dseigt(double rnorm, int n, double[] h, int ldh, double[] eig, double[] bounds, double[] workl, org.netlib.util.intW ierr) {
+//   org.netlib.arpack.Dseigt.dseigt(rnorm, n, h, 0, ldh, eig, 0, bounds, 0, workl, 0, ierr);
+//  }
 
-  @Override
-  public void dseigt(double rnorm, int n, double[] h, int _h_offset, int ldh, double[] eig, int _eig_offset, double[] bounds, int _bounds_offset, double[] workl, int _workl_offset, org.netlib.util.intW ierr) {
-   org.netlib.arpack.Dseigt.dseigt(rnorm, n, h, _h_offset, ldh, eig, _eig_offset, bounds, _bounds_offset, workl, _workl_offset, ierr);
-  }
+//  @Override
+//  public void dseigt(double rnorm, int n, double[] h, int _h_offset, int ldh, double[] eig, int _eig_offset, double[] bounds, int _bounds_offset, double[] workl, int _workl_offset, org.netlib.util.intW ierr) {
+//   org.netlib.arpack.Dseigt.dseigt(rnorm, n, h, _h_offset, ldh, eig, _eig_offset, bounds, _bounds_offset, workl, _workl_offset, ierr);
+//  }
 
-  @Override
-  public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int na, double[] a, int lda) {
-   org.netlib.arpack.Dsesrt.dsesrt(which, apply, n, x, 0, na, a, 0, lda);
-  }
+//  @Override
+//  public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int na, double[] a, int lda) {
+//   org.netlib.arpack.Dsesrt.dsesrt(which, apply, n, x, 0, na, a, 0, lda);
+//  }
 
-  @Override
-  public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int _x_offset, int na, double[] a, int _a_offset, int lda) {
-   org.netlib.arpack.Dsesrt.dsesrt(which, apply, n, x, _x_offset, na, a, _a_offset, lda);
-  }
+//  @Override
+//  public void dsesrt(java.lang.String which, boolean apply, int n, double[] x, int _x_offset, int na, double[] a, int _a_offset, int lda) {
+//   org.netlib.arpack.Dsesrt.dsesrt(which, apply, n, x, _x_offset, na, a, _a_offset, lda);
+//  }
 
   @Override
   public void dseupd(boolean rvec, java.lang.String howmny, boolean[] select, double[] d, double[] z, int ldz, double sigma, java.lang.String bmat, int n, java.lang.String which, org.netlib.util.intW nev, double tol, double[] resid, int ncv, double[] v, int ldv, int[] iparam, int[] ipntr, double[] workd, double[] workl, int lworkl, org.netlib.util.intW info) {
@@ -311,55 +311,55 @@ public class F2jARPACK extends com.github.fommil.netlib.ARPACK {
 //   org.netlib.arpack.Dseupd.dseupd(rvec, howmny, select, _select_offset, d, _d_offset, z, _z_offset, ldz, sigma, bmat, n, which, nev, tol, resid, _resid_offset, ncv, v, _v_offset, ldv, iparam, _iparam_offset, ipntr, _ipntr_offset, workd, _workd_offset, workl, _workl_offset, lworkl, info);
 //  }
 
-  @Override
-  public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, double[] bounds, double[] shifts) {
-   org.netlib.arpack.Dsgets.dsgets(ishift, which, kev, np, ritz, 0, bounds, 0, shifts, 0);
-  }
+//  @Override
+//  public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, double[] bounds, double[] shifts) {
+//   org.netlib.arpack.Dsgets.dsgets(ishift, which, kev, np, ritz, 0, bounds, 0, shifts, 0);
+//  }
 
-  @Override
-  public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] shifts, int _shifts_offset) {
-   org.netlib.arpack.Dsgets.dsgets(ishift, which, kev, np, ritz, _ritz_offset, bounds, _bounds_offset, shifts, _shifts_offset);
-  }
+//  @Override
+//  public void dsgets(int ishift, java.lang.String which, org.netlib.util.intW kev, org.netlib.util.intW np, double[] ritz, int _ritz_offset, double[] bounds, int _bounds_offset, double[] shifts, int _shifts_offset) {
+//   org.netlib.arpack.Dsgets.dsgets(ishift, which, kev, np, ritz, _ritz_offset, bounds, _bounds_offset, shifts, _shifts_offset);
+//  }
 
-  @Override
-  public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, double[] ximag, double[] y) {
-   org.netlib.arpack.Dsortc.dsortc(which, apply, n, xreal, 0, ximag, 0, y, 0);
-  }
+//  @Override
+//  public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, double[] ximag, double[] y) {
+//   org.netlib.arpack.Dsortc.dsortc(which, apply, n, xreal, 0, ximag, 0, y, 0);
+//  }
 
-  @Override
-  public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, int _xreal_offset, double[] ximag, int _ximag_offset, double[] y, int _y_offset) {
-   org.netlib.arpack.Dsortc.dsortc(which, apply, n, xreal, _xreal_offset, ximag, _ximag_offset, y, _y_offset);
-  }
+//  @Override
+//  public void dsortc(java.lang.String which, boolean apply, int n, double[] xreal, int _xreal_offset, double[] ximag, int _ximag_offset, double[] y, int _y_offset) {
+//   org.netlib.arpack.Dsortc.dsortc(which, apply, n, xreal, _xreal_offset, ximag, _ximag_offset, y, _y_offset);
+//  }
 
-  @Override
-  public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, double[] x2) {
-   org.netlib.arpack.Dsortr.dsortr(which, apply, n, x1, 0, x2, 0);
-  }
+//  @Override
+//  public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, double[] x2) {
+//   org.netlib.arpack.Dsortr.dsortr(which, apply, n, x1, 0, x2, 0);
+//  }
 
-  @Override
-  public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, int _x1_offset, double[] x2, int _x2_offset) {
-   org.netlib.arpack.Dsortr.dsortr(which, apply, n, x1, _x1_offset, x2, _x2_offset);
-  }
+//  @Override
+//  public void dsortr(java.lang.String which, boolean apply, int n, double[] x1, int _x1_offset, double[] x2, int _x2_offset) {
+//   org.netlib.arpack.Dsortr.dsortr(which, apply, n, x1, _x1_offset, x2, _x2_offset);
+//  }
 
-  @Override
-  public void dstatn() {
-   org.netlib.arpack.Dstatn.dstatn();
-  }
+//  @Override
+//  public void dstatn() {
+//   org.netlib.arpack.Dstatn.dstatn();
+//  }
 
-  @Override
-  public void dstats() {
-   org.netlib.arpack.Dstats.dstats();
-  }
+//  @Override
+//  public void dstats() {
+//   org.netlib.arpack.Dstats.dstats();
+//  }
 
-  @Override
-  public void dstqrb(int n, double[] d, double[] e, double[] z, double[] work, org.netlib.util.intW info) {
-   org.netlib.arpack.Dstqrb.dstqrb(n, d, 0, e, 0, z, 0, work, 0, info);
-  }
+//  @Override
+//  public void dstqrb(int n, double[] d, double[] e, double[] z, double[] work, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dstqrb.dstqrb(n, d, 0, e, 0, z, 0, work, 0, info);
+//  }
 
-  @Override
-  public void dstqrb(int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, double[] work, int _work_offset, org.netlib.util.intW info) {
-   org.netlib.arpack.Dstqrb.dstqrb(n, d, _d_offset, e, _e_offset, z, _z_offset, work, _work_offset, info);
-  }
+//  @Override
+//  public void dstqrb(int n, double[] d, int _d_offset, double[] e, int _e_offset, double[] z, int _z_offset, double[] work, int _work_offset, org.netlib.util.intW info) {
+//   org.netlib.arpack.Dstqrb.dstqrb(n, d, _d_offset, e, _e_offset, z, _z_offset, work, _work_offset, info);
+//  }
 
 //  @Override
 //  public void sgetv0(org.netlib.util.intW ido, java.lang.String bmat, int itry, boolean initv, int n, int j, float[] v, int ldv, float[] resid, org.netlib.util.floatW rnorm, int[] ipntr, float[] workd, org.netlib.util.intW ierr) {
