@@ -573,7 +573,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  abstract public void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -1409,7 +1409,7 @@ public abstract class BLAS {
    * @param s
    *
    */
-  abstract public void drotg(org.netlib.util.doubleW da, org.netlib.util.doubleW db, org.netlib.util.doubleW c, org.netlib.util.doubleW s);
+//  abstract public void drotg(org.netlib.util.doubleW da, org.netlib.util.doubleW db, org.netlib.util.doubleW c, org.netlib.util.doubleW s);
 
   /**
    * <pre><code>
@@ -1472,7 +1472,7 @@ public abstract class BLAS {
    * @param dparam
    *
    */
-  abstract public void drotm(int n, double[] dx, int incx, double[] dy, int incy, double[] dparam);
+//  abstract public void drotm(int n, double[] dx, int incx, double[] dy, int incy, double[] dparam);
 
   /**
    * <pre><code>
@@ -1538,7 +1538,7 @@ public abstract class BLAS {
    * @param _dparam_offset
    *
    */
-  abstract public void drotm(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset);
+//  abstract public void drotm(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset);
 
   /**
    * <pre><code>
@@ -1596,7 +1596,7 @@ public abstract class BLAS {
    * @param dparam
    *
    */
-  abstract public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam);
+//  abstract public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam);
 
   /**
    * <pre><code>
@@ -1655,7 +1655,7 @@ public abstract class BLAS {
    * @param _dparam_offset
    *
    */
-  abstract public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset);
+//  abstract public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset);
 
   /**
    * <pre><code>
@@ -1942,7 +1942,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  abstract public void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -4439,7 +4439,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  abstract public void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -4959,7 +4959,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
+//  abstract public void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -6261,7 +6261,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public int isamax(int n, float[] sx, int incx);
+//  abstract public int isamax(int n, float[] sx, int incx);
 
   /**
    * <pre><code>
@@ -6285,7 +6285,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public int isamax(int n, float[] sx, int _sx_offset, int incx);
+//  abstract public int isamax(int n, float[] sx, int _sx_offset, int incx);
 
   /**
    * <pre><code>

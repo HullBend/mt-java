@@ -81,10 +81,10 @@ public class F2jBLAS extends com.github.fommil.netlib.BLAS {
    org.netlib.blas.Dgbmv.dgbmv(trans, m, n, kl, ku, alpha, a, 0, lda, x, 0, incx, beta, y, 0, incy);
   }
 
-  @Override
-  public void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
-   org.netlib.blas.Dgbmv.dgbmv(trans, m, n, kl, ku, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
-  }
+//  @Override
+//  public void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
+//   org.netlib.blas.Dgbmv.dgbmv(trans, m, n, kl, ku, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
+//  }
 
   @Override
   public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int ldc) {
@@ -136,40 +136,40 @@ public class F2jBLAS extends com.github.fommil.netlib.BLAS {
    org.netlib.blas.Drot.drot(n, dx, _dx_offset, incx, dy, _dy_offset, incy, c, s);
   }
 
-  @Override
-  public void drotg(org.netlib.util.doubleW da, org.netlib.util.doubleW db, org.netlib.util.doubleW c, org.netlib.util.doubleW s) {
-   org.netlib.blas.Drotg.drotg(da, db, c, s);
-  }
+//  @Override
+//  public void drotg(org.netlib.util.doubleW da, org.netlib.util.doubleW db, org.netlib.util.doubleW c, org.netlib.util.doubleW s) {
+//   org.netlib.blas.Drotg.drotg(da, db, c, s);
+//  }
 
-  @Override
-  public void drotm(int n, double[] dx, int incx, double[] dy, int incy, double[] dparam) {
-   org.netlib.blas.Drotm.drotm(n, dx, 0, incx, dy, 0, incy, dparam, 0);
-  }
+//  @Override
+//  public void drotm(int n, double[] dx, int incx, double[] dy, int incy, double[] dparam) {
+//   org.netlib.blas.Drotm.drotm(n, dx, 0, incx, dy, 0, incy, dparam, 0);
+//  }
 
-  @Override
-  public void drotm(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset) {
-   org.netlib.blas.Drotm.drotm(n, dx, _dx_offset, incx, dy, _dy_offset, incy, dparam, _dparam_offset);
-  }
+//  @Override
+//  public void drotm(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset) {
+//   org.netlib.blas.Drotm.drotm(n, dx, _dx_offset, incx, dy, _dy_offset, incy, dparam, _dparam_offset);
+//  }
 
-  @Override
-  public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam) {
-   org.netlib.blas.Drotmg.drotmg(dd1, dd2, dx1, dy1, dparam, 0);
-  }
+//  @Override
+//  public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam) {
+//   org.netlib.blas.Drotmg.drotmg(dd1, dd2, dx1, dy1, dparam, 0);
+//  }
 
-  @Override
-  public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset) {
-   org.netlib.blas.Drotmg.drotmg(dd1, dd2, dx1, dy1, dparam, _dparam_offset);
-  }
+//  @Override
+//  public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset) {
+//   org.netlib.blas.Drotmg.drotmg(dd1, dd2, dx1, dy1, dparam, _dparam_offset);
+//  }
 
   @Override
   public void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int lda, double[] x, int incx, double beta, double[] y, int incy) {
    org.netlib.blas.Dsbmv.dsbmv(uplo, n, k, alpha, a, 0, lda, x, 0, incx, beta, y, 0, incy);
   }
 
-  @Override
-  public void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
-   org.netlib.blas.Dsbmv.dsbmv(uplo, n, k, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
-  }
+//  @Override
+//  public void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
+//   org.netlib.blas.Dsbmv.dsbmv(uplo, n, k, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
+//  }
 
   @Override
   public void dscal(int n, double da, double[] dx, int incx) {
@@ -286,10 +286,10 @@ public class F2jBLAS extends com.github.fommil.netlib.BLAS {
    org.netlib.blas.Dtbmv.dtbmv(uplo, trans, diag, n, k, a, 0, lda, x, 0, incx);
   }
 
-  @Override
-  public void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
-   org.netlib.blas.Dtbmv.dtbmv(uplo, trans, diag, n, k, a, _a_offset, lda, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
+//   org.netlib.blas.Dtbmv.dtbmv(uplo, trans, diag, n, k, a, _a_offset, lda, x, _x_offset, incx);
+//  }
 
   @Override
   public void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx) {
@@ -306,10 +306,10 @@ public class F2jBLAS extends com.github.fommil.netlib.BLAS {
    org.netlib.blas.Dtpmv.dtpmv(uplo, trans, diag, n, ap, 0, x, 0, incx);
   }
 
-  @Override
-  public void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx) {
-   org.netlib.blas.Dtpmv.dtpmv(uplo, trans, diag, n, ap, _ap_offset, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx) {
+//   org.netlib.blas.Dtpmv.dtpmv(uplo, trans, diag, n, ap, _ap_offset, x, _x_offset, incx);
+//  }
 
   @Override
   public void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx) {
@@ -371,15 +371,15 @@ public class F2jBLAS extends com.github.fommil.netlib.BLAS {
     return org.netlib.blas.Idamax.idamax(n, dx, _dx_offset, incx);
   }
 
-  @Override
-  public int isamax(int n, float[] sx, int incx) {
-    return org.netlib.blas.Isamax.isamax(n, sx, 0, incx);
-  }
+//  @Override
+//  public int isamax(int n, float[] sx, int incx) {
+//    return org.netlib.blas.Isamax.isamax(n, sx, 0, incx);
+//  }
 
-  @Override
-  public int isamax(int n, float[] sx, int _sx_offset, int incx) {
-    return org.netlib.blas.Isamax.isamax(n, sx, _sx_offset, incx);
-  }
+//  @Override
+//  public int isamax(int n, float[] sx, int _sx_offset, int incx) {
+//    return org.netlib.blas.Isamax.isamax(n, sx, _sx_offset, incx);
+//  }
 
   @Override
   public boolean lsame(java.lang.String ca, java.lang.String cb) {

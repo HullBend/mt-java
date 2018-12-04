@@ -90,12 +90,12 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
   @Override
   public native void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int lda, double[] x, int incx, double beta, double[] y, int incy);
 
-  @Override
-  public void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
-  dgbmv_offsets(trans, m, n, kl, ku, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
-  }
+//  @Override
+//  public void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
+//  dgbmv_offsets(trans, m, n, kl, ku, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
+//  }
 
-  public native void dgbmv_offsets(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  private native void dgbmv_offsets(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   @Override
   public native void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int ldc);
@@ -147,38 +147,38 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
 
   public native void drot_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double c, double s);
 
-  @Override
-  public native void drotg(org.netlib.util.doubleW da, org.netlib.util.doubleW db, org.netlib.util.doubleW c, org.netlib.util.doubleW s);
+//  @Override
+//  public native void drotg(org.netlib.util.doubleW da, org.netlib.util.doubleW db, org.netlib.util.doubleW c, org.netlib.util.doubleW s);
 
-  @Override
-  public native void drotm(int n, double[] dx, int incx, double[] dy, int incy, double[] dparam);
+//  @Override
+//  public native void drotm(int n, double[] dx, int incx, double[] dy, int incy, double[] dparam);
 
-  @Override
-  public void drotm(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset) {
-  drotm_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy, dparam, _dparam_offset);
-  }
+//  @Override
+//  public void drotm(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset) {
+//  drotm_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy, dparam, _dparam_offset);
+//  }
 
-  public native void drotm_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset);
+//  private native void drotm_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double[] dparam, int _dparam_offset);
 
-  @Override
-  public native void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam);
+//  @Override
+//  public native void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam);
 
-  @Override
-  public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset) {
-  drotmg_offsets(dd1, dd2, dx1, dy1, dparam, _dparam_offset);
-  }
+//  @Override
+//  public void drotmg(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset) {
+//  drotmg_offsets(dd1, dd2, dx1, dy1, dparam, _dparam_offset);
+//  }
 
-  public native void drotmg_offsets(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset);
+//  private native void drotmg_offsets(org.netlib.util.doubleW dd1, org.netlib.util.doubleW dd2, org.netlib.util.doubleW dx1, double dy1, double[] dparam, int _dparam_offset);
 
   @Override
   public native void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int lda, double[] x, int incx, double beta, double[] y, int incy);
 
-  @Override
-  public void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
-  dsbmv_offsets(uplo, n, k, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
-  }
+//  @Override
+//  public void dsbmv(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
+//  dsbmv_offsets(uplo, n, k, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
+//  }
 
-  public native void dsbmv_offsets(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  private native void dsbmv_offsets(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   @Override
   public native void dscal(int n, double da, double[] dx, int incx);
@@ -293,12 +293,12 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
   @Override
   public native void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx);
 
-  @Override
-  public void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
-  dtbmv_offsets(uplo, trans, diag, n, k, a, _a_offset, lda, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
+//  dtbmv_offsets(uplo, trans, diag, n, k, a, _a_offset, lda, x, _x_offset, incx);
+//  }
 
-  public native void dtbmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  private native void dtbmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
   @Override
   public native void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx);
@@ -313,12 +313,12 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
   @Override
   public native void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx);
 
-  @Override
-  public void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx) {
-  dtpmv_offsets(uplo, trans, diag, n, ap, _ap_offset, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx) {
+//  dtpmv_offsets(uplo, trans, diag, n, ap, _ap_offset, x, _x_offset, incx);
+//  }
 
-  public native void dtpmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
+//  private native void dtpmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
 
   @Override
   public native void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx);
@@ -380,15 +380,15 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
 
   public native int idamax_offsets(int n, double[] dx, int _dx_offset, int incx);
 
-  @Override
-  public native int isamax(int n, float[] sx, int incx);
+//  @Override
+//  public native int isamax(int n, float[] sx, int incx);
 
-  @Override
-  public int isamax(int n, float[] sx, int _sx_offset, int incx) {
-    return isamax_offsets(n, sx, _sx_offset, incx);
-  }
+//  @Override
+//  public int isamax(int n, float[] sx, int _sx_offset, int incx) {
+//    return isamax_offsets(n, sx, _sx_offset, incx);
+//  }
 
-  public native int isamax_offsets(int n, float[] sx, int _sx_offset, int incx);
+//  private native int isamax_offsets(int n, float[] sx, int _sx_offset, int incx);
 
   @Override
   public native float sasum(int n, float[] sx, int incx);
