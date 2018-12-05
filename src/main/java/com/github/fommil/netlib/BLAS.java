@@ -6214,7 +6214,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public int idamax(int n, double[] dx, int incx);
+//  abstract public int idamax(int n, double[] dx, int incx);
 
   /**
    * <pre><code>
@@ -6238,7 +6238,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public int idamax(int n, double[] dx, int _dx_offset, int incx);
+//  abstract public int idamax(int n, double[] dx, int _dx_offset, int incx);
 
   /**
    * <pre><code>
@@ -6314,7 +6314,7 @@ public abstract class BLAS {
    * @param cb
    * @return
    */
-  abstract public boolean lsame(java.lang.String ca, java.lang.String cb);
+//  abstract public boolean lsame(java.lang.String ca, java.lang.String cb);
 
   /**
    * <pre><code>
@@ -6339,7 +6339,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public float sasum(int n, float[] sx, int incx);
+//  abstract public float sasum(int n, float[] sx, int incx);
 
   /**
    * <pre><code>
@@ -6365,7 +6365,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public float sasum(int n, float[] sx, int _sx_offset, int incx);
+//  abstract public float sasum(int n, float[] sx, int _sx_offset, int incx);
 
   /**
    * <pre><code>
@@ -6391,7 +6391,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void saxpy(int n, float sa, float[] sx, int incx, float[] sy, int incy);
+//  abstract public void saxpy(int n, float sa, float[] sx, int incx, float[] sy, int incy);
 
   /**
    * <pre><code>
@@ -6419,7 +6419,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void saxpy(int n, float sa, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
+//  abstract public void saxpy(int n, float sa, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
 
   /**
    * <pre><code>
@@ -6444,7 +6444,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void scopy(int n, float[] sx, int incx, float[] sy, int incy);
+//  abstract public void scopy(int n, float[] sx, int incx, float[] sy, int incy);
 
   /**
    * <pre><code>
@@ -6471,7 +6471,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void scopy(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
+//  abstract public void scopy(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
 
   /**
    * <pre><code>
@@ -6497,7 +6497,7 @@ public abstract class BLAS {
    * @param incy
    * @return
    */
-  abstract public float sdot(int n, float[] sx, int incx, float[] sy, int incy);
+//  abstract public float sdot(int n, float[] sx, int incx, float[] sy, int incy);
 
   /**
    * <pre><code>
@@ -6525,7 +6525,7 @@ public abstract class BLAS {
    * @param incy
    * @return
    */
-  abstract public float sdot(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
+//  abstract public float sdot(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
 
   /**
    * <pre><code>
@@ -6604,7 +6604,7 @@ public abstract class BLAS {
    * @param incy
    * @return
    */
-  abstract public float sdsdot(int n, float sb, float[] sx, int incx, float[] sy, int incy);
+//  abstract public float sdsdot(int n, float sb, float[] sx, int incx, float[] sy, int incy);
 
   /**
    * <pre><code>
@@ -6685,7 +6685,7 @@ public abstract class BLAS {
    * @param incy
    * @return
    */
-  abstract public float sdsdot(int n, float sb, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
+//  abstract public float sdsdot(int n, float sb, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
 
   /**
    * <pre><code>
@@ -6825,7 +6825,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sgbmv(java.lang.String trans, int m, int n, int kl, int ku, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
+//  abstract public void sgbmv(java.lang.String trans, int m, int n, int kl, int ku, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
 
   /**
    * <pre><code>
@@ -6968,7 +6968,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sgbmv(java.lang.String trans, int m, int n, int kl, int ku, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
+//  abstract public void sgbmv(java.lang.String trans, int m, int n, int kl, int ku, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -7112,7 +7112,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void sgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, float alpha, float[] a, int lda, float[] b, int ldb, float beta, float[] c, int Ldc);
+//  abstract public void sgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, float alpha, float[] a, int lda, float[] b, int ldb, float beta, float[] c, int Ldc);
 
   /**
    * <pre><code>
@@ -7259,7 +7259,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void sgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, float beta, float[] c, int _c_offset, int Ldc);
+//  abstract public void sgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, float beta, float[] c, int _c_offset, int Ldc);
 
   /**
    * <pre><code>
@@ -7372,7 +7372,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sgemv(java.lang.String trans, int m, int n, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
+//  abstract public void sgemv(java.lang.String trans, int m, int n, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
 
   /**
    * <pre><code>
@@ -7488,7 +7488,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sgemv(java.lang.String trans, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
+//  abstract public void sgemv(java.lang.String trans, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -7578,7 +7578,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void sger(int m, int n, float alpha, float[] x, int incx, float[] y, int incy, float[] a, int lda);
+//  abstract public void sger(int m, int n, float alpha, float[] x, int incx, float[] y, int incy, float[] a, int lda);
 
   /**
    * <pre><code>
@@ -7671,7 +7671,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void sger(int m, int n, float alpha, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] a, int _a_offset, int lda);
+//  abstract public void sger(int m, int n, float alpha, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] a, int _a_offset, int lda);
 
   /**
    * <pre><code>
@@ -7701,7 +7701,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public float snrm2(int n, float[] x, int incx);
+//  abstract public float snrm2(int n, float[] x, int incx);
 
   /**
    * <pre><code>
@@ -7732,7 +7732,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public float snrm2(int n, float[] x, int _x_offset, int incx);
+//  abstract public float snrm2(int n, float[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -7763,7 +7763,7 @@ public abstract class BLAS {
    * @param s
    *
    */
-  abstract public void srot(int n, float[] sx, int incx, float[] sy, int incy, float c, float s);
+//  abstract public void srot(int n, float[] sx, int incx, float[] sy, int incy, float c, float s);
 
   /**
    * <pre><code>
@@ -7796,7 +7796,7 @@ public abstract class BLAS {
    * @param s
    *
    */
-  abstract public void srot(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy, float c, float s);
+//  abstract public void srot(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy, float c, float s);
 
   /**
    * <pre><code>
@@ -7818,7 +7818,7 @@ public abstract class BLAS {
    * @param s
    *
    */
-  abstract public void srotg(org.netlib.util.floatW sa, org.netlib.util.floatW sb, org.netlib.util.floatW c, org.netlib.util.floatW s);
+//  abstract public void srotg(org.netlib.util.floatW sa, org.netlib.util.floatW sb, org.netlib.util.floatW c, org.netlib.util.floatW s);
 
   /**
    * <pre><code>
@@ -7882,7 +7882,7 @@ public abstract class BLAS {
    * @param sparam
    *
    */
-  abstract public void srotm(int n, float[] sx, int incx, float[] sy, int incy, float[] sparam);
+//  abstract public void srotm(int n, float[] sx, int incx, float[] sy, int incy, float[] sparam);
 
   /**
    * <pre><code>
@@ -7949,7 +7949,7 @@ public abstract class BLAS {
    * @param _sparam_offset
    *
    */
-  abstract public void srotm(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy, float[] sparam, int _sparam_offset);
+//  abstract public void srotm(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy, float[] sparam, int _sparam_offset);
 
   /**
    * <pre><code>
@@ -8009,7 +8009,7 @@ public abstract class BLAS {
    * @param sparam
    *
    */
-  abstract public void srotmg(org.netlib.util.floatW sd1, org.netlib.util.floatW sd2, org.netlib.util.floatW sx1, float sy1, float[] sparam);
+//  abstract public void srotmg(org.netlib.util.floatW sd1, org.netlib.util.floatW sd2, org.netlib.util.floatW sx1, float sy1, float[] sparam);
 
   /**
    * <pre><code>
@@ -8070,7 +8070,7 @@ public abstract class BLAS {
    * @param _sparam_offset
    *
    */
-  abstract public void srotmg(org.netlib.util.floatW sd1, org.netlib.util.floatW sd2, org.netlib.util.floatW sx1, float sy1, float[] sparam, int _sparam_offset);
+//  abstract public void srotmg(org.netlib.util.floatW sd1, org.netlib.util.floatW sd2, org.netlib.util.floatW sx1, float sy1, float[] sparam, int _sparam_offset);
 
   /**
    * <pre><code>
@@ -8212,7 +8212,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void ssbmv(java.lang.String uplo, int n, int k, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
+//  abstract public void ssbmv(java.lang.String uplo, int n, int k, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
 
   /**
    * <pre><code>
@@ -8357,7 +8357,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void ssbmv(java.lang.String uplo, int n, int k, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
+//  abstract public void ssbmv(java.lang.String uplo, int n, int k, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -8382,7 +8382,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void sscal(int n, float sa, float[] sx, int incx);
+//  abstract public void sscal(int n, float sa, float[] sx, int incx);
 
   /**
    * <pre><code>
@@ -8408,7 +8408,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void sscal(int n, float sa, float[] sx, int _sx_offset, int incx);
+//  abstract public void sscal(int n, float sa, float[] sx, int _sx_offset, int incx);
 
   /**
    * <pre><code>
@@ -8514,7 +8514,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sspmv(java.lang.String uplo, int n, float alpha, float[] ap, float[] x, int incx, float beta, float[] y, int incy);
+//  abstract public void sspmv(java.lang.String uplo, int n, float alpha, float[] ap, float[] x, int incx, float beta, float[] y, int incy);
 
   /**
    * <pre><code>
@@ -8623,7 +8623,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sspmv(java.lang.String uplo, int n, float alpha, float[] ap, int _ap_offset, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
+//  abstract public void sspmv(java.lang.String uplo, int n, float alpha, float[] ap, int _ap_offset, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -8713,7 +8713,7 @@ public abstract class BLAS {
    * @param ap
    *
    */
-  abstract public void sspr(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] ap);
+//  abstract public void sspr(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] ap);
 
   /**
    * <pre><code>
@@ -8805,7 +8805,7 @@ public abstract class BLAS {
    * @param _ap_offset
    *
    */
-  abstract public void sspr(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] ap, int _ap_offset);
+//  abstract public void sspr(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] ap, int _ap_offset);
 
   /**
    * <pre><code>
@@ -8908,7 +8908,7 @@ public abstract class BLAS {
    * @param ap
    *
    */
-  abstract public void sspr2(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] y, int incy, float[] ap);
+//  abstract public void sspr2(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] y, int incy, float[] ap);
 
   /**
    * <pre><code>
@@ -9014,7 +9014,7 @@ public abstract class BLAS {
    * @param _ap_offset
    *
    */
-  abstract public void sspr2(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] ap, int _ap_offset);
+//  abstract public void sspr2(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] ap, int _ap_offset);
 
   /**
    * <pre><code>
@@ -9039,7 +9039,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sswap(int n, float[] sx, int incx, float[] sy, int incy);
+//  abstract public void sswap(int n, float[] sx, int incx, float[] sy, int incy);
 
   /**
    * <pre><code>
@@ -9066,7 +9066,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void sswap(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
+//  abstract public void sswap(int n, float[] sx, int _sx_offset, int incx, float[] sy, int _sy_offset, int incy);
 
   /**
    * <pre><code>
@@ -9213,7 +9213,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void ssymm(java.lang.String side, java.lang.String uplo, int m, int n, float alpha, float[] a, int lda, float[] b, int ldb, float beta, float[] c, int Ldc);
+//  abstract public void ssymm(java.lang.String side, java.lang.String uplo, int m, int n, float alpha, float[] a, int lda, float[] b, int ldb, float beta, float[] c, int Ldc);
 
   /**
    * <pre><code>
@@ -9363,7 +9363,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void ssymm(java.lang.String side, java.lang.String uplo, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, float beta, float[] c, int _c_offset, int Ldc);
+//  abstract public void ssymm(java.lang.String side, java.lang.String uplo, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, float beta, float[] c, int _c_offset, int Ldc);
 
   /**
    * <pre><code>
@@ -9473,7 +9473,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void ssymv(java.lang.String uplo, int n, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
+//  abstract public void ssymv(java.lang.String uplo, int n, float alpha, float[] a, int lda, float[] x, int incx, float beta, float[] y, int incy);
 
   /**
    * <pre><code>
@@ -9586,7 +9586,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void ssymv(java.lang.String uplo, int n, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
+//  abstract public void ssymv(java.lang.String uplo, int n, float alpha, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx, float beta, float[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -9680,7 +9680,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void ssyr(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] a, int lda);
+//  abstract public void ssyr(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] a, int lda);
 
   /**
    * <pre><code>
@@ -9776,7 +9776,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void ssyr(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] a, int _a_offset, int lda);
+//  abstract public void ssyr(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] a, int _a_offset, int lda);
 
   /**
    * <pre><code>
@@ -9883,7 +9883,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void ssyr2(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] y, int incy, float[] a, int lda);
+//  abstract public void ssyr2(java.lang.String uplo, int n, float alpha, float[] x, int incx, float[] y, int incy, float[] a, int lda);
 
   /**
    * <pre><code>
@@ -9993,7 +9993,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void ssyr2(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] a, int _a_offset, int lda);
+//  abstract public void ssyr2(java.lang.String uplo, int n, float alpha, float[] x, int _x_offset, int incx, float[] y, int _y_offset, int incy, float[] a, int _a_offset, int lda);
 
   /**
    * <pre><code>
@@ -10143,7 +10143,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void ssyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int lda, float[] b, int ldb, float beta, float[] c, int Ldc);
+//  abstract public void ssyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int lda, float[] b, int ldb, float beta, float[] c, int Ldc);
 
   /**
    * <pre><code>
@@ -10296,7 +10296,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void ssyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, float beta, float[] c, int _c_offset, int Ldc);
+//  abstract public void ssyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb, float beta, float[] c, int _c_offset, int Ldc);
 
   /**
    * <pre><code>
@@ -10425,7 +10425,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void ssyrk(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int lda, float beta, float[] c, int Ldc);
+//  abstract public void ssyrk(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int lda, float beta, float[] c, int Ldc);
 
   /**
    * <pre><code>
@@ -10556,7 +10556,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void ssyrk(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int _a_offset, int lda, float beta, float[] c, int _c_offset, int Ldc);
+//  abstract public void ssyrk(java.lang.String uplo, java.lang.String trans, int n, int k, float alpha, float[] a, int _a_offset, int lda, float beta, float[] c, int _c_offset, int Ldc);
 
   /**
    * <pre><code>
@@ -10704,7 +10704,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int lda, float[] x, int incx);
+//  abstract public void stbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int lda, float[] x, int incx);
 
   /**
    * <pre><code>
@@ -10854,7 +10854,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
+//  abstract public void stbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -11006,7 +11006,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int lda, float[] x, int incx);
+//  abstract public void stbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int lda, float[] x, int incx);
 
   /**
    * <pre><code>
@@ -11160,7 +11160,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
+//  abstract public void stbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -11266,7 +11266,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, float[] x, int incx);
+//  abstract public void stpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, float[] x, int incx);
 
   /**
    * <pre><code>
@@ -11374,7 +11374,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, int _ap_offset, float[] x, int _x_offset, int incx);
+//  abstract public void stpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, int _ap_offset, float[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -11483,7 +11483,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, float[] x, int incx);
+//  abstract public void stpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, float[] x, int incx);
 
   /**
    * <pre><code>
@@ -11594,7 +11594,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void stpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, int _ap_offset, float[] x, int _x_offset, int incx);
+//  abstract public void stpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] ap, int _ap_offset, float[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -11732,7 +11732,7 @@ public abstract class BLAS {
    * @param ldb
    *
    */
-  abstract public void strmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int lda, float[] b, int ldb);
+//  abstract public void strmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int lda, float[] b, int ldb);
 
   /**
    * <pre><code>
@@ -11872,7 +11872,7 @@ public abstract class BLAS {
    * @param ldb
    *
    */
-  abstract public void strmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb);
+//  abstract public void strmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb);
 
   /**
    * <pre><code>
@@ -11982,7 +11982,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void strmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int lda, float[] x, int incx);
+//  abstract public void strmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int lda, float[] x, int incx);
 
   /**
    * <pre><code>
@@ -12094,7 +12094,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void strmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
+//  abstract public void strmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -12235,7 +12235,7 @@ public abstract class BLAS {
    * @param ldb
    *
    */
-  abstract public void strsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int lda, float[] b, int ldb);
+//  abstract public void strsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int lda, float[] b, int ldb);
 
   /**
    * <pre><code>
@@ -12378,7 +12378,7 @@ public abstract class BLAS {
    * @param ldb
    *
    */
-  abstract public void strsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb);
+//  abstract public void strsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, float alpha, float[] a, int _a_offset, int lda, float[] b, int _b_offset, int ldb);
 
   /**
    * <pre><code>
@@ -12491,7 +12491,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void strsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int lda, float[] x, int incx);
+//  abstract public void strsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int lda, float[] x, int incx);
 
   /**
    * <pre><code>
@@ -12606,5 +12606,6 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void strsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
+//  abstract public void strsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, float[] a, int _a_offset, int lda, float[] x, int _x_offset, int incx);
+
 }
