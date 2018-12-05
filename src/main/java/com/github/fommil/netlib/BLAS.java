@@ -108,7 +108,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public double dasum(int n, double[] dx, int incx);
+//  abstract public double dasum(int n, double[] dx, int incx);
 
   /**
    * <pre><code>
@@ -132,7 +132,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public double dasum(int n, double[] dx, int _dx_offset, int incx);
+//  abstract public double dasum(int n, double[] dx, int _dx_offset, int incx);
 
   /**
    * <pre><code>
@@ -158,7 +158,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void daxpy(int n, double da, double[] dx, int incx, double[] dy, int incy);
+//  abstract public void daxpy(int n, double da, double[] dx, int incx, double[] dy, int incy);
 
   /**
    * <pre><code>
@@ -186,7 +186,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void daxpy(int n, double da, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  abstract public void daxpy(int n, double da, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
   /**
    * <pre><code>
@@ -211,7 +211,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dcopy(int n, double[] dx, int incx, double[] dy, int incy);
+//  abstract public void dcopy(int n, double[] dx, int incx, double[] dy, int incy);
 
   /**
    * <pre><code>
@@ -238,7 +238,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dcopy(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  abstract public void dcopy(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
   /**
    * <pre><code>
@@ -263,7 +263,7 @@ public abstract class BLAS {
    * @param incy
    * @return
    */
-  abstract public double ddot(int n, double[] dx, int incx, double[] dy, int incy);
+//  abstract public double ddot(int n, double[] dx, int incx, double[] dy, int incy);
 
   /**
    * <pre><code>
@@ -290,7 +290,7 @@ public abstract class BLAS {
    * @param incy
    * @return
    */
-  abstract public double ddot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  abstract public double ddot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
   /**
    * <pre><code>
@@ -864,7 +864,7 @@ public abstract class BLAS {
    * @param ldc
    *
    */
-  abstract public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc);
+//  abstract public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc);
 
   /**
    * <pre><code>
@@ -1093,7 +1093,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dgemv(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  abstract public void dgemv(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -1276,7 +1276,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void dger(int m, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
+//  abstract public void dger(int m, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
 
   /**
    * <pre><code>
@@ -1304,7 +1304,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public double dnrm2(int n, double[] x, int incx);
+//  abstract public double dnrm2(int n, double[] x, int incx);
 
   /**
    * <pre><code>
@@ -1333,7 +1333,7 @@ public abstract class BLAS {
    * @param incx
    * @return
    */
-  abstract public double dnrm2(int n, double[] x, int _x_offset, int incx);
+//  abstract public double dnrm2(int n, double[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -1359,7 +1359,7 @@ public abstract class BLAS {
    * @param s
    *
    */
-  abstract public void drot(int n, double[] dx, int incx, double[] dy, int incy, double c, double s);
+//  abstract public void drot(int n, double[] dx, int incx, double[] dy, int incy, double c, double s);
 
   /**
    * <pre><code>
@@ -1387,7 +1387,7 @@ public abstract class BLAS {
    * @param s
    *
    */
-  abstract public void drot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double c, double s);
+//  abstract public void drot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double c, double s);
 
   /**
    * <pre><code>
@@ -1967,7 +1967,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dscal(int n, double da, double[] dx, int incx);
+//  abstract public void dscal(int n, double da, double[] dx, int incx);
 
   /**
    * <pre><code>
@@ -1993,7 +1993,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dscal(int n, double da, double[] dx, int _dx_offset, int incx);
+//  abstract public void dscal(int n, double da, double[] dx, int _dx_offset, int incx);
 
   /**
    * <pre><code>
@@ -2208,7 +2208,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dspmv(java.lang.String uplo, int n, double alpha, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  abstract public void dspmv(java.lang.String uplo, int n, double alpha, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -2390,7 +2390,7 @@ public abstract class BLAS {
    * @param _ap_offset
    *
    */
-  abstract public void dspr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] ap, int _ap_offset);
+//  abstract public void dspr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] ap, int _ap_offset);
 
   /**
    * <pre><code>
@@ -2599,7 +2599,7 @@ public abstract class BLAS {
    * @param _ap_offset
    *
    */
-  abstract public void dspr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] ap, int _ap_offset);
+//  abstract public void dspr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] ap, int _ap_offset);
 
   /**
    * <pre><code>
@@ -2624,7 +2624,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dswap(int n, double[] dx, int incx, double[] dy, int incy);
+//  abstract public void dswap(int n, double[] dx, int incx, double[] dy, int incy);
 
   /**
    * <pre><code>
@@ -2651,7 +2651,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dswap(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  abstract public void dswap(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
   /**
    * <pre><code>
@@ -2948,7 +2948,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void dsymm(java.lang.String side, java.lang.String uplo, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
+//  abstract public void dsymm(java.lang.String side, java.lang.String uplo, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
 
   /**
    * <pre><code>
@@ -3171,7 +3171,7 @@ public abstract class BLAS {
    * @param incy
    *
    */
-  abstract public void dsymv(java.lang.String uplo, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  abstract public void dsymv(java.lang.String uplo, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   /**
    * <pre><code>
@@ -3361,7 +3361,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void dsyr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] a, int _a_offset, int lda);
+//  abstract public void dsyr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] a, int _a_offset, int lda);
 
   /**
    * <pre><code>
@@ -3578,7 +3578,7 @@ public abstract class BLAS {
    * @param lda
    *
    */
-  abstract public void dsyr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
+//  abstract public void dsyr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
 
   /**
    * <pre><code>
@@ -3881,7 +3881,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void dsyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
+//  abstract public void dsyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
 
   /**
    * <pre><code>
@@ -4141,7 +4141,7 @@ public abstract class BLAS {
    * @param Ldc
    *
    */
-  abstract public void dsyrk(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double beta, double[] c, int _c_offset, int Ldc);
+//  abstract public void dsyrk(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double beta, double[] c, int _c_offset, int Ldc);
 
   /**
    * <pre><code>
@@ -4591,7 +4591,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx);
+//  abstract public void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx);
 
   /**
    * <pre><code>
@@ -4745,7 +4745,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  abstract public void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -5068,7 +5068,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx);
+//  abstract public void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx);
 
   /**
    * <pre><code>
@@ -5179,7 +5179,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
+//  abstract public void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -5457,7 +5457,7 @@ public abstract class BLAS {
    * @param ldb
    *
    */
-  abstract public void dtrmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
+//  abstract public void dtrmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
 
   /**
    * <pre><code>
@@ -5679,7 +5679,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtrmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  abstract public void dtrmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>
@@ -5820,7 +5820,7 @@ public abstract class BLAS {
    * @param ldb
    *
    */
-  abstract public void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int lda, double[] b, int ldb);
+//  abstract public void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int lda, double[] b, int ldb);
 
   /**
    * <pre><code>
@@ -5963,7 +5963,7 @@ public abstract class BLAS {
    * @param ldb
    *
    */
-  abstract public void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
+//  abstract public void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
 
   /**
    * <pre><code>
@@ -6076,7 +6076,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int lda, double[] x, int incx);
+//  abstract public void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int lda, double[] x, int incx);
 
   /**
    * <pre><code>
@@ -6191,7 +6191,7 @@ public abstract class BLAS {
    * @param incx
    *
    */
-  abstract public void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  abstract public void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
   /**
    * <pre><code>

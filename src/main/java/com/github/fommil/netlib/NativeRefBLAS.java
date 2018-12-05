@@ -47,45 +47,45 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
 //    return org.netlib.blas.Lsame.lsame(ca, cb);
 //  }
 
-  @Override
-  public native double dasum(int n, double[] dx, int incx);
+//  @Override
+//  public native double dasum(int n, double[] dx, int incx);
 
-  @Override
-  public double dasum(int n, double[] dx, int _dx_offset, int incx) {
-    return dasum_offsets(n, dx, _dx_offset, incx);
-  }
+//  @Override
+//  public double dasum(int n, double[] dx, int _dx_offset, int incx) {
+//    return dasum_offsets(n, dx, _dx_offset, incx);
+//  }
 
-  public native double dasum_offsets(int n, double[] dx, int _dx_offset, int incx);
+//  private native double dasum_offsets(int n, double[] dx, int _dx_offset, int incx);
 
-  @Override
-  public native void daxpy(int n, double da, double[] dx, int incx, double[] dy, int incy);
+//  @Override
+//  public native void daxpy(int n, double da, double[] dx, int incx, double[] dy, int incy);
 
-  @Override
-  public void daxpy(int n, double da, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
-  daxpy_offsets(n, da, dx, _dx_offset, incx, dy, _dy_offset, incy);
-  }
+//  @Override
+//  public void daxpy(int n, double da, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
+//  daxpy_offsets(n, da, dx, _dx_offset, incx, dy, _dy_offset, incy);
+//  }
 
-  public native void daxpy_offsets(int n, double da, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  private native void daxpy_offsets(int n, double da, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
-  @Override
-  public native void dcopy(int n, double[] dx, int incx, double[] dy, int incy);
+//  @Override
+//  public native void dcopy(int n, double[] dx, int incx, double[] dy, int incy);
 
-  @Override
-  public void dcopy(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
-  dcopy_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy);
-  }
+//  @Override
+//  public void dcopy(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
+//  dcopy_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy);
+//  }
 
-  public native void dcopy_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  private native void dcopy_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
-  @Override
-  public native double ddot(int n, double[] dx, int incx, double[] dy, int incy);
+//  @Override
+//  public native double ddot(int n, double[] dx, int incx, double[] dy, int incy);
 
-  @Override
-  public double ddot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
-    return ddot_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy);
-  }
+//  @Override
+//  public double ddot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
+//    return ddot_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy);
+//  }
 
-  public native double ddot_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  private native double ddot_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
   @Override
   public native void dgbmv(java.lang.String trans, int m, int n, int kl, int ku, double alpha, double[] a, int lda, double[] x, int incx, double beta, double[] y, int incy);
@@ -100,52 +100,52 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
   @Override
   public native void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int ldc);
 
-  @Override
-  public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc) {
-  dgemm_offsets(transa, transb, m, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, ldc);
-  }
+//  @Override
+//  public void dgemm(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc) {
+//  dgemm_offsets(transa, transb, m, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, ldc);
+//  }
 
-  public native void dgemm_offsets(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc);
+//  private native void dgemm_offsets(java.lang.String transa, java.lang.String transb, int m, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc);
 
   @Override
   public native void dgemv(java.lang.String trans, int m, int n, double alpha, double[] a, int lda, double[] x, int incx, double beta, double[] y, int incy);
 
-  @Override
-  public void dgemv(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
-  dgemv_offsets(trans, m, n, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
-  }
+//  @Override
+//  public void dgemv(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
+//  dgemv_offsets(trans, m, n, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
+//  }
 
-  public native void dgemv_offsets(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+  private native void dgemv_offsets(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   @Override
   public native void dger(int m, int n, double alpha, double[] x, int incx, double[] y, int incy, double[] a, int lda);
 
-  @Override
-  public void dger(int m, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda) {
-  dger_offsets(m, n, alpha, x, _x_offset, incx, y, _y_offset, incy, a, _a_offset, lda);
-  }
+//  @Override
+//  public void dger(int m, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda) {
+//  dger_offsets(m, n, alpha, x, _x_offset, incx, y, _y_offset, incy, a, _a_offset, lda);
+//  }
 
-  public native void dger_offsets(int m, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
+//  private native void dger_offsets(int m, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
 
-  @Override
-  public native double dnrm2(int n, double[] x, int incx);
+//  @Override
+//  public native double dnrm2(int n, double[] x, int incx);
 
-  @Override
-  public double dnrm2(int n, double[] x, int _x_offset, int incx) {
-    return dnrm2_offsets(n, x, _x_offset, incx);
-  }
+//  @Override
+//  public double dnrm2(int n, double[] x, int _x_offset, int incx) {
+//    return dnrm2_offsets(n, x, _x_offset, incx);
+//  }
 
-  public native double dnrm2_offsets(int n, double[] x, int _x_offset, int incx);
+//  private native double dnrm2_offsets(int n, double[] x, int _x_offset, int incx);
 
-  @Override
-  public native void drot(int n, double[] dx, int incx, double[] dy, int incy, double c, double s);
+//  @Override
+//  public native void drot(int n, double[] dx, int incx, double[] dy, int incy, double c, double s);
 
-  @Override
-  public void drot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double c, double s) {
-  drot_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy, c, s);
-  }
+//  @Override
+//  public void drot(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double c, double s) {
+//  drot_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy, c, s);
+//  }
 
-  public native void drot_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double c, double s);
+//  private native void drot_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy, double c, double s);
 
 //  @Override
 //  public native void drotg(org.netlib.util.doubleW da, org.netlib.util.doubleW db, org.netlib.util.doubleW c, org.netlib.util.doubleW s);
@@ -180,115 +180,115 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
 
 //  private native void dsbmv_offsets(java.lang.String uplo, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
-  @Override
-  public native void dscal(int n, double da, double[] dx, int incx);
+//  @Override
+//  public native void dscal(int n, double da, double[] dx, int incx);
 
-  @Override
-  public void dscal(int n, double da, double[] dx, int _dx_offset, int incx) {
-  dscal_offsets(n, da, dx, _dx_offset, incx);
-  }
+//  @Override
+//  public void dscal(int n, double da, double[] dx, int _dx_offset, int incx) {
+//  dscal_offsets(n, da, dx, _dx_offset, incx);
+//  }
 
-  public native void dscal_offsets(int n, double da, double[] dx, int _dx_offset, int incx);
+//  private native void dscal_offsets(int n, double da, double[] dx, int _dx_offset, int incx);
 
   @Override
   public native void dspmv(java.lang.String uplo, int n, double alpha, double[] ap, double[] x, int incx, double beta, double[] y, int incy);
 
-  @Override
-  public void dspmv(java.lang.String uplo, int n, double alpha, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
-  dspmv_offsets(uplo, n, alpha, ap, _ap_offset, x, _x_offset, incx, beta, y, _y_offset, incy);
-  }
+//  @Override
+//  public void dspmv(java.lang.String uplo, int n, double alpha, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
+//  dspmv_offsets(uplo, n, alpha, ap, _ap_offset, x, _x_offset, incx, beta, y, _y_offset, incy);
+//  }
 
-  public native void dspmv_offsets(java.lang.String uplo, int n, double alpha, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  private native void dspmv_offsets(java.lang.String uplo, int n, double alpha, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   @Override
   public native void dspr(java.lang.String uplo, int n, double alpha, double[] x, int incx, double[] ap);
 
-  @Override
-  public void dspr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] ap, int _ap_offset) {
-  dspr_offsets(uplo, n, alpha, x, _x_offset, incx, ap, _ap_offset);
-  }
+//  @Override
+//  public void dspr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] ap, int _ap_offset) {
+//  dspr_offsets(uplo, n, alpha, x, _x_offset, incx, ap, _ap_offset);
+//  }
 
-  public native void dspr_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] ap, int _ap_offset);
+//  private native void dspr_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] ap, int _ap_offset);
 
   @Override
   public native void dspr2(java.lang.String uplo, int n, double alpha, double[] x, int incx, double[] y, int incy, double[] ap);
 
-  @Override
-  public void dspr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] ap, int _ap_offset) {
-  dspr2_offsets(uplo, n, alpha, x, _x_offset, incx, y, _y_offset, incy, ap, _ap_offset);
-  }
+//  @Override
+//  public void dspr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] ap, int _ap_offset) {
+//  dspr2_offsets(uplo, n, alpha, x, _x_offset, incx, y, _y_offset, incy, ap, _ap_offset);
+//  }
 
-  public native void dspr2_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] ap, int _ap_offset);
+//  private native void dspr2_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] ap, int _ap_offset);
 
-  @Override
-  public native void dswap(int n, double[] dx, int incx, double[] dy, int incy);
+//  @Override
+//  public native void dswap(int n, double[] dx, int incx, double[] dy, int incy);
 
-  @Override
-  public void dswap(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
-  dswap_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy);
-  }
+//  @Override
+//  public void dswap(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
+//  dswap_offsets(n, dx, _dx_offset, incx, dy, _dy_offset, incy);
+//  }
 
-  public native void dswap_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
+//  private native void dswap_offsets(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy);
 
   @Override
   public native void dsymm(java.lang.String side, java.lang.String uplo, int m, int n, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int Ldc);
 
-  @Override
-  public void dsymm(java.lang.String side, java.lang.String uplo, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc) {
-  dsymm_offsets(side, uplo, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, Ldc);
-  }
+//  @Override
+//  public void dsymm(java.lang.String side, java.lang.String uplo, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc) {
+//  dsymm_offsets(side, uplo, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, Ldc);
+//  }
 
-  public native void dsymm_offsets(java.lang.String side, java.lang.String uplo, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
+//  private native void dsymm_offsets(java.lang.String side, java.lang.String uplo, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
 
   @Override
   public native void dsymv(java.lang.String uplo, int n, double alpha, double[] a, int lda, double[] x, int incx, double beta, double[] y, int incy);
 
-  @Override
-  public void dsymv(java.lang.String uplo, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
-  dsymv_offsets(uplo, n, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
-  }
+//  @Override
+//  public void dsymv(java.lang.String uplo, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
+//  dsymv_offsets(uplo, n, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
+//  }
 
-  public native void dsymv_offsets(java.lang.String uplo, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  private native void dsymv_offsets(java.lang.String uplo, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   @Override
   public native void dsyr(java.lang.String uplo, int n, double alpha, double[] x, int incx, double[] a, int lda);
 
-  @Override
-  public void dsyr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] a, int _a_offset, int lda) {
-  dsyr_offsets(uplo, n, alpha, x, _x_offset, incx, a, _a_offset, lda);
-  }
+//  @Override
+//  public void dsyr(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] a, int _a_offset, int lda) {
+//  dsyr_offsets(uplo, n, alpha, x, _x_offset, incx, a, _a_offset, lda);
+//  }
 
-  public native void dsyr_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] a, int _a_offset, int lda);
+//  private native void dsyr_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] a, int _a_offset, int lda);
 
   @Override
   public native void dsyr2(java.lang.String uplo, int n, double alpha, double[] x, int incx, double[] y, int incy, double[] a, int lda);
 
-  @Override
-  public void dsyr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda) {
-  dsyr2_offsets(uplo, n, alpha, x, _x_offset, incx, y, _y_offset, incy, a, _a_offset, lda);
-  }
+//  @Override
+//  public void dsyr2(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda) {
+//  dsyr2_offsets(uplo, n, alpha, x, _x_offset, incx, y, _y_offset, incy, a, _a_offset, lda);
+//  }
 
-  public native void dsyr2_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
+//  private native void dsyr2_offsets(java.lang.String uplo, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset, int incy, double[] a, int _a_offset, int lda);
 
   @Override
   public native void dsyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int lda, double[] b, int ldb, double beta, double[] c, int Ldc);
 
-  @Override
-  public void dsyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc) {
-  dsyr2k_offsets(uplo, trans, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, Ldc);
-  }
+//  @Override
+//  public void dsyr2k(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc) {
+//  dsyr2k_offsets(uplo, trans, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, Ldc);
+//  }
 
-  public native void dsyr2k_offsets(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
+//  private native void dsyr2k_offsets(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int Ldc);
 
   @Override
   public native void dsyrk(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int lda, double beta, double[] c, int Ldc);
 
-  @Override
-  public void dsyrk(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double beta, double[] c, int _c_offset, int Ldc) {
-  dsyrk_offsets(uplo, trans, n, k, alpha, a, _a_offset, lda, beta, c, _c_offset, Ldc);
-  }
+//  @Override
+//  public void dsyrk(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double beta, double[] c, int _c_offset, int Ldc) {
+//  dsyrk_offsets(uplo, trans, n, k, alpha, a, _a_offset, lda, beta, c, _c_offset, Ldc);
+//  }
 
-  public native void dsyrk_offsets(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double beta, double[] c, int _c_offset, int Ldc);
+//  private native void dsyrk_offsets(java.lang.String uplo, java.lang.String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda, double beta, double[] c, int _c_offset, int Ldc);
 
   @Override
   public native void dtbmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx);
@@ -300,15 +300,15 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
 
 //  private native void dtbmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
-  @Override
-  public native void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx);
+//  @Override
+//  public native void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int lda, double[] x, int incx);
 
-  @Override
-  public void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
-  dtbsv_offsets(uplo, trans, diag, n, k, a, _a_offset, lda, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtbsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
+//  dtbsv_offsets(uplo, trans, diag, n, k, a, _a_offset, lda, x, _x_offset, incx);
+//  }
 
-  public native void dtbsv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  private native void dtbsv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, int k, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
   @Override
   public native void dtpmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx);
@@ -320,55 +320,55 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
 
 //  private native void dtpmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
 
-  @Override
-  public native void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx);
+//  @Override
+//  public native void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, double[] x, int incx);
 
-  @Override
-  public void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx) {
-  dtpsv_offsets(uplo, trans, diag, n, ap, _ap_offset, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtpsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx) {
+//  dtpsv_offsets(uplo, trans, diag, n, ap, _ap_offset, x, _x_offset, incx);
+//  }
 
-  public native void dtpsv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
+//  private native void dtpsv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] ap, int _ap_offset, double[] x, int _x_offset, int incx);
 
   @Override
   public native void dtrmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int lda, double[] b, int ldb);
 
-  @Override
-  public void dtrmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb) {
-  dtrmm_offsets(side, uplo, transa, diag, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
-  }
+//  @Override
+//  public void dtrmm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb) {
+//  dtrmm_offsets(side, uplo, transa, diag, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
+//  }
 
-  public native void dtrmm_offsets(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
+//  private native void dtrmm_offsets(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
 
   @Override
   public native void dtrmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int lda, double[] x, int incx);
 
-  @Override
-  public void dtrmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
-  dtrmv_offsets(uplo, trans, diag, n, a, _a_offset, lda, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtrmv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
+//  dtrmv_offsets(uplo, trans, diag, n, a, _a_offset, lda, x, _x_offset, incx);
+//  }
 
-  public native void dtrmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  private native void dtrmv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
-  @Override
-  public native void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int lda, double[] b, int ldb);
+//  @Override
+//  public native void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int lda, double[] b, int ldb);
 
-  @Override
-  public void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb) {
-  dtrsm_offsets(side, uplo, transa, diag, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
-  }
+//  @Override
+//  public void dtrsm(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb) {
+//  dtrsm_offsets(side, uplo, transa, diag, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
+//  }
 
-  public native void dtrsm_offsets(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
+//  private native void dtrsm_offsets(java.lang.String side, java.lang.String uplo, java.lang.String transa, java.lang.String diag, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb);
 
-  @Override
-  public native void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int lda, double[] x, int incx);
+//  @Override
+//  public native void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int lda, double[] x, int incx);
 
-  @Override
-  public void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
-  dtrsv_offsets(uplo, trans, diag, n, a, _a_offset, lda, x, _x_offset, incx);
-  }
+//  @Override
+//  public void dtrsv(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx) {
+//  dtrsv_offsets(uplo, trans, diag, n, a, _a_offset, lda, x, _x_offset, incx);
+//  }
 
-  public native void dtrsv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
+//  private native void dtrsv_offsets(java.lang.String uplo, java.lang.String trans, java.lang.String diag, int n, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx);
 
 //  @Override
 //  public native int idamax(int n, double[] dx, int incx);
