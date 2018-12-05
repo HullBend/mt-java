@@ -8,6 +8,6 @@ Uber-jar of the Heimsund-Halliday Matrix Toolkit for Java: https://github.com/fo
 <dependency>
     <groupId>com.github.hullbend</groupId>
     <artifactId>mt-java</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 </dependency>
 ```
