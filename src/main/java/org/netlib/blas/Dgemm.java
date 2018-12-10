@@ -147,12 +147,6 @@ public final class Dgemm {
     public static void dgemm(String transa, String transb, int m, int n, int k, double alpha, double a[], int _a_offset,
             int lda, double b[], int _b_offset, int ldb, double beta, double c[], int _c_offset, int ldc) {
 
-        // trace offset values != 0 (temporary measure)
-        if (_a_offset != 0 || _b_offset != 0 || _c_offset != 0) {
-            System.err.println("_a_offset: " + _a_offset + ", _b_offset: " + _b_offset + ", _c_offset: " + _c_offset);
-            new RuntimeException().printStackTrace();
-        }
-
         byte info = 0;
         int nrowa = 0;
         int nrowb = 0;
@@ -190,34 +184,34 @@ public final class Dgemm {
             return;
         }
         // Quick return if possible
-        if (((m == 0) || (n == 0)) || (((alpha == 0.0D) || (k == 0)) && (beta == 1.0D))) {
+        if (((m == 0) || (n == 0)) || (((alpha == 0.0) || (k == 0)) && (beta == 1.0))) {
             return;
         }
 
         // And also if alpha == 0
-        if (alpha == 0.0D) {
-            if (beta == 0.0D) {
-                int l4 = 1;
-                for (int j8 = (n - 1) + 1; j8 > 0; j8--) {
-                    int j2 = 1;
-                    for (int l9 = (m - 1) + 1; l9 > 0; l9--) {
-                        c[(j2 - 1) + (l4 - 1) * ldc + _c_offset] = 0.0D;
-                        j2++;
+        if (alpha == 0.0) {
+            if (beta == 0.0) {
+                int v = 1;
+                for (int o = n; o > 0; o--) {
+                    int i = 1;
+                    for (int p = m; p > 0; p--) {
+                        c[(i - 1) + (v - 1) * ldc + _c_offset] = 0.0;
+                        i++;
                     }
 
-                    l4++;
+                    v++;
                 }
 
             } else {
-                int i5 = 1;
-                for (int k8 = (n - 1) + 1; k8 > 0; k8--) {
-                    int k2 = 1;
-                    for (int i10 = (m - 1) + 1; i10 > 0; i10--) {
-                        c[(k2 - 1) + (i5 - 1) * ldc + _c_offset] = beta * c[(k2 - 1) + (i5 - 1) * ldc + _c_offset];
-                        k2++;
+                int v = 1;
+                for (int o = n; o > 0; o--) {
+                    int i = 1;
+                    for (int p = m; p > 0; p--) {
+                        c[(i - 1) + (v - 1) * ldc + _c_offset] = beta * c[(i - 1) + (v - 1) * ldc + _c_offset];
+                        i++;
                     }
 
-                    i5++;
+                    v++;
                 }
 
             }
@@ -229,127 +223,128 @@ public final class Dgemm {
         if (notb) {
             if (nota) {
                 // Form C := alpha*A*B + beta*C
-                int j5 = 1;
-                for (int l8 = (n - 1) + 1; l8 > 0; l8--) {
-                    if (beta == 0.0D) {
-                        int l2 = 1;
-                        for (int j10 = (m - 1) + 1; j10 > 0; j10--) {
-                            c[(l2 - 1) + (j5 - 1) * ldc + _c_offset] = 0.0D;
-                            l2++;
+                int u = 1;
+                for (int o = n; o > 0; o--) {
+                    if (beta == 0.0) {
+                        int i = 1;
+                        for (int p = m; p > 0; p--) {
+                            c[(i - 1) + (u - 1) * ldc + _c_offset] = 0.0;
+                            i++;
                         }
 
-                    } else if (beta != 1.0D) {
-                        int i3 = 1;
-                        for (int k10 = (m - 1) + 1; k10 > 0; k10--) {
-                            c[(i3 - 1) + (j5 - 1) * ldc + _c_offset] = beta * c[(i3 - 1) + (j5 - 1) * ldc + _c_offset];
-                            i3++;
+                    } else if (beta != 1.0) {
+                        int i = 1;
+                        for (int p = m; p > 0; p--) {
+                            c[(i - 1) + (u - 1) * ldc + _c_offset] = beta * c[(i - 1) + (u - 1) * ldc + _c_offset];
+                            i++;
                         }
 
                     }
-                    int j6 = 1;
-                    for (int l10 = (k - 1) + 1; l10 > 0; l10--) {
-                        if (b[(j6 - 1) + (j5 - 1) * ldb + _b_offset] != 0.0D) {
-                            double d3 = alpha * b[(j6 - 1) + (j5 - 1) * ldb + _b_offset];
-                            int j3 = 1;
-                            for (int j12 = (m - 1) + 1; j12 > 0; j12--) {
-                                c[(j3 - 1) + (j5 - 1) * ldc + _c_offset] = c[(j3 - 1) + (j5 - 1) * ldc + _c_offset]
-                                        + d3 * a[(j3 - 1) + (j6 - 1) * lda + _a_offset];
-                                j3++;
+                    int w = 1;
+                    for (int p = k; p > 0; p--) {
+                        if (b[(w - 1) + (u - 1) * ldb + _b_offset] != 0.0) {
+                            double tmp = alpha * b[(w - 1) + (u - 1) * ldb + _b_offset];
+                            int i = 1;
+                            for (int q = m; q > 0; q--) {
+                                c[(i - 1) + (u - 1) * ldc + _c_offset] = c[(i - 1) + (u - 1) * ldc + _c_offset]
+                                        + tmp * a[(i - 1) + (w - 1) * lda + _a_offset];
+                                i++;
                             }
 
                         }
-                        j6++;
+                        w++;
                     }
 
-                    j5++;
+                    u++;
                 }
 
             } else {
                 // Form C := alpha*A**T*B + beta*C
-                int k5 = 1;
-                for (int i9 = (n - 1) + 1; i9 > 0; i9--) {
-                    int k3 = 1;
-                    for (int i11 = (m - 1) + 1; i11 > 0; i11--) {
-                        double d4 = 0.0D;
-                        int k6 = 1;
-                        for (int k12 = (k - 1) + 1; k12 > 0; k12--) {
-                            d4 += a[(k6 - 1) + (k3 - 1) * lda + _a_offset] * b[(k6 - 1) + (k5 - 1) * ldb + _b_offset];
-                            k6++;
+                int u = 1;
+                for (int o = n; o > 0; o--) {
+                    int w = 1;
+                    for (int p = m; p > 0; p--) {
+                        double tmp = 0.0;
+                        int i = 1;
+                        for (int q = k; q > 0; q--) {
+                            tmp += a[(i - 1) + (w - 1) * lda + _a_offset] * b[(i - 1) + (u - 1) * ldb + _b_offset];
+                            i++;
                         }
 
-                        if (beta == 0.0D)
-                            c[(k3 - 1) + (k5 - 1) * ldc + _c_offset] = alpha * d4;
-                        else
-                            c[(k3 - 1) + (k5 - 1) * ldc + _c_offset] = alpha * d4
-                                    + beta * c[(k3 - 1) + (k5 - 1) * ldc + _c_offset];
-                        k3++;
+                        if (beta == 0.0) {
+                            c[(w - 1) + (u - 1) * ldc + _c_offset] = alpha * tmp;
+                        } else {
+                            c[(w - 1) + (u - 1) * ldc + _c_offset] = alpha * tmp
+                                    + beta * c[(w - 1) + (u - 1) * ldc + _c_offset];
+                        }
+                        w++;
                     }
 
-                    k5++;
+                    u++;
                 }
 
             }
         } else if (nota) {
             // Form C := alpha*A*B**T + beta*C
-            int l5 = 1;
-            for (int j9 = (n - 1) + 1; j9 > 0; j9--) {
-                if (beta == 0.0D) {
-                    int l3 = 1;
-                    for (int j11 = (m - 1) + 1; j11 > 0; j11--) {
-                        c[(l3 - 1) + (l5 - 1) * ldc + _c_offset] = 0.0D;
-                        l3++;
+            int u = 1;
+            for (int o = n; o > 0; o--) {
+                if (beta == 0.0) {
+                    int i = 1;
+                    for (int p = m; p > 0; p--) {
+                        c[(i - 1) + (u - 1) * ldc + _c_offset] = 0.0;
+                        i++;
                     }
 
-                } else if (beta != 1.0D) {
-                    int i4 = 1;
-                    for (int k11 = (m - 1) + 1; k11 > 0; k11--) {
-                        c[(i4 - 1) + (l5 - 1) * ldc + _c_offset] = beta * c[(i4 - 1) + (l5 - 1) * ldc + _c_offset];
-                        i4++;
+                } else if (beta != 1.0) {
+                    int i = 1;
+                    for (int p = m; p > 0; p--) {
+                        c[(i - 1) + (u - 1) * ldc + _c_offset] = beta * c[(i - 1) + (u - 1) * ldc + _c_offset];
+                        i++;
                     }
 
                 }
-                int l6 = 1;
-                for (int l11 = (k - 1) + 1; l11 > 0; l11--) {
-                    if (b[(l5 - 1) + (l6 - 1) * ldb + _b_offset] != 0.0D) {
-                        double d5 = alpha * b[(l5 - 1) + (l6 - 1) * ldb + _b_offset];
-                        int j4 = 1;
-                        for (int l12 = (m - 1) + 1; l12 > 0; l12--) {
-                            c[(j4 - 1) + (l5 - 1) * ldc + _c_offset] = c[(j4 - 1) + (l5 - 1) * ldc + _c_offset]
-                                    + d5 * a[(j4 - 1) + (l6 - 1) * lda + _a_offset];
-                            j4++;
+                int w = 1;
+                for (int p = k; p > 0; p--) {
+                    if (b[(u - 1) + (w - 1) * ldb + _b_offset] != 0.0) {
+                        double tmp = alpha * b[(u - 1) + (w - 1) * ldb + _b_offset];
+                        int i = 1;
+                        for (int q = m; q > 0; q--) {
+                            c[(i - 1) + (u - 1) * ldc + _c_offset] = c[(i - 1) + (u - 1) * ldc + _c_offset]
+                                    + tmp * a[(i - 1) + (w - 1) * lda + _a_offset];
+                            i++;
                         }
 
                     }
-                    l6++;
+                    w++;
                 }
 
-                l5++;
+                u++;
             }
 
         } else {
             // Form C := alpha*A**T*B**T + beta*C
-            int i6 = 1;
-            for (int k9 = (n - 1) + 1; k9 > 0; k9--) {
-                int k4 = 1;
-                for (int i12 = (m - 1) + 1; i12 > 0; i12--) {
-                    double d6 = 0.0D;
-                    int i7 = 1;
-                    for (int i13 = (k - 1) + 1; i13 > 0; i13--) {
-                        d6 += a[(i7 - 1) + (k4 - 1) * lda + _a_offset] * b[(i6 - 1) + (i7 - 1) * ldb + _b_offset];
-                        i7++;
+            int u = 1;
+            for (int o = n; o > 0; o--) {
+                int w = 1;
+                for (int p = m; p > 0; p--) {
+                    double tmp = 0.0;
+                    int i = 1;
+                    for (int q = k; q > 0; q--) {
+                        tmp += a[(i - 1) + (w - 1) * lda + _a_offset] * b[(u - 1) + (i - 1) * ldb + _b_offset];
+                        i++;
                     }
 
-                    if (beta == 0.0D)
-                        c[(k4 - 1) + (i6 - 1) * ldc + _c_offset] = alpha * d6;
-                    else
-                        c[(k4 - 1) + (i6 - 1) * ldc + _c_offset] = alpha * d6
-                                + beta * c[(k4 - 1) + (i6 - 1) * ldc + _c_offset];
-                    k4++;
+                    if (beta == 0.0) {
+                        c[(w - 1) + (u - 1) * ldc + _c_offset] = alpha * tmp;
+                    } else {
+                        c[(w - 1) + (u - 1) * ldc + _c_offset] = alpha * tmp
+                                + beta * c[(w - 1) + (u - 1) * ldc + _c_offset];
+                    }
+                    w++;
                 }
 
-                i6++;
+                u++;
             }
-
         }
     }
 }

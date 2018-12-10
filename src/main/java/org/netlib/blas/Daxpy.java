@@ -1,5 +1,7 @@
 package org.netlib.blas;
 
+// constant times a vector plus a vector.
+// uses unrolled loops for increments equal to one.
 public final class Daxpy {
 
     public static void daxpy(int n, double da, double[] dx, int _dx_offset, int incx,
@@ -9,47 +11,50 @@ public final class Daxpy {
             return;
         }
 
-        int j1 = 0;
+        int i = 0;
 
-        if ((incx != 1) || (incy != 1)) {
-            int k1 = 1;
-            int l1 = 1;
+        if (incx != 1 || incy != 1) {
+            // code for unequal increments or equal increments
+            // not equal to 1
+            int ix = 1;
+            int iy = 1;
             if (incx < 0) {
-                k1 = (-n + 1) * incx + 1;
+                ix = (-n + 1) * incx + 1;
             }
             if (incy < 0) {
-                l1 = (-n + 1) * incy + 1;
+                iy = (-n + 1) * incy + 1;
             }
-            j1 = 1;
-            for (int k2 = (n - 1) + 1; k2 > 0; k2--) {
-                dy[(l1 - 1) + _dy_offset] = dy[(l1 - 1) + _dy_offset] + da * dx[(k1 - 1) + _dx_offset];
-                k1 += incx;
-                l1 += incy;
-                j1++;
+            i = 1;
+            for (int k = n; k > 0; k--) {
+                dy[(iy - 1) + _dy_offset] = dy[(iy - 1) + _dy_offset] + da * dx[(ix - 1) + _dx_offset];
+                ix += incx;
+                iy += incy;
+                i++;
             }
 
             return;
         }
-        int i2 = n % 4;
-        if (i2 != 0) {
-            j1 = 1;
-            for (int l2 = (i2 - 1) + 1; l2 > 0; l2--) {
-                dy[(j1 - 1) + _dy_offset] = dy[(j1 - 1) + _dy_offset] + da * dx[(j1 - 1) + _dx_offset];
-                j1++;
+        // code for both increments equal to 1
+        int m = n % 4; // label 20
+        if (m != 0) {
+            i = 1;
+            for (int k = m; k > 0; k--) {
+                dy[(i - 1) + _dy_offset] = dy[(i - 1) + _dy_offset] + da * dx[(i - 1) + _dx_offset];
+                i++;
             }
 
             if (n < 4) {
                 return;
             }
         }
-        int j2 = i2 + 1;
-        j1 = j2;
-        for (int i3 = ((n - j2) + 4) / 4; i3 > 0; i3--) {
-            dy[j1 - 1 + _dy_offset] = dy[j1 - 1 + _dy_offset] + da * dx[j1 - 1 + _dx_offset];
-            dy[j1 + _dy_offset    ] = dy[j1     + _dy_offset] + da * dx[j1     + _dx_offset];
-            dy[j1 + 1 + _dy_offset] = dy[j1 + 1 + _dy_offset] + da * dx[j1 + 1 + _dx_offset];
-            dy[j1 + 2 + _dy_offset] = dy[j1 + 2 + _dy_offset] + da * dx[j1 + 2 + _dx_offset];
-            j1 += 4;
+        int mp1 = m + 1; // label 40
+        i = mp1;
+        for (int k = ((n - mp1) + 4) / 4; k > 0; k--) {
+            dy[i - 1 + _dy_offset] = dy[i - 1 + _dy_offset] + da * dx[i - 1 + _dx_offset];
+            dy[i +     _dy_offset] = dy[i     + _dy_offset] + da * dx[i     + _dx_offset];
+            dy[i + 1 + _dy_offset] = dy[i + 1 + _dy_offset] + da * dx[i + 1 + _dx_offset];
+            dy[i + 2 + _dy_offset] = dy[i + 2 + _dy_offset] + da * dx[i + 2 + _dx_offset];
+            i += 4;
         }
     }
 }
