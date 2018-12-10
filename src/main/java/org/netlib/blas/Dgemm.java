@@ -147,6 +147,12 @@ public final class Dgemm {
     public static void dgemm(String transa, String transb, int m, int n, int k, double alpha, double a[], int _a_offset,
             int lda, double b[], int _b_offset, int ldb, double beta, double c[], int _c_offset, int ldc) {
 
+        // trace offset values != 0 (temporary measure)
+        if (_a_offset != 0 || _b_offset != 0 || _c_offset != 0) {
+            System.err.println("_a_offset: " + _a_offset + ", _b_offset: " + _b_offset + ", _c_offset: " + _c_offset);
+            new RuntimeException().printStackTrace();
+        }
+
         byte info = 0;
         int nrowa = 0;
         int nrowb = 0;
