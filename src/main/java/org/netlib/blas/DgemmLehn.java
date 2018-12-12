@@ -14,10 +14,9 @@ final class DgemmLehn {
     static void dgemm(boolean notA, boolean notB, int m, int n, int k, double alpha, double[] A, int _a_offset, int ldA,
             double[] B, int _b_offset, int ldB, double beta, double[] C, int _c_offset, int ldC) {
 
-        // FIXME
-        if (_a_offset != 0 || _b_offset != 0 || _c_offset != 0) {
-            System.err.println("non-zero offsets : a=" + _a_offset + ", b=" + _b_offset + ", c=" + _c_offset);
-        }
+//        if (_a_offset != 0 || _b_offset != 0 || _c_offset != 0) {
+//            System.err.println("non-zero offsets : a=" + _a_offset + ", b=" + _b_offset + ", c=" + _c_offset);
+//        }
 
         if (notB) {
             if (notA) {

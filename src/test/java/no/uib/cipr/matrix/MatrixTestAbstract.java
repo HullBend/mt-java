@@ -84,7 +84,7 @@ public abstract class MatrixTestAbstract {
     /**
      * Maximum matrix size, to avoid too slow tests
      */
-    protected int max = 100;
+    protected int max = 180;
 
     @Before
     public void setUp() throws Exception {
