@@ -4,48 +4,58 @@ import org.netlib.err.Xerbla;
 import org.netlib.util.doubleW;
 import org.netlib.util.intW;
 
+// DGEHD2 reduces a real general matrix A to upper Hessenberg form H by
+// an orthogonal similarity transformation:  Q**T * A * Q = H .
 public final class Dgehd2 {
-	public static void dgehd2(int i, int j, int k, double ad[], int l, int i1,
-			double ad1[], int j1, double ad2[], int k1, intW intw) {
-		int l1 = 0;
-		intw.val = 0;
-		if (i < 0)
-			intw.val = -1;
-		else if ((j < 1) || (j > Math.max(1, i)))
-			intw.val = -2;
-		else if ((k < Math.min(j, i)) || (k > i))
-			intw.val = -3;
-		else if (i1 < Math.max(1, i))
-			intw.val = -5;
-		if (intw.val != 0) {
-			Xerbla.xerbla("DGEHD2", -intw.val);
-			return;
-		}
-		l1 = j;
-		for (int i2 = (k - 1 - j) + 1; i2 > 0; i2--) {
-			dlarfg_adapter(k - l1, ad, ((l1 + 1) - 1) + (l1 - 1) * i1 + l, ad,
-					(Math.min(l1 + 2, i) - 1) + (l1 - 1) * i1 + l, 1, ad1,
-					(l1 - 1) + j1);
-			double d1 = ad[((l1 + 1) - 1) + (l1 - 1) * i1 + l];
-			ad[((l1 + 1) - 1) + (l1 - 1) * i1 + l] = 1.0D;
-			Dlarf.dlarf("Right", k, k - l1, ad, ((l1 + 1) - 1) + (l1 - 1) * i1
-					+ l, 1, ad1[(l1 - 1) + j1], ad, (1 - 1) + ((l1 + 1) - 1)
-					* i1 + l, i1, ad2, k1);
-			Dlarf.dlarf("Left", k - l1, i - l1, ad, ((l1 + 1) - 1) + (l1 - 1)
-					* i1 + l, 1, ad1[(l1 - 1) + j1], ad, ((l1 + 1) - 1)
-					+ ((l1 + 1) - 1) * i1 + l, i1, ad2, k1);
-			ad[((l1 + 1) - 1) + (l1 - 1) * i1 + l] = d1;
-			l1++;
-		}
 
-	}
+    public static void dgehd2(int n, int ilo, int ihi, double[] a, int _a_offset, int lda, double[] tau,
+            int _tau_offset, double[] work, int _work_offset, intW info) {
 
-	private static void dlarfg_adapter(int i, double ad[], int j, double ad1[],
-			int k, int l, double ad2[], int i1) {
-		doubleW doublew = new doubleW(ad[j]);
-		doubleW doublew1 = new doubleW(ad2[i1]);
-		Dlarfg.dlarfg(i, doublew, ad1, k, l, doublew1);
-		ad[j] = doublew.val;
-		ad2[i1] = doublew1.val;
-	}
+        info.val = 0;
+        if (n < 0)
+            info.val = -1;
+        else if (ilo < 1 || ilo > Math.max(1, n))
+            info.val = -2;
+        else if (ihi < Math.min(ilo, n) || ihi > n)
+            info.val = -3;
+        else if (lda < Math.max(1, n))
+            info.val = -5;
+        if (info.val != 0) {
+            Xerbla.xerbla("DGEHD2", -info.val);
+            return;
+        }
+
+        int i = ilo;
+
+        for (int k = ihi - ilo; k > 0; k--) {
+
+            // Compute elementary reflector H(i) to annihilate A(i+2:ihi,i)
+            dlarfg_adapter(ihi - i, a, i + (i - 1) * lda + _a_offset, a,
+                    (Math.min(i + 2, n) - 1) + (i - 1) * lda + _a_offset, 1, tau, (i - 1) + _tau_offset);
+
+            double aii = a[i + (i - 1) * lda + _a_offset];
+
+            a[i + (i - 1) * lda + _a_offset] = 1.0;
+
+            // Apply H(i) to A(1:ihi,i+1:ihi) from the right
+            Dlarf.dlarf("Right", ihi, ihi - i, a, i + (i - 1) * lda + _a_offset, 1, tau[i - 1 + _tau_offset], a,
+                    i * lda + _a_offset, lda, work, _work_offset);
+
+            // Apply H(i) to A(i+1:ihi,i+1:n) from the left
+            Dlarf.dlarf("Left", ihi - i, n - i, a, i + (i - 1) * lda + _a_offset, 1, tau[i - 1 + _tau_offset], a,
+                    i + i * lda + _a_offset, lda, work, _work_offset);
+
+            a[i + (i - 1) * lda + _a_offset] = aii;
+            i++;
+        }
+
+    }
+
+    private static void dlarfg_adapter(int i, double[] a, int j, double[] b, int k, int l, double[] c, int m) {
+        doubleW dw1 = new doubleW(a[j]);
+        doubleW dw2 = new doubleW(c[m]);
+        Dlarfg.dlarfg(i, dw1, b, k, l, dw2);
+        a[j] = dw1.val;
+        c[m] = dw2.val;
+    }
 }
