@@ -1,42 +1,49 @@
 package org.netlib.blas;
 
+// DSCAL scales a vector by a constant.
+// Uses unrolled loops for increment equal to 1.
 public final class Dscal {
-	public static void dscal(int i, double d, double ad[], int j, int k) {
-		int l = 0;
-		int i1 = 0;
-		int j1 = 0;
-		if ((i <= 0) || (k <= 0))
-			return;
-		if (k != 1) {
-			int k1 = i * k;
-			l = 1;
-			for (int l1 = ((k1 - 1) + k) / k; l1 > 0; l1--) {
-				ad[(l - 1) + j] = d * ad[(l - 1) + j];
-				l += k;
-			}
 
-			return;
-		}
-		i1 = i % 5;
-		if (i1 != 0) {
-			l = 1;
-			for (int i2 = (i1 - 1) + 1; i2 > 0; i2--) {
-				ad[(l - 1) + j] = d * ad[(l - 1) + j];
-				l++;
-			}
+    public static void dscal(int n, double da, double[] dx, int _dx_offset, int incx) {
 
-			if (i < 5)
-				return;
-		}
-		j1 = i1 + 1;
-		l = j1;
-		for (int j2 = ((i - j1) + 5) / 5; j2 > 0; j2--) {
-			ad[(l - 1) + j] = d * ad[(l - 1) + j];
-			ad[((l + 1) - 1) + j] = d * ad[((l + 1) - 1) + j];
-			ad[((l + 2) - 1) + j] = d * ad[((l + 2) - 1) + j];
-			ad[((l + 3) - 1) + j] = d * ad[((l + 3) - 1) + j];
-			ad[((l + 4) - 1) + j] = d * ad[((l + 4) - 1) + j];
-			l += 5;
-		}
-	}
+        if (n <= 0 || incx <= 0) {
+            return;
+        }
+
+        int l = 0;
+        // code for increment not equal to 1
+        if (incx != 1) {
+            int nincx = n * incx;
+            l = 1;
+            for (int i = ((nincx - 1) + incx) / incx; i > 0; i--) {
+                dx[l - 1 + _dx_offset] = da * dx[l - 1 + _dx_offset];
+                l += incx;
+            }
+
+            return;
+        }
+        // code for increment equal to 1
+        int m = n % 5;
+        if (m != 0) {
+            l = 1;
+            for (int i = m; i > 0; i--) {
+                dx[l - 1 + _dx_offset] = da * dx[l - 1 + _dx_offset];
+                l++;
+            }
+
+            if (n < 5) {
+                return;
+            }
+        }
+        int mp = m + 1;
+        l = mp;
+        for (int i = ((n - mp) + 5) / 5; i > 0; i--) {
+            dx[l - 1 + _dx_offset] = da * dx[l - 1 + _dx_offset];
+            dx[l     + _dx_offset] = da * dx[l     + _dx_offset];
+            dx[l + 1 + _dx_offset] = da * dx[l + 1 + _dx_offset];
+            dx[l + 2 + _dx_offset] = da * dx[l + 2 + _dx_offset];
+            dx[l + 3 + _dx_offset] = da * dx[l + 3 + _dx_offset];
+            l += 5;
+        }
+    }
 }

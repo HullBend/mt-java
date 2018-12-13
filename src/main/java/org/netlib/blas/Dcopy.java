@@ -1,52 +1,62 @@
 package org.netlib.blas;
 
+// DCOPY copies a vector, x, to a vector, y.
+// Uses unrolled loops for increments equal to 1.
 public final class Dcopy {
-	public static void dcopy(int i, double ad[], int j, int k, double ad1[],
-			int l, int i1) {
-		int j1 = 0;
-		int i2 = 0;
-		int j2 = 0;
-		if (i <= 0)
-			return;
-		if ((k != 1) || (i1 != 1)) {
-			int k1 = 1;
-			int l1 = 1;
-			if (k < 0)
-				k1 = (-i + 1) * k + 1;
-			if (i1 < 0)
-				l1 = (-i + 1) * i1 + 1;
-			j1 = 1;
-			for (int k2 = (i - 1) + 1; k2 > 0; k2--) {
-				ad1[(l1 - 1) + l] = ad[(k1 - 1) + j];
-				k1 += k;
-				l1 += i1;
-				j1++;
-			}
 
-			return;
-		}
-		i2 = i % 7;
-		if (i2 != 0) {
-			j1 = 1;
-			for (int l2 = (i2 - 1) + 1; l2 > 0; l2--) {
-				ad1[(j1 - 1) + l] = ad[(j1 - 1) + j];
-				j1++;
-			}
+    public static void dcopy(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
 
-			if (i < 7)
-				return;
-		}
-		j2 = i2 + 1;
-		j1 = j2;
-		for (int i3 = ((i - j2) + 7) / 7; i3 > 0; i3--) {
-			ad1[(j1 - 1) + l] = ad[(j1 - 1) + j];
-			ad1[((j1 + 1) - 1) + l] = ad[((j1 + 1) - 1) + j];
-			ad1[((j1 + 2) - 1) + l] = ad[((j1 + 2) - 1) + j];
-			ad1[((j1 + 3) - 1) + l] = ad[((j1 + 3) - 1) + j];
-			ad1[((j1 + 4) - 1) + l] = ad[((j1 + 4) - 1) + j];
-			ad1[((j1 + 5) - 1) + l] = ad[((j1 + 5) - 1) + j];
-			ad1[((j1 + 6) - 1) + l] = ad[((j1 + 6) - 1) + j];
-			j1 += 7;
-		}
-	}
+        if (n <= 0) {
+            return;
+        }
+
+        int k = 0;
+
+        // code for unequal increments or equal increments
+        // not equal to 1
+        if (incx != 1 || incy != 1) {
+            int ix = 1;
+            int iy = 1;
+            if (incx < 0) {
+                ix = (-n + 1) * incx + 1;
+            }
+            if (incy < 0) {
+                iy = (-n + 1) * incy + 1;
+            }
+            k = 1;
+            for (int i = n; i > 0; i--) {
+                dy[iy - 1 + _dy_offset] = dx[ix - 1 + _dx_offset];
+                ix += incx;
+                iy += incy;
+                k++;
+            }
+
+            return;
+        }
+        // code for both increments equal to 1
+        int m = n % 7;
+        if (m != 0) {
+            k = 1;
+            for (int i = m; i > 0; i--) {
+                dy[k - 1 + _dy_offset] = dx[k - 1 + _dx_offset];
+                k++;
+            }
+
+            if (n < 7) {
+                return;
+            }
+        }
+        int mp = m + 1;
+        k = mp;
+        for (int i = ((n - mp) + 7) / 7; i > 0; i--) {
+            dy[k - 1 + _dy_offset] = dx[k - 1 + _dx_offset];
+            dy[k     + _dy_offset] = dx[k     + _dx_offset];
+            dy[k + 1 + _dy_offset] = dx[k + 1 + _dx_offset];
+            dy[k + 2 + _dy_offset] = dx[k + 2 + _dx_offset];
+            dy[k + 3 + _dy_offset] = dx[k + 3 + _dx_offset];
+            dy[k + 4 + _dy_offset] = dx[k + 4 + _dx_offset];
+            dy[k + 5 + _dy_offset] = dx[k + 5 + _dx_offset];
+            k += 7;
+        }
+    }
 }
