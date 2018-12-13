@@ -240,22 +240,22 @@ public final class Dsyr2k
         } else
         {
             int l6 = 1;
-            for(int i10 = (i - 1) + 1; i10 > 0; i10--)
+            for (int i10 = (i - 1) + 1; i10 > 0; i10--)
             {
                 int l4 = l6;
-                for(int i13 = (i - l6) + 1; i13 > 0; i13--)
+                for (int i13 = (i - l6) + 1; i13 > 0; i13--)
                 {
                     double d6 = 0.0D;
                     double d11 = 0.0D;
                     int l7 = 1;
-                    for(int i14 = (j - 1) + 1; i14 > 0; i14--)
+                    for (int i14 = (j - 1) + 1; i14 > 0; i14--)
                     {
                         d6 += ad[(l7 - 1) + (l4 - 1) * l + k] * ad1[(l7 - 1) + (l6 - 1) * j1 + i1];
                         d11 += ad1[(l7 - 1) + (l4 - 1) * j1 + i1] * ad[(l7 - 1) + (l6 - 1) * l + k];
                         l7++;
                     }
 
-                    if(d1 == 0.0D)
+                    if (d1 == 0.0D)
                         ad2[(l4 - 1) + (l6 - 1) * l1 + k1] = d * d6 + d * d11;
                     else
                         ad2[(l4 - 1) + (l6 - 1) * l1 + k1] = d1 * ad2[(l4 - 1) + (l6 - 1) * l1 + k1] + d * d6 + d * d11;

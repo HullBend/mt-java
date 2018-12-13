@@ -120,16 +120,16 @@ public final class Dsyr2
         } else
         {
             int k4 = 1;
-            for(int k6 = (i - 1) + 1; k6 > 0; k6--)
+            for (int k6 = (i - 1) + 1; k6 > 0; k6--)
             {
-                if((ad[(l4 - 1) + j] != 0.0D) || (ad1[(i5 - 1) + l] != 0.0D))
+                if ((ad[(l4 - 1) + j] != 0.0D) || (ad1[(i5 - 1) + l] != 0.0D))
                 {
                     double d5 = d * ad1[(i5 - 1) + l];
                     double d10 = d * ad[(l4 - 1) + j];
                     int i3 = l4;
                     int k3 = i5;
                     int k2 = k4;
-                    for(int k7 = (i - k4) + 1; k7 > 0; k7--)
+                    for (int k7 = (i - k4) + 1; k7 > 0; k7--)
                     {
                         ad2[(k2 - 1) + (k4 - 1) * k1 + j1] = ad2[(k2 - 1) + (k4 - 1) * k1 + j1] + ad[(i3 - 1) + j] * d5 + ad1[(k3 - 1) + l] * d10;
                         i3 += k;

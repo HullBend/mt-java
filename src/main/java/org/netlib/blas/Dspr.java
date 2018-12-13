@@ -108,14 +108,14 @@ public final class Dspr
         {
             int j3 = l4;
             int l2 = 1;
-            for(int l5 = (i - 1) + 1; l5 > 0; l5--)
+            for (int l5 = (i - 1) + 1; l5 > 0; l5--)
             {
-                if(ad[(j3 - 1) + j] != 0.0D)
+                if (ad[(j3 - 1) + j] != 0.0D)
                 {
                     double d5 = d * ad[(j3 - 1) + j];
                     int l1 = j3;
                     int j4 = k4;
-                    for(int l6 = ((k4 + i) - l2 - k4) + 1; l6 > 0; l6--)
+                    for (int l6 = ((k4 + i) - l2 - k4) + 1; l6 > 0; l6--)
                     {
                         ad1[(j4 - 1) + l] = ad1[(j4 - 1) + l] + ad[(l1 - 1) + j] * d5;
                         l1 += k;

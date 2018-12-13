@@ -211,19 +211,19 @@ public final class Dtrsv
             j7 += (i - 1) * i1;
             int i7 = j7;
             int i6 = i;
-            for(int j9 = ((1 - i) + -1) / -1; j9 > 0; j9--)
+            for (int j9 = ((1 - i) + -1) / -1; j9 > 0; j9--)
             {
                 double d8 = ad1[(i7 - 1) + l];
                 int i4 = j7;
                 int i3 = i;
-                for(int j11 = (((i6 + 1) - i) + -1) / -1; j11 > 0; j11--)
+                for (int j11 = (((i6 + 1) - i) + -1) / -1; j11 > 0; j11--)
                 {
                     d8 -= ad[(i3 - 1) + (i6 - 1) * k + j] * ad1[(i4 - 1) + l];
                     i4 -= i1;
                     i3--;
                 }
 
-                if(flag4)
+                if (flag4)
                     d8 /= ad[(i6 - 1) + (i6 - 1) * k + j];
                 ad1[(i7 - 1) + l] = d8;
                 i7 -= i1;

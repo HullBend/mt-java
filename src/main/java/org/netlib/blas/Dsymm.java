@@ -172,7 +172,7 @@ public final class Dsymm
                     else
                         d6 = d * ad[(i5 - 1) + (l5 - 1) * l + k];
                     int k3 = 1;
-                    for(int i10 = (i - 1) + 1; i10 > 0; i10--)
+                    for (int i10 = (i - 1) + 1; i10 > 0; i10--)
                     {
                         ad2[(k3 - 1) + (i5 - 1) * l1 + k1] = ad2[(k3 - 1) + (i5 - 1) * l1 + k1] + d6 * ad1[(k3 - 1) + (l5 - 1) * j1 + i1];
                         k3++;
@@ -182,15 +182,15 @@ public final class Dsymm
                 }
 
                 l5 = i5 + 1;
-                for(int j9 = (j - (i5 + 1)) + 1; j9 > 0; j9--)
+                for (int j9 = (j - (i5 + 1)) + 1; j9 > 0; j9--)
                 {
                     double d7;
-                    if(flag3)
+                    if (flag3)
                         d7 = d * ad[(i5 - 1) + (l5 - 1) * l + k];
                     else
                         d7 = d * ad[(l5 - 1) + (i5 - 1) * l + k];
                     int l3 = 1;
-                    for(int j10 = (i - 1) + 1; j10 > 0; j10--)
+                    for (int j10 = (i - 1) + 1; j10 > 0; j10--)
                     {
                         ad2[(l3 - 1) + (i5 - 1) * l1 + k1] = ad2[(l3 - 1) + (i5 - 1) * l1 + k1] + d7 * ad1[(l3 - 1) + (l5 - 1) * j1 + i1];
                         l3++;

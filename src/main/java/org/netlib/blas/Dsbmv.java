@@ -173,7 +173,7 @@ public final class Dsbmv
             int k6 = k7;
             int i7 = l7;
             int i6 = 1;
-            for(int l10 = (i - 1) + 1; l10 > 0; l10--)
+            for (int l10 = (i - 1) + 1; l10 > 0; l10--)
             {
                 double d6 = d * ad1[(k6 - 1) + i1];
                 double d11 = 0.0D;
@@ -182,7 +182,7 @@ public final class Dsbmv
                 int j4 = k6;
                 int i5 = i7;
                 int l3 = i6 + 1;
-                for(int l11 = (Math.min(i, i6 + j) - (i6 + 1)) + 1; l11 > 0; l11--)
+                for (int l11 = (Math.min(i, i6 + j) - (i6 + 1)) + 1; l11 > 0; l11--)
                 {
                     j4 += j1;
                     i5 += l1;

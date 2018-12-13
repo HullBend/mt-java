@@ -230,14 +230,14 @@ public final class Dtpmv
             {
                 int l5 = i9;
                 int l4 = 1;
-                for(int i11 = (i - 1) + 1; i11 > 0; i11--)
+                for (int i11 = (i - 1) + 1; i11 > 0; i11--)
                 {
                     double d8 = ad1[(l5 - 1) + k];
                     int l2 = l5;
-                    if(flag)
+                    if (flag)
                         d8 *= ad[(l8 - 1) + j];
                     int l7 = l8 + 1;
-                    for(int i13 = ((l8 + i) - l4 - (l8 + 1)) + 1; i13 > 0; i13--)
+                    for (int i13 = ((l8 + i) - l4 - (l8 + 1)) + 1; i13 > 0; i13--)
                     {
                         l2 += l;
                         d8 += ad[(l7 - 1) + j] * ad1[(l2 - 1) + k];

@@ -166,7 +166,7 @@ public final class Dspmv
             int k5 = k7;
             int i6 = l7;
             int i5 = 1;
-            for(int l9 = (i - 1) + 1; l9 > 0; l9--)
+            for (int l9 = (i - 1) + 1; l9 > 0; l9--)
             {
                 double d6 = d * ad1[(k5 - 1) + k];
                 double d11 = 0.0D;
@@ -174,7 +174,7 @@ public final class Dspmv
                 int j3 = k5;
                 int i4 = i6;
                 int i7 = j7 + 1;
-                for(int l10 = ((j7 + i) - i5 - (j7 + 1)) + 1; l10 > 0; l10--)
+                for (int l10 = ((j7 + i) - i5 - (j7 + 1)) + 1; l10 > 0; l10--)
                 {
                     j3 += l;
                     i4 += j1;

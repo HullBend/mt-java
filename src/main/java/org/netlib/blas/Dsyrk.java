@@ -232,20 +232,20 @@ public final class Dsyrk
         } else
         {
             int j6 = 1;
-            for(int k9 = (i - 1) + 1; k9 > 0; k9--)
+            for (int k9 = (i - 1) + 1; k9 > 0; k9--)
             {
                 int j4 = j6;
-                for(int k12 = (i - j6) + 1; k12 > 0; k12--)
+                for (int k12 = (i - j6) + 1; k12 > 0; k12--)
                 {
                     double d6 = 0.0D;
                     int j7 = 1;
-                    for(int k13 = (j - 1) + 1; k13 > 0; k13--)
+                    for (int k13 = (j - 1) + 1; k13 > 0; k13--)
                     {
                         d6 += ad[(j7 - 1) + (j4 - 1) * l + k] * ad[(j7 - 1) + (j6 - 1) * l + k];
                         j7++;
                     }
 
-                    if(d1 == 0.0D)
+                    if (d1 == 0.0D)
                         ad1[(j4 - 1) + (j6 - 1) * j1 + i1] = d * d6;
                     else
                         ad1[(j4 - 1) + (j6 - 1) * j1 + i1] = d * d6 + d1 * ad1[(j4 - 1) + (j6 - 1) * j1 + i1];

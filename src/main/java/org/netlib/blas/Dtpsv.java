@@ -218,7 +218,7 @@ public final class Dtpsv
                         l1--;
                     }
 
-                    if(flag)
+                    if (flag)
                         d7 /= ad[(((l8 - i) + k4) - 1) + j];
                     ad1[(k4 - 1) + k] = d7;
                     l8 -= (i - k4) + 1;
@@ -230,19 +230,19 @@ public final class Dtpsv
                 i9 += (i - 1) * l;
                 int l5 = i9;
                 int l4 = i;
-                for(int i11 = ((1 - i) + -1) / -1; i11 > 0; i11--)
+                for (int i11 = ((1 - i) + -1) / -1; i11 > 0; i11--)
                 {
                     double d8 = ad1[(l5 - 1) + k];
                     int l2 = i9;
                     int l7 = l8;
-                    for(int i13 = ((l8 - (i - (l4 + 1)) - l8) + -1) / -1; i13 > 0; i13--)
+                    for (int i13 = ((l8 - (i - (l4 + 1)) - l8) + -1) / -1; i13 > 0; i13--)
                     {
                         d8 -= ad[(l7 - 1) + j] * ad1[(l2 - 1) + k];
                         l2 -= l;
                         l7--;
                     }
 
-                    if(flag)
+                    if (flag)
                         d8 /= ad[(((l8 - i) + l4) - 1) + j];
                     ad1[(l5 - 1) + k] = d8;
                     l5 -= l;

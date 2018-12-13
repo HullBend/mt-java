@@ -229,16 +229,16 @@ public final class Dtbmv
         {
             int j7 = i8;
             int j6 = 1;
-            for(int i12 = (i - 1) + 1; i12 > 0; i12--)
+            for (int i12 = (i - 1) + 1; i12 > 0; i12--)
             {
                 double d8 = ad1[(j7 - 1) + i1];
                 i8 += j1;
                 int j4 = i8;
                 int i10 = 1 - j6;
-                if(flag)
+                if (flag)
                     d8 *= ad[(1 - 1) + (j6 - 1) * l + k];
                 int j3 = j6 + 1;
-                for(int i14 = (Math.min(i, j6 + j) - (j6 + 1)) + 1; i14 > 0; i14--)
+                for (int i14 = (Math.min(i, j6 + j) - (j6 + 1)) + 1; i14 > 0; i14--)
                 {
                     d8 += ad[((i10 + j3) - 1) + (j6 - 1) * l + k] * ad1[(j4 - 1) + i1];
                     j4 += j1;

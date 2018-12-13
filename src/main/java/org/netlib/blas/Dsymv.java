@@ -160,7 +160,7 @@ public final class Dsymv
             int j6 = i7;
             int l6 = j7;
             int l5 = 1;
-            for(int j9 = (i - 1) + 1; j9 > 0; j9--)
+            for (int j9 = (i - 1) + 1; j9 > 0; j9--)
             {
                 double d6 = d * ad1[(j6 - 1) + l];
                 double d11 = 0.0D;
@@ -168,7 +168,7 @@ public final class Dsymv
                 int i4 = j6;
                 int l4 = l6;
                 int k3 = l5 + 1;
-                for(int j10 = (i - (l5 + 1)) + 1; j10 > 0; j10--)
+                for (int j10 = (i - (l5 + 1)) + 1; j10 > 0; j10--)
                 {
                     i4 += i1;
                     l4 += k1;

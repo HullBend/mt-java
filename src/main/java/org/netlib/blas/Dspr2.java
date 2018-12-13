@@ -126,16 +126,16 @@ public final class Dspr2
         } else
         {
             int l3 = 1;
-            for(int i7 = (i - 1) + 1; i7 > 0; i7--)
+            for (int i7 = (i - 1) + 1; i7 > 0; i7--)
             {
-                if((ad[(i4 - 1) + j] != 0.0D) || (ad1[(j4 - 1) + l] != 0.0D))
+                if ((ad[(i4 - 1) + j] != 0.0D) || (ad1[(j4 - 1) + l] != 0.0D))
                 {
                     double d5 = d * ad1[(j4 - 1) + l];
                     double d10 = d * ad[(i4 - 1) + j];
                     int j2 = i4;
                     int l2 = j4;
                     int j5 = k5;
-                    for(int i8 = ((k5 + i) - l3 - k5) + 1; i8 > 0; i8--)
+                    for (int i8 = ((k5 + i) - l3 - k5) + 1; i8 > 0; i8--)
                     {
                         ad2[(j5 - 1) + j1] = ad2[(j5 - 1) + j1] + ad[(j2 - 1) + j] * d5 + ad1[(l2 - 1) + l] * d10;
                         j2 += k;
