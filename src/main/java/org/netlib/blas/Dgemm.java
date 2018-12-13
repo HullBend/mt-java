@@ -175,7 +175,6 @@ public final class Dgemm {
         if (Math.round(Math.sqrt(m * n)) <= 220L) {
             DgemmNetlib.dgemm(notA, notB, m, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, ldc);
         } else {
-//            System.err.println("using Lehn for (" + m + " x " + n + ") C matrix");
             DgemmLehn.dgemm(notA, notB, m, n, k, alpha, a, _a_offset, lda, b, _b_offset, ldb, beta, c, _c_offset, ldc);
         }
     }

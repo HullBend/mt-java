@@ -341,57 +341,6 @@ final class Dgemm4x4 {
     //
     // Compute C <- beta*C + alpha*A*B
     //
-//    static int dgemm(int rowsA, int colsB, int colsA, double alpha, double[] A, int incRowA, int incColA, double[] B,
-//            int incRowB, int incColB, double beta, double[] C, int incRowC, int incColC) {
-//
-//        int micro_kernel_calls = 0;
-//
-//        if (alpha == 0.0 || colsA == 0) {
-//            dgescal(rowsA, colsB, beta, 0, C, incRowC, incColC);
-//            return micro_kernel_calls;
-//        }
-//
-//        final int mb = (rowsA + MC - 1) / MC;
-//        final int nb = (colsB + NC - 1) / NC;
-//        final int kb = (colsA + KC - 1) / KC;
-//
-//        final int _mc = rowsA % MC;
-//        final int _nc = colsB % NC;
-//        final int _kc = colsA % KC;
-//
-//        //
-//        // Local buffers for storing panels from A, B and C
-//        //
-//        final double[] _A = new double[MC * KC];
-//        final double[] _B = new double[KC * NC];
-//        final double[] _C = new double[MR_Height * NR_Width];
-//        final double[] AB = new double[MR_Height * NR_Width];
-//
-//        for (int j = 0; j < nb; ++j) {
-//            int nc = (j != nb - 1 || _nc == 0) ? NC : _nc;
-//
-//            for (int l = 0; l < kb; ++l) {
-//                int kc = (l != kb - 1 || _kc == 0) ? KC : _kc;
-//                double _beta = (l == 0) ? beta : 1.0;
-//
-//                pack_B(kc, nc, (l * KC * incRowB + j * NC * incColB), B, incRowB, incColB, _B);
-//
-//                for (int i = 0; i < mb; ++i) {
-//                    int mc = (i != mb - 1 || _mc == 0) ? MC : _mc;
-//
-//                    pack_A(mc, kc, (i * MC * incRowA + l * KC * incColA), A, incRowA, incColA, _A);
-//
-//                    micro_kernel_calls += dgemm_macro_kernel(mc, nc, kc, alpha, _beta,
-//                            (i * MC * incRowC + j * NC * incColC), C, incRowC, incColC, _A, _B, AB, _C);
-//                }
-//            }
-//        }
-//        return micro_kernel_calls;
-//    }
-
-    //
-    // Compute C <- beta*C + alpha*A*B
-    //
     static int dgemm(int rowsA, int colsB, int colsA, double alpha, int offA, double[] A, int incRowA, int incColA, int offB, double[] B,
             int incRowB, int incColB, double beta, int offC, double[] C, int incRowC, int incColC) {
 
@@ -438,14 +387,5 @@ final class Dgemm4x4 {
             }
         }
         return micro_kernel_calls;
-    }
-
-    //
-    // Compute C <- beta*C + alpha*A*B
-    //
-    static int dgemm(int rowsA, int colsB, int colsA, double alpha, double[] A, int incRowA, int incColA, double[] B,
-            int incRowB, int incColB, double beta, double[] C, int incRowC, int incColC) {
-
-        return dgemm(rowsA, colsB, colsA, alpha, 0, A, incRowA, incColA, 0, B, incRowB, incColB, beta, 0, C, incRowC, incColC);
     }
 }
