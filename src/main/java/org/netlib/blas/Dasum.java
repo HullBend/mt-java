@@ -1,58 +1,54 @@
 package org.netlib.blas;
 
+// DASUM takes the sum of the absolute values.
+public final class Dasum {
 
-public final class Dasum
-{
-    public static double dasum(int i, double ad[], int j, int k)
-    {
-        double d;
-label0:
-        {
-            d = 0.0D;
-            int l = 0;
-            int i1 = 0;
-            int j1 = 0;
-            double d1 = 0.0D;
-            d1 = 0.0D;
-            d = 0.0D;
-            if((i <= 0) || (k <= 0))
-                return d1;
-            if(k != 1)
-            {
-                int k1 = i * k;
-                l = 1;
-                for(int l1 = ((k1 - 1) + k) / k; l1 > 0; l1--)
-                {
-                    d += Math.abs(ad[(l - 1) + j]);
-                    l += k;
-                }
+    public static double dasum(int n, double[] dx, int _dx_offset, int incx) {
 
-                double d2 = d;
-                return d2;
+        double dasum;
+        label0: {
+
+            if (n <= 0 || incx <= 0) {
+                return 0.0;
             }
-            i1 = i % 6;
-            if(i1 != 0)
-            {
-                l = 1;
-                for(int i2 = (i1 - 1) + 1; i2 > 0; i2--)
-                {
-                    d += Math.abs(ad[(l - 1) + j]);
-                    l++;
+
+            dasum = 0.0;
+            int k = 0;
+
+            // code for increment not equal to 1
+            if (incx != 1) {
+                int nincx = n * incx;
+                k = 1;
+                for (int i = (nincx - 1 + incx) / incx; i > 0; i--) {
+                    dasum += Math.abs(dx[k - 1 + _dx_offset]);
+                    k += incx;
                 }
 
-                if(i < 6)
+                return dasum;
+            }
+            // code for increment equal to 1
+            int m = n % 6;
+            if (m != 0) {
+                k = 1;
+                for (int i = m; i > 0; i--) {
+                    dasum += Math.abs(dx[k - 1 + _dx_offset]);
+                    k++;
+                }
+
+                if (n < 6) {
                     break label0;
+                }
             }
-            j1 = i1 + 1;
-            l = j1;
-            for(int j2 = ((i - j1) + 6) / 6; j2 > 0; j2--)
-            {
-                d = d + Math.abs(ad[(l - 1) + j]) + Math.abs(ad[((l + 1) - 1) + j]) + Math.abs(ad[((l + 2) - 1) + j]) + Math.abs(ad[((l + 3) - 1) + j]) + Math.abs(ad[((l + 4) - 1) + j]) + Math.abs(ad[((l + 5) - 1) + j]);
-                l += 6;
+            int mp1 = m + 1;
+            k = mp1;
+            for (int i = (n - mp1 + 6) / 6; i > 0; i--) {
+                dasum = dasum + Math.abs(dx[k - 1 + _dx_offset]) + Math.abs(dx[k + _dx_offset])
+                        + Math.abs(dx[k + 1 + _dx_offset]) + Math.abs(dx[k + 2 + _dx_offset])
+                        + Math.abs(dx[k + 3 + _dx_offset]) + Math.abs(dx[k + 4 + _dx_offset]);
+                k += 6;
             }
 
         }
-        double d3 = d;
-        return d3;
+        return dasum;
     }
 }

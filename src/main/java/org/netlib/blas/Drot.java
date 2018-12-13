@@ -1,38 +1,44 @@
 package org.netlib.blas;
 
+// DROT applies a plane rotation.
 public final class Drot {
-	public static void drot(int i, double ad[], int j, int k, double ad1[],
-			int l, int i1, double d, double d1) {
-		int j1 = 0;
-		if (i <= 0)
-			return;
-		if ((k != 1) || (i1 != 1)) {
-			int k1 = 1;
-			int l1 = 1;
-			if (k < 0)
-				k1 = (-i + 1) * k + 1;
-			if (i1 < 0)
-				l1 = (-i + 1) * i1 + 1;
-			j1 = 1;
-			for (int i2 = (i - 1) + 1; i2 > 0; i2--) {
-				double d3 = d * ad[(k1 - 1) + j] + d1 * ad1[(l1 - 1) + l];
-				ad1[(l1 - 1) + l] = d * ad1[(l1 - 1) + l] - d1
-						* ad[(k1 - 1) + j];
-				ad[(k1 - 1) + j] = d3;
-				k1 += k;
-				l1 += i1;
-				j1++;
-			}
 
-			return;
-		}
-		j1 = 1;
-		for (int j2 = (i - 1) + 1; j2 > 0; j2--) {
-			double d4 = d * ad[(j1 - 1) + j] + d1 * ad1[(j1 - 1) + l];
-			ad1[(j1 - 1) + l] = d * ad1[(j1 - 1) + l] - d1 * ad[(j1 - 1) + j];
-			ad[(j1 - 1) + j] = d4;
-			j1++;
-		}
+    public static void drot(int n, double[] dx, int _dx_offset, int incx, double[] dy,
+            int _dy_offset, int incy, double c, double s) {
 
-	}
+        if (n <= 0) {
+            return;
+        }
+
+        int k = 0;
+
+        if (incx != 1 || incy != 1) {
+            int ix = 1;
+            int iy = 1;
+            if (incx < 0) {
+                ix = (-n + 1) * incx + 1;
+            }
+            if (incy < 0) {
+                iy = (-n + 1) * incy + 1;
+            }
+            k = 1;
+            for (int i = n; i > 0; i--) {
+                double dtemp = c * dx[ix - 1 + _dx_offset] + s * dy[iy - 1 + _dy_offset];
+                dy[iy - 1 + _dy_offset] = c * dy[iy - 1 + _dy_offset] - s * dx[ix - 1 + _dx_offset];
+                dx[ix - 1 + _dx_offset] = dtemp;
+                ix += incx;
+                iy += incy;
+                k++;
+            }
+
+            return;
+        }
+        k = 1;
+        for (int i = n; i > 0; i--) {
+            double dtemp = c * dx[k - 1 + _dx_offset] + s * dy[k - 1 + _dy_offset];
+            dy[k - 1 + _dy_offset] = c * dy[k - 1 + _dy_offset] - s * dx[k - 1 + _dx_offset];
+            dx[k - 1 + _dx_offset] = dtemp;
+            k++;
+        }
+    }
 }
