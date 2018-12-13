@@ -26,6 +26,7 @@ public final class Dgehrd {
         k3 = Math.min(64, Ilaenv.ilaenv(1, "DGEHRD", " ", i, j, k, -1));
         j3 = i * k3;
         ad2[k1] = j3;
+
         flag = (l1 == -1);
         if (i < 0)
             intw.val = -1;
@@ -35,7 +36,7 @@ public final class Dgehrd {
             intw.val = -3;
         else if (i1 < Math.max(1, i))
             intw.val = -5;
-        else if (l1 < Math.max(1, i) && flag ^ true)
+        else if (l1 < Math.max(1, i) && !flag)
             intw.val = -8;
         if (intw.val != 0) {
             Xerbla.xerbla("DGEHRD", -intw.val);
@@ -47,13 +48,13 @@ public final class Dgehrd {
 
         i2 = 1;
         for (int k4 = j - 1; k4 > 0; k4--) {
-            ad1[(i2 - 1) + j1] = 0.0;
+            ad1[i2 - 1 + j1] = 0.0;
             i2++;
         }
 
         i2 = Math.max(1, k);
         for (int l4 = i - Math.max(1, k); l4 > 0; l4--) {
-            ad1[(i2 - 1) + j1] = 0.0;
+            ad1[i2 - 1 + j1] = 0.0;
             i2++;
         }
 
@@ -89,14 +90,14 @@ public final class Dgehrd {
 
                 Dlahr2.dlahr2(k, i2, j2, ad, (i2 - 1) * i1 + l, i1, ad1, (i2 - 1) + j1, ad3, 0, 65, ad2, k1, i3);
 
-                double d1 = ad[((i2 + j2) - 1) + ((i2 + j2) - 2) * i1 + l];
+                double d1 = ad[(i2 + j2 - 1) + (i2 + j2 - 2) * i1 + l];
 
-                ad[((i2 + j2) - 1) + ((i2 + j2) - 2) * i1 + l] = 1.0;
+                ad[(i2 + j2 - 1) + (i2 + j2 - 2) * i1 + l] = 1.0;
 
                 Dgemm.dgemm("No transpose", "Transpose", k, (k - i2 - j2) + 1, j2, -1.0, ad2, k1, i3, ad,
                         (i2 + j2) - 1 + (i2 - 1) * i1 + l, i1, 1.0, ad, (i2 + j2 - 1) * i1 + l, i1);
 
-                ad[((i2 + j2) - 1) + ((i2 + j2) - 2) * i1 + l] = d1;
+                ad[(i2 + j2 - 1) + (i2 + j2 - 2) * i1 + l] = d1;
 
                 Dtrmm.dtrmm("Right", "Lower", "Transpose", "Unit", i2, j2 - 1, 1.0, ad, i2 + (i2 - 1) * i1 + l, i1, ad2,
                         k1, i3);
@@ -115,6 +116,6 @@ public final class Dgehrd {
 
         }
         Dgehd2.dgehd2(i, i2, k, ad, l, i1, ad1, j1, ad2, k1, intw1);
-        ad2[(1 - 1) + k1] = k2;
+        ad2[k1] = k2;
     }
 }
