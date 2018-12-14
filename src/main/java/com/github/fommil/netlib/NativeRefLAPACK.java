@@ -3967,6 +3967,6 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
   @Override
   public native double dlamch(java.lang.String cmach);
 
-  @Override
-  public native float slamch(java.lang.String cmach);
+//  @Override
+//  public native float slamch(java.lang.String cmach);
 }

@@ -7006,10 +7006,10 @@ public class F2jLAPACK extends com.github.fommil.netlib.LAPACK {
 //    return org.netlib.lapack.Second.second();
 //  }
 
-  @Override
-  public float slamch(java.lang.String cmach) {
-    return org.netlib.lapack.Slamch.slamch(cmach);
-  }
+//  @Override
+//  public float slamch(java.lang.String cmach) {
+//    return org.netlib.lapack.Slamch.slamch(cmach);
+//  }
 
 //  @Override
 //  public void slamc1(org.netlib.util.intW beta, org.netlib.util.intW t, org.netlib.util.booleanW rnd, org.netlib.util.booleanW ieee1) {
