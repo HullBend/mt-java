@@ -24,7 +24,7 @@ import com.github.fommil.netlib.LAPACK;
 import org.netlib.util.intW;
 
 /**
- * Computes eigenvalues of symmetrical, dense matrices
+ * Computes eigenvalues of symmetrical, dense matrices.
  */
 public class SymmDenseEVD extends SymmEVD {
 
@@ -61,7 +61,7 @@ public class SymmDenseEVD extends SymmEVD {
     /**
      * Sets up an eigenvalue decomposition for symmetrical, dense matrices.
      * Computes all eigenvalues and eigenvectors, and uses a low default
-     * tolerance criteria
+     * tolerance criteria.
      * 
      * @param n
      *            Size of the matrix
@@ -70,7 +70,7 @@ public class SymmDenseEVD extends SymmEVD {
      *            the lower part of the matrix is stored instead
      */
     public SymmDenseEVD(int n, boolean upper) {
-        this(n, upper, true, LAPACK.getInstance().dlamch("Safe minimum"));
+        this(n, upper, true, SymmEVD.SAFE_ABSTOL);
     }
 
     /**
@@ -91,7 +91,7 @@ public class SymmDenseEVD extends SymmEVD {
 
     /**
      * Sets up an eigenvalue decomposition for symmetrical, dense matrices. Uses
-     * a low default tolerance criteria
+     * a low default tolerance criteria.
      * 
      * @param n
      *            Size of the matrix
@@ -103,7 +103,7 @@ public class SymmDenseEVD extends SymmEVD {
      *            eigenvalues
      */
     public SymmDenseEVD(int n, boolean upper, boolean vectors) {
-        this(n, upper, vectors, LAPACK.getInstance().dlamch("Safe minimum"));
+        this(n, upper, vectors, SymmEVD.SAFE_ABSTOL);
     }
 
     /**
@@ -223,5 +223,4 @@ public class SymmDenseEVD extends SymmEVD {
 
         return this;
     }
-
 }

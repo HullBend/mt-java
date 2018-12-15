@@ -6961,10 +6961,10 @@ public class F2jLAPACK extends com.github.fommil.netlib.LAPACK {
 //   org.netlib.lapack.Stzrzf.stzrzf(m, n, a, _a_offset, lda, tau, _tau_offset, work, _work_offset, lwork, info);
 //  }
 
-  @Override
-  public double dlamch(java.lang.String cmach) {
-    return org.netlib.lapack.Dlamch.dlamch(cmach);
-  }
+//  @Override
+//  public double dlamch(java.lang.String cmach) {
+//    return org.netlib.lapack.Dlamch.dlamch(cmach);
+//  }
 
 //  @Override
 //  public void dlamc1(org.netlib.util.intW beta, org.netlib.util.intW t, org.netlib.util.booleanW rnd, org.netlib.util.booleanW ieee1) {

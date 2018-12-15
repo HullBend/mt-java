@@ -24,7 +24,7 @@ import com.github.fommil.netlib.LAPACK;
 import org.netlib.util.intW;
 
 /**
- * Computes eigenvalues of symmetrical, tridiagonal matrices
+ * Computes eigenvalues of symmetrical, tridiagonal matrices.
  */
 public class SymmTridiagEVD extends SymmEVD {
 
@@ -80,7 +80,7 @@ public class SymmTridiagEVD extends SymmEVD {
 
     /**
      * Sets up an eigenvalue decomposition for symmetrical, tridiagonal
-     * matrices. Uses a low default tolerance criteria
+     * matrices. Uses a low default tolerance criteria.
      * 
      * @param n
      *            Size of the matrix
@@ -89,7 +89,7 @@ public class SymmTridiagEVD extends SymmEVD {
      *            eigenvalues
      */
     public SymmTridiagEVD(int n, boolean vectors) {
-        this(n, vectors, LAPACK.getInstance().dlamch("Safe minimum"));
+        this(n, vectors, SymmEVD.SAFE_ABSTOL);
     }
 
     /**
@@ -179,5 +179,4 @@ public class SymmTridiagEVD extends SymmEVD {
 
         return this;
     }
-
 }

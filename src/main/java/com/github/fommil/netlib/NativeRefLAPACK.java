@@ -3964,8 +3964,8 @@ public class NativeRefLAPACK extends com.github.fommil.netlib.F2jLAPACK {
 
 //  private native void stzrzf_offsets(int m, int n, float[] a, int _a_offset, int lda, float[] tau, int _tau_offset, float[] work, int _work_offset, int lwork, org.netlib.util.intW info);
 
-  @Override
-  public native double dlamch(java.lang.String cmach);
+//  @Override
+//  public native double dlamch(java.lang.String cmach);
 
 //  @Override
 //  public native float slamch(java.lang.String cmach);

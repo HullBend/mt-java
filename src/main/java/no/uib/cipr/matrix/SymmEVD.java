@@ -46,6 +46,11 @@ abstract class SymmEVD {
     final JobEig job;
 
     /**
+     * Safe default value for absolute tolerance
+     */
+    protected static final double SAFE_ABSTOL = 2.2250738585072014E-308;
+
+    /**
      * Allocates storage for an eigenvalue computation
      * 
      * @param n
@@ -95,5 +100,4 @@ abstract class SymmEVD {
     public boolean hasEigenvectors() {
         return Z != null;
     }
-
 }
