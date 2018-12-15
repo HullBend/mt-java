@@ -1,6 +1,7 @@
 package org.netlib.lapack;
 
 import org.netlib.blas.Dtrsm;
+import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
