@@ -10,13 +10,15 @@ public final class Dlarfb {
     public static void dlarfb(String s, String s1, String s2, String s3, int i, int j, int k, double ad[], int l,
             int i1, double ad1[], int j1, int k1, double ad2[], int l1, int i2, double ad3[], int j2, int k2) {
 
-        String s4 = new String(" ");
-        if ((i <= 0) || (j <= 0))
+        String s4;
+        if (i <= 0 || j <= 0) {
             return;
-        if (Lsame.lsame(s1, "N"))
+        }
+        if (Lsame.lsame(s1, "N")) {
             s4 = "T";
-        else
+        } else {
             s4 = "N";
+        }
         if (Lsame.lsame(s3, "C")) {
             if (Lsame.lsame(s2, "F")) {
                 if (Lsame.lsame(s, "L")) {
@@ -27,13 +29,15 @@ public final class Dlarfb {
                     }
 
                     Dtrmm.dtrmm("Right", "Lower", "No transpose", "Unit", j, k, 1.0, ad, l, i1, ad3, j2, k2);
-                    if (i > k)
+                    if (i > k) {
                         Dgemm.dgemm("Transpose", "No transpose", j, k, i - k, 1.0, ad2, k + l1, i2, ad, k + l, i1, 1.0,
                                 ad3, j2, k2);
+                    }
                     Dtrmm.dtrmm("Right", "Upper", s4, "Non-unit", j, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                    if (i > k)
+                    if (i > k) {
                         Dgemm.dgemm("No transpose", "Transpose", i - k, j, k, -1.0, ad, k + l, i1, ad3, j2, k2, 1.0,
                                 ad2, k + l1, i2);
+                    }
                     Dtrmm.dtrmm("Right", "Lower", "Transpose", "Unit", j, k, 1.0, ad, l, i1, ad3, j2, k2);
                     l4 = 1;
                     for (int i7 = k; i7 > 0; i7--) {
@@ -55,13 +59,15 @@ public final class Dlarfb {
                     }
 
                     Dtrmm.dtrmm("Right", "Lower", "No transpose", "Unit", i, k, 1.0, ad, l, i1, ad3, j2, k2);
-                    if (j > k)
+                    if (j > k) {
                         Dgemm.dgemm("No transpose", "No transpose", i, k, j - k, 1.0, ad2, k * i2 + l1, i2, ad,
                                 k * i1 + l, i1, 1.0, ad3, j2, k2);
+                    }
                     Dtrmm.dtrmm("Right", "Upper", s1, "Non-unit", i, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                    if (j > k)
+                    if (j > k) {
                         Dgemm.dgemm("No transpose", "Transpose", i, j - k, k, -1.0, ad3, j2, k2, ad, k + l, i1, 1.0,
                                 ad2, k * i2 + l1, i2);
+                    }
                     Dtrmm.dtrmm("Right", "Lower", "Transpose", "Unit", i, k, 1.0, ad, l, i1, ad3, j2, k2);
                     i5 = 1;
                     for (int k7 = k; k7 > 0; k7--) {
@@ -84,13 +90,15 @@ public final class Dlarfb {
                 }
 
                 Dtrmm.dtrmm("Right", "Upper", "No transpose", "Unit", j, k, 1.0, ad, (i - k) + l, i1, ad3, j2, k2);
-                if (i > k)
+                if (i > k) {
                     Dgemm.dgemm("Transpose", "No transpose", j, k, i - k, 1.0, ad2, l1, i2, ad, l, i1, 1.0, ad3, j2,
                             k2);
+                }
                 Dtrmm.dtrmm("Right", "Lower", s4, "Non-unit", j, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                if (i > k)
+                if (i > k) {
                     Dgemm.dgemm("No transpose", "Transpose", i - k, j, k, -1.0, ad, l, i1, ad3, j2, k2, 1.0, ad2, l1,
                             i2);
+                }
                 Dtrmm.dtrmm("Right", "Upper", "Transpose", "Unit", j, k, 1.0, ad, (i - k) + l, i1, ad3, j2, k2);
                 j5 = 1;
                 for (int i8 = k; i8 > 0; i8--) {
@@ -112,13 +120,15 @@ public final class Dlarfb {
                 }
 
                 Dtrmm.dtrmm("Right", "Upper", "No transpose", "Unit", i, k, 1.0, ad, (j - k) + l, i1, ad3, j2, k2);
-                if (j > k)
+                if (j > k) {
                     Dgemm.dgemm("No transpose", "No transpose", i, k, j - k, 1.0, ad2, l1, i2, ad, l, i1, 1.0, ad3, j2,
                             k2);
+                }
                 Dtrmm.dtrmm("Right", "Lower", s1, "Non-unit", i, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                if (j > k)
+                if (j > k) {
                     Dgemm.dgemm("No transpose", "Transpose", i, j - k, k, -1.0, ad3, j2, k2, ad, l, i1, 1.0, ad2, l1,
                             i2);
+                }
                 Dtrmm.dtrmm("Right", "Upper", "Transpose", "Unit", i, k, 1.0, ad, (j - k) + l, i1, ad3, j2, k2);
                 k5 = 1;
                 for (int k8 = k; k8 > 0; k8--) {
@@ -143,13 +153,15 @@ public final class Dlarfb {
                     }
 
                     Dtrmm.dtrmm("Right", "Upper", "Transpose", "Unit", j, k, 1.0, ad, l, i1, ad3, j2, k2);
-                    if (i > k)
+                    if (i > k) {
                         Dgemm.dgemm("Transpose", "Transpose", j, k, i - k, 1.0, ad2, k + l1, i2, ad, k * i1 + l, i1,
                                 1.0, ad3, j2, k2);
+                    }
                     Dtrmm.dtrmm("Right", "Upper", s4, "Non-unit", j, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                    if (i > k)
+                    if (i > k) {
                         Dgemm.dgemm("Transpose", "Transpose", i - k, j, k, -1.0, ad, k * i1 + l, i1, ad3, j2, k2, 1.0,
                                 ad2, k + l1, i2);
+                    }
                     Dtrmm.dtrmm("Right", "Upper", "No transpose", "Unit", j, k, 1.0, ad, l, i1, ad3, j2, k2);
                     l5 = 1;
                     for (int i9 = k; i9 > 0; i9--) {
@@ -171,13 +183,15 @@ public final class Dlarfb {
                     }
 
                     Dtrmm.dtrmm("Right", "Upper", "Transpose", "Unit", i, k, 1.0, ad, l, i1, ad3, j2, k2);
-                    if (j > k)
+                    if (j > k) {
                         Dgemm.dgemm("No transpose", "Transpose", i, k, j - k, 1.0, ad2, k * i2 + l1, i2, ad, k * i1 + l,
                                 i1, 1.0, ad3, j2, k2);
+                    }
                     Dtrmm.dtrmm("Right", "Upper", s1, "Non-unit", i, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                    if (j > k)
+                    if (j > k) {
                         Dgemm.dgemm("No transpose", "No transpose", i, j - k, k, -1.0, ad3, j2, k2, ad, k * i1 + l, i1,
                                 1.0, ad2, k * i2 + l1, i2);
+                    }
                     Dtrmm.dtrmm("Right", "Upper", "No transpose", "Unit", i, k, 1.0, ad, l, i1, ad3, j2, k2);
                     i6 = 1;
                     for (int k9 = k; k9 > 0; k9--) {
@@ -200,11 +214,13 @@ public final class Dlarfb {
                 }
 
                 Dtrmm.dtrmm("Right", "Lower", "Transpose", "Unit", j, k, 1.0, ad, (i - k) * i1 + l, i1, ad3, j2, k2);
-                if (i > k)
+                if (i > k) {
                     Dgemm.dgemm("Transpose", "Transpose", j, k, i - k, 1.0, ad2, l1, i2, ad, l, i1, 1.0, ad3, j2, k2);
+                }
                 Dtrmm.dtrmm("Right", "Lower", s4, "Non-unit", j, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                if (i > k)
+                if (i > k) {
                     Dgemm.dgemm("Transpose", "Transpose", i - k, j, k, -1.0, ad, l, i1, ad3, j2, k2, 1.0, ad2, l1, i2);
+                }
                 Dtrmm.dtrmm("Right", "Lower", "No transpose", "Unit", j, k, 1.0, ad, (i - k) * i1 + l, i1, ad3, j2, k2);
                 j6 = 1;
                 for (int i10 = k; i10 > 0; i10--) {
@@ -226,13 +242,15 @@ public final class Dlarfb {
                 }
 
                 Dtrmm.dtrmm("Right", "Lower", "Transpose", "Unit", i, k, 1.0, ad, (j - k) * i1 + l, i1, ad3, j2, k2);
-                if (j > k)
+                if (j > k) {
                     Dgemm.dgemm("No transpose", "Transpose", i, k, j - k, 1.0, ad2, l1, i2, ad, l, i1, 1.0, ad3, j2,
                             k2);
+                }
                 Dtrmm.dtrmm("Right", "Lower", s1, "Non-unit", i, k, 1.0, ad1, j1, k1, ad3, j2, k2);
-                if (j > k)
+                if (j > k) {
                     Dgemm.dgemm("No transpose", "No transpose", i, j - k, k, -1.0, ad3, j2, k2, ad, l, i1, 1.0, ad2, l1,
                             i2);
+                }
                 Dtrmm.dtrmm("Right", "Lower", "No transpose", "Unit", i, k, 1.0, ad, (j - k) * i1 + l, i1, ad3, j2, k2);
                 k6 = 1;
                 for (int k10 = k; k10 > 0; k10--) {
