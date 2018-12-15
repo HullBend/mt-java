@@ -24,7 +24,7 @@ import com.github.fommil.netlib.LAPACK;
 import org.netlib.util.intW;
 
 /**
- * Computers QR decompositions
+ * Computes QR decompositions
  */
 public class QR extends OrthogonalComputer {
 
