@@ -4,19 +4,19 @@ import org.netlib.util.Util;
 
 public final class Ilaenv {
 
-	public static int ilaenv(int ispec, String name, String opts, int n1, int n2, int n3, int n4) {
+    public static int ilaenv(int ispec, String name, String opts, int n1, int n2, int n3, int n4) {
 
         label0: {
-        	boolean flag1;
-        	boolean flag2;
-        	String s1;
-        	String s2;
-        	String s3;
+            boolean flag1;
+            boolean flag2;
+            String s1;
+            String s2;
+            String s3;
 
             label1: {
                 label2: {
-        			int i = ispec;
-        			int j;
+                    int i = ispec;
+                    int j;
 
                     if (i != 1 && i != 2 && i != 3) {
 
@@ -227,7 +227,7 @@ public final class Ilaenv {
                         x0 = 1;
 
                     return x0;
-                }
+                } // label2
                 int x1 = 2;
                 if (s1.regionMatches(0, "GE", 0, 2)) {
                     if (((s3.regionMatches(0, "QRF", 0, 3) || s3.regionMatches(0, "RQF", 0, 3))
@@ -290,7 +290,7 @@ public final class Ilaenv {
                         x1 = 2;
 
                 return x1;
-            }
+            } // label1
             char c2 = '\0';
             if (s1.regionMatches(0, "GE", 0, 2)) {
                 if (((s3.regionMatches(0, "QRF", 0, 3) || s3.regionMatches(0, "RQF", 0, 3))
@@ -329,7 +329,7 @@ public final class Ilaenv {
                             || s2.regionMatches(0, "BR", 0, 2)))
                 c2 = '\200';
             return c2;
-        }
+        } // label0
         return 1;
     }
 }
