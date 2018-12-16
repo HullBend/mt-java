@@ -2,75 +2,79 @@ package org.netlib.blas;
 
 import org.netlib.err.Xerbla;
 
+// DGER performs the rank 1 operation A := alpha*x*y**T + A,
+// where alpha is a scalar, x is an m element vector, y is
+// an n element vector and A is an m by n matrix.
 public final class Dger {
 
-	public static void dger(int i, int j, double d, double ad[], int k, int l,
-			double ad1[], int i1, int j1, double ad2[], int k1, int l1) {
+    public static void dger(int m, int n, double alpha, double[] x, int _x_offset, int incx, double[] y, int _y_offset,
+            int incy, double[] a, int _a_offset, int lda) {
 
-		byte byte0 = 0;
-		int j3 = 0;
-		byte0 = 0;
-		if (i < 0)
-			byte0 = 1;
-		else if (j < 0)
-			byte0 = 2;
-		else if (l == 0)
-			byte0 = 5;
-		else if (j1 == 0)
-			byte0 = 7;
-		else if (l1 < Math.max(1, i))
-			byte0 = 9;
-		if (byte0 != 0) {
-			Xerbla.xerbla("DGER  ", byte0);
-			return;
-		}
-		if ((i == 0 || j == 0) || d == 0.0)
-			return;
-		if (j1 > 0) {
-			j3 = 1;
-		} else {
-			j3 = 1 - (j - 1) * j1;
-		}
-		if (l == 1) {
-			int l2 = 1;
-			for (int l3 = j; l3 > 0; l3--) {
-				if (ad1[j3 - 1 + i1] != 0.0) {
-					double d2 = d * ad1[j3 - 1 + i1];
-					int i2 = 1;
-					for (int j4 = i; j4 > 0; j4--) {
-						ad2[i2 - 1 + (l2 - 1) * l1 + k1] = ad2[i2 - 1 + (l2 - 1) * l1 + k1] + ad[i2 - 1 + k] * d2;
-						i2++;
-					}
+        int info = 0;
+        if (m < 0) {
+            info = 1;
+        } else if (n < 0) {
+            info = 2;
+        } else if (incx == 0) {
+            info = 5;
+        } else if (incy == 0) {
+            info = 7;
+        } else if (lda < Math.max(1, m)) {
+            info = 9;
+        }
+        if (info != 0) {
+            Xerbla.xerbla("DGER  ", info);
+            return;
+        }
+        if ((m == 0 || n == 0) || alpha == 0.0) {
+            return;
+        }
 
-				}
-				j3 += j1;
-				l2++;
-			}
+        int jy = 0;
+        if (incy > 0) {
+            jy = 1;
+        } else {
+            jy = 1 - (n - 1) * incy;
+        }
+        if (incx == 1) {
+            int j = 1;
+            for (int p = n; p > 0; p--) {
+                if (y[jy - 1 + _y_offset] != 0.0) {
+                    double temp = alpha * y[jy - 1 + _y_offset];
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset]
+                                + x[i - 1 + _x_offset] * temp;
+                        i++;
+                    }
+                }
+                jy += incy;
+                j++;
+            }
+        } else {
+            int kx;
+            if (incx > 0) {
+                kx = 1;
+            } else {
+                kx = 1 - (m - 1) * incx;
+            }
+            int j = 1;
+            for (int p = n; p > 0; p--) {
+                if (y[jy - 1 + _y_offset] != 0.0) {
+                    double temp = alpha * y[jy - 1 + _y_offset];
+                    int ix = kx;
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset]
+                                + x[ix - 1 + _x_offset] * temp;
+                        ix += incx;
+                        i++;
+                    }
 
-		} else {
-			int k3;
-			if (l > 0) {
-				k3 = 1;
-			} else {
-				k3 = 1 - (i - 1) * l;
-			}
-			int i3 = 1;
-			for (int i4 = j; i4 > 0; i4--) {
-				if (ad1[j3 - 1 + i1] != 0.0) {
-					double d3 = d * ad1[j3 - 1 + i1];
-					int k2 = k3;
-					int j2 = 1;
-					for (int k4 = i; k4 > 0; k4--) {
-						ad2[j2 - 1 + (i3 - 1) * l1 + k1] = ad2[j2 - 1 + (i3 - 1) * l1 + k1] + ad[k2 - 1 + k] * d3;
-						k2 += l;
-						j2++;
-					}
-
-				}
-				j3 += j1;
-				i3++;
-			}
-
-		}
-	}
+                }
+                jy += incy;
+                j++;
+            }
+        }
+    }
 }
