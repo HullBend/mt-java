@@ -2,163 +2,162 @@ package org.netlib.blas;
 
 import org.netlib.err.Xerbla;
 
+// DGEMV performs one of the matrix-vector operations
+// y := alpha*A*x + beta*y,  or  y := alpha*A**T*x + beta*y,
+// where alpha and beta are scalars, x and y are vectors and
+// A is an m by n matrix.
 public final class Dgemv {
 
-	public static void dgemv(String s, int i, int j, double d, double ad[],
-			int k, int l, double ad1[], int i1, int j1, double d1,
-			double ad2[], int k1, int l1) {
+    public static void dgemv(String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x,
+            int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy) {
 
-		byte byte0 = 0;
-		int j6 = 0;
-		int k6 = 0;
-		int l6 = 0;
-		int i7 = 0;
-		byte0 = 0;
-		if ((!Lsame.lsame(s, "N") && !Lsame.lsame(s, "T"))
-				&& !Lsame.lsame(s, "C"))
-			byte0 = 1;
-		else if (i < 0)
-			byte0 = 2;
-		else if (j < 0)
-			byte0 = 3;
-		else if (l < Math.max(1, i))
-			byte0 = 6;
-		else if (j1 == 0)
-			byte0 = 8;
-		else if (l1 == 0)
-			byte0 = 11;
-		if (byte0 != 0) {
-			Xerbla.xerbla("DGEMV ", byte0);
-			return;
-		}
-		if ((i == 0 || j == 0) || (d == 0.0 && d1 == 1.0))
-			return;
-		if (Lsame.lsame(s, "N")) {
-			l6 = j;
-			i7 = i;
-		} else {
-			l6 = i;
-			i7 = j;
-		}
-		if (j1 > 0)
-			j6 = 1;
-		else
-			j6 = 1 - (l6 - 1) * j1;
-		if (l1 > 0)
-			k6 = 1;
-		else
-			k6 = 1 - (i7 - 1) * l1;
-		if (d1 != 1.0)
-			if (l1 == 1) {
-				if (d1 == 0.0) {
-					int i2 = 1;
-					for (int j7 = (i7 - 1) + 1; j7 > 0; j7--) {
-						ad2[(i2 - 1) + k1] = 0.0;
-						i2++;
-					}
+        int info = 0;
+        if ((!Lsame.lsame(trans, "N") && !Lsame.lsame(trans, "T")) && !Lsame.lsame(trans, "C")) {
+            info = 1;
+        } else if (m < 0) {
+            info = 2;
+        } else if (n < 0) {
+            info = 3;
+        } else if (lda < Math.max(1, m)) {
+            info = 6;
+        } else if (incx == 0) {
+            info = 8;
+        } else if (incy == 0) {
+            info = 11;
+        }
+        if (info != 0) {
+            Xerbla.xerbla("DGEMV ", info);
+            return;
+        }
 
-				} else {
-					int j2 = 1;
-					for (int k7 = (i7 - 1) + 1; k7 > 0; k7--) {
-						ad2[(j2 - 1) + k1] = d1 * ad2[(j2 - 1) + k1];
-						j2++;
-					}
+        if ((m == 0 || n == 0) || (alpha == 0.0 && beta == 1.0)) {
+            return;
+        }
+        int lenx;
+        int leny;
+        if (Lsame.lsame(trans, "N")) {
+            lenx = n;
+            leny = m;
+        } else {
+            lenx = m;
+            leny = n;
+        }
+        int kx;
+        if (incx > 0) {
+            kx = 1;
+        } else {
+            kx = 1 - (lenx - 1) * incx;
+        }
+        int ky;
+        if (incy > 0) {
+            ky = 1;
+        } else {
+            ky = 1 - (leny - 1) * incy;
+        }
+        // First form y := beta*y
+        if (beta != 1.0) {
+            if (incy == 1) {
+                if (beta == 0.0) {
+                    int i = 1;
+                    for (int p = leny; p > 0; p--) {
+                        y[(i - 1) + _y_offset] = 0.0;
+                        i++;
+                    }
+                } else {
+                    int i = 1;
+                    for (int p = leny; p > 0; p--) {
+                        y[(i - 1) + _y_offset] = beta * y[(i - 1) + _y_offset];
+                        i++;
+                    }
+                }
+            } else {
+                int iy = ky;
+                if (beta == 0.0) {
+                    for (int p = leny; p > 0; p--) {
+                        y[(iy - 1) + _y_offset] = 0.0;
+                        iy += incy;
+                    }
+                } else {
+                    for (int p = leny; p > 0; p--) {
+                        y[(iy - 1) + _y_offset] = beta * y[(iy - 1) + _y_offset];
+                        iy += incy;
+                    }
+                }
+            }
+        }
+        if (alpha == 0.0) {
+            return;
+        }
+        // Form y := alpha*A*x + y
+        if (Lsame.lsame(trans, "N")) {
+            int jx = kx;
+            if (incy == 1) {
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    if (x[(jx - 1) + _x_offset] != 0.0) {
+                        double temp = alpha * x[(jx - 1) + _x_offset];
+                        int i = 1;
+                        for (int q = m; q > 0; q--) {
+                            y[(i - 1) + _y_offset] = y[(i - 1) + _y_offset]
+                                    + temp * a[(i - 1) + (j - 1) * lda + _a_offset];
+                            i++;
+                        }
+                    }
+                    jx += incx;
+                    j++;
+                }
+            } else {
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    if (x[(jx - 1) + _x_offset] != 0.0) {
+                        double temp = alpha * x[(jx - 1) + _x_offset];
+                        int iy = ky;
+                        int i = 1;
+                        for (int q = m; q > 0; q--) {
+                            y[(iy - 1) + _y_offset] = y[(iy - 1) + _y_offset]
+                                    + temp * a[(i - 1) + (j - 1) * lda + _a_offset];
+                            iy += incy;
+                            i++;
+                        }
+                    }
+                    jx += incx;
+                    j++;
+                }
+            }
+        } else {
+            // Form y := alpha*A**T*x + y
+            int jy = ky;
+            if (incx == 1) {
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    double temp = 0.0;
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        temp += a[(i - 1) + (j - 1) * lda + _a_offset] * x[(i - 1) + _x_offset];
+                        i++;
+                    }
 
-				}
-			} else {
-				int j4 = k6;
-				if (d1 == 0.0) {
-					for (int l7 = (i7 - 1) + 1; l7 > 0; l7--) {
-						ad2[(j4 - 1) + k1] = 0.0;
-						j4 += l1;
-					}
+                    y[(jy - 1) + _y_offset] = y[(jy - 1) + _y_offset] + alpha * temp;
+                    jy += incy;
+                    j++;
+                }
+            } else {
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    double temp = 0.0;
+                    int ix = kx;
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        temp += a[(i - 1) + (j - 1) * lda + _a_offset] * x[(ix - 1) + _x_offset];
+                        ix += incx;
+                        i++;
+                    }
 
-				} else {
-					for (int i8 = (i7 - 1) + 1; i8 > 0; i8--) {
-						ad2[(j4 - 1) + k1] = d1 * ad2[(j4 - 1) + k1];
-						j4 += l1;
-					}
-
-				}
-			}
-		if (d == 0.0)
-			return;
-		if (Lsame.lsame(s, "N")) {
-			int l5 = j6;
-			if (l1 == 1) {
-				int l4 = 1;
-				for (int j8 = (j - 1) + 1; j8 > 0; j8--) {
-					if (ad1[(l5 - 1) + i1] != 0.0) {
-						double d3 = d * ad1[(l5 - 1) + i1];
-						int i3 = 1;
-						for (int j9 = (i - 1) + 1; j9 > 0; j9--) {
-							ad2[(i3 - 1) + k1] = ad2[(i3 - 1) + k1] + d3
-									* ad[(i3 - 1) + (l4 - 1) * l + k];
-							i3++;
-						}
-
-					}
-					l5 += j1;
-					l4++;
-				}
-
-			} else {
-				int i5 = 1;
-				for (int k8 = (j - 1) + 1; k8 > 0; k8--) {
-					if (ad1[(l5 - 1) + i1] != 0.0) {
-						double d4 = d * ad1[(l5 - 1) + i1];
-						int k4 = k6;
-						int j3 = 1;
-						for (int k9 = (i - 1) + 1; k9 > 0; k9--) {
-							ad2[(k4 - 1) + k1] = ad2[(k4 - 1) + k1] + d4
-									* ad[(j3 - 1) + (i5 - 1) * l + k];
-							k4 += l1;
-							j3++;
-						}
-
-					}
-					l5 += j1;
-					i5++;
-				}
-
-			}
-		} else {
-			int i6 = k6;
-			if (j1 == 1) {
-				int j5 = 1;
-				for (int l8 = (j - 1) + 1; l8 > 0; l8--) {
-					double d5 = 0.0;
-					int k3 = 1;
-					for (int l9 = (i - 1) + 1; l9 > 0; l9--) {
-						d5 += ad[(k3 - 1) + (j5 - 1) * l + k]
-								* ad1[(k3 - 1) + i1];
-						k3++;
-					}
-
-					ad2[(i6 - 1) + k1] = ad2[(i6 - 1) + k1] + d * d5;
-					i6 += l1;
-					j5++;
-				}
-
-			} else {
-				int k5 = 1;
-				for (int i9 = (j - 1) + 1; i9 > 0; i9--) {
-					double d6 = 0.0;
-					int i4 = j6;
-					int l3 = 1;
-					for (int i10 = (i - 1) + 1; i10 > 0; i10--) {
-						d6 += ad[(l3 - 1) + (k5 - 1) * l + k]
-								* ad1[(i4 - 1) + i1];
-						i4 += j1;
-						l3++;
-					}
-
-					ad2[(i6 - 1) + k1] = ad2[(i6 - 1) + k1] + d * d6;
-					i6 += l1;
-					k5++;
-				}
-
-			}
-		}
-	}
+                    y[(jy - 1) + _y_offset] = y[(jy - 1) + _y_offset] + alpha * temp;
+                    jy += incy;
+                    j++;
+                }
+            }
+        }
+    }
 }
