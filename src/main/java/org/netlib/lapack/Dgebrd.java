@@ -14,19 +14,17 @@ public final class Dgebrd
         boolean flag = false;
         int k2 = 0;
         intW intw1 = new intW(0);
-        boolean flag1 = false;
         int j3 = 0;
         int k3 = 0;
         int l3 = 0;
         int i4 = 0;
         int j4 = 0;
-        boolean flag2 = false;
         int l4 = 0;
         double d = 0.0;
         intw.val = 0;
         j4 = Math.max(1, Ilaenv.ilaenv(1, "DGEBRD", " ", i, j, -1, -1));
         l3 = (i + j) * j4;
-        ad5[(1 - 1) + i2] = l3;
+        ad5[i2] = l3;
         flag = j2 == -1;
         if(i < 0)
             intw.val = -1;
@@ -82,15 +80,15 @@ public final class Dgebrd
         for(int i5 = ((i4 - l4 - 1) + j4) / j4; i5 > 0; i5--)
         {
             Dlabrd.dlabrd((i - k2) + 1, (j - k2) + 1, j4, ad, (k2 - 1) + (k2 - 1) * l + k, l, ad1, (k2 - 1) + i1, ad2, (k2 - 1) + j1, ad3, (k2 - 1) + k1, ad4, (k2 - 1) + l1, ad5, i2, j3, ad5, ((j3 * j4 + 1) - 1) + i2, k3);
-            Dgemm.dgemm("No transpose", "Transpose", (i - k2 - j4) + 1, (j - k2 - j4) + 1, j4, -1D, ad, ((k2 + j4) - 1) + (k2 - 1) * l + k, l, ad5, ((j3 * j4 + j4 + 1) - 1) + i2, k3, 1.0D, ad, ((k2 + j4) - 1) + ((k2 + j4) - 1) * l + k, l);
-            Dgemm.dgemm("No transpose", "No transpose", (i - k2 - j4) + 1, (j - k2 - j4) + 1, j4, -1D, ad5, ((j4 + 1) - 1) + i2, j3, ad, (k2 - 1) + ((k2 + j4) - 1) * l + k, l, 1.0D, ad, ((k2 + j4) - 1) + ((k2 + j4) - 1) * l + k, l);
+            Dgemm.dgemm("No transpose", "Transpose", (i - k2 - j4) + 1, (j - k2 - j4) + 1, j4, -1.0, ad, ((k2 + j4) - 1) + (k2 - 1) * l + k, l, ad5, ((j3 * j4 + j4 + 1) - 1) + i2, k3, 1.0, ad, ((k2 + j4) - 1) + ((k2 + j4) - 1) * l + k, l);
+            Dgemm.dgemm("No transpose", "No transpose", (i - k2 - j4) + 1, (j - k2 - j4) + 1, j4, -1.0, ad5, ((j4 + 1) - 1) + i2, j3, ad, (k2 - 1) + ((k2 + j4) - 1) * l + k, l, 1.0, ad, ((k2 + j4) - 1) + ((k2 + j4) - 1) * l + k, l);
             if(i >= j)
             {
                 int l2 = k2;
                 for(int j5 = ((k2 + j4) - 1 - k2) + 1; j5 > 0; j5--)
                 {
                     ad[(l2 - 1) + (l2 - 1) * l + k] = ad1[(l2 - 1) + i1];
-                    ad[(l2 - 1) + ((l2 + 1) - 1) * l + k] = ad2[(l2 - 1) + j1];
+                    ad[(l2 - 1) + l2 * l + k] = ad2[(l2 - 1) + j1];
                     l2++;
                 }
 
