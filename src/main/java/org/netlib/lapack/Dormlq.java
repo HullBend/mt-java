@@ -25,7 +25,7 @@ public final class Dormlq
         int l5 = 0;
         int i6 = 0;
         int j6 = 0;
-        double ad4[] = new double[65 * 64];
+        double[] ad4 = new double[65 * 64];
         intw.val = 0;
         flag = Lsame.lsame(s, "L");
         flag2 = Lsame.lsame(s1, "N");
@@ -39,10 +39,10 @@ public final class Dormlq
             i6 = j;
             j6 = i;
         }
-        if(flag ^ true && Lsame.lsame(s, "R") ^ true)
+        if(!flag && !Lsame.lsame(s, "R"))
             intw.val = -1;
         else
-        if(flag2 ^ true && Lsame.lsame(s1, "T") ^ true)
+        if(!flag2 && !Lsame.lsame(s1, "T"))
             intw.val = -2;
         else
         if(i < 0)
@@ -60,13 +60,13 @@ public final class Dormlq
         if(l1 < Math.max(1, i))
             intw.val = -10;
         else
-        if((j2 < Math.max(1, j6)) && flag1 ^ true)
+        if((j2 < Math.max(1, j6)) && !flag1)
             intw.val = -12;
         if(intw.val == 0)
         {
             j5 = Math.min(64, Ilaenv.ilaenv(1, "DORMLQ", s + s1, i, j, k, -1));
             l4 = Math.max(1, j6) * j5;
-            ad3[(1 - 1) + i2] = l4;
+            ad3[i2] = l4;
         }
         if(intw.val != 0)
         {
@@ -77,7 +77,7 @@ public final class Dormlq
             return;
         if(((i == 0) || (j == 0)) || (k == 0))
         {
-            ad3[(1 - 1) + i2] = 1;
+            ad3[i2] = 1;
             return;
         }
         k5 = 2;
@@ -102,7 +102,7 @@ public final class Dormlq
             int l2;
             int i3;
             int j3;
-            if((flag && flag2) || (flag ^ true && flag2 ^ true))
+            if((flag && flag2) || (!flag && !flag2))
             {
                 l2 = 1;
                 i3 = k;
@@ -146,6 +146,6 @@ public final class Dormlq
             }
 
         }
-        ad3[(1 - 1) + i2] = l4;
+        ad3[i2] = l4;
     }
 }
