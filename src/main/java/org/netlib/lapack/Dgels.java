@@ -84,21 +84,19 @@ label0:
                 return;
             }
 
-            doubleW doublew = new doubleW(0.0);
-            doubleW doublew1 = new doubleW(0.0);
-            doublew1.val = Dlamch.dlamch("S") / Dlamch.dlamch("P");
-            doublew.val = 1.0 / doublew1.val;
-            Dlabad.dlabad(doublew1, doublew);
+            doubleW dw1 = new doubleW(Dlamch.dlamch("S") / Dlamch.dlamch("P"));
+            doubleW dw2 = new doubleW(1.0 / dw1.val);
+            Dlabad.dlabad(dw1, dw2);
             d = Dlange.dlange("M", i, j, ad, l, i1, ad3, 0);
             byte0 = 0;
-            if((d > 0.0) && (d < doublew1.val))
+            if((d > 0.0) && (d < dw1.val))
             {
-                Dlascl.dlascl("G", 0, 0, d, doublew1.val, i, j, ad, l, i1, intw);
+                Dlascl.dlascl("G", 0, 0, d, dw1.val, i, j, ad, l, i1, intw);
                 byte0 = 1;
             } else
-            if(d > doublew.val)
+            if(d > dw2.val)
             {
-                Dlascl.dlascl("G", 0, 0, d, doublew.val, i, j, ad, l, i1, intw);
+                Dlascl.dlascl("G", 0, 0, d, dw2.val, i, j, ad, l, i1, intw);
                 byte0 = 2;
             } else
             if(d == 0.0)
@@ -111,20 +109,20 @@ label0:
                 j2 = j;
             d1 = Dlange.dlange("M", j2, k, ad1, j1, k1, ad3, 0);
             byte1 = 0;
-            if((d1 > 0.0) && (d1 < doublew1.val))
+            if((d1 > 0.0) && (d1 < dw1.val))
             {
-                Dlascl.dlascl("G", 0, 0, d1, doublew1.val, j2, k, ad1, j1, k1, intw);
+                Dlascl.dlascl("G", 0, 0, d1, dw1.val, j2, k, ad1, j1, k1, intw);
                 byte1 = 1;
             } else
-            if(d1 > doublew.val)
+            if(d1 > dw2.val)
             {
-                Dlascl.dlascl("G", 0, 0, d1, doublew.val, j2, k, ad1, j1, k1, intw);
+                Dlascl.dlascl("G", 0, 0, d1, dw2.val, j2, k, ad1, j1, k1, intw);
                 byte1 = 2;
             }
             if(i >= j)
             {
                 Dgeqrf.dgeqrf(i, j, ad, l, i1, ad2, l1, ad2, k3 + l1, i2 - k3, intw);
-                if(flag1 ^ true)
+                if(!flag1)
                 {
                     Dormqr.dormqr("Left", "Transpose", i, k, j, ad, l, i1, ad2, l1, ad1, j1, k1, ad2, k3 + l1, i2 - k3, intw);
                     Dtrtrs.dtrtrs("Upper", "No transpose", "Non-unit", j, k, ad, l, i1, ad1, j1, k1, intw);
@@ -185,15 +183,15 @@ label0:
                 }
             }
             if(byte0 == 1)
-                Dlascl.dlascl("G", 0, 0, d, doublew1.val, i4, k, ad1, j1, k1, intw);
+                Dlascl.dlascl("G", 0, 0, d, dw1.val, i4, k, ad1, j1, k1, intw);
             else
             if(byte0 == 2)
-                Dlascl.dlascl("G", 0, 0, d, doublew.val, i4, k, ad1, j1, k1, intw);
+                Dlascl.dlascl("G", 0, 0, d, dw2.val, i4, k, ad1, j1, k1, intw);
             if(byte1 == 1)
-                Dlascl.dlascl("G", 0, 0, doublew1.val, d1, i4, k, ad1, j1, k1, intw);
+                Dlascl.dlascl("G", 0, 0, dw1.val, d1, i4, k, ad1, j1, k1, intw);
             else
             if(byte1 == 2)
-                Dlascl.dlascl("G", 0, 0, doublew.val, d1, i4, k, ad1, j1, k1, intw);
+                Dlascl.dlascl("G", 0, 0, dw2.val, d1, i4, k, ad1, j1, k1, intw);
         }
         ad2[l1] = j4;
     }
