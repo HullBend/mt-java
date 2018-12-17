@@ -1,58 +1,72 @@
 package org.netlib.blas;
 
+// DSWAP interchanges two vectors.
+// Uses unrolled loops for increments equal to 1.
 public final class Dswap {
-	public static void dswap(int i, double ad[], int j, int k, double ad1[],
-			int l, int i1) {
-		int j1 = 0;
-		int i2 = 0;
-		int j2 = 0;
-		if (i <= 0)
+
+	public static void dswap(int n, double[] dx, int _dx_offset, int incx, double[] dy, int _dy_offset, int incy) {
+
+		if (n <= 0) {
 			return;
-		if ((k != 1) || (i1 != 1)) {
-			int k1 = 1;
-			int l1 = 1;
-			if (k < 0)
-				k1 = (-i + 1) * k + 1;
-			if (i1 < 0)
-				l1 = (-i + 1) * i1 + 1;
-			j1 = 1;
-			for (int k2 = (i - 1) + 1; k2 > 0; k2--) {
-				double d1 = ad[(k1 - 1) + j];
-				ad[(k1 - 1) + j] = ad1[(l1 - 1) + l];
-				ad1[(l1 - 1) + l] = d1;
-				k1 += k;
-				l1 += i1;
-				j1++;
+		}
+
+		// code for unequal increments or equal increments
+		// not equal to 1
+		if (incx != 1 || incy != 1) {
+			int ix = 1;
+			int iy = 1;
+			if (incx < 0) {
+				ix = (1 - n) * incx + 1;
+			}
+			if (incy < 0) {
+				iy = (1 - n) * incy + 1;
+			}
+			for (int i = n; i > 0; i--) {
+				double dtemp = dx[ix - 1 + _dx_offset];
+				dx[ix - 1 + _dx_offset] = dy[iy - 1 + _dy_offset];
+				dy[iy - 1 + _dy_offset] = dtemp;
+				ix += incx;
+				iy += incy;
 			}
 
 			return;
 		}
-		i2 = i % 3;
-		if (i2 != 0) {
-			j1 = 1;
-			for (int l2 = (i2 - 1) + 1; l2 > 0; l2--) {
-				double d2 = ad[(j1 - 1) + j];
-				ad[(j1 - 1) + j] = ad1[(j1 - 1) + l];
-				ad1[(j1 - 1) + l] = d2;
-				j1++;
+
+		// code for both increments equal to 1
+		int m = n % 3;
+		int i;
+		if (m != 0) {
+			i = 1;
+			for (int k = m; k > 0; k--) {
+				double dtemp = dx[i - 1 + _dx_offset];
+				dx[i - 1 + _dx_offset] = dy[i - 1 + _dy_offset];
+				dy[i - 1 + _dy_offset] = dtemp;
+				i++;
 			}
 
-			if (i < 3)
+			if (n < 3) {
 				return;
+			}
 		}
-		j2 = i2 + 1;
-		j1 = j2;
-		for (int i3 = ((i - j2) + 3) / 3; i3 > 0; i3--) {
-			double d3 = ad[(j1 - 1) + j];
-			ad[(j1 - 1) + j] = ad1[(j1 - 1) + l];
-			ad1[(j1 - 1) + l] = d3;
-			d3 = ad[((j1 + 1) - 1) + j];
-			ad[((j1 + 1) - 1) + j] = ad1[((j1 + 1) - 1) + l];
-			ad1[((j1 + 1) - 1) + l] = d3;
-			d3 = ad[((j1 + 2) - 1) + j];
-			ad[((j1 + 2) - 1) + j] = ad1[((j1 + 2) - 1) + l];
-			ad1[((j1 + 2) - 1) + l] = d3;
-			j1 += 3;
+
+		int mp1 = m + 1;
+		i = mp1;
+
+		for (int k = (n - mp1 + 3) / 3; k > 0; k--) {
+
+			double dtemp           = dx[i - 1 + _dx_offset];
+			dx[i - 1 + _dx_offset] = dy[i - 1 + _dy_offset];
+			dy[i - 1 + _dy_offset] = dtemp;
+
+			dtemp                  = dx[i +     _dx_offset];
+			dx[i +     _dx_offset] = dy[i +     _dy_offset];
+			dy[i +     _dy_offset] = dtemp;
+
+			dtemp                  = dx[i + 1 + _dx_offset];
+			dx[i + 1 + _dx_offset] = dy[i + 1 + _dy_offset];
+			dy[i + 1 + _dy_offset] = dtemp;
+
+			i += 3;
 		}
 	}
 }
