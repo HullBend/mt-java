@@ -27,11 +27,14 @@ public final class Dgehd2 {
 
         int i = ilo;
 
+        doubleW dw1 = new doubleW(0.0);
+        doubleW dw2 = new doubleW(0.0);
+
         for (int k = ihi - ilo; k > 0; k--) {
 
             // Compute elementary reflector H(i) to annihilate A(i+2:ihi,i)
             dlarfg_adapter(ihi - i, a, i + (i - 1) * lda + _a_offset, a,
-                    (Math.min(i + 2, n) - 1) + (i - 1) * lda + _a_offset, 1, tau, (i - 1) + _tau_offset);
+                    (Math.min(i + 2, n) - 1) + (i - 1) * lda + _a_offset, 1, tau, (i - 1) + _tau_offset, dw1, dw2);
 
             double aii = a[i + (i - 1) * lda + _a_offset];
 
@@ -51,9 +54,10 @@ public final class Dgehd2 {
 
     }
 
-    private static void dlarfg_adapter(int i, double[] a, int j, double[] b, int k, int l, double[] c, int m) {
-        doubleW dw1 = new doubleW(a[j]);
-        doubleW dw2 = new doubleW(c[m]);
+    private static void dlarfg_adapter(int i, double[] a, int j, double[] b, int k, int l, double[] c, int m,
+            doubleW dw1, doubleW dw2) {
+        dw1.val = a[j];
+        dw2.val = c[m];
         Dlarfg.dlarfg(i, dw1, b, k, l, dw2);
         a[j] = dw1.val;
         c[m] = dw2.val;
