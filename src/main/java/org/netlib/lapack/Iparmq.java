@@ -2,53 +2,63 @@ package org.netlib.lapack;
 
 import org.netlib.util.Util;
 
+// This program sets problem and machine dependent parameters
+// useful for xHSEQR and related subroutines for eigenvalue
+// problems. It is called whenever
+// IPARMQ is called with 12 <= ISPEC <= 16
 public final class Iparmq {
-	public static int iparmq(int i, String s, String s1, int j, int k, int l,
-			int i1) {
-		int j1 = 0;
-		int k1 = 0;
-		int l1 = 0;
-		if (((i == 15) || (i == 13)) || (i == 16)) {
-			j1 = (l - k) + 1;
-			k1 = 2;
-			if (j1 >= 30)
-				k1 = 4;
-			if (j1 >= 60)
-				k1 = 10;
-			if (j1 >= 150)
-				k1 = Math.max(
-						10,
-						j1
-								/ Util.nint((float) Math.log(j1)
-										/ (float) Math.log(2.0F)));
-			if (j1 >= 590)
-				k1 = 64;
-			if (j1 >= 3000)
-				k1 = 128;
-			if (j1 >= 6000)
-				k1 = 256;
-			k1 = Math.max(2, k1 - k1 % 2);
-		}
-		if (i == 12)
-			l1 = 75;
-		else if (i == 14)
-			l1 = 14;
-		else if (i == 15)
-			l1 = k1;
-		else if (i == 13) {
-			if (j1 <= 500)
-				l1 = k1;
-			else
-				l1 = (3 * k1) / 2;
-		} else if (i == 16) {
-			l1 = 0;
-			if (k1 >= 14)
-				l1 = 1;
-			if (k1 >= 14)
-				l1 = 2;
-		} else {
-			l1 = -1;
-		}
-		return l1;
-	}
+
+    public static int iparmq(int ispec, String name, String opts, int n, int ilo, int ihi, int lwork) {
+
+        int nh = 0;
+        int ns = 0;
+        int iparmq = 0;
+        if (ispec == 15 || ispec == 13 || ispec == 16) {
+            nh = (ihi - ilo) + 1;
+            ns = 2;
+            if (nh >= 30) {
+                ns = 4;
+            }
+            if (nh >= 60) {
+                ns = 10;
+            }
+            if (nh >= 150) {
+                ns = Math.max(10, nh / Util.nint((float) Math.log(nh) / (float) Math.log(2.0f)));
+            }
+            if (nh >= 590) {
+                ns = 64;
+            }
+            if (nh >= 3000) {
+                ns = 128;
+            }
+            if (nh >= 6000) {
+                ns = 256;
+            }
+            ns = Math.max(2, ns - ns % 2);
+        }
+        if (ispec == 12) {
+            iparmq = 75;
+        } else if (ispec == 14) {
+            iparmq = 14;
+        } else if (ispec == 15) {
+            iparmq = ns;
+        } else if (ispec == 13) {
+            if (nh <= 500) {
+                iparmq = ns;
+            } else {
+                iparmq = (3 * ns) / 2;
+            }
+        } else if (ispec == 16) {
+            iparmq = 0;
+            if (ns >= 14) {
+                iparmq = 1;
+            }
+            if (ns >= 14) {
+                iparmq = 2;
+            }
+        } else {
+            iparmq = -1;
+        }
+        return iparmq;
+    }
 }
