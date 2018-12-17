@@ -15,26 +15,28 @@ public final class Dgelq2
         if(i < 0)
             intw.val = -1;
         else
-        if(j < 0)
+        if (j < 0)
             intw.val = -2;
         else
-        if(l < Math.max(1, i))
+        if (l < Math.max(1, i))
             intw.val = -4;
-        if(intw.val != 0)
+        if (intw.val != 0)
         {
             Xerbla.xerbla("DGELQ2", -intw.val);
             return;
         }
         l1 = Math.min(i, j);
         k1 = 1;
-        for(int i2 = (l1 - 1) + 1; i2 > 0; i2--)
+        doubleW dw1 = new doubleW(0.0);
+        doubleW dw2 = new doubleW(0.0);
+        for (int i2 = l1; i2 > 0; i2--)
         {
-            dlarfg_adapter((j - k1) + 1, ad, (k1 - 1) + (k1 - 1) * l + k, ad, (k1 - 1) + (Math.min(k1 + 1, j) - 1) * l + k, l, ad1, (k1 - 1) + i1);
-            if(k1 < i)
+            dlarfg_adapter((j - k1) + 1, ad, (k1 - 1) + (k1 - 1) * l + k, ad, (k1 - 1) + (Math.min(k1 + 1, j) - 1) * l + k, l, ad1, (k1 - 1) + i1, dw1, dw2);
+            if (k1 < i)
             {
                 double d1 = ad[(k1 - 1) + (k1 - 1) * l + k];
-                ad[(k1 - 1) + (k1 - 1) * l + k] = 1.0D;
-                Dlarf.dlarf("Right", i - k1, (j - k1) + 1, ad, (k1 - 1) + (k1 - 1) * l + k, l, ad1[(k1 - 1) + i1], ad, ((k1 + 1) - 1) + (k1 - 1) * l + k, l, ad2, j1);
+                ad[(k1 - 1) + (k1 - 1) * l + k] = 1.0;
+                Dlarf.dlarf("Right", i - k1, (j - k1) + 1, ad, (k1 - 1) + (k1 - 1) * l + k, l, ad1[(k1 - 1) + i1], ad, k1 + (k1 - 1) * l + k, l, ad2, j1);
                 ad[(k1 - 1) + (k1 - 1) * l + k] = d1;
             }
             k1++;
@@ -42,12 +44,12 @@ public final class Dgelq2
 
     }
 
-    private static void dlarfg_adapter(int i, double ad[], int j, double ad1[], int k, int l, double ad2[], int i1)
+    private static void dlarfg_adapter(int i, double ad[], int j, double ad1[], int k, int l, double ad2[], int i1, doubleW dw1, doubleW dw2)
     {
-        doubleW doublew = new doubleW(ad[j]);
-        doubleW doublew1 = new doubleW(ad2[i1]);
-        Dlarfg.dlarfg(i, doublew, ad1, k, l, doublew1);
-        ad[j] = doublew.val;
-        ad2[i1] = doublew1.val;
+        dw1.val = ad[j];
+        dw2.val = ad2[i1];
+        Dlarfg.dlarfg(i, dw1, ad1, k, l, dw2);
+        ad[j] = dw1.val;
+        ad2[i1] = dw2.val;
     }
 }
