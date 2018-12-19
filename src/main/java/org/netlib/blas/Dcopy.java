@@ -30,8 +30,6 @@ public final class Dcopy {
         }
 
         // code for both increments equal to 1
-        for (int j = 0; j < n; ++j) {
-            dy[j + _dy_offset] = dx[j + _dx_offset];
-        }
+        System.arraycopy(dx, _dx_offset, dy, _dy_offset, n);
     }
 }
