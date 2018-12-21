@@ -4,308 +4,294 @@ import org.netlib.err.Xerbla;
 
 public final class Dtrmm {
 
-    public static void dtrmm(String s, String s1, String s2, String s3, int i,
-            int j, double d, double ad[], int k, int l, double ad1[], int i1,
-            int j1) {
+    public static void dtrmm(String side, String uplo, String transa, String diag, int m, int n, double alpha,
+            double[] a, int _a_offset, int lda, double[] b, int _b_offset, int ldb) {
 
-        byte byte0 = 0;
-        int i9 = 0;
-        boolean flag3 = false;
-        boolean flag4 = false;
-        boolean flag5 = false;
-        flag3 = Lsame.lsame(s, "L");
-        if (flag3) {
-            i9 = i;
-        } else {
-            i9 = j;
+        boolean lside = Lsame.lsame(side, "L");
+        boolean nounit = Lsame.lsame(diag, "N");
+        boolean upper = Lsame.lsame(uplo, "U");
+        boolean notrans = Lsame.lsame(transa, "N");
+        int info = 0;
+        if (!lside && !Lsame.lsame(side, "R")) {
+            info = 1;
+        } else if (!upper && !Lsame.lsame(uplo, "L")) {
+            info = 2;
+        } else if (!notrans && !Lsame.lsame(transa, "T") && !Lsame.lsame(transa, "C")) {
+            info = 3;
+        } else if (!nounit && !Lsame.lsame(diag, "U")) {
+            info = 4;
+        } else if (m < 0) {
+            info = 5;
+        } else if (n < 0) {
+            info = 6;
+        } else if (lda < Math.max(1, (lside) ? m : n)) {
+            info = 9;
+        } else if (ldb < Math.max(1, m)) {
+            info = 11;
         }
-        flag4 = Lsame.lsame(s3, "N");
-        flag5 = Lsame.lsame(s1, "U");
-        byte0 = 0;
-        if (!flag3 && !Lsame.lsame(s, "R"))
-            byte0 = 1;
-        else if (!flag5 && !Lsame.lsame(s1, "L"))
-            byte0 = 2;
-        else if ((!Lsame.lsame(s2, "N") && !Lsame.lsame(s2, "T"))
-                && !Lsame.lsame(s2, "C"))
-            byte0 = 3;
-        else if (!Lsame.lsame(s3, "U") && !Lsame.lsame(s3, "N"))
-            byte0 = 4;
-        else if (i < 0)
-            byte0 = 5;
-        else if (j < 0)
-            byte0 = 6;
-        else if (l < Math.max(1, i9))
-            byte0 = 9;
-        else if (j1 < Math.max(1, i))
-            byte0 = 11;
-        if (byte0 != 0) {
-            Xerbla.xerbla("DTRMM ", byte0);
+        if (info != 0) {
+            Xerbla.xerbla("DTRMM ", info);
             return;
         }
-        if (j == 0) {
+        // Quick return if possible
+        if (n == 0) {
             return;
         }
-        if (d == 0.0) {
-            int l4 = 1;
-            for (int j9 = j; j9 > 0; j9--) {
-                int k1 = 1;
-                for (int k11 = i; k11 > 0; k11--) {
-                    ad1[(k1 - 1) + (l4 - 1) * j1 + i1] = 0.0;
-                    k1++;
+        // Quick return when == alpha zero
+        if (alpha == 0.0) {
+            int j = 1;
+            for (int p = n; p > 0; p--) {
+                int i = 1;
+                for (int q = m; q > 0; q--) {
+                    b[i - 1 + (j - 1) * ldb + _b_offset] = 0.0;
+                    i++;
                 }
 
-                l4++;
+                j++;
             }
 
             return;
         }
-        if (flag3) {
-            if (Lsame.lsame(s2, "N")) {
-                if (flag5) {
-                    int i5 = 1;
-                    for (int k9 = j; k9 > 0; k9--) {
-                        int i7 = 1;
-                        for (int l11 = i; l11 > 0; l11--) {
-                            if (ad1[(i7 - 1) + (i5 - 1) * j1 + i1] != 0.0) {
-                                double d2 = d
-                                        * ad1[(i7 - 1) + (i5 - 1) * j1 + i1];
-                                int l1 = 1;
-                                for (int l14 = i7 - 1; l14 > 0; l14--) {
-                                    ad1[(l1 - 1) + (i5 - 1) * j1 + i1] = ad1[(l1 - 1)
-                                            + (i5 - 1) * j1 + i1]
-                                            + d2
-                                            * ad[(l1 - 1) + (i7 - 1) * l + k];
-                                    l1++;
+        // Start the operations
+        if (lside) {
+            if (notrans) {
+                if (upper) {
+                    // lside, notrans, upper
+                    int j = 1;
+                    for (int p = n; p > 0; p--) {
+                        int k = 1;
+                        for (int q = m; q > 0; q--) {
+                            if (b[k - 1 + (j - 1) * ldb + _b_offset] != 0.0) {
+                                double temp = alpha * b[k - 1 + (j - 1) * ldb + _b_offset];
+                                int i = 1;
+                                for (int r = k - 1; r > 0; r--) {
+                                    b[i - 1 + (j - 1) * ldb + _b_offset] = b[i - 1 + (j - 1) * ldb + _b_offset]
+                                            + temp * a[i - 1 + (k - 1) * lda + _a_offset];
+                                    i++;
                                 }
 
-                                if (flag4) {
-                                    d2 *= ad[(i7 - 1) + (i7 - 1) * l + k];
+                                if (nounit) {
+                                    temp *= a[k - 1 + (k - 1) * lda + _a_offset];
                                 }
-                                ad1[(i7 - 1) + (i5 - 1) * j1 + i1] = d2;
+                                b[k - 1 + (j - 1) * ldb + _b_offset] = temp;
                             }
-                            i7++;
+                            k++;
                         }
 
-                        i5++;
+                        j++;
                     }
 
                 } else {
-                    int j5 = 1;
-                    for (int l9 = j; l9 > 0; l9--) {
-                        int j7 = i;
-                        for (int i12 = i; i12 > 0; i12--) {
-                            if (ad1[(j7 - 1) + (j5 - 1) * j1 + i1] != 0.0) {
-                                double d3 = d
-                                        * ad1[(j7 - 1) + (j5 - 1) * j1 + i1];
-                                ad1[(j7 - 1) + (j5 - 1) * j1 + i1] = d3;
-                                if (flag4) {
-                                    ad1[(j7 - 1) + (j5 - 1) * j1 + i1] = ad1[(j7 - 1)
-                                            + (j5 - 1) * j1 + i1]
-                                            * ad[(j7 - 1) + (j7 - 1) * l + k];
+                    // lside, notrans, !upper
+                    int j = 1;
+                    for (int p = n; p > 0; p--) {
+                        int k = m;
+                        for (int q = m; q > 0; q--) {
+                            if (b[k - 1 + (j - 1) * ldb + _b_offset] != 0.0) {
+                                double temp = alpha * b[k - 1 + (j - 1) * ldb + _b_offset];
+                                b[k - 1 + (j - 1) * ldb + _b_offset] = temp;
+                                if (nounit) {
+                                    b[k - 1 + (j - 1) * ldb + _b_offset] = b[k - 1 + (j - 1) * ldb + _b_offset]
+                                            * a[k - 1 + (k - 1) * lda + _a_offset];
                                 }
-                                int i2 = j7 + 1;
-                                for (int i15 = i - j7; i15 > 0; i15--) {
-                                    ad1[(i2 - 1) + (j5 - 1) * j1 + i1] = ad1[(i2 - 1)
-                                            + (j5 - 1) * j1 + i1]
-                                            + d3
-                                            * ad[(i2 - 1) + (j7 - 1) * l + k];
-                                    i2++;
+                                int i = k + 1;
+                                for (int r = m - k; r > 0; r--) {
+                                    b[i - 1 + (j - 1) * ldb + _b_offset] = b[i - 1 + (j - 1) * ldb + _b_offset]
+                                            + temp * a[i - 1 + (k - 1) * lda + _a_offset];
+                                    i++;
                                 }
 
                             }
-                            j7--;
+                            k--;
                         }
 
-                        j5++;
+                        j++;
                     }
 
                 }
-            } else if (flag5) {
-                int k5 = 1;
-                for (int i10 = j; i10 > 0; i10--) {
-                    int j2 = i;
-                    for (int j12 = i; j12 > 0; j12--) {
-                        double d4 = ad1[(j2 - 1) + (k5 - 1) * j1 + i1];
-                        if (flag4) {
-                            d4 *= ad[(j2 - 1) + (j2 - 1) * l + k];
+            } else if (upper) {
+                // Form B := alpha*A**T*B
+                // lside, !notrans, upper
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = m;
+                    for (int q = m; q > 0; q--) {
+                        double temp = b[i - 1 + (j - 1) * ldb + _b_offset];
+                        if (nounit) {
+                            temp *= a[i - 1 + (i - 1) * lda + _a_offset];
                         }
-                        int k7 = 1;
-                        for (int j15 = j2 - 1; j15 > 0; j15--) {
-                            d4 += ad[(k7 - 1) + (j2 - 1) * l + k]
-                                    * ad1[(k7 - 1) + (k5 - 1) * j1 + i1];
-                            k7++;
-                        }
-
-                        ad1[(j2 - 1) + (k5 - 1) * j1 + i1] = d * d4;
-                        j2--;
-                    }
-
-                    k5++;
-                }
-
-            } else {
-                int l5 = 1;
-                for (int j10 = j; j10 > 0; j10--) {
-                    int k2 = 1;
-                    for (int k12 = i; k12 > 0; k12--) {
-                        double d5 = ad1[(k2 - 1) + (l5 - 1) * j1 + i1];
-                        if (flag4) {
-                            d5 *= ad[(k2 - 1) + (k2 - 1) * l + k];
-                        }
-                        int l7 = k2 + 1;
-                        for (int k15 = i - k2; k15 > 0; k15--) {
-                            d5 += ad[(l7 - 1) + (k2 - 1) * l + k]
-                                    * ad1[(l7 - 1) + (l5 - 1) * j1 + i1];
-                            l7++;
+                        int k = 1;
+                        for (int r = i - 1; r > 0; r--) {
+                            temp += a[k - 1 + (i - 1) * lda + _a_offset] * b[k - 1 + (j - 1) * ldb + _b_offset];
+                            k++;
                         }
 
-                        ad1[(k2 - 1) + (l5 - 1) * j1 + i1] = d * d5;
-                        k2++;
+                        b[i - 1 + (j - 1) * ldb + _b_offset] = alpha * temp;
+                        i--;
                     }
 
-                    l5++;
-                }
-
-            }
-        } else if (Lsame.lsame(s2, "N")) {
-            if (flag5) {
-                int i6 = j;
-                for (int k10 = j; k10 > 0; k10--) {
-                    double d6 = d;
-                    if (flag4) {
-                        d6 *= ad[(i6 - 1) + (i6 - 1) * l + k];
-                    }
-                    int l2 = 1;
-                    for (int l12 = i; l12 > 0; l12--) {
-                        ad1[(l2 - 1) + (i6 - 1) * j1 + i1] = d6
-                                * ad1[(l2 - 1) + (i6 - 1) * j1 + i1];
-                        l2++;
-                    }
-
-                    int i8 = 1;
-                    for (int i13 = i6 - 1; i13 > 0; i13--) {
-                        if (ad[(i8 - 1) + (i6 - 1) * l + k] != 0.0) {
-                            double d7 = d * ad[(i8 - 1) + (i6 - 1) * l + k];
-                            int i3 = 1;
-                            for (int l15 = i; l15 > 0; l15--) {
-                                ad1[(i3 - 1) + (i6 - 1) * j1 + i1] = ad1[(i3 - 1)
-                                        + (i6 - 1) * j1 + i1]
-                                        + d7
-                                        * ad1[(i3 - 1) + (i8 - 1) * j1 + i1];
-                                i3++;
-                            }
-
-                        }
-                        i8++;
-                    }
-
-                    i6--;
+                    j++;
                 }
 
             } else {
-                int j6 = 1;
-                for (int l10 = j; l10 > 0; l10--) {
-                    double d8 = d;
-                    if (flag4) {
-                        d8 *= ad[(j6 - 1) + (j6 - 1) * l + k];
-                    }
-                    int j3 = 1;
-                    for (int j13 = i; j13 > 0; j13--) {
-                        ad1[(j3 - 1) + (j6 - 1) * j1 + i1] = d8
-                                * ad1[(j3 - 1) + (j6 - 1) * j1 + i1];
-                        j3++;
-                    }
-
-                    int j8 = j6 + 1;
-                    for (int k13 = j - j6; k13 > 0; k13--) {
-                        if (ad[(j8 - 1) + (j6 - 1) * l + k] != 0.0) {
-                            double d9 = d * ad[(j8 - 1) + (j6 - 1) * l + k];
-                            int k3 = 1;
-                            for (int i16 = i; i16 > 0; i16--) {
-                                ad1[(k3 - 1) + (j6 - 1) * j1 + i1] = ad1[(k3 - 1)
-                                        + (j6 - 1) * j1 + i1]
-                                        + d9
-                                        * ad1[(k3 - 1) + (j8 - 1) * j1 + i1];
-                                k3++;
-                            }
-
+                // lside, !notrans, !upper
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        double temp = b[i - 1 + (j - 1) * ldb + _b_offset];
+                        if (nounit) {
+                            temp *= a[i - 1 + (i - 1) * lda + _a_offset];
                         }
-                        j8++;
+                        int k = i + 1;
+                        for (int r = m - i; r > 0; r--) {
+                            temp += a[k - 1 + (i - 1) * lda + _a_offset] * b[k - 1 + (j - 1) * ldb + _b_offset];
+                            k++;
+                        }
+
+                        b[i - 1 + (j - 1) * ldb + _b_offset] = alpha * temp;
+                        i++;
                     }
 
-                    j6++;
+                    j++;
                 }
 
             }
-        } else if (flag5) {
-            int k8 = 1;
-            for (int i11 = j; i11 > 0; i11--) {
-                int k6 = 1;
-                for (int l13 = k8 - 1; l13 > 0; l13--) {
-                    if (ad[(k6 - 1) + (k8 - 1) * l + k] != 0.0) {
-                        double d10 = d * ad[(k6 - 1) + (k8 - 1) * l + k];
-                        int l3 = 1;
-                        for (int j16 = i; j16 > 0; j16--) {
-                            ad1[(l3 - 1) + (k6 - 1) * j1 + i1] = ad1[(l3 - 1)
-                                    + (k6 - 1) * j1 + i1]
-                                    + d10 * ad1[(l3 - 1) + (k8 - 1) * j1 + i1];
-                            l3++;
+        } else if (notrans) {
+            // Form B := alpha*B*A
+            // !lside, notrans
+            if (upper) {
+                // !lside, notrans, upper
+                int j = n;
+                for (int p = n; p > 0; p--) {
+                    double temp = alpha;
+                    if (nounit) {
+                        temp *= a[j - 1 + (j - 1) * lda + _a_offset];
+                    }
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        b[i - 1 + (j - 1) * ldb + _b_offset] = temp * b[i - 1 + (j - 1) * ldb + _b_offset];
+                        i++;
+                    }
+
+                    int k = 1;
+                    for (int r = j - 1; r > 0; r--) {
+                        if (a[k - 1 + (j - 1) * lda + _a_offset] != 0.0) {
+                            temp = alpha * a[k - 1 + (j - 1) * lda + _a_offset];
+                            int ii = 1;
+                            for (int s = m; s > 0; s--) {
+                                b[ii - 1 + (j - 1) * ldb + _b_offset] = b[(ii - 1) + (j - 1) * ldb + _b_offset]
+                                        + temp * b[ii - 1 + (k - 1) * ldb + _b_offset];
+                                ii++;
+                            }
+
+                        }
+                        k++;
+                    }
+
+                    j--;
+                }
+
+            } else {
+                // !lside, notrans, !upper
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    double temp = alpha;
+                    if (nounit) {
+                        temp *= a[j - 1 + (j - 1) * lda + _a_offset];
+                    }
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        b[i - 1 + (j - 1) * ldb + _b_offset] = temp * b[i - 1 + (j - 1) * ldb + _b_offset];
+                        i++;
+                    }
+
+                    int k = j + 1;
+                    for (int r = n - j; r > 0; r--) {
+                        if (a[k - 1 + (j - 1) * lda + _a_offset] != 0.0) {
+                            temp = alpha * a[k - 1 + (j - 1) * lda + _a_offset];
+                            int ii = 1;
+                            for (int s = m; s > 0; s--) {
+                                b[ii - 1 + (j - 1) * ldb + _b_offset] = b[ii - 1 + (j - 1) * ldb + _b_offset]
+                                        + temp * b[ii - 1 + (k - 1) * ldb + _b_offset];
+                                ii++;
+                            }
+
+                        }
+                        k++;
+                    }
+
+                    j++;
+                }
+
+            }
+        } else if (upper) {
+            // Form B := alpha*B*A**T
+            // !lside, !notrans, upper
+            int k = 1;
+            for (int p = n; p > 0; p--) {
+                int j = 1;
+                for (int q = k - 1; q > 0; q--) {
+                    if (a[j - 1 + (k - 1) * lda + _a_offset] != 0.0) {
+                        double temp = alpha * a[j - 1 + (k - 1) * lda + _a_offset];
+                        int i = 1;
+                        for (int r = m; r > 0; r--) {
+                            b[i - 1 + (j - 1) * ldb + _b_offset] = b[i - 1 + (j - 1) * ldb + _b_offset]
+                                    + temp * b[i - 1 + (k - 1) * ldb + _b_offset];
+                            i++;
                         }
 
                     }
-                    k6++;
+                    j++;
                 }
 
-                double d11 = d;
-                if (flag4) {
-                    d11 *= ad[(k8 - 1) + (k8 - 1) * l + k];
+                double temp = alpha;
+                if (nounit) {
+                    temp *= a[k - 1 + (k - 1) * lda + _a_offset];
                 }
-                if (d11 != 1.0) {
-                    int i4 = 1;
-                    for (int i14 = i; i14 > 0; i14--) {
-                        ad1[(i4 - 1) + (k8 - 1) * j1 + i1] = d11
-                                * ad1[(i4 - 1) + (k8 - 1) * j1 + i1];
-                        i4++;
+                if (temp != 1.0) {
+                    int i = 1;
+                    for (int s = m; s > 0; s--) {
+                        b[i - 1 + (k - 1) * ldb + _b_offset] = temp * b[i - 1 + (k - 1) * ldb + _b_offset];
+                        i++;
                     }
 
                 }
-                k8++;
+                k++;
             }
 
         } else {
-            int l8 = j;
-            for (int j11 = j; j11 > 0; j11--) {
-                int l6 = l8 + 1;
-                for (int j14 = j - l8; j14 > 0; j14--) {
-                    if (ad[(l6 - 1) + (l8 - 1) * l + k] != 0.0) {
-                        double d12 = d * ad[(l6 - 1) + (l8 - 1) * l + k];
-                        int j4 = 1;
-                        for (int k16 = i; k16 > 0; k16--) {
-                            ad1[(j4 - 1) + (l6 - 1) * j1 + i1] = ad1[(j4 - 1)
-                                    + (l6 - 1) * j1 + i1]
-                                    + d12 * ad1[(j4 - 1) + (l8 - 1) * j1 + i1];
-                            j4++;
+            // !lside, !notrans, !upper
+            int k = n;
+            for (int p = n; p > 0; p--) {
+                int j = k + 1;
+                for (int q = n - k; q > 0; q--) {
+                    if (a[j - 1 + (k - 1) * lda + _a_offset] != 0.0) {
+                        double temp = alpha * a[j - 1 + (k - 1) * lda + _a_offset];
+                        int i = 1;
+                        for (int r = m; r > 0; r--) {
+                            b[i - 1 + (j - 1) * ldb + _b_offset] = b[i - 1 + (j - 1) * ldb + _b_offset]
+                                    + temp * b[i - 1 + (k - 1) * ldb + _b_offset];
+                            i++;
                         }
 
                     }
-                    l6++;
+                    j++;
                 }
 
-                double d13 = d;
-                if (flag4) {
-                    d13 *= ad[(l8 - 1) + (l8 - 1) * l + k];
+                double temp = alpha;
+                if (nounit) {
+                    temp *= a[k - 1 + (k - 1) * lda + _a_offset];
                 }
-                if (d13 != 1.0) {
-                    int k4 = 1;
-                    for (int k14 = i; k14 > 0; k14--) {
-                        ad1[(k4 - 1) + (l8 - 1) * j1 + i1] = d13
-                                * ad1[(k4 - 1) + (l8 - 1) * j1 + i1];
-                        k4++;
+                if (temp != 1.0) {
+                    int i = 1;
+                    for (int s = m; s > 0; s--) {
+                        b[i - 1 + (k - 1) * ldb + _b_offset] = temp * b[i - 1 + (k - 1) * ldb + _b_offset];
+                        i++;
                     }
 
                 }
-                l8--;
+                k--;
             }
 
         }
