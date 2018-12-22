@@ -95,7 +95,6 @@ public final class Dgels {
         // Get machine parameters
         doubleW smlnum = new doubleW(1.0020841800044864E-292);
         doubleW bignum = new doubleW(9.979201547673599E291);
-        Dlabad.dlabad(smlnum, bignum);
         // Scale A, B if max element outside range [SMLNUM,BIGNUM]
         double[] rwork = new double[1];
         double anrm = Dlange.dlange("M", m, n, a, _a_offset, lda, rwork, 0);
