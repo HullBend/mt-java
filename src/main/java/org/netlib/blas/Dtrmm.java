@@ -2,6 +2,11 @@ package org.netlib.blas;
 
 import org.netlib.err.Xerbla;
 
+// DTRMM performs one of the matrix-matrix operations
+// B := alpha*op( A )*B,  or  B := alpha*B*op( A ),
+// where  alpha  is a scalar, B is an m by n matrix, A is a unit, or
+// non-unit, upper or lower triangular matrix and op( A ) is one  of
+// op( A ) = A  or  op( A ) = A**T.
 public final class Dtrmm {
 
     public static void dtrmm(String side, String uplo, String transa, String diag, int m, int n, double alpha,
