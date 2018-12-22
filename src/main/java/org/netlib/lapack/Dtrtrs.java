@@ -5,53 +5,50 @@ import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
-public final class Dtrtrs
-{
-    public static void dtrtrs(String s, String s1, String s2, int i, int j, double ad[], int k, int l, 
-            double ad1[], int i1, int j1, intW intw)
-    {
-        boolean flag = false;
-        intw.val = 0;
-        flag = Lsame.lsame(s2, "N");
-        if(Lsame.lsame(s, "U") ^ true && Lsame.lsame(s, "L") ^ true)
-            intw.val = -1;
-        else
-        if((Lsame.lsame(s1, "N") ^ true && Lsame.lsame(s1, "T") ^ true) && Lsame.lsame(s1, "C") ^ true)
-            intw.val = -2;
-        else
-        if(flag ^ true && Lsame.lsame(s2, "U") ^ true)
-            intw.val = -3;
-        else
-        if(i < 0)
-            intw.val = -4;
-        else
-        if(j < 0)
-            intw.val = -5;
-        else
-        if(l < Math.max(1, i))
-            intw.val = -7;
-        else
-        if(j1 < Math.max(1, i))
-            intw.val = -9;
-        if(intw.val != 0)
-        {
-            Xerbla.xerbla("DTRTRS", -intw.val);
-            return;
-        }
-        if(i == 0)
-            return;
-        if(flag)
-        {
-            intw.val = 1;
-            for(int k1 = (i - 1) + 1; k1 > 0; k1--)
-            {
-                if(ad[(intw.val - 1) + (intw.val - 1) * l + k] == 0.0D)
-                    return;
-                intw.val = intw.val + 1;
-            }
+// DTRTRS solves a triangular system of the form
+//   A * X = B  or  A**T * X = B,
+// where A is a triangular matrix of order N, and B is an N-by-NRHS
+// matrix.  A check is made to verify that A is nonsingular.
+public final class Dtrtrs {
 
+    public static void dtrtrs(String uplo, String trans, String diag, int n, int nrhs, double[] a, int _a_offset,
+            int lda, double[] b, int _b_offset, int ldb, intW info) {
+
+        info.val = 0;
+        boolean nounit = Lsame.lsame(diag, "N");
+        if (!Lsame.lsame(uplo, "U") && !Lsame.lsame(uplo, "L")) {
+            info.val = -1;
+        } else if (!Lsame.lsame(trans, "N") && !Lsame.lsame(trans, "T") && !Lsame.lsame(trans, "C")) {
+            info.val = -2;
+        } else if (!nounit && !Lsame.lsame(diag, "U")) {
+            info.val = -3;
+        } else if (n < 0) {
+            info.val = -4;
+        } else if (nrhs < 0) {
+            info.val = -5;
+        } else if (lda < Math.max(1, n)) {
+            info.val = -7;
+        } else if (ldb < Math.max(1, n)) {
+            info.val = -9;
         }
-        intw.val = 0;
-        Dtrsm.dtrsm("Left", s, s1, s2, i, j, 1.0D, ad, k, l, ad1, i1, j1);
+        if (info.val != 0) {
+            Xerbla.xerbla("DTRTRS", -info.val);
+            return;
+        }
+        if (n == 0) {
+            return;
+        }
+        if (nounit) {
+            info.val = 1;
+            for (int p = n; p > 0; p--) {
+                if (a[(info.val - 1) + (info.val - 1) * lda + _a_offset] == 0.0) {
+                    return;
+                }
+                info.val = info.val + 1;
+            }
+        }
+        info.val = 0;
+        // Solve A * x = b or A**T * x = b
+        Dtrsm.dtrsm("Left", uplo, trans, diag, n, nrhs, 1.0, a, _a_offset, lda, b, _b_offset, ldb);
     }
 }
