@@ -5,29 +5,19 @@ import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
 public final class Dormqr {
+
 	public static void dormqr(String s, String s1, int i, int j, int k,
-			double ad[], int l, int i1, double ad1[], int j1, double ad2[],
-			int k1, int l1, double ad3[], int i2, int j2, intW intw) {
-		boolean flag = false;
-		boolean flag1 = false;
-		boolean flag2 = false;
-		int l3 = 0;
-		intW intw1 = new intW(0);
-		int i4 = 0;
-		int j4 = 0;
-		int k4 = 0;
-		int l4 = 0;
-		int i5 = 0;
-		int j5 = 0;
-		int k5 = 0;
-		int l5 = 0;
-		int i6 = 0;
-		int j6 = 0;
+			double[] ad, int l, int i1, double ad1[], int j1, double[] ad2,
+			int k1, int l1, double[] ad3, int i2, int j2, intW intw) {
+
 		double[] ad4 = new double[65 * 64];
-		intw.val = 0;
-		flag = Lsame.lsame(s, "L");
-		flag2 = Lsame.lsame(s1, "N");
-		flag1 = j2 == -1;
+		boolean flag = Lsame.lsame(s, "L");
+		boolean flag2 = Lsame.lsame(s1, "N");
+		boolean flag1 = j2 == -1;
+        int l4 = 0;
+		int j5 = 0;
+		int i6;
+		int j6;
 		if (flag) {
 			i6 = i;
 			j6 = j;
@@ -60,15 +50,17 @@ public final class Dormqr {
 			Xerbla.xerbla("DORMQR", -intw.val);
 			return;
 		}
-		if (flag1)
+		if (flag1) {
 			return;
-		if (((i == 0) || (j == 0)) || (k == 0)) {
+        }
+		if ((i == 0 || j == 0) || k == 0) {
 			ad3[i2] = 1;
 			return;
 		}
-		k5 = 2;
-		k4 = j6;
-		if ((j5 > 1) && (j5 < k)) {
+        int i4 = 0;
+		int k5 = 2;
+		int k4 = j6;
+		if (j5 > 1 && j5 < k) {
 			i4 = j6 * j5;
 			if (j2 < i4) {
 				j5 = j2 / k4;
@@ -78,13 +70,17 @@ public final class Dormqr {
 		} else {
 			i4 = j6;
 		}
-		if ((j5 < k5) || (j5 >= k)) {
+		if (j5 < k5 || j5 >= k) {
 			Dorm2r.dorm2r(s, s1, i, j, k, ad, l, i1, ad1, j1, ad2, k1, l1, ad3,
-					i2, intw1);
+					i2, refInfo);
 		} else {
+            int i5 = 0;
 			int l2;
+            int l3 = 0;
 			int i3;
 			int j3;
+            int j4 = 0;
+            int l5 = 0;
 			if ((flag && !flag2) || (!flag && flag2)) {
 				l2 = 1;
 				i3 = k;
@@ -123,4 +119,6 @@ public final class Dormqr {
 		}
 		ad3[i2] = l4;
 	}
+
+	private static final intW refInfo = new intW(0);
 }
