@@ -4,15 +4,38 @@ import org.netlib.err.Xerbla;
 import org.netlib.blas.Lsame;
 import org.netlib.util.*;
 
-public final class Dgels
-{
+// DGELS solves overdetermined or underdetermined real linear systems
+// involving an M-by-N matrix A, or its transpose, using a QR or LQ
+// factorization of A.  It is assumed that A has full rank.
+//
+// The following options are provided:
+//
+// 1. If TRANS = 'N' and m >= n:  find the least squares solution of
+//    an overdetermined system, i.e., solve the least squares problem
+//                minimize || B - A*X ||.
+//
+// 2. If TRANS = 'N' and m < n:  find the minimum norm solution of
+//    an underdetermined system A * X = B.
+//
+// 3. If TRANS = 'T' and m >= n:  find the minimum norm solution of
+//    an underdetermined system A**T * X = B.
+//
+// 4. If TRANS = 'T' and m < n:  find the least squares solution of
+//    an overdetermined system, i.e., solve the least squares problem
+//                 minimize || B - A**T * X ||.
+//
+// Several right hand side vectors b and solution vectors x can be
+// handled in a single call; they are stored as the columns of the
+// M-by-NRHS right hand side matrix B and the N-by-NRHS solution
+// matrix X.
+public final class Dgels {
 
     public static void dgels(String trans, int m, int n, int nrhs, double[] a, int _a_offset, int lda, double[] b,
             int _b_offset, int ldb, double[] work, int _work_offset, int lwork, intW info) {
 
         info.val = 0;
-        int k3 = Math.min(m, n);
-        boolean flag = lwork == -1;
+        int mn = Math.min(m, n);
+        boolean lquery = (lwork == -1);
         if (!(Lsame.lsame(trans, "N") || Lsame.lsame(trans, "T"))) {
             info.val = -1;
         } else if (m < 0) {
@@ -25,170 +48,184 @@ public final class Dgels
             info.val = -6;
         } else if (ldb < Util.max(1, m, n)) {
             info.val = -8;
-        } else if (!flag && lwork < Math.max(1, k3 + Math.max(k3, nrhs))) {
+        } else if (!lquery && lwork < Math.max(1, mn + Math.max(mn, nrhs))) {
             info.val = -10;
         }
 
-        int j4 = 0;
-        boolean flag1 = false;
-        if (info.val == 0 || info.val == -10)
-        {
-            flag1 = true;
+        // Figure out optimal block size
+        int wsize = 0;
+        boolean tpsd = false;
+        if (info.val == 0 || info.val == -10) {
+            tpsd = true;
             if (Lsame.lsame(trans, "N")) {
-                flag1 = false;
+                tpsd = false;
             }
-            int l3;
-            if (m >= n)
-            {
-                l3 = Ilaenv.ilaenv(1, "DGEQRF", " ", m, n, -1, -1);
-                if (flag1) {
-                    l3 = Math.max(l3, Ilaenv.ilaenv(1, "DORMQR", "LN", m, nrhs, n, -1));
+            int nb;
+            if (m >= n) {
+                nb = Ilaenv.ilaenv(1, "DGEQRF", " ", m, n, -1, -1);
+                if (tpsd) {
+                    nb = Math.max(nb, Ilaenv.ilaenv(1, "DORMQR", "LN", m, nrhs, n, -1));
                 } else {
-                    l3 = Math.max(l3, Ilaenv.ilaenv(1, "DORMQR", "LT", m, nrhs, n, -1));
+                    nb = Math.max(nb, Ilaenv.ilaenv(1, "DORMQR", "LT", m, nrhs, n, -1));
                 }
-            } else
-            {
-                l3 = Ilaenv.ilaenv(1, "DGELQF", " ", m, n, -1, -1);
-                if (flag1) {
-                    l3 = Math.max(l3, Ilaenv.ilaenv(1, "DORMLQ", "LT", n, nrhs, m, -1));
+            } else {
+                nb = Ilaenv.ilaenv(1, "DGELQF", " ", m, n, -1, -1);
+                if (tpsd) {
+                    nb = Math.max(nb, Ilaenv.ilaenv(1, "DORMLQ", "LT", n, nrhs, m, -1));
                 } else {
-                    l3 = Math.max(l3, Ilaenv.ilaenv(1, "DORMLQ", "LN", n, nrhs, m, -1));
+                    nb = Math.max(nb, Ilaenv.ilaenv(1, "DORMLQ", "LN", n, nrhs, m, -1));
                 }
             }
-            j4 = Math.max(1, k3 + Math.max(k3, nrhs) * l3);
-            work[_work_offset] = j4;
+            wsize = Math.max(1, mn + Math.max(mn, nrhs) * nb);
+            work[_work_offset] = wsize;
         }
-        if (info.val != 0)
-        {
+        if (info.val != 0) {
             Xerbla.xerbla("DGELS ", -info.val);
             return;
         }
-        if (flag) {
+        if (lquery) {
             return;
         }
-        if (Util.min(m, n, nrhs) == 0)
-        {
+        // Quick return if possible
+        if (Util.min(m, n, nrhs) == 0) {
             Dlaset.dlaset("Full", Math.max(m, n), nrhs, 0.0, 0.0, b, _b_offset, ldb);
             return;
         }
 
-        doubleW dw1 = new doubleW(1.0020841800044864E-292);
-        doubleW dw2 = new doubleW(9.979201547673599E291);
-        Dlabad.dlabad(dw1, dw2);
-        double[] ad3 = new double[1];
-        double d = Dlange.dlange("M", m, n, a, _a_offset, lda, ad3, 0);
-        int byte0 = 0;
-        if (d > 0.0 && d < dw1.val)
-        {
-            Dlascl.dlascl("G", 0, 0, d, dw1.val, m, n, a, _a_offset, lda, info);
-            byte0 = 1;
-        } else
-        if (d > dw2.val)
-        {
-            Dlascl.dlascl("G", 0, 0, d, dw2.val, m, n, a, _a_offset, lda, info);
-            byte0 = 2;
-        } else
-        if (d == 0.0)
-        {
+        // Get machine parameters
+        doubleW smlnum = new doubleW(1.0020841800044864E-292);
+        doubleW bignum = new doubleW(9.979201547673599E291);
+        Dlabad.dlabad(smlnum, bignum);
+        // Scale A, B if max element outside range [SMLNUM,BIGNUM]
+        double[] rwork = new double[1];
+        double anrm = Dlange.dlange("M", m, n, a, _a_offset, lda, rwork, 0);
+        int iascl = 0;
+        if (anrm > 0.0 && anrm < smlnum.val) {
+            // Scale matrix norm up to SMLNUM
+            Dlascl.dlascl("G", 0, 0, anrm, smlnum.val, m, n, a, _a_offset, lda, info);
+            iascl = 1;
+        } else if (anrm > bignum.val) {
+            // Scale matrix norm down to BIGNUM
+            Dlascl.dlascl("G", 0, 0, anrm, bignum.val, m, n, a, _a_offset, lda, info);
+            iascl = 2;
+        } else if (anrm == 0.0) {
+            // Matrix all zero. Return zero solution
             Dlaset.dlaset("F", Math.max(m, n), nrhs, 0.0, 0.0, b, _b_offset, ldb);
-            work[_work_offset] = j4;
+            work[_work_offset] = wsize;
             return;
         }
-        int j2 = m;
-        if (flag1) {
-            j2 = n;
+        int brow = m;
+        if (tpsd) {
+            brow = n;
         }
-        double d1 = Dlange.dlange("M", j2, nrhs, b, _b_offset, ldb, ad3, 0);
-        int byte1 = 0;
-        if (d1 > 0.0 && d1 < dw1.val)
-        {
-            Dlascl.dlascl("G", 0, 0, d1, dw1.val, j2, nrhs, b, _b_offset, ldb, info);
-            byte1 = 1;
-        } else
-        if (d1 > dw2.val)
-        {
-            Dlascl.dlascl("G", 0, 0, d1, dw2.val, j2, nrhs, b, _b_offset, ldb, info);
-            byte1 = 2;
+        double bnrm = Dlange.dlange("M", brow, nrhs, b, _b_offset, ldb, rwork, 0);
+        int ibscl = 0;
+        if (bnrm > 0.0 && bnrm < smlnum.val) {
+            // Scale matrix norm up to SMLNUM
+            Dlascl.dlascl("G", 0, 0, bnrm, smlnum.val, brow, nrhs, b, _b_offset, ldb, info);
+            ibscl = 1;
+        } else if (bnrm > bignum.val) {
+            // Scale matrix norm down to BIGNUM
+            Dlascl.dlascl("G", 0, 0, bnrm, bignum.val, brow, nrhs, b, _b_offset, ldb, info);
+            ibscl = 2;
         }
-        int i4 = 0;
-        if (m >= n)
-        {
-            Dgeqrf.dgeqrf(m, n, a, _a_offset, lda, work, _work_offset, work, k3 + _work_offset, lwork - k3, info);
-            if (!flag1)
-            {
-                Dormqr.dormqr("Left", "Transpose", m, nrhs, n, a, _a_offset, lda, work, _work_offset, b, _b_offset, ldb, work, k3 + _work_offset, lwork - k3, info);
+        int scllen = 0;
+        if (m >= n) {
+            // compute QR factorization of A
+            Dgeqrf.dgeqrf(m, n, a, _a_offset, lda, work, _work_offset, work, mn + _work_offset, lwork - mn, info);
+            // workspace at least N, optimally N*NB
+            if (!tpsd) {
+                // Least-Squares Problem min || A * X - B ||
+                // B(1:M,1:NRHS) := Q**T * B(1:M,1:NRHS)
+                Dormqr.dormqr("Left", "Transpose", m, nrhs, n, a, _a_offset, lda, work, _work_offset, b, _b_offset, ldb,
+                        work, mn + _work_offset, lwork - mn, info);
+                // workspace at least NRHS, optimally NRHS*NB
+                // B(1:N,1:NRHS) := inv(R) * B(1:N,1:NRHS)
                 Dtrtrs.dtrtrs("Upper", "No transpose", "Non-unit", n, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
                 if (info.val > 0) {
                     return;
                 }
-                i4 = n;
-            } else
-            {
+                scllen = n;
+            } else {
+                // Underdetermined system of equations A**T * X = B
+                // B(1:N,1:NRHS) := inv(R**T) * B(1:N,1:NRHS)
                 Dtrtrs.dtrtrs("Upper", "Transpose", "Non-unit", n, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
                 if (info.val > 0) {
                     return;
                 }
-                int i3 = 1;
-                for (int k4 = nrhs; k4 > 0; k4--)
-                {
-                    int k2 = n + 1;
-                    for (int i5 = m - n; i5 > 0; i5--)
-                    {
-                        b[(k2 - 1) + (i3 - 1) * ldb + _b_offset] = 0.0;
-                        k2++;
+                // B(N+1:M,1:NRHS) = 0
+                int j = 1;
+                for (int p = nrhs; p > 0; p--) {
+                    int i = n + 1;
+                    for (int q = m - n; q > 0; q--) {
+                        b[(i - 1) + (j - 1) * ldb + _b_offset] = 0.0;
+                        i++;
                     }
 
-                    i3++;
+                    j++;
                 }
 
-                Dormqr.dormqr("Left", "No transpose", m, nrhs, n, a, _a_offset, lda, work, _work_offset, b, _b_offset, ldb, work, k3 + _work_offset, lwork - k3, info);
-                i4 = m;
+                // B(1:M,1:NRHS) := Q(1:N,:) * B(1:N,1:NRHS)
+                Dormqr.dormqr("Left", "No transpose", m, nrhs, n, a, _a_offset, lda, work, _work_offset, b, _b_offset,
+                        ldb, work, mn + _work_offset, lwork - mn, info);
+                // workspace at least NRHS, optimally NRHS*NB
+                scllen = m;
             }
-        } else
-        {
-            Dgelqf.dgelqf(m, n, a, _a_offset, lda, work, _work_offset, work, k3 + _work_offset, lwork - k3, info);
-            if (!flag1)
-            {
+        } else {
+            // Compute LQ factorization of A
+            Dgelqf.dgelqf(m, n, a, _a_offset, lda, work, _work_offset, work, mn + _work_offset, lwork - mn, info);
+            // workspace at least M, optimally M*NB
+            if (!tpsd) {
+                // underdetermined system of equations A * X = B
+                // B(1:M,1:NRHS) := inv(L) * B(1:M,1:NRHS)
                 Dtrtrs.dtrtrs("Lower", "No transpose", "Non-unit", m, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
                 if (info.val > 0) {
                     return;
                 }
-                int j3 = 1;
-                for (int l4 = nrhs; l4 > 0; l4--)
-                {
-                    int l2 = m + 1;
-                    for (int j5 = n - m; j5 > 0; j5--)
-                    {
-                        b[(l2 - 1) + (j3 - 1) * ldb + _b_offset] = 0.0;
-                        l2++;
+                // B(M+1:N,1:NRHS) = 0
+                int j = 1;
+                for (int p = nrhs; p > 0; p--) {
+                    int i = m + 1;
+                    for (int q = n - m; q > 0; q--) {
+                        b[(i - 1) + (j - 1) * ldb + _b_offset] = 0.0;
+                        i++;
                     }
 
-                    j3++;
+                    j++;
                 }
 
-                Dormlq.dormlq("Left", "Transpose", n, nrhs, m, a, _a_offset, lda, work, _work_offset, b, _b_offset, ldb, work, k3 + _work_offset, lwork - k3, info);
-                i4 = n;
-            } else
-            {
-                Dormlq.dormlq("Left", "No transpose", n, nrhs, m, a, _a_offset, lda, work, _work_offset, b, _b_offset, ldb, work, k3 + _work_offset, lwork - k3, info);
+                // B(1:N,1:NRHS) := Q(1:N,:)**T * B(1:M,1:NRHS)
+                Dormlq.dormlq("Left", "Transpose", n, nrhs, m, a, _a_offset, lda, work, _work_offset, b, _b_offset, ldb,
+                        work, mn + _work_offset, lwork - mn, info);
+                // workspace at least NRHS, optimally NRHS*NB
+                scllen = n;
+            } else {
+                // overdetermined system min || A**T * X - B ||
+                // B(1:N,1:NRHS) := Q * B(1:N,1:NRHS)
+                Dormlq.dormlq("Left", "No transpose", n, nrhs, m, a, _a_offset, lda, work, _work_offset, b, _b_offset,
+                        ldb, work, mn + _work_offset, lwork - mn, info);
+                // workspace at least NRHS, optimally NRHS*NB
+                // B(1:M,1:NRHS) := inv(L**T) * B(1:M,1:NRHS)
                 Dtrtrs.dtrtrs("Lower", "Transpose", "Non-unit", m, nrhs, a, _a_offset, lda, b, _b_offset, ldb, info);
                 if (info.val > 0) {
                     return;
                 }
-                i4 = m;
+                scllen = m;
             }
         }
-        if (byte0 == 1) {
-            Dlascl.dlascl("G", 0, 0, d, dw1.val, i4, nrhs, b, _b_offset, ldb, info);
-        } else if (byte0 == 2) {
-            Dlascl.dlascl("G", 0, 0, d, dw2.val, i4, nrhs, b, _b_offset, ldb, info);
+
+        // Undo scaling
+        if (iascl == 1) {
+            Dlascl.dlascl("G", 0, 0, anrm, smlnum.val, scllen, nrhs, b, _b_offset, ldb, info);
+        } else if (iascl == 2) {
+            Dlascl.dlascl("G", 0, 0, anrm, bignum.val, scllen, nrhs, b, _b_offset, ldb, info);
         }
-        if (byte1 == 1) {
-            Dlascl.dlascl("G", 0, 0, dw1.val, d1, i4, nrhs, b, _b_offset, ldb, info);
-        } else if (byte1 == 2) {
-            Dlascl.dlascl("G", 0, 0, dw2.val, d1, i4, nrhs, b, _b_offset, ldb, info);
+        if (ibscl == 1) {
+            Dlascl.dlascl("G", 0, 0, smlnum.val, bnrm, scllen, nrhs, b, _b_offset, ldb, info);
+        } else if (ibscl == 2) {
+            Dlascl.dlascl("G", 0, 0, bignum.val, bnrm, scllen, nrhs, b, _b_offset, ldb, info);
         }
 
-        work[_work_offset] = j4;
+        work[_work_offset] = wsize;
     }
 }
