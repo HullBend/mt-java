@@ -7,29 +7,29 @@ import org.netlib.util.*;
 public final class Dgels
 {
 
-	public static void dgels(String trans, int m, int n, int nrhs, double[] a, int _a_offset, int lda, double[] b,
-			int _b_offset, int ldb, double[] work, int _work_offset, int lwork, intW info) {
+    public static void dgels(String trans, int m, int n, int nrhs, double[] a, int _a_offset, int lda, double[] b,
+            int _b_offset, int ldb, double[] work, int _work_offset, int lwork, intW info) {
 
         info.val = 0;
         int k3 = Math.min(m, n);
         boolean flag = lwork == -1;
-		if (!(Lsame.lsame(trans, "N") || Lsame.lsame(trans, "T"))) {
-			info.val = -1;
-		} else if (m < 0) {
-			info.val = -2;
-		} else if (n < 0) {
-			info.val = -3;
-		} else if (nrhs < 0) {
-			info.val = -4;
-		} else if (lda < Math.max(1, m)) {
-			info.val = -6;
-		} else if (ldb < Util.max(1, m, n)) {
-			info.val = -8;
-		} else if (!flag && lwork < Math.max(1, k3 + Math.max(k3, nrhs))) {
-			info.val = -10;
-		}
+        if (!(Lsame.lsame(trans, "N") || Lsame.lsame(trans, "T"))) {
+            info.val = -1;
+        } else if (m < 0) {
+            info.val = -2;
+        } else if (n < 0) {
+            info.val = -3;
+        } else if (nrhs < 0) {
+            info.val = -4;
+        } else if (lda < Math.max(1, m)) {
+            info.val = -6;
+        } else if (ldb < Util.max(1, m, n)) {
+            info.val = -8;
+        } else if (!flag && lwork < Math.max(1, k3 + Math.max(k3, nrhs))) {
+            info.val = -10;
+        }
 
-		int j4 = 0;
+        int j4 = 0;
         boolean flag1 = false;
         if (info.val == 0 || info.val == -10)
         {
@@ -178,16 +178,16 @@ public final class Dgels
                 i4 = m;
             }
         }
-		if (byte0 == 1) {
-			Dlascl.dlascl("G", 0, 0, d, dw1.val, i4, nrhs, b, _b_offset, ldb, info);
-		} else if (byte0 == 2) {
-			Dlascl.dlascl("G", 0, 0, d, dw2.val, i4, nrhs, b, _b_offset, ldb, info);
-		}
-		if (byte1 == 1) {
-			Dlascl.dlascl("G", 0, 0, dw1.val, d1, i4, nrhs, b, _b_offset, ldb, info);
-		} else if (byte1 == 2) {
-			Dlascl.dlascl("G", 0, 0, dw2.val, d1, i4, nrhs, b, _b_offset, ldb, info);
-		}
+        if (byte0 == 1) {
+            Dlascl.dlascl("G", 0, 0, d, dw1.val, i4, nrhs, b, _b_offset, ldb, info);
+        } else if (byte0 == 2) {
+            Dlascl.dlascl("G", 0, 0, d, dw2.val, i4, nrhs, b, _b_offset, ldb, info);
+        }
+        if (byte1 == 1) {
+            Dlascl.dlascl("G", 0, 0, dw1.val, d1, i4, nrhs, b, _b_offset, ldb, info);
+        } else if (byte1 == 2) {
+            Dlascl.dlascl("G", 0, 0, dw2.val, d1, i4, nrhs, b, _b_offset, ldb, info);
+        }
 
         work[_work_offset] = j4;
     }
