@@ -3,93 +3,108 @@ package org.netlib.lapack;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
-public final class Dgelqf
-{
-    public static void dgelqf(int i, int j, double[] ad, int k, int l, double[] ad1, int i1, double[] ad2, 
-            int j1, int k1, intW intw)
-    {
-        boolean flag = false;
-        int l1 = 0;
-        intW intw1 = new intW(0);
-        int j2 = 0;
-        int k2 = 0;
-        int l2 = 0;
-        int i3 = 0;
-        int j3 = 0;
-        int k3 = 0;
-        int l3 = 0;
-        intw.val = 0;
-        j3 = Ilaenv.ilaenv(1, "DGELQF", " ", i, j, -1, -1);
-        i3 = i * j3;
-        ad2[j1] = i3;
-        flag = k1 == -1;
-        if(i < 0)
-            intw.val = -1;
-        else
-        if (j < 0)
-            intw.val = -2;
-        else
-        if (l < Math.max(1, i))
-            intw.val = -4;
-        else
-        if (!flag && k1 < Math.max(1, i))
-            intw.val = -7;
+//DGELQF computes an LQ factorization of a real M-by-N matrix A:
+//   A = L * Q.
+//
+// The matrix Q is represented as a product of elementary reflectors
+//
+//    Q = H(k) . . . H(2) H(1), where k = min(m,n).
+//
+// Each H(i) has the form
+//
+//    H(i) = I - tau * v * v**T
+//
+// where tau is a real scalar, and v is a real vector with
+// v(1:i-1) = 0 and v(i) = 1; v(i+1:n) is stored on exit in A(i,i+1:n),
+// and tau in TAU(i).
+public final class Dgelqf {
 
-        if (intw.val != 0)
-        {
-            Xerbla.xerbla("DGELQF", -intw.val);
+    public static void dgelqf(int m, int n, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset,
+            double[] work, int _work_offset, int lwork, intW info) {
+
+        info.val = 0;
+        int nb = Ilaenv.ilaenv(1, "DGELQF", " ", m, n, -1, -1);
+        int lwkopt = m * nb;
+        work[_work_offset] = lwkopt;
+        boolean lquery = (lwork == -1);
+
+        if (m < 0) {
+            info.val = -1;
+        } else if (n < 0) {
+            info.val = -2;
+        } else if (lda < Math.max(1, m)) {
+            info.val = -4;
+        } else if (!lquery && lwork < Math.max(1, m)) {
+            info.val = -7;
+        }
+
+        if (info.val != 0) {
+            Xerbla.xerbla("DGELQF", -info.val);
             return;
         }
 
-        if (flag) {
+        if (lquery) {
             return;
         }
 
-        k2 = Math.min(i, j);
-        if (k2 == 0)
-        {
-            ad2[j1] = 1;
+        // Quick return if possible
+        int k = Math.min(m, n);
+        if (k == 0) {
+            work[_work_offset] = 1;
             return;
         }
-        k3 = 2;
-        l3 = 0;
-        j2 = i;
-        if (j3 > 1 && j3 < k2)
-        {
-            l3 = Math.max(0, Ilaenv.ilaenv(3, "DGELQF", " ", i, j, -1, -1));
-            if (l3 < k2)
-            {
-                l2 = i;
-                j2 = l2 * j3;
-                if (k1 < j2)
-                {
-                    j3 = k1 / l2;
-                    k3 = Math.max(2, Ilaenv.ilaenv(2, "DGELQF", " ", i, j, -1, -1));
+
+        int nbmin = 2;
+        int nx = 0;
+        int ldwork = 0;
+        int iws = m;
+        if (nb > 1 && nb < k) {
+            // Determine when to cross over from blocked to unblocked code
+            nx = Math.max(0, Ilaenv.ilaenv(3, "DGELQF", " ", m, n, -1, -1));
+            if (nx < k) {
+                // Determine if workspace is large enough for blocked code
+                ldwork = m;
+                iws = ldwork * nb;
+                if (lwork < iws) {
+                    // Not enough workspace to use optimal NB: reduce NB
+                    // and determine the minimum value of NB
+                    nb = lwork / ldwork;
+                    nbmin = Math.max(2, Ilaenv.ilaenv(2, "DGELQF", " ", m, n, -1, -1));
                 }
             }
         }
-        if (j3 >= k3 && j3 < k2 && l3 < k2)
-        {
-            l1 = 1;
-            for (int i4 = ((k2 - l3 - 1) + j3) / j3; i4 > 0; i4--)
-            {
-                int i2 = Math.min(k2 - l1 + 1, j3);
-                Dgelq2.dgelq2(i2, j - l1 + 1, ad, l1 - 1 + (l1 - 1) * l + k, l, ad1, l1 - 1 + i1, ad2, j1, intw1);
-                if (l1 + i2 <= i)
-                {
-                    Dlarft.dlarft("Forward", "Rowwise", j - l1 + 1, i2, ad, l1 - 1 + (l1 - 1) * l + k, l, ad1, l1 - 1 + i1, ad2, j1, l2);
-                    Dlarfb.dlarfb("Right", "No transpose", "Forward", "Rowwise", i - l1 - i2 + 1, j - l1 + 1, i2, ad, l1 - 1 + (l1 - 1) * l + k, l, ad2, j1, l2, ad, l1 + i2 - 1 + (l1 - 1) * l + k, l, ad2, i2 + j1, l2);
+        int i = 0;
+        if (nb >= nbmin && nb < k && nx < k) {
+            // Use blocked code initially
+            i = 1;
+            for (int p = (k - nx - 1 + nb) / nb; p > 0; p--) {
+                int ib = Math.min(k - i + 1, nb);
+                // Compute the LQ factorization of the current block
+                // A(i:i+ib-1,i:n)
+                Dgelq2.dgelq2(ib, n - i + 1, a, i - 1 + (i - 1) * lda + _a_offset, lda, tau, i - 1 + _tau_offset, work,
+                        _work_offset, refInfo);
+                if (i + ib <= m) {
+                    // Form the triangular factor of the block reflector
+                    // H = H(i) H(i+1) . . . H(i+ib-1)
+                    Dlarft.dlarft("Forward", "Rowwise", n - i + 1, ib, a, i - 1 + (i - 1) * lda + _a_offset, lda, tau,
+                            i - 1 + _tau_offset, work, _work_offset, ldwork);
+                    // Apply H to A(i+ib:m,i:n) from the right
+                    Dlarfb.dlarfb("Right", "No transpose", "Forward", "Rowwise", m - i - ib + 1, n - i + 1, ib, a,
+                            i - 1 + (i - 1) * lda + _a_offset, lda, work, _work_offset, ldwork, a,
+                            i + ib - 1 + (i - 1) * lda + _a_offset, lda, work, ib + _work_offset, ldwork);
                 }
-                l1 += j3;
+                i += nb;
             }
-
-        } else
-        {
-            l1 = 1;
+        } else {
+            i = 1;
         }
-        if (l1 <= k2) {
-            Dgelq2.dgelq2(i - l1 + 1, j - l1 + 1, ad, l1 - 1 + (l1 - 1) * l + k, l, ad1, l1 - 1 + i1, ad2, j1, intw1);
+        // Use unblocked code to factor the last or only block
+        if (i <= k) {
+            Dgelq2.dgelq2(m - i + 1, n - i + 1, a, i - 1 + (i - 1) * lda + _a_offset, lda, tau, i - 1 + _tau_offset,
+                    work, _work_offset, refInfo);
         }
-        ad2[j1] = j2;
+        work[_work_offset] = iws;
     }
+
+    private static final intW refInfo = new intW(0);
 }
