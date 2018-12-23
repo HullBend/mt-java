@@ -4,192 +4,191 @@ import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
+// DLASCL multiplies the M by N real matrix A by the real scalar
+// CTO/CFROM.  This is done without over/underflow as long as the final
+// result CTO*A(I,J)/CFROM does not over/underflow. TYPE specifies that
+// A may be full, upper triangular, lower triangular, upper Hessenberg,
+// or banded.
 public final class Dlascl {
 
-	public static void dlascl(String s, int i, int j, double d, double d1,
-			int k, int l, double ad[], int i1, int j1, intW info) {
+    public static void dlascl(String type, int kl, int ku, double cfrom, double cto, int m, int n, double[] a,
+            int _a_offset, int lda, intW info) {
 
-		info.val = 0;
-		int byte0 = 0;
-		if (Lsame.lsame(s, "G")) {
-			byte0 = 0;
-		} else if (Lsame.lsame(s, "L")) {
-			byte0 = 1;
-		} else if (Lsame.lsame(s, "U")) { 
-			byte0 = 2;
-		} else if (Lsame.lsame(s, "H")) {
-			byte0 = 3;
-		} else if (Lsame.lsame(s, "B")) {
-			byte0 = 4;
-		} else if (Lsame.lsame(s, "Q")) {
-			byte0 = 5;
-		} else if (Lsame.lsame(s, "Z")) {
-			byte0 = 6;
-		} else {
-			byte0 = -1;
-		}
+        info.val = 0;
+        int itype = 0;
+        if (Lsame.lsame(type, "G")) {
+            itype = 0;
+        } else if (Lsame.lsame(type, "L")) {
+            itype = 1;
+        } else if (Lsame.lsame(type, "U")) {
+            itype = 2;
+        } else if (Lsame.lsame(type, "H")) {
+            itype = 3;
+        } else if (Lsame.lsame(type, "B")) {
+            itype = 4;
+        } else if (Lsame.lsame(type, "Q")) {
+            itype = 5;
+        } else if (Lsame.lsame(type, "Z")) {
+            itype = 6;
+        } else {
+            itype = -1;
+        }
 
-		if (byte0 == -1) {
-			info.val = -1;
-		} else if (d == 0.0) {
-			info.val = -4;
-		} else if (k < 0) {
-			info.val = -6;
-		} else if ((l < 0 || (byte0 == 4 && l != k)) || (byte0 == 5 && l != k)) {
-			info.val = -7;
-		} else if (byte0 <= 3 && j1 < Math.max(1, k)) {
-			info.val = -9;
-		} else if (byte0 >= 4) {
-			if (i < 0 || i > Math.max(k - 1, 0)) {
-				info.val = -2;
-			} else if ((j < 0 || j > Math.max(l - 1, 0)) || ((byte0 == 4 || byte0 == 5) && (i != j))) {
-				info.val = -3;
-			} else if (((byte0 == 4 && j1 < i + 1) || (byte0 == 5 && j1 < j + 1))
-					|| (byte0 == 6 && j1 < 2 * i + j + 1)) {
-				info.val = -9;
-			}
-		}
+        if (itype == -1) {
+            info.val = -1;
+        } else if (cfrom == 0.0) {
+            info.val = -4;
+        } else if (m < 0) {
+            info.val = -6;
+        } else if ((n < 0 || (itype == 4 && n != m)) || (itype == 5 && n != m)) {
+            info.val = -7;
+        } else if (itype <= 3 && lda < Math.max(1, m)) {
+            info.val = -9;
+        } else if (itype >= 4) {
+            if (kl < 0 || kl > Math.max(m - 1, 0)) {
+                info.val = -2;
+            } else if ((ku < 0 || ku > Math.max(n - 1, 0)) || ((itype == 4 || itype == 5) && (kl != ku))) {
+                info.val = -3;
+            } else if (((itype == 4 && lda < kl + 1) || (itype == 5 && lda < ku + 1))
+                    || (itype == 6 && lda < 2 * kl + ku + 1)) {
+                info.val = -9;
+            }
+        }
 
-		if (info.val != 0) {
-			Xerbla.xerbla("DLASCL", -info.val);
-			return;
-		}
-		if (l == 0 || k == 0) {
-			return;
-		}
+        if (info.val != 0) {
+            Xerbla.xerbla("DLASCL", -info.val);
+            return;
+        }
+        // Quick return if possible
+        if (n == 0 || m == 0) {
+            return;
+        }
 
-		boolean flag = false;
-		final double d11 = 2.2250738585072014E-308;
-		double d2 = 1.0 / d11;
-		double d5 = d;
-		double d8 = d1;
-		do {
-			double d4 = d5 * d11;
-			double d7 = d8 / d2;
-			double d10;
-			if (Math.abs(d4) > Math.abs(d8) && d8 != 0.0) {
-				d10 = d11;
-				flag = false;
-				d5 = d4;
-			} else if (Math.abs(d7) > Math.abs(d5)) {
-				d10 = d2;
-				flag = false;
-				d8 = d7;
-			} else {
-				d10 = d8 / d5;
-				flag = true;
-			}
-			if (byte0 == 0) {
-				int j3 = 1;
-				for (int p = l; p > 0; p--) {
-					int k1 = 1;
-					for (int q = k; q > 0; q--) {
-						ad[k1 - 1 + (j3 - 1) * j1 + i1] = ad[k1 - 1
-								+ (j3 - 1) * j1 + i1]
-								* d10;
-						k1++;
-					}
+        boolean done = false;
+        // Get machine parameters
+        final double smlnum = 2.2250738585072014E-308;
+        final double bignum = 4.49423283715579E307;
+        double cfromc = cfrom;
+        double ctoc = cto;
+        do {
+            double cfrom1 = cfromc * smlnum;
+            double cto1 = ctoc / bignum;
+            double mul;
+            if (Math.abs(cfrom1) > Math.abs(ctoc) && ctoc != 0.0) {
+                mul = smlnum;
+                done = false;
+                cfromc = cfrom1;
+            } else if (Math.abs(cto1) > Math.abs(cfromc)) {
+                mul = bignum;
+                done = false;
+                ctoc = cto1;
+            } else {
+                mul = ctoc / cfromc;
+                done = true;
+            }
+            if (itype == 0) {
+                // Full matrix
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = 1;
+                    for (int q = m; q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset] * mul;
+                        i++;
+                    }
 
-					j3++;
-				}
+                    j++;
+                }
 
-			} else if (byte0 == 1) {
-				int k3 = 1;
-				for (int p = l; p > 0; p--) {
-					int l1 = k3;
-					for (int q = k - k3 + 1; q > 0; q--) {
-						ad[l1 - 1 + (k3 - 1) * j1 + i1] = ad[l1 - 1
-								+ (k3 - 1) * j1 + i1]
-								* d10;
-						l1++;
-					}
+            } else if (itype == 1) {
+                // Lower triangular matrix
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = j;
+                    for (int q = m - j + 1; q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset] * mul;
+                        i++;
+                    }
 
-					k3++;
-				}
+                    j++;
+                }
 
-			} else if (byte0 == 2) {
-				int l3 = 1;
-				for (int p = l; p > 0; p--) {
-					int i2 = 1;
-					for (int q = Math.min(l3, k); q > 0; q--) {
-						ad[i2 - 1 + (l3 - 1) * j1 + i1] = ad[i2 - 1
-								+ (l3 - 1) * j1 + i1]
-								* d10;
-						i2++;
-					}
+            } else if (itype == 2) {
+                // Upper triangular matrix
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = 1;
+                    for (int q = Math.min(j, m); q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset] * mul;
+                        i++;
+                    }
 
-					l3++;
-				}
+                    j++;
+                }
 
-			} else if (byte0 == 3) {
-				int i4 = 1;
-				for (int p = l; p > 0; p--) {
-					int j2 = 1;
-					for (int q = Math.min(i4 + 1, k); q > 0; q--) {
-						ad[j2 - 1 + (i4 - 1) * j1 + i1] = ad[j2 - 1
-								+ (i4 - 1) * j1 + i1]
-								* d10;
-						j2++;
-					}
+            } else if (itype == 3) {
+                // Upper Hessenberg matrix
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = 1;
+                    for (int q = Math.min(j + 1, m); q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset] * mul;
+                        i++;
+                    }
 
-					i4++;
-				}
+                    j++;
+                }
 
-			} else if (byte0 == 4) {
-				int l5 = i + 1;
-				int k6 = l + 1;
+            } else if (itype == 4) {
+                // Lower half of a symmetric band matrix
+                int k3 = kl + 1;
+                int k4 = n + 1;
 
-				int j4 = 1;
-				for (int p = l; p > 0; p--) {
-					int k2 = 1;
-					for (int q = Math.min(l5, k6 - j4); q > 0; q--) {
-						ad[k2 - 1 + (j4 - 1) * j1 + i1] = ad[k2 - 1
-								+ (j4 - 1) * j1 + i1]
-								* d10;
-						k2++;
-					}
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = 1;
+                    for (int q = Math.min(k3, k4 - j); q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset] * mul;
+                        i++;
+                    }
 
-					j4++;
-				}
+                    j++;
+                }
 
-			} else if (byte0 == 5) {
-				int i5 = j + 2;
-				int i6 = j + 1;
+            } else if (itype == 5) {
+                // Upper half of a symmetric band matrix
+                int k1 = ku + 2;
+                int k3 = ku + 1;
 
-				int k4 = 1;
-				for (int p = l; p > 0; p--) {
-					int l2 = Math.max(i5 - k4, 1);
-					for (int q = i6 - Math.max(i5 - k4, 1) + 1; q > 0; q--) {
-						ad[l2 - 1 + (k4 - 1) * j1 + i1] = ad[l2 - 1
-								+ (k4 - 1) * j1 + i1]
-								* d10;
-						l2++;
-					}
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = Math.max(k1 - j, 1);
+                    for (int q = k3 - Math.max(k1 - j, 1) + 1; q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset] * mul;
+                        i++;
+                    }
 
-					k4++;
-				}
+                    j++;
+                }
 
-			} else if (byte0 == 6) {
-				int j5 = i + j + 2;
-				int k5 = i + 1;
-				int j6 = 2 * i + j + 1;
-				int l6 = i + j + 1 + k;
+            } else if (itype == 6) {
+                // Band matrix
+                int k1 = kl + ku + 2;
+                int k2 = kl + 1;
+                int k3 = 2 * kl + ku + 1;
+                int k4 = kl + ku + 1 + m;
 
-				int l4 = 1;
-				for (int p = l; p > 0; p--) {
-					int i3 = Math.max(j5 - l4, k5);
-					for (int q = (Math.min(j6, l6 - l4) - Math.max(j5 - l4,
-							k5)) + 1; q > 0; q--) {
-						ad[i3 - 1 + (l4 - 1) * j1 + i1] = ad[i3 - 1
-								+ (l4 - 1) * j1 + i1]
-								* d10;
-						i3++;
-					}
+                int j = 1;
+                for (int p = n; p > 0; p--) {
+                    int i = Math.max(k1 - j, k2);
+                    for (int q = (Math.min(k3, k4 - j) - Math.max(k1 - j, k2)) + 1; q > 0; q--) {
+                        a[i - 1 + (j - 1) * lda + _a_offset] = a[i - 1 + (j - 1) * lda + _a_offset] * mul;
+                        i++;
+                    }
 
-					l4++;
-				}
+                    j++;
+                }
 
-			}
-		} while (!flag);
-	}
+            }
+        } while (!done);
+    }
 }
