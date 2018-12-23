@@ -4,19 +4,28 @@ import org.netlib.blas.Dgemv;
 import org.netlib.blas.Dger;
 import org.netlib.blas.Lsame;
 
+// DLARF applies a real elementary reflector H to a
+// real m by n matrix C, from either the left or the
+// right. H is represented in the form
+//
+//       H = I - tau * v * v**T
+//
+// where tau is a real scalar and v is a real vector.
+//
+// If tau = 0, then H is taken to be the unit matrix.
 public final class Dlarf {
-	public static void dlarf(String s, int i, int j, double ad[], int k, int l,
-			double d, double ad1[], int i1, int j1, double ad2[], int k1) {
-		if (Lsame.lsame(s, "L")) {
-			if (d != 0.0D) {
-				Dgemv.dgemv("Transpose", i, j, 1.0D, ad1, i1, j1, ad, k, l,
-						0.0D, ad2, k1, 1);
-				Dger.dger(i, j, -d, ad, k, l, ad2, k1, 1, ad1, i1, j1);
-			}
-		} else if (d != 0.0D) {
-			Dgemv.dgemv("No transpose", i, j, 1.0D, ad1, i1, j1, ad, k, l,
-					0.0D, ad2, k1, 1);
-			Dger.dger(i, j, -d, ad2, k1, 1, ad, k, l, ad1, i1, j1);
-		}
-	}
+
+    public static void dlarf(String side, int m, int n, double[] v, int _v_offset, int incv, double tau, double[] c,
+            int _c_offset, int ldc, double[] work, int _work_offset) {
+
+        if (Lsame.lsame(side, "L")) {
+            if (tau != 0.0) {
+                Dgemv.dgemv("Transpose", m, n, 1.0, c, _c_offset, ldc, v, _v_offset, incv, 0.0, work, _work_offset, 1);
+                Dger.dger(m, n, -tau, v, _v_offset, incv, work, _work_offset, 1, c, _c_offset, ldc);
+            }
+        } else if (tau != 0.0) {
+            Dgemv.dgemv("No transpose", m, n, 1.0, c, _c_offset, ldc, v, _v_offset, incv, 0.0, work, _work_offset, 1);
+            Dger.dger(m, n, -tau, work, _work_offset, 1, v, _v_offset, incv, c, _c_offset, ldc);
+        }
+    }
 }

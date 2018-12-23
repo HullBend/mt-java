@@ -1,20 +1,17 @@
 package org.netlib.lapack;
 
+// DLAPY2 returns sqrt(x**2 + y**2), taking care
+// not to cause unnecessary overflow.
 public final class Dlapy2 {
-	public static double dlapy2(double d, double d1) {
-		double d2 = 0.0D;
-		double d3 = 0.0D;
-		double d4 = 0.0D;
-		double d5 = 0.0D;
-		double d6 = 0.0D;
-		d3 = Math.abs(d);
-		d4 = Math.abs(d1);
-		d2 = Math.max(d3, d4);
-		d5 = Math.min(d3, d4);
-		if (d5 == 0.0D)
-			d6 = d2;
-		else
-			d6 = d2 * Math.sqrt(1.0D + Math.pow(d5 / d2, 2));
-		return d6;
-	}
+
+    public static double dlapy2(double x, double y) {
+        double xabs = Math.abs(x);
+        double yabs = Math.abs(y);
+        double w = Math.max(xabs, yabs);
+        double z = Math.min(xabs, yabs);
+        if (z == 0.0) {
+            return w;
+        }
+        return w * Math.sqrt(1.0 + Math.pow(z / w, 2));
+    }
 }
