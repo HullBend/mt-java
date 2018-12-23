@@ -4,52 +4,68 @@ import org.netlib.err.Xerbla;
 import org.netlib.util.doubleW;
 import org.netlib.util.intW;
 
+// DGEQR2 computes a QR factorization of a real m by n matrix A:
+//   A = Q * R.
+//
+// The matrix Q is represented as a product of elementary reflectors
+//
+//    Q = H(1) H(2) . . . H(k), where k = min(m,n).
+//
+// Each H(i) has the form
+//
+//    H(i) = I - tau * v * v**T
+//
+// where tau is a real scalar, and v is a real vector with
+// v(1:i-1) = 0 and v(i) = 1; v(i+1:m) is stored on exit in A(i+1:m,i),
+// and tau in TAU(i).
 public final class Dgeqr2 {
 
-    public static void dgeqr2(int i, int j, double[] ad, int k, int l,
-            double[] ad1, int i1, double[] ad2, int j1, intW intw) {
+    public static void dgeqr2(int m, int n, double[] a, int _a_offset, int lda, double[] tau, int _tau_offset,
+            double[] work, int _work_offset, intW info) {
 
-        int k1 = 0;
-        int l1 = 0;
-        intw.val = 0;
-        if (i < 0)
-            intw.val = -1;
-        else if (j < 0)
-            intw.val = -2;
-        else if (l < Math.max(1, i))
-            intw.val = -4;
-        if (intw.val != 0) {
-            Xerbla.xerbla("DGEQR2", -intw.val);
+        info.val = 0;
+        if (m < 0) {
+            info.val = -1;
+        } else if (n < 0) {
+            info.val = -2;
+        } else if (lda < Math.max(1, m)) {
+            info.val = -4;
+        }
+
+        if (info.val != 0) {
+            Xerbla.xerbla("DGEQR2", -info.val);
             return;
         }
 
-        l1 = Math.min(i, j);
-        k1 = 1;
-        doubleW dw1 = new doubleW(0.0);
-        doubleW dw2 = new doubleW(0.0);
-        for (int i2 = l1; i2 > 0; i2--) {
-            dlarfg_adapter(i - k1 + 1, ad, k1 - 1 + (k1 - 1) * l + k, ad,
-                    Math.min(k1 + 1, i) - 1 + (k1 - 1) * l + k, 1, ad1,
-                    k1 - 1 + i1, dw1, dw2);
-            if (k1 < j) {
-                double d1 = ad[k1 - 1 + (k1 - 1) * l + k];
-                ad[k1 - 1 + (k1 - 1) * l + k] = 1.0;
-                Dlarf.dlarf("Left", i - k1 + 1, j - k1, ad, k1 - 1
-                        + (k1 - 1) * l + k, 1, ad1[k1 - 1 + i1], ad, k1 - 1
-                        + k1 * l + k, l, ad2, j1);
-                ad[k1 - 1 + (k1 - 1) * l + k] = d1;
-            }
-            k1++;
-        }
+        int k = Math.min(m, n);
+        doubleW a1Val = new doubleW(0.0);
+        doubleW tauVal = new doubleW(0.0);
 
+        int i = 1;
+        for (int p = k; p > 0; p--) {
+            // Generate elementary reflector H(i) to annihilate A(i+1:m,i)
+            dlarfg_adapter(m - i + 1, a, i - 1 + (i - 1) * lda + _a_offset, a,
+                    Math.min(i + 1, m) - 1 + (i - 1) * lda + _a_offset, 1, tau, i - 1 + _tau_offset, a1Val, tauVal);
+
+            if (i < n) {
+                // Apply H(i) to A(i:m,i+1:n) from the left
+                double aii = a[i - 1 + (i - 1) * lda + _a_offset];
+                a[i - 1 + (i - 1) * lda + _a_offset] = 1.0;
+                Dlarf.dlarf("Left", m - i + 1, n - i, a, i - 1 + (i - 1) * lda + _a_offset, 1, tau[i - 1 + _tau_offset],
+                        a, i - 1 + i * lda + _a_offset, lda, work, _work_offset);
+                a[i - 1 + (i - 1) * lda + _a_offset] = aii;
+            }
+            i++;
+        }
     }
 
-    private static void dlarfg_adapter(int i, double ad[], int j, double ad1[],
-            int k, int l, double ad2[], int i1, doubleW dw1, doubleW dw2) {
-        dw1.val = ad[j];
-        dw2.val = ad2[i1];
-        Dlarfg.dlarfg(i, dw1, ad1, k, l, dw2);
-        ad[j] = dw1.val;
-        ad2[i1] = dw2.val;
+    private static void dlarfg_adapter(int i, double[] a1, int idxA1, double[] a2, int off, int inc, double[] tau,
+            int idxTau, doubleW a1Val, doubleW tauVal) {
+
+        a1Val.val = a1[idxA1];
+        tauVal.val = tau[idxTau];
+        Dlarfg.dlarfg(i, a1Val, a2, off, inc, tauVal);
+        a1[idxA1] = a1Val.val;
+        tau[idxTau] = tauVal.val;
     }
 }
