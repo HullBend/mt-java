@@ -126,9 +126,11 @@ public final class Dormqr {
                 Dlarft.dlarft("Forward", "Columnwise", nq - i + 1, ib, a, i - 1 + (i - 1) * lda + _a_offset, lda, tau,
                         i - 1 + _tau_offset, buffer, 0, 65);
                 if (left) {
+                    // H or H**T is applied to C(i:m,1:n)
                     mi = m - i + 1;
                     ic = i;
                 } else {
+                    // H or H**T is applied to C(1:m,i:n)
                     ni = n - i + 1;
                     jc = i;
                 }
