@@ -21,7 +21,7 @@ public final class Dgelqf
         intw.val = 0;
         j3 = Ilaenv.ilaenv(1, "DGELQF", " ", i, j, -1, -1);
         i3 = i * j3;
-        ad2[(1 - 1) + j1] = i3;
+        ad2[j1] = i3;
         flag = k1 == -1;
         if(i < 0)
             intw.val = -1;

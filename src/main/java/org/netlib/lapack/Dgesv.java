@@ -9,16 +9,16 @@ public final class Dgesv
             int j1, int k1, intW intw)
     {
         intw.val = 0;
-        if(i < 0)
+        if (i < 0)
             intw.val = -1;
         else
-        if(j < 0)
+        if (j < 0)
             intw.val = -2;
         else
-        if(l < Math.max(1, i))
+        if (l < Math.max(1, i))
             intw.val = -4;
         else
-        if(k1 < Math.max(1, i))
+        if (k1 < Math.max(1, i))
             intw.val = -7;
 
         if (intw.val != 0)
@@ -27,7 +27,8 @@ public final class Dgesv
             return;
         }
         Dgetrf.dgetrf(i, i, ad, k, l, ai, i1, intw);
-        if (intw.val == 0)
+        if (intw.val == 0) {
             Dgetrs.dgetrs("No transpose", i, j, ad, k, l, ai, i1, ad1, j1, k1, intw);
+        }
     }
 }

@@ -16,13 +16,13 @@ public final class Dgetrs
         if (!flag && !Lsame.lsame(s, "T") && !Lsame.lsame(s, "C"))
             intw.val = -1;
         else
-        if(i < 0)
+        if (i < 0)
             intw.val = -2;
         else
-        if(j < 0)
+        if (j < 0)
             intw.val = -3;
         else
-        if(l < Math.max(1, i))
+        if (l < Math.max(1, i))
             intw.val = -5;
         else
         if (k1 < Math.max(1, i))

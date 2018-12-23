@@ -25,6 +25,7 @@ public final class Dgelq2
             Xerbla.xerbla("DGELQ2", -intw.val);
             return;
         }
+
         l1 = Math.min(i, j);
         k1 = 1;
         doubleW dw1 = new doubleW(0.0);

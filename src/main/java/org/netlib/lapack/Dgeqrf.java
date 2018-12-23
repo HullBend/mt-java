@@ -83,9 +83,10 @@ public final class Dgeqrf {
 		} else {
 			l1 = 1;
 		}
-		if (l1 <= k2)
+		if (l1 <= k2) {
 			Dgeqr2.dgeqr2(i - l1 + 1, j - l1 + 1, ad, l1 - 1 + (l1 - 1)
 					* l + k, l, ad1, l1 - 1 + i1, ad2, j1, intw1);
+        }
 		ad2[j1] = j2;
 	}
 }

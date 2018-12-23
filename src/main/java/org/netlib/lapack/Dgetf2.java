@@ -26,6 +26,7 @@ public final class Dgetf2
         if (i == 0 || j == 0) {
             return;
         }
+
         int k1 = 1;
         for (int p = Math.min(i, j); p > 0; p--)
         {

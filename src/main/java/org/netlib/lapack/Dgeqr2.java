@@ -22,6 +22,7 @@ public final class Dgeqr2 {
             Xerbla.xerbla("DGEQR2", -intw.val);
             return;
         }
+
         l1 = Math.min(i, j);
         k1 = 1;
         doubleW dw1 = new doubleW(0.0);

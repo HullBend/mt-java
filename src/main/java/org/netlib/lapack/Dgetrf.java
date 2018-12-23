@@ -12,16 +12,16 @@ public final class Dgetrf
         intW intw1 = new intW(0);
         int i2 = 0;
         intw.val = 0;
-        if(i < 0)
+        if (i < 0)
             intw.val = -1;
         else
-        if(j < 0)
+        if (j < 0)
             intw.val = -2;
         else
-        if(l < Math.max(1, i))
+        if (l < Math.max(1, i))
             intw.val = -4;
 
-        if(intw.val != 0)
+        if (intw.val != 0)
         {
             Xerbla.xerbla("DGETRF", -intw.val);
             return;
