@@ -31,20 +31,20 @@ public final class Dgelq2
         doubleW dw2 = new doubleW(0.0);
         for (int i2 = l1; i2 > 0; i2--)
         {
-            dlarfg_adapter((j - k1) + 1, ad, (k1 - 1) + (k1 - 1) * l + k, ad, (k1 - 1) + (Math.min(k1 + 1, j) - 1) * l + k, l, ad1, (k1 - 1) + i1, dw1, dw2);
+            dlarfg_adapter(j - k1 + 1, ad, k1 - 1 + (k1 - 1) * l + k, ad, k1 - 1 + (Math.min(k1 + 1, j) - 1) * l + k, l, ad1, k1 - 1 + i1, dw1, dw2);
             if (k1 < i)
             {
-                double d1 = ad[(k1 - 1) + (k1 - 1) * l + k];
-                ad[(k1 - 1) + (k1 - 1) * l + k] = 1.0;
-                Dlarf.dlarf("Right", i - k1, (j - k1) + 1, ad, (k1 - 1) + (k1 - 1) * l + k, l, ad1[(k1 - 1) + i1], ad, k1 + (k1 - 1) * l + k, l, ad2, j1);
-                ad[(k1 - 1) + (k1 - 1) * l + k] = d1;
+                double d1 = ad[k1 - 1 + (k1 - 1) * l + k];
+                ad[k1 - 1 + (k1 - 1) * l + k] = 1.0;
+                Dlarf.dlarf("Right", i - k1, j - k1 + 1, ad, k1 - 1 + (k1 - 1) * l + k, l, ad1[k1 - 1 + i1], ad, k1 + (k1 - 1) * l + k, l, ad2, j1);
+                ad[k1 - 1 + (k1 - 1) * l + k] = d1;
             }
             k1++;
         }
 
     }
 
-    private static void dlarfg_adapter(int i, double ad[], int j, double ad1[], int k, int l, double ad2[], int i1, doubleW dw1, doubleW dw2)
+    private static void dlarfg_adapter(int i, double[] ad, int j, double[] ad1, int k, int l, double[] ad2, int i1, doubleW dw1, doubleW dw2)
     {
         dw1.val = ad[j];
         dw2.val = ad2[i1];

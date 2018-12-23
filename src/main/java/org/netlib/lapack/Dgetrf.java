@@ -40,10 +40,11 @@ public final class Dgetrf
             {
                 int l1 = Math.min((Math.min(i, j) - k1) + 1, i2);
                 Dgetf2.dgetf2(i - k1 + 1, l1, ad, k1 - 1 + (k1 - 1) * l + k, l, ai, k1 - 1 + i1, intw1);
-                if (intw.val == 0 && intw1.val > 0)
+                if (intw.val == 0 && intw1.val > 0) {
                     intw.val = (intw1.val + k1) - 1;
+                }
                 int j1 = k1;
-                for (int k2 = (Math.min(i, (k1 + l1) - 1) - k1) + 1; k2 > 0; k2--)
+                for (int k2 = Math.min(i, (k1 + l1) - 1) - k1 + 1; k2 > 0; k2--)
                 {
                     ai[j1 - 1 + i1] = k1 - 1 + ai[j1 - 1 + i1];
                     j1++;

@@ -37,11 +37,12 @@ public final class Dgeqrf {
 			return;
 		}
 
-		if (flag)
+		if (flag) {
 			return;
+        }
 		k2 = Math.min(i, j);
 		if (k2 == 0) {
-			ad2[(1 - 1) + j1] = 1;
+			ad2[j1] = 1;
 			return;
 		}
 		k3 = 2;
@@ -62,7 +63,7 @@ public final class Dgeqrf {
 		if (j3 >= k3 && j3 < k2 && l3 < k2) {
 			l1 = 1;
 			for (int i4 = (k2 - l3 - 1 + j3) / j3; i4 > 0; i4--) {
-				int i2 = Math.min((k2 - l1) + 1, j3);
+				int i2 = Math.min(k2 - l1 + 1, j3);
 				Dgeqr2.dgeqr2(i - l1 + 1, i2, ad,
 						l1 - 1 + (l1 - 1) * l + k, l, ad1, l1 - 1 + i1,
 						ad2, j1, intw1);
@@ -83,8 +84,8 @@ public final class Dgeqrf {
 			l1 = 1;
 		}
 		if (l1 <= k2)
-			Dgeqr2.dgeqr2((i - l1) + 1, (j - l1) + 1, ad, (l1 - 1) + (l1 - 1)
-					* l + k, l, ad1, (l1 - 1) + i1, ad2, j1, intw1);
+			Dgeqr2.dgeqr2(i - l1 + 1, j - l1 + 1, ad, l1 - 1 + (l1 - 1)
+					* l + k, l, ad1, l1 - 1 + i1, ad2, j1, intw1);
 		ad2[j1] = j2;
 	}
 }

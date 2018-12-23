@@ -34,7 +34,7 @@ public final class Dgetf2
             if (ad[l1 - 1 + (k1 - 1) * l + k] != 0.0)
             {
                 if (l1 != k1) {
-                    Dswap.dswap(j, ad, k1 - 1 + k, l, ad, (l1 - 1) + k, l);
+                    Dswap.dswap(j, ad, k1 - 1 + k, l, ad, l1 - 1 + k, l);
                 }
                 if (k1 < i) {
                     if (Math.abs(ad[k1 - 1 + (k1 - 1) * l + k]) >= 2.2250738585072014E-308)
@@ -45,7 +45,7 @@ public final class Dgetf2
                         int j1 = 1;
                         for (int q = i - k1; q > 0; q--)
                         {
-                            ad[((k1 + j1) - 1) + (k1 - 1) * l + k] = ad[((k1 + j1) - 1) + (k1 - 1) * l + k] / ad[(k1 - 1) + (k1 - 1) * l + k];
+                            ad[k1 + j1 - 1 + (k1 - 1) * l + k] = ad[k1 + j1 - 1 + (k1 - 1) * l + k] / ad[k1 - 1 + (k1 - 1) * l + k];
                             j1++;
                         }
 

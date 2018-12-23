@@ -27,16 +27,16 @@ public final class Dgeqr2 {
         doubleW dw1 = new doubleW(0.0);
         doubleW dw2 = new doubleW(0.0);
         for (int i2 = l1; i2 > 0; i2--) {
-            dlarfg_adapter((i - k1) + 1, ad, (k1 - 1) + (k1 - 1) * l + k, ad,
-                    (Math.min(k1 + 1, i) - 1) + (k1 - 1) * l + k, 1, ad1,
-                    (k1 - 1) + i1, dw1, dw2);
+            dlarfg_adapter(i - k1 + 1, ad, k1 - 1 + (k1 - 1) * l + k, ad,
+                    Math.min(k1 + 1, i) - 1 + (k1 - 1) * l + k, 1, ad1,
+                    k1 - 1 + i1, dw1, dw2);
             if (k1 < j) {
-                double d1 = ad[(k1 - 1) + (k1 - 1) * l + k];
-                ad[(k1 - 1) + (k1 - 1) * l + k] = 1.0;
-                Dlarf.dlarf("Left", (i - k1) + 1, j - k1, ad, (k1 - 1)
-                        + (k1 - 1) * l + k, 1, ad1[(k1 - 1) + i1], ad, (k1 - 1)
+                double d1 = ad[k1 - 1 + (k1 - 1) * l + k];
+                ad[k1 - 1 + (k1 - 1) * l + k] = 1.0;
+                Dlarf.dlarf("Left", i - k1 + 1, j - k1, ad, k1 - 1
+                        + (k1 - 1) * l + k, 1, ad1[k1 - 1 + i1], ad, k1 - 1
                         + k1 * l + k, l, ad2, j1);
-                ad[(k1 - 1) + (k1 - 1) * l + k] = d1;
+                ad[k1 - 1 + (k1 - 1) * l + k] = d1;
             }
             k1++;
         }

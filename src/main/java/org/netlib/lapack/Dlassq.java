@@ -10,8 +10,8 @@ public final class Dlassq {
 		if (i > 0) {
 			int l = 1;
 			for (int i1 = (((1 + (i - 1) * k) - 1) + k) / k; i1 > 0; i1--) {
-				if (ad[(l - 1) + j] != 0.0) {
-					double d1 = Math.abs(ad[(l - 1) + j]);
+				if (ad[l - 1 + j] != 0.0) {
+					double d1 = Math.abs(ad[l - 1 + j]);
 					if (doublew.val < d1) {
 						doublew1.val = 1 + doublew1.val
 								* Math.pow(doublew.val / d1, 2);

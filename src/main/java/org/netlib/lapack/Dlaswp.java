@@ -31,21 +31,21 @@ public final class Dlaswp
         if (l4 != 0)
         {
             int i4 = 1;
-            for (int i5 = ((l4 - 1) + 32) / 32; i5 > 0; i5--)
+            for (int i5 = (l4 + 31) / 32; i5 > 0; i5--)
             {
                 int j3 = l3;
                 int l1 = j2;
-                for (int k5 = ((k2 - j2) + byte0) / byte0; k5 > 0; k5--)
+                for (int k5 = (k2 - j2 + byte0) / byte0; k5 > 0; k5--)
                 {
-                    int l2 = ai[(j3 - 1) + j1];
+                    int l2 = ai[j3 - 1 + j1];
                     if (l2 != l1)
                     {
                         int j4 = i4;
-                        for (int i6 = ((i4 + 31) - i4) + 1; i6 > 0; i6--)
+                        for (int i6 = 32; i6 > 0; i6--)
                         {
-                            double d1 = ad[(l1 - 1) + (j4 - 1) * k + j];
-                            ad[(l1 - 1) + (j4 - 1) * k + j] = ad[(l2 - 1) + (j4 - 1) * k + j];
-                            ad[(l2 - 1) + (j4 - 1) * k + j] = d1;
+                            double d1 = ad[l1 - 1 + (j4 - 1) * k + j];
+                            ad[l1 - 1 + (j4 - 1) * k + j] = ad[l2 - 1 + (j4 - 1) * k + j];
+                            ad[l2 - 1 + (j4 - 1) * k + j] = d1;
                             j4++;
                         }
 
@@ -63,17 +63,17 @@ public final class Dlaswp
             l4++;
             int k3 = l3;
             int i2 = j2;
-            for (int j5 = ((k2 - j2) + byte0) / byte0; j5 > 0; j5--)
+            for (int j5 = (k2 - j2 + byte0) / byte0; j5 > 0; j5--)
             {
-                int i3 = ai[(k3 - 1) + j1];
+                int i3 = ai[k3 - 1 + j1];
                 if (i3 != i2)
                 {
                     int k4 = l4;
-                    for (int l5 = (i - l4) + 1; l5 > 0; l5--)
+                    for (int l5 = i - l4 + 1; l5 > 0; l5--)
                     {
-                        double d2 = ad[(i2 - 1) + (k4 - 1) * k + j];
-                        ad[(i2 - 1) + (k4 - 1) * k + j] = ad[(i3 - 1) + (k4 - 1) * k + j];
-                        ad[(i3 - 1) + (k4 - 1) * k + j] = d2;
+                        double d2 = ad[i2 - 1 + (k4 - 1) * k + j];
+                        ad[i2 - 1 + (k4 - 1) * k + j] = ad[(i3 - 1) + (k4 - 1) * k + j];
+                        ad[i3 - 1 + (k4 - 1) * k + j] = d2;
                         k4++;
                     }
 
