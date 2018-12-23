@@ -6,7 +6,7 @@ import org.netlib.util.intW;
 
 public final class Dgelq2
 {
-    public static void dgelq2(int i, int j, double ad[], int k, int l, double ad1[], int i1, double ad2[], 
+    public static void dgelq2(int i, int j, double[] ad, int k, int l, double[] ad1, int i1, double[] ad2, 
             int j1, intW intw)
     {
         int k1 = 0;
