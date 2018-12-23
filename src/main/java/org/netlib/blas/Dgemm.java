@@ -4,6 +4,7 @@ import org.netlib.err.Xerbla;
 
 public final class Dgemm {
     /**
+     * <pre><code>
      * Purpose =======
      *
      * DGEMM performs one of the matrix-matrix operations
