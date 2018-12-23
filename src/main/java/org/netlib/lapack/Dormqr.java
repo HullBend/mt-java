@@ -4,121 +4,143 @@ import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
+// DORMQR overwrites the general real M-by-N matrix C with
+//
+//                 SIDE = 'L'     SIDE = 'R'
+// TRANS = 'N':      Q * C          C * Q
+// TRANS = 'T':      Q**T * C       C * Q**T
+//
+// where Q is a real orthogonal matrix defined as the product
+// of k elementary reflectors
+//
+// Q = H(1) H(2) . . . H(k)
+//
+// as returned by DGEQRF. Q is of order M if SIDE = 'L' and
+// of order N if SIDE = 'R'.
 public final class Dormqr {
 
-	public static void dormqr(String s, String s1, int i, int j, int k,
-			double[] ad, int l, int i1, double ad1[], int j1, double[] ad2,
-			int k1, int l1, double[] ad3, int i2, int j2, intW intw) {
+    public static void dormqr(String side, String trans, int m, int n, int k, double[] a, int _a_offset, int lda,
+            double[] tau, int _tau_offset, double[] c, int _c_offset, int ldc, double[] work, int _work_offset,
+            int lwork, intW info) {
 
-		double[] ad4 = new double[65 * 64];
-		boolean flag = Lsame.lsame(s, "L");
-		boolean flag2 = Lsame.lsame(s1, "N");
-		boolean flag1 = j2 == -1;
-        int l4 = 0;
-		int j5 = 0;
-		int i6;
-		int j6;
-		if (flag) {
-			i6 = i;
-			j6 = j;
-		} else {
-			i6 = j;
-			j6 = i;
-		}
-		if (!flag && !Lsame.lsame(s, "R"))
-			intw.val = -1;
-		else if (!flag2 && !Lsame.lsame(s1, "T"))
-			intw.val = -2;
-		else if (i < 0)
-			intw.val = -3;
-		else if (j < 0)
-			intw.val = -4;
-		else if ((k < 0) || (k > i6))
-			intw.val = -5;
-		else if (i1 < Math.max(1, i6))
-			intw.val = -7;
-		else if (l1 < Math.max(1, i))
-			intw.val = -10;
-		else if ((j2 < Math.max(1, j6)) && !flag1)
-			intw.val = -12;
-		if (intw.val == 0) {
-			j5 = Math.min(64, Ilaenv.ilaenv(1, "DORMQR", s + s1, i, j, k, -1));
-			l4 = Math.max(1, j6) * j5;
-			ad3[i2] = l4;
-		}
-		if (intw.val != 0) {
-			Xerbla.xerbla("DORMQR", -intw.val);
-			return;
-		}
-		if (flag1) {
-			return;
+        boolean left = Lsame.lsame(side, "L");
+        boolean notran = Lsame.lsame(trans, "N");
+        boolean lquery = (lwork == -1);
+        // NQ is the order of Q and NW is the minimum dimension of WORK
+        int nq;
+        int nw;
+        if (left) {
+            nq = m;
+            nw = n;
+        } else {
+            nq = n;
+            nw = m;
         }
-		if ((i == 0 || j == 0) || k == 0) {
-			ad3[i2] = 1;
-			return;
-		}
-        int i4 = 0;
-		int k5 = 2;
-		int k4 = j6;
-		if (j5 > 1 && j5 < k) {
-			i4 = j6 * j5;
-			if (j2 < i4) {
-				j5 = j2 / k4;
-				k5 = Math.max(2,
-						Ilaenv.ilaenv(2, "DORMQR", s + s1, i, j, k, -1));
-			}
-		} else {
-			i4 = j6;
-		}
-		if (j5 < k5 || j5 >= k) {
-			Dorm2r.dorm2r(s, s1, i, j, k, ad, l, i1, ad1, j1, ad2, k1, l1, ad3,
-					i2, refInfo);
-		} else {
-            int i5 = 0;
-			int l2;
-            int l3 = 0;
-			int i3;
-			int j3;
-            int j4 = 0;
-            int l5 = 0;
-			if ((flag && !flag2) || (!flag && flag2)) {
-				l2 = 1;
-				i3 = k;
-				j3 = j5;
-			} else {
-				l2 = ((k - 1) / j5) * j5 + 1;
-				i3 = 1;
-				j3 = -j5;
-			}
-			if (flag) {
-				l5 = j;
-				j4 = 1;
-			} else {
-				i5 = i;
-				l3 = 1;
-			}
-			int k2 = l2;
-			for (int k6 = ((i3 - l2) + j3) / j3; k6 > 0; k6--) {
-				int k3 = Math.min(j5, (k - k2) + 1);
-				Dlarft.dlarft("Forward", "Columnwise", (i6 - k2) + 1, k3, ad,
-						(k2 - 1) + (k2 - 1) * i1 + l, i1, ad1, (k2 - 1) + j1,
-						ad4, 0, 65);
-				if (flag) {
-					i5 = (i - k2) + 1;
-					l3 = k2;
-				} else {
-					l5 = (j - k2) + 1;
-					j4 = k2;
-				}
-				Dlarfb.dlarfb(s, s1, "Forward", "Columnwise", i5, l5, k3, ad,
-						(k2 - 1) + (k2 - 1) * i1 + l, i1, ad4, 0, 65, ad2,
-						(l3 - 1) + (j4 - 1) * l1 + k1, l1, ad3, i2, k4);
-				k2 += j3;
-			}
+        if (!left && !Lsame.lsame(side, "R")) {
+            info.val = -1;
+        } else if (!notran && !Lsame.lsame(trans, "T")) {
+            info.val = -2;
+        } else if (m < 0) {
+            info.val = -3;
+        } else if (n < 0) {
+            info.val = -4;
+        } else if (k < 0 || k > nq) {
+            info.val = -5;
+        } else if (lda < Math.max(1, nq)) {
+            info.val = -7;
+        } else if (ldc < Math.max(1, m)) {
+            info.val = -10;
+        } else if (!lquery && lwork < Math.max(1, nw)) {
+            info.val = -12;
+        }
 
-		}
-		ad3[i2] = l4;
-	}
+        int lwkopt = 0;
+        int nb = 0;
+        if (info.val == 0) {
+            // Compute the workspace requirements
+            nb = Math.min(64, Ilaenv.ilaenv(1, "DORMQR", side + trans, m, n, k, -1));
+            lwkopt = Math.max(1, nw) * nb;
+            work[_work_offset] = lwkopt;
+        }
+        if (info.val != 0) {
+            Xerbla.xerbla("DORMQR", -info.val);
+            return;
+        }
+        if (lquery) {
+            return;
+        }
+        // Quick return if possible
+        if ((m == 0 || n == 0) || k == 0) {
+            work[_work_offset] = 1;
+            return;
+        }
 
-	private static final intW refInfo = new intW(0);
+        int nbmin = 2;
+        int ldwork = nw;
+        if (nb > 1 && nb < k) {
+            if (lwork < nw * nb) {
+                nb = lwork / ldwork;
+                nbmin = Math.max(2, Ilaenv.ilaenv(2, "DORMQR", side + trans, m, n, k, -1));
+            }
+        }
+
+        if (nb < nbmin || nb >= k) {
+            // Use unblocked code
+            Dorm2r.dorm2r(side, trans, m, n, k, a, _a_offset, lda, tau, _tau_offset, c, _c_offset, ldc, work,
+                    _work_offset, refInfo);
+        } else {
+            // Use blocked code
+            int ni = 0;
+            int jc = 0;
+
+            int mi = 0;
+            int ic = 0;
+
+            int i1;
+            int i2;
+            int i3;
+
+            if ((left && !notran) || (!left && notran)) {
+                i1 = 1;
+                i2 = k;
+                i3 = nb;
+            } else {
+                i1 = ((k - 1) / nb) * nb + 1;
+                i2 = 1;
+                i3 = -nb;
+            }
+            if (left) {
+                ni = n;
+                jc = 1;
+            } else {
+                mi = m;
+                ic = 1;
+            }
+
+            double[] buffer = new double[65 * 64];
+            int i = i1;
+            for (int p = (i2 - i1 + i3) / i3; p > 0; p--) {
+                int ib = Math.min(nb, (k - i) + 1);
+                // Form the triangular factor of the block reflector
+                // H = H(i) H(i+1) . . . H(i+ib-1)
+                Dlarft.dlarft("Forward", "Columnwise", nq - i + 1, ib, a, i - 1 + (i - 1) * lda + _a_offset, lda, tau,
+                        i - 1 + _tau_offset, buffer, 0, 65);
+                if (left) {
+                    mi = m - i + 1;
+                    ic = i;
+                } else {
+                    ni = n - i + 1;
+                    jc = i;
+                }
+                // Apply H or H**T
+                Dlarfb.dlarfb(side, trans, "Forward", "Columnwise", mi, ni, ib, a, i - 1 + (i - 1) * lda + _a_offset,
+                        lda, buffer, 0, 65, c, ic - 1 + (jc - 1) * ldc + _c_offset, ldc, work, _work_offset, ldwork);
+                i += i3;
+            }
+
+        }
+        work[_work_offset] = lwkopt;
+    }
+
+    private static final intW refInfo = new intW(0);
 }
