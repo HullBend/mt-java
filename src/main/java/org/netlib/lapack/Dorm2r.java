@@ -4,80 +4,107 @@ import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
+// DORM2R overwrites the general real m by n matrix C with
+//
+//       Q * C  if SIDE = 'L' and TRANS = 'N', or
+//
+//       Q**T* C  if SIDE = 'L' and TRANS = 'T', or
+//
+//       C * Q  if SIDE = 'R' and TRANS = 'N', or
+//
+//       C * Q**T if SIDE = 'R' and TRANS = 'T',
+//
+// where Q is a real orthogonal matrix defined as the product
+// of k elementary reflectors
+//
+// Q = H(1) H(2) . . . H(k)
+//
+// as returned by DGEQRF. Q is of order m if SIDE = 'L' and
+// of order n if SIDE = 'R'.
 public final class Dorm2r {
 
-	public static void dorm2r(String s, String s1, int i, int j, int k,
-			double ad[], int l, int i1, double[] ad1, int j1, double[] ad2,
-			int k1, int l1, double[] ad3, int i2, intW info) {
+    public static void dorm2r(String side, String trans, int m, int n, int k, double[] a, int _a_offset, int lda,
+            double[] tau, int _tau_offset, double[] c, int _c_offset, int ldc, double[] work, int _work_offset,
+            intW info) {
 
-		int j2 = 0;
-		int k2 = 0;
-		int l2 = 0;
-		int byte0 = 0;
-		int i3 = 0;
-		int j3 = 0;
-		int k3 = 0;
-		int l3 = 0;
-		int i4 = 0;
-		info.val = 0;
-		boolean flag = Lsame.lsame(s, "L");
-		boolean flag1 = Lsame.lsame(s1, "N");
-		if (flag)
-			i4 = i;
-		else
-			i4 = j;
-		if (!flag && !Lsame.lsame(s, "R"))
-			info.val = -1;
-		else if (!flag1 && !Lsame.lsame(s1, "T"))
-			info.val = -2;
-		else if (i < 0)
-			info.val = -3;
-		else if (j < 0)
-			info.val = -4;
-		else if ((k < 0) || (k > i4))
-			info.val = -5;
-		else if (i1 < Math.max(1, i4))
-			info.val = -7;
-		else if (l1 < Math.max(1, i))
-			info.val = -10;
-		if (info.val != 0) {
-			Xerbla.xerbla("DORM2R", -info.val);
-			return;
-		}
-		if ((i == 0 || j == 0) || k == 0)
-			return;
-		if ((flag && !flag1) || (!flag && flag1)) {
-			k2 = 1;
-			l2 = k;
-			byte0 = 1;
-		} else {
-			k2 = k;
-			l2 = 1;
-			byte0 = -1;
-		}
-		if (flag) {
-			l3 = j;
-			j3 = 1;
-		} else {
-			k3 = i;
-			i3 = 1;
-		}
-		j2 = k2;
-		for (int j4 = ((l2 - k2) + byte0) / byte0; j4 > 0; j4--) {
-			if (flag) {
-				k3 = (i - j2) + 1;
-				i3 = j2;
-			} else {
-				l3 = (j - j2) + 1;
-				j3 = j2;
-			}
-			double d1 = ad[(j2 - 1) + (j2 - 1) * i1 + l];
-			ad[(j2 - 1) + (j2 - 1) * i1 + l] = 1.0;
-			Dlarf.dlarf(s, k3, l3, ad, (j2 - 1) + (j2 - 1) * i1 + l, 1,
-					ad1[(j2 - 1) + j1], ad2, (i3 - 1) + (j3 - 1) * l1 + k1, l1,
-					ad3, i2);
-			ad[(j2 - 1) + (j2 - 1) * i1 + l] = d1;
-			j2 += byte0;
-		}
-	}
+        info.val = 0;
+        boolean left = Lsame.lsame(side, "L");
+        boolean notran = Lsame.lsame(trans, "N");
+        // NQ is the order of Q
+        int nq;
+        if (left) {
+            nq = m;
+        } else {
+            nq = n;
+        }
+
+        if (!left && !Lsame.lsame(side, "R")) {
+            info.val = -1;
+        } else if (!notran && !Lsame.lsame(trans, "T")) {
+            info.val = -2;
+        } else if (m < 0) {
+            info.val = -3;
+        } else if (n < 0) {
+            info.val = -4;
+        } else if (k < 0 || k > nq) {
+            info.val = -5;
+        } else if (lda < Math.max(1, nq)) {
+            info.val = -7;
+        } else if (ldc < Math.max(1, m)) {
+            info.val = -10;
+        }
+
+        if (info.val != 0) {
+            Xerbla.xerbla("DORM2R", -info.val);
+            return;
+        }
+        // Quick return if possible
+        if ((m == 0 || n == 0) || k == 0) {
+            return;
+        }
+
+        int i1 = 0;
+        int i2 = 0;
+        int i3 = 0;
+        if ((left && !notran) || (!left && notran)) {
+            i1 = 1;
+            i2 = k;
+            i3 = 1;
+        } else {
+            i1 = k;
+            i2 = 1;
+            i3 = -1;
+        }
+
+        int ni = 0;
+        int jc = 0;
+        int mi = 0;
+        int ic = 0;
+        if (left) {
+            ni = n;
+            jc = 1;
+        } else {
+            mi = m;
+            ic = 1;
+        }
+        int i = i1;
+        for (int p = (i2 - i1 + i3) / i3; p > 0; p--) {
+            if (left) {
+                // H(i) is applied to C(i:m,1:n)
+                mi = m - i + 1;
+                ic = i;
+            } else {
+                // H(i) is applied to C(1:m,i:n)
+                ni = n - i + 1;
+                jc = i;
+            }
+            // Apply H(i)
+            double aii = a[i - 1 + (i - 1) * lda + _a_offset];
+            a[i - 1 + (i - 1) * lda + _a_offset] = 1.0;
+            Dlarf.dlarf(side, mi, ni, a, i - 1 + (i - 1) * lda + _a_offset, 1, tau[i - 1 + _tau_offset], c,
+                    ic - 1 + (jc - 1) * ldc + _c_offset, ldc, work, _work_offset);
+            a[i - 1 + (i - 1) * lda + _a_offset] = aii;
+            i += i3;
+        }
+    }
 }
