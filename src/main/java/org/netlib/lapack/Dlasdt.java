@@ -14,7 +14,7 @@ public final class Dlasdt
         int k2 = 0;
         double d = 0.0;
         k2 = Math.max(1, i);
-        d = Math.log((double)k2 / (double)(i1 + 1)) / Math.log(2D);
+        d = Math.log((double)k2 / (double)(i1 + 1)) / Math.log(2.0);
         intw.val = (int)d + 1;
         j1 = i / 2;
         ai[j] = j1 + 1;

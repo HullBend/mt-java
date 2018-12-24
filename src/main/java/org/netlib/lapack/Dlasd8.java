@@ -17,9 +17,9 @@ public final class Dlasd8
         int i4 = 0;
         int j4 = 0;
         int k4 = 0;
-        double d2 = 0.0D;
-        double d7 = 0.0D;
-        double d8 = 0.0D;
+        double d2 = 0.0;
+        double d7 = 0.0;
+        double d8 = 0.0;
         intw.val = 0;
         if((i < 0) || (i > 1))
             intw.val = -1;
@@ -36,12 +36,12 @@ public final class Dlasd8
         }
         if(j == 1)
         {
-            ad[(1 - 1) + k] = Math.abs(ad1[(1 - 1) + l]);
-            ad4[(1 - 1) + k1] = ad[(1 - 1) + k];
+            ad[k] = Math.abs(ad1[l]);
+            ad4[k1] = ad[k];
             if(i == 1)
             {
-                ad4[(2 - 1) + k1] = 1.0D;
-                ad5[(1 - 1) + (2 - 1) * i2 + l1] = 1.0D;
+                ad4[1 + k1] = 1.0;
+                ad5[i2 + l1] = 1.0;
             }
             return;
         }
@@ -58,18 +58,18 @@ public final class Dlasd8
         l3 = k3 - 1;
         j4 = i4 - 1;
         d8 = Dnrm2.dnrm2(j, ad1, l, 1);
-        Dlascl.dlascl("G", 0, 0, d8, 1.0D, j, 1, ad1, l, j, intw);
+        Dlascl.dlascl("G", 0, 0, d8, 1.0, j, 1, ad1, l, j, intw);
         d8 *= d8;
-        Dlaset.dlaset("A", j, 1, 1.0D, 1.0D, ad7, (i4 - 1) + k2, j);
+        Dlaset.dlaset("A", j, 1, 1.0, 1.0, ad7, (i4 - 1) + k2, j);
         k4 = 1;
-        for(int i5 = (j - 1) + 1; i5 > 0; i5--)
+        for(int i5 = j; i5 > 0; i5--)
         {
             dlasd4_adapter(j, k4, ad6, j2, ad1, l, ad7, (j3 - 1) + k2, d8, ad, (k4 - 1) + k, ad7, (k3 - 1) + k2, intw);
             if(intw.val != 0)
                 return;
             ad7[((j4 + k4) - 1) + k2] = ad7[((j4 + k4) - 1) + k2] * ad7[(k4 - 1) + k2] * ad7[((l3 + k4) - 1) + k2];
             ad4[(k4 - 1) + k1] = -ad7[(k4 - 1) + k2];
-            ad5[(k4 - 1) + (1 - 1) * i2 + l1] = -ad7[((k4 + 1) - 1) + k2];
+            ad5[(k4 - 1) + l1] = -ad7[((k4 + 1) - 1) + k2];
             l2 = 1;
             for(int l5 = (k4 - 1 - 1) + 1; l5 > 0; l5--)
             {
@@ -102,12 +102,12 @@ public final class Dlasd8
             double d6 = -ad6[(k4 - 1) + j2];
             if(k4 < j)
             {
-                d2 = -ad5[(k4 - 1) + (1 - 1) * i2 + l1];
+                d2 = -ad5[(k4 - 1) + l1];
                 d7 = -ad6[((k4 + 1) - 1) + j2];
             }
             ad7[(k4 - 1) + k2] = -(ad1[(k4 - 1) + l] / d1 / (ad6[(k4 - 1) + j2] + d4));
             int i3 = 1;
-            for(int j6 = (k4 - 1 - 1) + 1; j6 > 0; j6--)
+            for(int j6 = k4 - 1; j6 > 0; j6--)
             {
                 ad7[(i3 - 1) + k2] = ad1[(i3 - 1) + l] / (Dlamc3.dlamc3(ad6[(i3 - 1) + j2], d6) - d1) / (ad6[(i3 - 1) + j2] + d4);
                 i3++;
