@@ -3,84 +3,101 @@ package org.netlib.lapack;
 import org.netlib.blas.Lsame;
 import org.netlib.util.doubleW;
 
+// DLANGE  returns the value of the one norm,  or the Frobenius norm, or
+// the  infinity norm,  or the  element of  largest absolute value  of a
+// real matrix A.
+//
+//    DLANGE = ( max(abs(A(i,j))), NORM = 'M' or 'm'
+//    (
+//    ( norm1(A),         NORM = '1', 'O' or 'o'
+//    (
+//    ( normI(A),         NORM = 'I' or 'i'
+//    (
+//    ( normF(A),         NORM = 'F', 'f', 'E' or 'e'
+//
+// where norm1 denotes the  one norm of a matrix (maximum column sum),
+// normI denotes the infinity norm  of a matrix (maximum row sum) and
+// normF denotes the Frobenius norm of a matrix (square root of sum of
+// squares). Note that max(abs(A(i,j))) is not a consistent matrix norm.
 public final class Dlange {
 
-    public static double dlange(String s, int i, int j, double ad[], int k,
-            int l, double ad1[], int i1) {
+    public static double dlange(String norm, int m, int n, double[] a, int _a_offset, int lda, double[] work,
+            int _work_offset) {
 
-        double d = 0.0;
+        double value = 0.0;
 
-        if (Math.min(i, j) == 0)
-            d = 0.0;
-        else if (Lsame.lsame(s, "M")) {
-            d = 0.0;
-            int i2 = 1;
-            for (int i3 = j; i3 > 0; i3--) {
-                int j1 = 1;
-                for (int k4 = i; k4 > 0; k4--) {
-                    d = Math.max(d, Math.abs(ad[j1 - 1 + (i2 - 1) * l + k]));
-                    j1++;
+        if (Math.min(m, n) == 0) {
+            value = 0.0;
+        } else if (Lsame.lsame(norm, "M")) {
+            // Find max(abs(A(i,j)))
+            value = 0.0;
+            int j = 1;
+            for (int p = n; p > 0; p--) {
+                int i = 1;
+                for (int q = m; q > 0; q--) {
+                    value = Math.max(value, Math.abs(a[i - 1 + (j - 1) * lda + _a_offset]));
+                    i++;
                 }
 
-                i2++;
+                j++;
             }
 
-        } else if (Lsame.lsame(s, "O") || s.regionMatches(0, "1", 0, 1)) {
-            d = 0.0;
-            int j2 = 1;
-            doubleW dw = new doubleW(0.0);
-            for (int j3 = j; j3 > 0; j3--) {
-                dw.val = 0.0;
-                int k1 = 1;
-                for (int l4 = i; l4 > 0; l4--) {
-                    dw.val = dw.val
-                            + Math.abs(ad[k1 - 1 + (j2 - 1) * l + k]);
-                    k1++;
+        } else if (Lsame.lsame(norm, "O") || norm.regionMatches(0, "1", 0, 1)) {
+            // Find norm1(A)
+            value = 0.0;
+            int j = 1;
+            for (int p = n; p > 0; p--) {
+                double sum = 0.0;
+                int i = 1;
+                for (int q = m; q > 0; q--) {
+                    sum += Math.abs(a[i - 1 + (j - 1) * lda + _a_offset]);
+                    i++;
                 }
 
-                d = Math.max(d, dw.val);
-                j2++;
+                value = Math.max(value, sum);
+                j++;
             }
 
-        } else if (Lsame.lsame(s, "I")) {
-            int l1 = 1;
-            for (int k3 = i; k3 > 0; k3--) {
-                ad1[l1 - 1 + i1] = 0.0;
-                l1++;
+        } else if (Lsame.lsame(norm, "I")) {
+            // Find normI(A)
+            int i = 1;
+            for (int p = m; p > 0; p--) {
+                work[i - 1 + _work_offset] = 0.0;
+                i++;
             }
 
-            int k2 = 1;
-            for (int l3 = j; l3 > 0; l3--) {
-                l1 = 1;
-                for (int i5 = i; i5 > 0; i5--) {
-                    ad1[l1 - 1 + i1] = ad1[l1 - 1 + i1]
-                            + Math.abs(ad[l1 - 1 + (k2 - 1) * l + k]);
-                    l1++;
+            int j = 1;
+            for (int p = n; p > 0; p--) {
+                i = 1;
+                for (int q = m; q > 0; q--) {
+                    work[i - 1 + _work_offset] = work[i - 1 + _work_offset]
+                            + Math.abs(a[i - 1 + (j - 1) * lda + _a_offset]);
+                    i++;
                 }
 
-                k2++;
+                j++;
             }
 
-            d = 0.0;
-            l1 = 1;
-            for (int i4 = i; i4 > 0; i4--) {
-                d = Math.max(d, ad1[l1 - 1 + i1]);
-                l1++;
+            value = 0.0;
+            i = 1;
+            for (int p = m; p > 0; p--) {
+                value = Math.max(value, work[i - 1 + _work_offset]);
+                i++;
             }
 
-        } else if (Lsame.lsame(s, "F") || Lsame.lsame(s, "E")) {
-            doubleW dw1 = new doubleW(1.0);
-            doubleW dw2 = new doubleW(0.0);
-            
-            int l2 = 1;
-            for (int j4 = j; j4 > 0; j4--) {
-                Dlassq.dlassq(i, ad, (l2 - 1) * l + k, 1, dw2,
-                        dw1);
-                l2++;
+        } else if (Lsame.lsame(norm, "F") || Lsame.lsame(norm, "E")) {
+            // Find normF(A)
+            doubleW scale = new doubleW(0.0);
+            doubleW sum = new doubleW(1.0);
+
+            int j = 1;
+            for (int p = n; p > 0; p--) {
+                Dlassq.dlassq(m, a, (j - 1) * lda + _a_offset, 1, scale, sum);
+                j++;
             }
 
-            d = dw2.val * Math.sqrt(dw1.val);
+            value = scale.val * Math.sqrt(sum.val);
         }
-        return d;
+        return value;
     }
 }
