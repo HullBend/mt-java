@@ -118,7 +118,7 @@ label0:
                 j5++;
             }
 
-            Dlamrg.dlamrg(i, j, ad4, (2 - 1) + j2, 1, 1, ai1, (2 - 1) + l3);
+            Dlamrg.dlamrg(i, j, ad4, 1 + j2, 1, 1, ai1, 1 + l3);
             j5 = 2;
             for(int l10 = (k8 - 2) + 1; l10 > 0; l10--)
             {
@@ -179,8 +179,8 @@ label0:
                         k6--;
                     if(i6 <= l8)
                         i6--;
-                    Drot.drot(k8, ad2, (1 - 1) + (k6 - 1) * k1 + j1, 1, ad2, (1 - 1) + (i6 - 1) * k1 + j1, 1, d2, d6);
-                    Drot.drot(j8, ad3, (k6 - 1) + (1 - 1) * i2 + l1, i2, ad3, (i6 - 1) + (1 - 1) * i2 + l1, i2, d2, d6);
+                    Drot.drot(k8, ad2, (k6 - 1) * k1 + j1, 1, ad2, (1 - 1) + (i6 - 1) * k1 + j1, 1, d2, d6);
+                    Drot.drot(j8, ad3, (k6 - 1) + l1, i2, ad3, (i6 - 1) + l1, i2, d2, d6);
                     if(ai4[(l6 - 1) + k4] != ai4[(l7 - 1) + k4])
                         ai4[(l6 - 1) + k4] = 3;
                     ai4[(l7 - 1) + k4] = 4;
@@ -202,7 +202,7 @@ label0:
             ai[(intw.val - 1) + k3] = l7;
         }
         int i7 = 1;
-        for(int j11 = (4 - 1) + 1; j11 > 0; j11--)
+        for(int j11 = 4; j11 > 0; j11--)
         {
             ai5[i7 - 1] = 0;
             i7++;
@@ -238,12 +238,12 @@ label0:
             int j6 = ai3[((ai1[(ai[(ai2[(i7 - 1) + i4] - 1) + k3] - 1) + l3] + 1) - 1) + j4];
             if(j6 <= l8)
                 j6--;
-            Dcopy.dcopy(k8, ad2, (1 - 1) + (j6 - 1) * k1 + j1, 1, ad5, (1 - 1) + (i7 - 1) * l2 + k2, 1);
-            Dcopy.dcopy(j8, ad3, (j6 - 1) + (1 - 1) * i2 + l1, i2, ad6, (i7 - 1) + (1 - 1) * j3 + i3, j3);
+            Dcopy.dcopy(k8, ad2, (j6 - 1) * k1 + j1, 1, ad5, (i7 - 1) * l2 + k2, 1);
+            Dcopy.dcopy(j8, ad3, (j6 - 1) + l1, i2, ad6, (i7 - 1) + i3, j3);
             i7++;
         }
 
-        ad4[(1 - 1) + j2] = 0.0D;
+        ad4[j2] = 0.0D;
         double d5 = d9 / 2D;
         if(Math.abs(ad4[(2 - 1) + j2]) <= d5)
             ad4[(2 - 1) + j2] = d5;
@@ -254,49 +254,49 @@ label0:
             {
                 d2 = 1.0D;
                 d6 = 0.0D;
-                ad1[(1 - 1) + i1] = d9;
+                ad1[i1] = d9;
             } else
             {
-                d2 = d10 / ad1[(1 - 1) + i1];
-                d6 = ad1[(j8 - 1) + i1] / ad1[(1 - 1) + i1];
+                d2 = d10 / ad1[i1];
+                d6 = ad1[(j8 - 1) + i1] / ad1[i1];
             }
         } else
         if(Math.abs(d10) <= d9)
             ad1[(1 - 1) + i1] = d9;
         else
             ad1[(1 - 1) + i1] = d10;
-        Dcopy.dcopy(intw.val - 1, ad5, (2 - 1) + (1 - 1) * l2 + k2, 1, ad1, (2 - 1) + i1, 1);
+        Dcopy.dcopy(intw.val - 1, ad5, 1 + k2, 1, ad1, 1 + i1, 1);
         Dlaset.dlaset("A", k8, 1, 0.0D, 0.0D, ad5, k2, l2);
-        ad5[(l8 - 1) + (1 - 1) * l2 + k2] = 1.0D;
+        ad5[(l8 - 1) + k2] = 1.0D;
         if(j8 > k8)
         {
             int k5 = 1;
             for(int j12 = (l8 - 1) + 1; j12 > 0; j12--)
             {
                 ad3[(j8 - 1) + (k5 - 1) * i2 + l1] = -(d6 * ad3[(l8 - 1) + (k5 - 1) * i2 + l1]);
-                ad6[(1 - 1) + (k5 - 1) * j3 + i3] = d2 * ad3[(l8 - 1) + (k5 - 1) * i2 + l1];
+                ad6[(k5 - 1) * j3 + i3] = d2 * ad3[(l8 - 1) + (k5 - 1) * i2 + l1];
                 k5++;
             }
 
             k5 = i9;
             for(int k12 = (j8 - i9) + 1; k12 > 0; k12--)
             {
-                ad6[(1 - 1) + (k5 - 1) * j3 + i3] = d6 * ad3[(j8 - 1) + (k5 - 1) * i2 + l1];
+                ad6[(k5 - 1) * j3 + i3] = d6 * ad3[(j8 - 1) + (k5 - 1) * i2 + l1];
                 ad3[(j8 - 1) + (k5 - 1) * i2 + l1] = d2 * ad3[(j8 - 1) + (k5 - 1) * i2 + l1];
                 k5++;
             }
 
         } else
         {
-            Dcopy.dcopy(j8, ad3, (l8 - 1) + (1 - 1) * i2 + l1, i2, ad6, (1 - 1) + (1 - 1) * j3 + i3, j3);
+            Dcopy.dcopy(j8, ad3, (l8 - 1) + l1, i2, ad6, i3, j3);
         }
         if(j8 > k8)
-            Dcopy.dcopy(j8, ad3, (j8 - 1) + (1 - 1) * i2 + l1, i2, ad6, (j8 - 1) + (1 - 1) * j3 + i3, j3);
+            Dcopy.dcopy(j8, ad3, (j8 - 1) + l1, i2, ad6, (j8 - 1) + i3, j3);
         if(k8 > intw.val)
         {
             Dcopy.dcopy(k8 - intw.val, ad4, ((intw.val + 1) - 1) + j2, 1, ad, ((intw.val + 1) - 1) + l, 1);
-            Dlacpy.dlacpy("A", k8, k8 - intw.val, ad5, (1 - 1) + ((intw.val + 1) - 1) * l2 + k2, l2, ad2, (1 - 1) + ((intw.val + 1) - 1) * k1 + j1, k1);
-            Dlacpy.dlacpy("A", k8 - intw.val, j8, ad6, ((intw.val + 1) - 1) + (1 - 1) * j3 + i3, j3, ad3, ((intw.val + 1) - 1) + (1 - 1) * i2 + l1, i2);
+            Dlacpy.dlacpy("A", k8, k8 - intw.val, ad5, ((intw.val + 1) - 1) * l2 + k2, l2, ad2, ((intw.val + 1) - 1) * k1 + j1, k1);
+            Dlacpy.dlacpy("A", k8 - intw.val, j8, ad6, ((intw.val + 1) - 1) + i3, j3, ad3, ((intw.val + 1) - 1) + l1, i2);
         }
         i7 = 1;
         for(int l12 = (4 - 1) + 1; l12 > 0; l12--)

@@ -123,8 +123,8 @@ public final class Dlasr
                             for(int j11 = (j - 1) + 1; j11 > 0; j11--)
                             {
                                 double d30 = ad2[(j5 - 1) + (j2 - 1) * j1 + i1];
-                                ad2[(j5 - 1) + (j2 - 1) * j1 + i1] = d4 * d30 - d17 * ad2[(1 - 1) + (j2 - 1) * j1 + i1];
-                                ad2[(1 - 1) + (j2 - 1) * j1 + i1] = d17 * d30 + d4 * ad2[(1 - 1) + (j2 - 1) * j1 + i1];
+                                ad2[(j5 - 1) + (j2 - 1) * j1 + i1] = d4 * d30 - d17 * ad2[(j2 - 1) * j1 + i1];
+                                ad2[(j2 - 1) * j1 + i1] = d17 * d30 + d4 * ad2[(j2 - 1) * j1 + i1];
                                 j2++;
                             }
 
@@ -138,7 +138,7 @@ public final class Dlasr
                 if(Lsame.lsame(s2, "F"))
                 {
                     int k5 = 1;
-                    for(int k8 = (i - 1 - 1) + 1; k8 > 0; k8--)
+                    for(int k8 = i - 1; k8 > 0; k8--)
                     {
                         double d5 = ad[(k5 - 1) + k];
                         double d18 = ad1[(k5 - 1) + l];
@@ -239,16 +239,16 @@ public final class Dlasr
                     int k6 = 2;
                     for(int k9 = (j - 2) + 1; k9 > 0; k9--)
                     {
-                        double d9 = ad[(k6 - 1 - 1) + k];
-                        double d22 = ad1[(k6 - 1 - 1) + l];
+                        double d9 = ad[(k6 - 2) + k];
+                        double d22 = ad1[(k6 - 2) + l];
                         if((d9 != 1.0D) || (d22 != 0.0D))
                         {
                             int k3 = 1;
                             for(int k12 = (i - 1) + 1; k12 > 0; k12--)
                             {
                                 double d35 = ad2[(k3 - 1) + (k6 - 1) * j1 + i1];
-                                ad2[(k3 - 1) + (k6 - 1) * j1 + i1] = d9 * d35 - d22 * ad2[(k3 - 1) + (1 - 1) * j1 + i1];
-                                ad2[(k3 - 1) + (1 - 1) * j1 + i1] = d22 * d35 + d9 * ad2[(k3 - 1) + (1 - 1) * j1 + i1];
+                                ad2[(k3 - 1) + (k6 - 1) * j1 + i1] = d9 * d35 - d22 * ad2[(k3 - 1) + i1];
+                                ad2[(k3 - 1) + i1] = d22 * d35 + d9 * ad2[(k3 - 1) + i1];
                                 k3++;
                             }
 
@@ -270,8 +270,8 @@ public final class Dlasr
                             for(int l12 = (i - 1) + 1; l12 > 0; l12--)
                             {
                                 double d36 = ad2[(l3 - 1) + (l6 - 1) * j1 + i1];
-                                ad2[(l3 - 1) + (l6 - 1) * j1 + i1] = d10 * d36 - d23 * ad2[(l3 - 1) + (1 - 1) * j1 + i1];
-                                ad2[(l3 - 1) + (1 - 1) * j1 + i1] = d23 * d36 + d10 * ad2[(l3 - 1) + (1 - 1) * j1 + i1];
+                                ad2[(l3 - 1) + (l6 - 1) * j1 + i1] = d10 * d36 - d23 * ad2[(l3 - 1) + i1];
+                                ad2[(l3 - 1) + i1] = d23 * d36 + d10 * ad2[(l3 - 1) + i1];
                                 l3++;
                             }
 
