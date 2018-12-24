@@ -5,62 +5,81 @@ import org.netlib.blas.Dtrsm;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
-public final class Dgetrf
-{
-    public static void dgetrf(int i, int j, double[] ad, int k, int l, int[] ai, int i1, intW intw)
-    {
-        intW intw1 = new intW(0);
-        int i2 = 0;
-        intw.val = 0;
-        if (i < 0)
-            intw.val = -1;
-        else
-        if (j < 0)
-            intw.val = -2;
-        else
-        if (l < Math.max(1, i))
-            intw.val = -4;
+// DGETRF computes an LU factorization of a general M-by-N matrix A
+// using partial pivoting with row interchanges.
+//
+// The factorization has the form
+//    A = P * L * U
+// where P is a permutation matrix, L is lower triangular with unit
+// diagonal elements (lower trapezoidal if m > n), and U is upper
+// triangular (upper trapezoidal if m < n).
+public final class Dgetrf {
 
-        if (intw.val != 0)
-        {
-            Xerbla.xerbla("DGETRF", -intw.val);
+    public static void dgetrf(int m, int n, double[] a, int _a_offset, int lda, int[] ipiv, int _ipiv_offset,
+            intW info) {
+
+        info.val = 0;
+        if (m < 0) {
+            info.val = -1;
+        } else if (n < 0) {
+            info.val = -2;
+        } else if (lda < Math.max(1, m)) {
+            info.val = -4;
+        }
+        if (info.val != 0) {
+            Xerbla.xerbla("DGETRF", -info.val);
             return;
         }
-        if (i == 0 || j == 0) {
+
+        // Quick return if possible
+        if (m == 0 || n == 0) {
             return;
         }
-        i2 = Ilaenv.ilaenv(1, "DGETRF", " ", i, j, -1, -1);
-        if (i2 <= 1 || i2 >= Math.min(i, j))
-        {
-            Dgetf2.dgetf2(i, j, ad, k, l, ai, i1, intw);
-        } else
-        {
-            int k1 = 1;
-            for (int j2 = ((Math.min(i, j) - 1) + i2) / i2; j2 > 0; j2--)
-            {
-                int l1 = Math.min((Math.min(i, j) - k1) + 1, i2);
-                Dgetf2.dgetf2(i - k1 + 1, l1, ad, k1 - 1 + (k1 - 1) * l + k, l, ai, k1 - 1 + i1, intw1);
-                if (intw.val == 0 && intw1.val > 0) {
-                    intw.val = (intw1.val + k1) - 1;
+        // Determine the block size for this environment
+        int nb = Ilaenv.ilaenv(1, "DGETRF", " ", m, n, -1, -1);
+        if (nb <= 1 || nb >= Math.min(m, n)) {
+            // Use unblocked code
+            Dgetf2.dgetf2(m, n, a, _a_offset, lda, ipiv, _ipiv_offset, info);
+        } else {
+            // Use blocked code
+            intW iinfo = new intW(0);
+            int j = 1;
+            for (int p = ((Math.min(m, n) - 1) + nb) / nb; p > 0; p--) {
+                int jb = Math.min((Math.min(m, n) - j) + 1, nb);
+                // Factor diagonal and subdiagonal blocks and test
+                // for exact singularity
+                Dgetf2.dgetf2(m - j + 1, jb, a, j - 1 + (j - 1) * lda + _a_offset, lda, ipiv, j - 1 + _ipiv_offset,
+                        iinfo);
+                // Adjust INFO and the pivot indices
+                if (info.val == 0 && iinfo.val > 0) {
+                    info.val = (iinfo.val + j) - 1;
                 }
-                int j1 = k1;
-                for (int k2 = Math.min(i, (k1 + l1) - 1) - k1 + 1; k2 > 0; k2--)
-                {
-                    ai[j1 - 1 + i1] = k1 - 1 + ai[j1 - 1 + i1];
-                    j1++;
+                int i = j;
+                for (int q = Math.min(m, j + jb - 1) - j + 1; q > 0; q--) {
+                    ipiv[i - 1 + _ipiv_offset] = j - 1 + ipiv[i - 1 + _ipiv_offset];
+                    i++;
                 }
 
-                Dlaswp.dlaswp(k1 - 1, ad, k, l, k1, k1 + l1 - 1, ai, i1, 1);
-                if (k1 + l1 <= j)
-                {
-                    Dlaswp.dlaswp(j - k1 - l1 + 1, ad, (k1 + l1 - 1) * l + k, l, k1, k1 + l1 - 1, ai, i1, 1);
-                    Dtrsm.dtrsm("Left", "Lower", "No transpose", "Unit", l1, j - k1 - l1 + 1, 1.0, ad, k1 - 1 + (k1 - 1) * l + k, l, ad, k1 - 1 + (k1 + l1 - 1) * l + k, l);
-                    if(k1 + l1 <= i)
-                        Dgemm.dgemm("No transpose", "No transpose", i - k1 - l1 + 1, j - k1 - l1 + 1, l1, -1.0, ad, k1 + l1 - 1 + (k1 - 1) * l + k, l, ad, k1 - 1 + (k1 + l1 - 1) * l + k, l, 1.0, ad, k1 + l1 - 1 + (k1 + l1 - 1) * l + k, l);
+                // Apply interchanges to columns 1:J-1
+                Dlaswp.dlaswp(j - 1, a, _a_offset, lda, j, j + jb - 1, ipiv, _ipiv_offset, 1);
+
+                if (j + jb <= n) {
+                    // Apply interchanges to columns J+JB:N
+                    Dlaswp.dlaswp(n - j - jb + 1, a, (j + jb - 1) * lda + _a_offset, lda, j, j + jb - 1, ipiv,
+                            _ipiv_offset, 1);
+                    // Compute block row of U
+                    Dtrsm.dtrsm("Left", "Lower", "No transpose", "Unit", jb, n - j - jb + 1, 1.0, a,
+                            j - 1 + (j - 1) * lda + _a_offset, lda, a, j - 1 + (j + jb - 1) * lda + _a_offset, lda);
+
+                    if (j + jb <= m) {
+                        // Update trailing submatrix
+                        Dgemm.dgemm("No transpose", "No transpose", m - j - jb + 1, n - j - jb + 1, jb, -1.0, a,
+                                j + jb - 1 + (j - 1) * lda + _a_offset, lda, a, j - 1 + (j + jb - 1) * lda + _a_offset,
+                                lda, 1.0, a, j + jb - 1 + (j + jb - 1) * lda + _a_offset, lda);
+                    }
                 }
-                k1 += i2;
+                j += nb;
             }
-
         }
     }
 }
