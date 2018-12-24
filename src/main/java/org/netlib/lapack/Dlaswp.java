@@ -1,87 +1,78 @@
 package org.netlib.lapack;
 
-public final class Dlaswp
-{
-    public static void dlaswp(int i, double[] ad, int j, int k, int l, int i1, int[] ai, int j1, 
-            int k1)
-    {
-        int j2 = 0;
-        int k2 = 0;
-        int byte0 = 0;
-        int l3 = 0;
-        int l4 = 0;
-        if (k1 > 0)
-        {
-            l3 = l;
-            j2 = l;
-            k2 = i1;
-            byte0 = 1;
-        } else
-        if (k1 < 0)
-        {
-            l3 = 1 + (1 - i1) * k1;
-            j2 = i1;
-            k2 = l;
-            byte0 = -1;
-        } else
-        {
+// DLASWP performs a series of row interchanges on the matrix A.
+// One row interchange is initiated for each of rows K1 through K2 of A.
+public final class Dlaswp {
+
+    public static void dlaswp(int n, double[] a, int _a_offset, int lda, int k1, int k2, int[] ipiv, int _ipiv_offset,
+            int incx) {
+
+        int ix0;
+        int i1;
+        int i2;
+        int inc;
+
+        // Interchange row I with row IPIV(K1+(I-K1)*abs(INCX))
+        // for each of rows K1 through K2
+
+        if (incx > 0) {
+            ix0 = k1;
+            i1 = k1;
+            i2 = k2;
+            inc = 1;
+        } else if (incx < 0) {
+            ix0 = 1 + (1 - k2) * incx;
+            i1 = k2;
+            i2 = k1;
+            inc = -1;
+        } else {
             return;
         }
-        l4 = (i / 32) * 32;
-        if (l4 != 0)
-        {
-            int i4 = 1;
-            for (int i5 = (l4 + 31) / 32; i5 > 0; i5--)
-            {
-                int j3 = l3;
-                int l1 = j2;
-                for (int k5 = (k2 - j2 + byte0) / byte0; k5 > 0; k5--)
-                {
-                    int l2 = ai[j3 - 1 + j1];
-                    if (l2 != l1)
-                    {
-                        int j4 = i4;
-                        for (int i6 = 32; i6 > 0; i6--)
-                        {
-                            double d1 = ad[l1 - 1 + (j4 - 1) * k + j];
-                            ad[l1 - 1 + (j4 - 1) * k + j] = ad[l2 - 1 + (j4 - 1) * k + j];
-                            ad[l2 - 1 + (j4 - 1) * k + j] = d1;
-                            j4++;
-                        }
 
+        int n32 = (n / 32) * 32;
+        if (n32 != 0) {
+            int j = 1;
+            for (int p = (n32 + 31) / 32; p > 0; p--) {
+                int ix = ix0;
+                int i = i1;
+                for (int q = (i2 - i1 + inc) / inc; q > 0; q--) {
+                    int ip = ipiv[ix - 1 + _ipiv_offset];
+                    if (ip != i) {
+                        int k = j;
+                        for (int r = 32; r > 0; r--) {
+                            double temp = a[i - 1 + (k - 1) * lda + _a_offset];
+                            a[i - 1 + (k - 1) * lda + _a_offset] = a[ip - 1 + (k - 1) * lda + _a_offset];
+                            a[ip - 1 + (k - 1) * lda + _a_offset] = temp;
+                            k++;
+                        }
                     }
-                    j3 += k1;
-                    l1 += byte0;
+                    ix += incx;
+                    i += inc;
                 }
 
-                i4 += 32;
+                j += 32;
             }
 
         }
-        if (l4 != i)
-        {
-            l4++;
-            int k3 = l3;
-            int i2 = j2;
-            for (int j5 = (k2 - j2 + byte0) / byte0; j5 > 0; j5--)
-            {
-                int i3 = ai[k3 - 1 + j1];
-                if (i3 != i2)
-                {
-                    int k4 = l4;
-                    for (int l5 = i - l4 + 1; l5 > 0; l5--)
-                    {
-                        double d2 = ad[i2 - 1 + (k4 - 1) * k + j];
-                        ad[i2 - 1 + (k4 - 1) * k + j] = ad[(i3 - 1) + (k4 - 1) * k + j];
-                        ad[i3 - 1 + (k4 - 1) * k + j] = d2;
-                        k4++;
+
+        if (n32 != n) {
+            n32++;
+            int ix = ix0;
+            int i = i1;
+            for (int p = (i2 - i1 + inc) / inc; p > 0; p--) {
+                int ip = ipiv[ix - 1 + _ipiv_offset];
+                if (ip != i) {
+                    int k = n32;
+                    for (int q = n - n32 + 1; q > 0; q--) {
+                        double temp = a[i - 1 + (k - 1) * lda + _a_offset];
+                        a[i - 1 + (k - 1) * lda + _a_offset] = a[ip - 1 + (k - 1) * lda + _a_offset];
+                        a[ip - 1 + (k - 1) * lda + _a_offset] = temp;
+                        k++;
                     }
-
                 }
-                k3 += k1;
-                i2 += byte0;
+                ix += incx;
+                i += inc;
             }
-
         }
     }
 }
