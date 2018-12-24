@@ -136,10 +136,10 @@ public final class Dlasda
                 Dcopy.dcopy(l13, ad11, (k8 - 1) + j5, 1, ad11, (k16 - 1) + j5, 1);
             } else
             {
-                Dlaset.dlaset("A", l12, l12, 0.0D, 1.0D, ad2, (j13 - 1) + (1 - 1) * l1 + k1, l1);
-                Dlaset.dlaset("A", l13, l13, 0.0D, 1.0D, ad3, (j13 - 1) + (1 - 1) * l1 + i2, l1);
-                Dlasdq.dlasdq("U", i15, l12, l13, l12, k10, ad, (j13 - 1) + i1, ad1, (j13 - 1) + j1, ad3, (j13 - 1) + (1 - 1) * l1 + i2, l1, ad2, (j13 - 1) + (1 - 1) * l1 + k1, l1, ad2, (j13 - 1) + (1 - 1) * l1 + k1, l1, ad11, (j14 - 1) + j5, intw);
-                Dcopy.dcopy(l13, ad3, (j13 - 1) + (1 - 1) * l1 + i2, 1, ad11, (l15 - 1) + j5, 1);
+                Dlaset.dlaset("A", l12, l12, 0.0D, 1.0D, ad2, (j13 - 1) + k1, l1);
+                Dlaset.dlaset("A", l13, l13, 0.0D, 1.0D, ad3, (j13 - 1) + i2, l1);
+                Dlasdq.dlasdq("U", i15, l12, l13, l12, k10, ad, (j13 - 1) + i1, ad1, (j13 - 1) + j1, ad3, (j13 - 1) + i2, l1, ad2, (j13 - 1) + k1, l1, ad2, (j13 - 1) + k1, l1, ad11, (j14 - 1) + j5, intw);
+                Dcopy.dcopy(l13, ad3, (j13 - 1) + i2, 1, ad11, (l15 - 1) + j5, 1);
                 Dcopy.dcopy(l13, ad3, (j13 - 1) + (l13 - 1) * l1 + i2, 1, ad11, (k16 - 1) + j5, 1);
             }
             if(intw.val != 0)
@@ -190,7 +190,7 @@ public final class Dlasda
                 doublew1.val = ad1[(l6 - 1) + j1];
                 if(i == 0)
                 {
-                    dlasd6_adapter(i, l11, i13, j15, ad, (j12 - 1) + i1, ad11, (i16 - 1) + j5, ad11, (l16 - 1) + j5, doublew, doublew1, ai4, (k7 - 1) + k5, ai3, j4, ai1, (1 - 1) + k3, ai2, l3, i4, ad8, k4, l1, ad7, j3, ad4, k2, ad5, l2, ad6, i3, ai, (1 - 1) + j2, ad9, (1 - 1) + l4, ad10, (1 - 1) + i5, ad11, (j14 - 1) + j5, ai4, (l8 - 1) + k5, intw);
+                    dlasd6_adapter(i, l11, i13, j15, ad, (j12 - 1) + i1, ad11, (i16 - 1) + j5, ad11, (l16 - 1) + j5, doublew, doublew1, ai4, (k7 - 1) + k5, ai3, j4, ai1, k3, ai2, l3, i4, ad8, k4, l1, ad7, j3, ad4, k2, ad5, l2, ad6, i3, ai, j2, ad9, l4, ad10, i5, ad11, (j14 - 1) + j5, ai4, (l8 - 1) + k5, intw);
                 } else
                 {
                     i9--;

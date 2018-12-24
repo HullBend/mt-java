@@ -21,9 +21,9 @@ public final class Dlazq4
         {
             if((d == d3) || (d == d4))
             {
-                double d14 = Math.sqrt(ad[(j2 - 3 - 1) + k]) * Math.sqrt(ad[(j2 - 5 - 1) + k]);
-                double d21 = Math.sqrt(ad[(j2 - 7 - 1) + k]) * Math.sqrt(ad[(j2 - 9 - 1) + k]);
-                double d7 = ad[(j2 - 7 - 1) + k] + ad[(j2 - 5 - 1) + k];
+                double d14 = Math.sqrt(ad[(j2 - 4) + k]) * Math.sqrt(ad[(j2 - 6) + k]);
+                double d21 = Math.sqrt(ad[(j2 - 8) + k]) * Math.sqrt(ad[(j2 - 10) + k]);
+                double d7 = ad[(j2 - 8) + k] + ad[(j2 - 6) + k];
                 if((d == d3) && (d1 == d4))
                 {
                     double d33 = d2 - d7 - d2 * 0.25D;
@@ -58,14 +58,14 @@ public final class Dlazq4
                     {
                         d28 = d3;
                         d8 = 0.0D;
-                        if(ad[(j2 - 5 - 1) + k] > ad[(j2 - 7 - 1) + k])
+                        if(ad[(j2 - 6) + k] > ad[(j2 - 8) + k])
                             return;
-                        d22 = ad[(j2 - 5 - 1) + k] / ad[(j2 - 7 - 1) + k];
+                        d22 = ad[(j2 - 6) + k] / ad[(j2 - 8) + k];
                         k2 = j2 - 9;
                     } else
                     {
                         k2 = j2 - 2 * l;
-                        d22 = ad[(k2 - 2 - 1) + k];
+                        d22 = ad[(k2 - 3) + k];
                         d28 = d4;
                         if(ad[(k2 - 4 - 1) + k] > ad[(k2 - 2 - 1) + k])
                             return;
