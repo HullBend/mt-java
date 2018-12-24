@@ -32,33 +32,34 @@ public final class Dormbr
             i4 = j;
             j4 = i;
         }
-        if(flag ^ true && Lsame.lsame(s, "P") ^ true)
+        if (!flag && !Lsame.lsame(s, "P"))
             intw.val = -1;
         else
-        if(flag1 ^ true && Lsame.lsame(s1, "R") ^ true)
+        if (!flag1 && !Lsame.lsame(s1, "R"))
             intw.val = -2;
         else
-        if(flag3 ^ true && Lsame.lsame(s2, "T") ^ true)
+        if (!flag3 && !Lsame.lsame(s2, "T"))
             intw.val = -3;
         else
-        if(i < 0)
+        if (i < 0)
             intw.val = -4;
         else
-        if(j < 0)
+        if (j < 0)
             intw.val = -5;
         else
-        if(k < 0)
+        if (k < 0)
             intw.val = -6;
         else
-        if((flag && (i1 < Math.max(1, i4))) || (flag ^ true && (i1 < Math.max(1, Math.min(i4, k)))))
+        if ((flag && (i1 < Math.max(1, i4))) || (!flag && (i1 < Math.max(1, Math.min(i4, k)))))
             intw.val = -8;
         else
-        if(l1 < Math.max(1, i))
+        if (l1 < Math.max(1, i))
             intw.val = -11;
         else
-        if((j2 < Math.max(1, j4)) && flag2 ^ true)
+        if ((j2 < Math.max(1, j4)) && !flag2)
             intw.val = -13;
-        if(intw.val == 0)
+
+        if (intw.val == 0)
         {
             int j3;
             if(flag)
@@ -75,11 +76,12 @@ public final class Dormbr
             k2 = Math.max(1, j4) * j3;
             ad3[(1 - 1) + i2] = k2;
         }
-        if(intw.val != 0)
+        if (intw.val != 0)
         {
             Xerbla.xerbla("DORMBR", -intw.val);
             return;
         }
+
         if(flag2)
             return;
         ad3[(1 - 1) + i2] = 1;
@@ -109,7 +111,7 @@ public final class Dormbr
                     byte0 = 1;
                     byte2 = 2;
                 }
-                Dormqr.dormqr(s1, s2, l2, k3, i4 - 1, ad, (2 - 1) + (1 - 1) * i1 + l, i1, ad1, j1, ad2, (byte0 - 1) + (byte2 - 1) * l1 + k1, l1, ad3, i2, j2, intw1);
+                Dormqr.dormqr(s1, s2, l2, k3, i4 - 1, ad, 1 + l, i1, ad1, j1, ad2, (byte0 - 1) + (byte2 - 1) * l1 + k1, l1, ad3, i2, j2, intw1);
             }
         } else
         {
@@ -140,7 +142,7 @@ public final class Dormbr
                     byte1 = 1;
                     byte3 = 2;
                 }
-                Dormlq.dormlq(s1, s4, i3, l3, i4 - 1, ad, (1 - 1) + (2 - 1) * i1 + l, i1, ad1, j1, ad2, (byte1 - 1) + (byte3 - 1) * l1 + k1, l1, ad3, i2, j2, intw1);
+                Dormlq.dormlq(s1, s4, i3, l3, i4 - 1, ad, i1 + l, i1, ad1, j1, ad2, (byte1 - 1) + (byte3 - 1) * l1 + k1, l1, ad3, i2, j2, intw1);
             }
         }
         ad3[i2] = k2;

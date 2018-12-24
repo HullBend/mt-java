@@ -26,7 +26,7 @@ public final class Dlasd6
         int i7 = 0;
         int j7 = 0;
         int k7 = 0;
-        double d = 0.0D;
+        double d = 0.0;
         intw2.val = 0;
         i7 = j + k + 1;
         l6 = i7 + l;

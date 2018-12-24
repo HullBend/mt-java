@@ -33,9 +33,9 @@ public final class Dbdsdc
         int k7 = 0;
         int k8 = 0;
         int l8 = 0;
-        doubleW doublew = new doubleW(0.0D);
-        doubleW doublew1 = new doubleW(0.0D);
-        doubleW doublew2 = new doubleW(0.0D);
+        doubleW doublew = new doubleW(0.0);
+        doubleW doublew1 = new doubleW(0.0);
+        doubleW doublew2 = new doubleW(0.0);
         intw.val = 0;
         byte2 = 0;
         if(Lsame.lsame(s, "U"))
@@ -78,15 +78,15 @@ public final class Dbdsdc
         {
             if(byte1 == 1)
             {
-                ad4[(1 - 1) + l1] = Util.dsign(1.0D, ad[(1 - 1) + j]);
-                ad4[((1 + k7 * i) - 1) + l1] = 1.0D;
+                ad4[l1] = Util.dsign(1.0, ad[j]);
+                ad4[((1 + k7 * i) - 1) + l1] = 1.0;
             } else
             if(byte1 == 2)
             {
-                ad2[(1 - 1) + (1 - 1) * i1 + l] = Util.dsign(1.0D, ad[(1 - 1) + j]);
-                ad3[(1 - 1) + (1 - 1) * k1 + j1] = 1.0D;
+                ad2[l] = Util.dsign(1.0, ad[j]);
+                ad3[j1] = 1.0;
             }
-            ad[(1 - 1) + j] = Math.abs(ad[(1 - 1) + j]);
+            ad[j] = Math.abs(ad[j]);
             return;
         }
         l6 = i - 1;
@@ -102,7 +102,7 @@ public final class Dbdsdc
             byte4 = 5;
             k8 = 2 * i - 1;
             int l3 = 1;
-            for(int i9 = (i - 1 - 1) + 1; i9 > 0; i9--)
+            for (int i9 = i - 1; i9 > 0; i9--)
             {
                 Dlartg.dlartg(ad[(l3 - 1) + j], ad1[(l3 - 1) + k], doublew, doublew2, doublew1);
                 ad[(l3 - 1) + j] = doublew1.val;

@@ -17,9 +17,9 @@ public final class Dlasdq
         byte byte0 = 0;
         int j4 = 0;
         int k4 = 0;
-        doubleW doublew = new doubleW(0.0D);
-        doubleW doublew1 = new doubleW(0.0D);
-        doubleW doublew2 = new doubleW(0.0D);
+        doubleW doublew = new doubleW(0.0);
+        doubleW doublew1 = new doubleW(0.0);
+        doubleW doublew2 = new doubleW(0.0);
         intw.val = 0;
         byte0 = 0;
         if(Lsame.lsame(s, "U"))
@@ -65,7 +65,7 @@ public final class Dlasdq
         if((byte0 == 1) && (k4 == 1))
         {
             k3 = 1;
-            for(int l4 = (j - 1 - 1) + 1; l4 > 0; l4--)
+            for(int l4 = j - 1; l4 > 0; l4--)
             {
                 Dlartg.dlartg(ad[(k3 - 1) + j1], ad1[(k3 - 1) + k1], doublew, doublew2, doublew1);
                 ad[(k3 - 1) + j1] = doublew1.val;
@@ -81,7 +81,7 @@ public final class Dlasdq
 
             Dlartg.dlartg(ad[(j - 1) + j1], ad1[(j - 1) + k1], doublew, doublew2, doublew1);
             ad[(j - 1) + j1] = doublew1.val;
-            ad1[(j - 1) + k1] = 0.0D;
+            ad1[(j - 1) + k1] = 0.0;
             if(flag)
             {
                 ad5[(j - 1) + j3] = doublew.val;
@@ -89,13 +89,13 @@ public final class Dlasdq
             }
             byte0 = 2;
             k4 = 0;
-            if(k > 0)
-                Dlasr.dlasr("L", "V", "F", j4, k, ad5, (1 - 1) + j3, ad5, (j4 - 1) + j3, ad2, l1, i2);
+            if (k > 0)
+                Dlasr.dlasr("L", "V", "F", j4, k, ad5, j3, ad5, (j4 - 1) + j3, ad2, l1, i2);
         }
-        if(byte0 == 2)
+        if (byte0 == 2)
         {
             k3 = 1;
-            for(int i5 = (j - 1 - 1) + 1; i5 > 0; i5--)
+            for(int i5 = j - 1; i5 > 0; i5--)
             {
                 Dlartg.dlartg(ad[(k3 - 1) + j1], ad1[(k3 - 1) + k1], doublew, doublew2, doublew1);
                 ad[(k3 - 1) + j1] = doublew1.val;
@@ -109,7 +109,7 @@ public final class Dlasdq
                 k3++;
             }
 
-            if(k4 == 1)
+            if (k4 == 1)
             {
                 Dlartg.dlartg(ad[(j - 1) + j1], ad1[(j - 1) + k1], doublew, doublew2, doublew1);
                 ad[(j - 1) + j1] = doublew1.val;
@@ -119,27 +119,27 @@ public final class Dlasdq
                     ad5[((j + j) - 1) + j3] = doublew2.val;
                 }
             }
-            if(l > 0)
-                if(k4 == 0)
-                    Dlasr.dlasr("R", "V", "F", l, j, ad5, (1 - 1) + j3, ad5, (j4 - 1) + j3, ad3, j2, k2);
+            if (l > 0)
+                if (k4 == 0)
+                    Dlasr.dlasr("R", "V", "F", l, j, ad5, j3, ad5, (j4 - 1) + j3, ad3, j2, k2);
                 else
-                    Dlasr.dlasr("R", "V", "F", l, j4, ad5, (1 - 1) + j3, ad5, (j4 - 1) + j3, ad3, j2, k2);
-            if(i1 > 0)
-                if(k4 == 0)
-                    Dlasr.dlasr("L", "V", "F", j, i1, ad5, (1 - 1) + j3, ad5, (j4 - 1) + j3, ad4, l2, i3);
+                    Dlasr.dlasr("R", "V", "F", l, j4, ad5, j3, ad5, (j4 - 1) + j3, ad3, j2, k2);
+            if (i1 > 0)
+                if (k4 == 0)
+                    Dlasr.dlasr("L", "V", "F", j, i1, ad5, j3, ad5, (j4 - 1) + j3, ad4, l2, i3);
                 else
-                    Dlasr.dlasr("L", "V", "F", j4, i1, ad5, (1 - 1) + j3, ad5, (j4 - 1) + j3, ad4, l2, i3);
+                    Dlasr.dlasr("L", "V", "F", j4, i1, ad5, j3, ad5, (j4 - 1) + j3, ad4, l2, i3);
         }
         Dbdsqr.dbdsqr("U", j, k, l, i1, ad, j1, ad1, k1, ad2, l1, i2, ad3, j2, k2, ad4, l2, i3, ad5, j3, intw);
         k3 = 1;
-        for(int j5 = (j - 1) + 1; j5 > 0; j5--)
+        for (int j5 = (j - 1) + 1; j5 > 0; j5--)
         {
             int l3 = k3;
             double d1 = ad[(k3 - 1) + j1];
             int i4 = k3 + 1;
-            for(int k5 = (j - (k3 + 1)) + 1; k5 > 0; k5--)
+            for (int k5 = (j - (k3 + 1)) + 1; k5 > 0; k5--)
             {
-                if(ad[(i4 - 1) + j1] < d1)
+                if (ad[(i4 - 1) + j1] < d1)
                 {
                     l3 = i4;
                     d1 = ad[(i4 - 1) + j1];
@@ -152,11 +152,11 @@ public final class Dlasdq
                 ad[(l3 - 1) + j1] = ad[(k3 - 1) + j1];
                 ad[(k3 - 1) + j1] = d1;
                 if(k > 0)
-                    Dswap.dswap(k, ad2, (l3 - 1) + (1 - 1) * i2 + l1, i2, ad2, (k3 - 1) + (1 - 1) * i2 + l1, i2);
+                    Dswap.dswap(k, ad2, (l3 - 1) + l1, i2, ad2, (k3 - 1) + l1, i2);
                 if(l > 0)
-                    Dswap.dswap(l, ad3, (1 - 1) + (l3 - 1) * k2 + j2, 1, ad3, (1 - 1) + (k3 - 1) * k2 + j2, 1);
+                    Dswap.dswap(l, ad3, (l3 - 1) * k2 + j2, 1, ad3, (k3 - 1) * k2 + j2, 1);
                 if(i1 > 0)
-                    Dswap.dswap(i1, ad4, (l3 - 1) + (1 - 1) * i3 + l2, i3, ad4, (k3 - 1) + (1 - 1) * i3 + l2, i3);
+                    Dswap.dswap(i1, ad4, (l3 - 1) + l2, i3, ad4, (k3 - 1) + l2, i3);
             }
             k3++;
         }

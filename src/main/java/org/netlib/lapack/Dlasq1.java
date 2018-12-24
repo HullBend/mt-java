@@ -11,11 +11,11 @@ public final class Dlasq1
     {
         int i1 = 0;
         intW intw1 = new intW(0);
-        double d = 0.0D;
-        double d1 = 0.0D;
-        double d2 = 0.0D;
-        doubleW doublew = new doubleW(0.0D);
-        doubleW doublew1 = new doubleW(0.0D);
+        double d = 0.0;
+        double d1 = 0.0;
+        double d2 = 0.0;
+        doubleW doublew = new doubleW(0.0);
+        doubleW doublew1 = new doubleW(0.0);
         intw.val = 0;
         if(i < 0)
         {
@@ -27,19 +27,19 @@ public final class Dlasq1
             return;
         if(i == 1)
         {
-            ad[(1 - 1) + j] = Math.abs(ad[(1 - 1) + j]);
+            ad[j] = Math.abs(ad[j]);
             return;
         }
         if(i == 2)
         {
-            Dlas2.dlas2(ad[(1 - 1) + j], ad1[(1 - 1) + k], ad[(2 - 1) + j], doublew, doublew1);
-            ad[(1 - 1) + j] = doublew1.val;
-            ad[(2 - 1) + j] = doublew.val;
+            Dlas2.dlas2(ad[j], ad1[k], ad[1 + j], doublew, doublew1);
+            ad[j] = doublew1.val;
+            ad[1 + j] = doublew.val;
             return;
         }
-        doublew1.val = 0.0D;
+        doublew1.val = 0.0;
         i1 = 1;
-        for(int k1 = (i - 1 - 1) + 1; k1 > 0; k1--)
+        for(int k1 = i - 1; k1 > 0; k1--)
         {
             ad[(i1 - 1) + j] = Math.abs(ad[(i1 - 1) + j]);
             doublew1.val = Math.max(doublew1.val, Math.abs(ad1[(i1 - 1) + k]));
@@ -47,7 +47,7 @@ public final class Dlasq1
         }
 
         ad[(i - 1) + j] = Math.abs(ad[(i - 1) + j]);
-        if(doublew1.val == 0.0D)
+        if(doublew1.val == 0.0)
         {
             Dlasrt.dlasrt("D", i, ad, j, intw1);
             return;
@@ -62,17 +62,17 @@ public final class Dlasq1
         d = Dlamch.dlamch("Precision");
         d2 = Dlamch.dlamch("Safe minimum");
         d1 = Math.sqrt(d / d2);
-        Dcopy.dcopy(i, ad, j, 1, ad2, (1 - 1) + l, 2);
-        Dcopy.dcopy(i - 1, ad1, k, 1, ad2, (2 - 1) + l, 2);
+        Dcopy.dcopy(i, ad, j, 1, ad2, l, 2);
+        Dcopy.dcopy(i - 1, ad1, k, 1, ad2, 1 + l, 2);
         Dlascl.dlascl("G", 0, 0, doublew1.val, d1, 2 * i - 1, 1, ad2, l, 2 * i - 1, intw1);
         i1 = 1;
-        for(int i2 = (2 * i - 1 - 1) + 1; i2 > 0; i2--)
+        for(int i2 = 2 * i - 1; i2 > 0; i2--)
         {
-            ad2[(i1 - 1) + l] = Math.pow(ad2[(i1 - 1) + l], 2);
+            ad2[(i1 - 1) + l] = Math.pow(ad2[(i1 - 1) + l], 2.0);
             i1++;
         }
 
-        ad2[(2 * i - 1) + l] = 0.0D;
+        ad2[(2 * i - 1) + l] = 0.0;
         Dlasq2.dlasq2(i, ad2, l, intw);
         if(intw.val == 0)
         {
