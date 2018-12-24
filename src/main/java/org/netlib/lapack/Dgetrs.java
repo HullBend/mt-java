@@ -5,48 +5,55 @@ import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
-public final class Dgetrs
-{
-    public static void dgetrs(String s, int i, int j, double[] ad, int k, int l, int[] ai, int i1, 
-            double[] ad1, int j1, int k1, intW intw)
-    {
-        boolean flag = false;
-        intw.val = 0;
-        flag = Lsame.lsame(s, "N");
-        if (!flag && !Lsame.lsame(s, "T") && !Lsame.lsame(s, "C"))
-            intw.val = -1;
-        else
-        if (i < 0)
-            intw.val = -2;
-        else
-        if (j < 0)
-            intw.val = -3;
-        else
-        if (l < Math.max(1, i))
-            intw.val = -5;
-        else
-        if (k1 < Math.max(1, i))
-            intw.val = -8;
+// DGETRS solves a system of linear equations
+//    A * X = B  or  A**T * X = B
+// with a general N-by-N matrix A using the LU factorization
+// computed by DGETRF.
+public final class Dgetrs {
 
-        if (intw.val != 0)
-        {
-            Xerbla.xerbla("DGETRS", -intw.val);
-            return;
-        }
-        if (i == 0 || j == 0) {
-            return;
+    public static void dgetrs(String trans, int n, int nrhs, double[] a, int _a_offset, int lda, int[] ipiv,
+            int _ipiv_offset, double[] b, int _b_offset, int ldb, intW info) {
+
+        info.val = 0;
+        boolean notran = Lsame.lsame(trans, "N");
+        if (!notran && !Lsame.lsame(trans, "T") && !Lsame.lsame(trans, "C")) {
+            info.val = -1;
+        } else if (n < 0) {
+            info.val = -2;
+        } else if (nrhs < 0) {
+            info.val = -3;
+        } else if (lda < Math.max(1, n)) {
+            info.val = -5;
+        } else if (ldb < Math.max(1, n)) {
+            info.val = -8;
         }
 
-        if (flag)
-        {
-            Dlaswp.dlaswp(j, ad1, j1, k1, 1, i, ai, i1, 1);
-            Dtrsm.dtrsm("Left", "Lower", "No transpose", "Unit", i, j, 1.0, ad, k, l, ad1, j1, k1);
-            Dtrsm.dtrsm("Left", "Upper", "No transpose", "Non-unit", i, j, 1.0, ad, k, l, ad1, j1, k1);
-        } else
-        {
-            Dtrsm.dtrsm("Left", "Upper", "Transpose", "Non-unit", i, j, 1.0, ad, k, l, ad1, j1, k1);
-            Dtrsm.dtrsm("Left", "Lower", "Transpose", "Unit", i, j, 1.0, ad, k, l, ad1, j1, k1);
-            Dlaswp.dlaswp(j, ad1, j1, k1, 1, i, ai, i1, -1);
+        if (info.val != 0) {
+            Xerbla.xerbla("DGETRS", -info.val);
+            return;
+        }
+        // Quick return if possible
+        if (n == 0 || nrhs == 0) {
+            return;
+        }
+
+        if (notran) {
+            // Solve A * X = B
+            // Apply row interchanges to the right hand sides
+            Dlaswp.dlaswp(nrhs, b, _b_offset, ldb, 1, n, ipiv, _ipiv_offset, 1);
+            // Solve L*X = B, overwriting B with X
+            Dtrsm.dtrsm("Left", "Lower", "No transpose", "Unit", n, nrhs, 1.0, a, _a_offset, lda, b, _b_offset, ldb);
+            // Solve U*X = B, overwriting B with X
+            Dtrsm.dtrsm("Left", "Upper", "No transpose", "Non-unit", n, nrhs, 1.0, a, _a_offset, lda, b, _b_offset,
+                    ldb);
+        } else {
+            // Solve A**T * X = B
+            // Solve U**T *X = B, overwriting B with X
+            Dtrsm.dtrsm("Left", "Upper", "Transpose", "Non-unit", n, nrhs, 1.0, a, _a_offset, lda, b, _b_offset, ldb);
+            // Solve L**T *X = B, overwriting B with X
+            Dtrsm.dtrsm("Left", "Lower", "Transpose", "Unit", n, nrhs, 1.0, a, _a_offset, lda, b, _b_offset, ldb);
+            // Apply row interchanges to the solution vectors
+            Dlaswp.dlaswp(nrhs, b, _b_offset, ldb, 1, n, ipiv, _ipiv_offset, -1);
         }
     }
 }
