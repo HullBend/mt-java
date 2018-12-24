@@ -1,5 +1,6 @@
 package org.netlib.lapack;
 
+import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.intW;
 
@@ -142,6 +143,6 @@ public final class Dormbr
                 Dormlq.dormlq(s1, s4, i3, l3, i4 - 1, ad, (1 - 1) + (2 - 1) * i1 + l, i1, ad1, j1, ad2, (byte1 - 1) + (byte3 - 1) * l1 + k1, l1, ad3, i2, j2, intw1);
             }
         }
-        ad3[(1 - 1) + i2] = k2;
+        ad3[i2] = k2;
     }
 }

@@ -1,5 +1,6 @@
 package org.netlib.lapack;
 
+import org.netlib.blas.Lsame;
 import org.netlib.util.doubleW;
 
 public final class Dlanst

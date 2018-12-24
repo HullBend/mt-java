@@ -1,5 +1,6 @@
 package org.netlib.lapack;
 
+import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 
 public final class Dlasr
@@ -329,3 +330,4 @@ public final class Dlasr
                 }
     }
 }
+

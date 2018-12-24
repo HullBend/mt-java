@@ -2,6 +2,7 @@ package org.netlib.lapack;
 
 import org.netlib.blas.Dcopy;
 import org.netlib.blas.Dswap;
+import org.netlib.blas.Lsame;
 import org.netlib.err.Xerbla;
 import org.netlib.util.*;
 
