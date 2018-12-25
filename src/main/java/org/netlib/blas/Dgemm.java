@@ -123,7 +123,7 @@ public final class Dgemm {
     public static void dgemm(String transa, String transb, int m, int n, int k, double alpha, double[] a, int _a_offset,
             int lda, double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc) {
 
-        byte info = 0;
+        int info = 0;
         int nRowA = 0;
         int nRowB = 0;
         boolean notA = Lsame.lsame(transa, "N");
@@ -139,22 +139,24 @@ public final class Dgemm {
             nRowB = n;
         }
         info = 0;
-        if ((!notA && !Lsame.lsame(transa, "C")) && !Lsame.lsame(transa, "T"))
+        if (!notA && !Lsame.lsame(transa, "C") && !Lsame.lsame(transa, "T")) {
             info = 1;
-        else if ((!notB && !Lsame.lsame(transb, "C")) && !Lsame.lsame(transb, "T"))
+        } else if (!notB && !Lsame.lsame(transb, "C") && !Lsame.lsame(transb, "T")) {
             info = 2;
-        else if (m < 0)
+        } else if (m < 0) {
             info = 3;
-        else if (n < 0)
+        } else if (n < 0) {
             info = 4;
-        else if (k < 0)
+        } else if (k < 0) {
             info = 5;
-        else if (lda < Math.max(1, nRowA))
+        } else if (lda < Math.max(1, nRowA)) {
             info = 8;
-        else if (ldb < Math.max(1, nRowB))
+        } else if (ldb < Math.max(1, nRowB)) {
             info = 10;
-        else if (ldc < Math.max(1, m))
+        } else if (ldc < Math.max(1, m)) {
             info = 13;
+        }
+
         if (info != 0) {
             Xerbla.xerbla("DGEMM ", info);
             return;
