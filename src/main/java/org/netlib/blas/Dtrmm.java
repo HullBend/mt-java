@@ -181,16 +181,10 @@ public final class Dtrmm {
             return;
         }
 
-        if ((lside && Math.min(m, n) > 190L) || (!lside && Math.min(m, n) > 280L)) {
-            // FIXME
-            System.err.println("Using Ulm TRMM with m = " + m + ", n = " + n + " (RIGHT: " + !lside + ")");
-            // FIXME
+        if ((lside && Math.min(m, n) > 190) || (!lside && Math.min(m, n) > 280)) {
             Trmm.trmm(lside, !upper, !notrans, !nounit, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
         } else {
             DtrmmNetlib.dtrmm(lside, upper, notrans, nounit, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
-            // FIXME
-            System.err.println("Using Netlib dtrmm with m = " + m + ", n = " + n + " (RIGHT: " + !lside + ")");
-            // FIXME
         }
     }
 }
