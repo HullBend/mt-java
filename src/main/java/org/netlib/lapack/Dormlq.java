@@ -59,7 +59,7 @@ public final class Dormlq {
         int nb = 0;
         if (info.val == 0) {
             // Compute the workspace requirements
-            nb = Math.min(64, Ilaenv.ilaenv(1, "DORMLQ", side + trans, m, n, k, -1));
+            nb = Math.min(nbmax, Ilaenv.ilaenv(1, "DORMLQ", side + trans, m, n, k, -1));
             lwkopt = Math.max(1, nw) * nb;
             work[_work_offset] = lwkopt;
         }
@@ -116,14 +116,14 @@ public final class Dormlq {
                 ic = 1;
             }
             String transt = notran ? "T" : "N";
-            double[] buffer = new double[65 * 64];
+            double[] buffer = new double[(nbmax + 1) * nbmax];
             int i = i1;
             for (int p = ((i2 - i1) + i3) / i3; p > 0; p--) {
                 int ib = Math.min(nb, k - i + 1);
                 // Form the triangular factor of the block reflector
                 // H = H(i) H(i+1) . . . H(i+ib-1)
                 Dlarft.dlarft("Forward", "Rowwise", nq - i + 1, ib, a, i - 1 + (i - 1) * lda + _a_offset, lda, tau,
-                        i - 1 + _tau_offset, buffer, 0, 65);
+                        i - 1 + _tau_offset, buffer, 0, (nbmax + 1));
                 if (left) {
                     // H or H**T is applied to C(i:m,1:n)
                     mi = m - i + 1;
@@ -135,12 +135,13 @@ public final class Dormlq {
                 }
                 // Apply H or H**T
                 Dlarfb.dlarfb(side, transt, "Forward", "Rowwise", mi, ni, ib, a, i - 1 + (i - 1) * lda + _a_offset, lda,
-                        buffer, 0, 65, c, ic - 1 + (jc - 1) * ldc + _c_offset, ldc, work, _work_offset, ldwork);
+                        buffer, 0, (nbmax + 1), c, ic - 1 + (jc - 1) * ldc + _c_offset, ldc, work, _work_offset, ldwork);
                 i += i3;
             }
         }
         work[_work_offset] = lwkopt;
     }
 
+    private static final int nbmax = 64;
     private static final intW refInfo = new intW(0);
 }
