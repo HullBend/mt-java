@@ -181,13 +181,16 @@ public final class Dtrmm {
             return;
         }
 
-        if ((lside && Math.round(Math.sqrt(m * n)) > 190L) || (!lside && Math.round(Math.sqrt(m * n)) > 280L)) {
+        if ((lside && Math.min(m, n) > 190L) || (!lside && Math.min(m, n) > 280L)) {
             // FIXME
-            System.err.println("Using Ulm TRMM with m = " + m + ", n = " + n);
+            System.err.println("Using Ulm TRMM with m = " + m + ", n = " + n + " (RIGHT: " + !lside + ")");
             // FIXME
             Trmm.trmm(lside, !upper, !notrans, !nounit, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
         } else {
             DtrmmNetlib.dtrmm(lside, upper, notrans, nounit, m, n, alpha, a, _a_offset, lda, b, _b_offset, ldb);
+            // FIXME
+            System.err.println("Using Netlib dtrmm with m = " + m + ", n = " + n + " (RIGHT: " + !lside + ")");
+            // FIXME
         }
     }
 }
