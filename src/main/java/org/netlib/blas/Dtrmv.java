@@ -138,7 +138,7 @@ public final class Dtrmv {
                         temp *= a[j - 1 + (j - 1) * lda + _a_offset];
                     }
                     int i = j - 1;
-                    for (int q = j; q > 0; q--) {
+                    for (int q = j - 1; q > 0; q--) {
                         temp += a[i - 1 + (j - 1) * lda + _a_offset] * x[i - 1 + _x_offset];
                         i--;
                     }
