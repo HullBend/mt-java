@@ -15,6 +15,9 @@ final class DgemmTasks {
         int mb_hi = 1;
         boolean mb_hi_is_last = true;
 
+        String loop = "";
+        int tasks;
+
         @Override
         public String toString() {
             return "{nb_lo=" + nb_lo + ", nb_hi=" + nb_hi + " (last=" + nb_hi_is_last + "), kb_lo=" + kb_lo + ", kb_hi="
@@ -40,22 +43,16 @@ final class DgemmTasks {
             throw new AssertionError("#cores : " + cores);
         }
 
-        LoopBounds[] loopsMb = null;
-        LoopBounds[] loopsKb = null;
-        LoopBounds[] loopsNb = divideLoopBounds(nb, cores);
-        int threads = loopsNb.length;
+        LoopBounds[] loopsMb = divideLoopBounds(mb, cores);
+        LoopBounds[] loopsNb = null;
+        int threads = loopsMb.length;
 
-        if (loopsNb.length <= 1) {
-            // can't divide nb
-            loopsKb = divideLoopBounds(kb, cores);
-            threads = loopsKb.length;
-            if (loopsKb.length <= 1) {
-                // can't divide kb
-                loopsMb = divideLoopBounds(mb, cores);
-                threads = loopsMb.length;
-                if (loopsMb.length <= 1) {
-                    throw new AssertionError("At least one loop must be divisible!");
-                }
+        if (loopsMb.length <= 1) {
+            // can't divide mb
+            loopsNb = divideLoopBounds(nb, cores);
+            threads = loopsNb.length;
+            if (loopsNb.length <= 1) {
+                throw new AssertionError("At least one loop must be divisible!");
             }
         }
         TaskConfig[] threadCfgs = new TaskConfig[threads];
@@ -68,30 +65,27 @@ final class DgemmTasks {
             threadCfgs[i] = cfg;
         }
         // correct task configs for the particular loop to be parallelized
-        if (loopsNb.length > 1 && loopsNb.length == threadCfgs.length) {
-            for (int i = 0; i < threadCfgs.length; ++i) {
-                TaskConfig cfg = threadCfgs[i];
-                cfg.nb_lo = loopsNb[i].lo;
-                cfg.nb_hi = loopsNb[i].hi;
-                cfg.nb_hi_is_last = loopsNb[i].hi_is_last;
-            }
-        } else if (loopsKb != null && loopsKb.length > 1 && loopsKb.length == threadCfgs.length) {
-            for (int i = 0; i < threadCfgs.length; ++i) {
-                TaskConfig cfg = threadCfgs[i];
-                cfg.kb_lo = loopsKb[i].lo;
-                cfg.kb_hi = loopsKb[i].hi;
-                cfg.kb_hi_is_last = loopsKb[i].hi_is_last;
-            }
-        } else if (loopsMb != null && loopsMb.length > 1 && loopsMb.length == threadCfgs.length) {
+        if (loopsMb != null && loopsMb.length > 1 && loopsMb.length == threadCfgs.length) {
             for (int i = 0; i < threadCfgs.length; ++i) {
                 TaskConfig cfg = threadCfgs[i];
                 cfg.mb_lo = loopsMb[i].lo;
                 cfg.mb_hi = loopsMb[i].hi;
                 cfg.mb_hi_is_last = loopsMb[i].hi_is_last;
+                cfg.loop = "mb";
+                cfg.tasks = loopsMb.length;
+            }
+        } else if (loopsNb.length > 1 && loopsNb.length == threadCfgs.length) {
+            for (int i = 0; i < threadCfgs.length; ++i) {
+                TaskConfig cfg = threadCfgs[i];
+                cfg.nb_lo = loopsNb[i].lo;
+                cfg.nb_hi = loopsNb[i].hi;
+                cfg.nb_hi_is_last = loopsNb[i].hi_is_last;
+                cfg.loop = "nb";
+                cfg.tasks = loopsNb.length;
             }
         } else {
-            throw new IllegalStateException("loopsNb: " + Arrays.toString(loopsNb) + ", loopsKb: "
-                    + Arrays.toString(loopsKb) + ", loopsMb: " + Arrays.toString(loopsMb));
+            throw new IllegalStateException(
+                    "loopsNb: " + Arrays.toString(loopsNb) + ", loopsMb: " + Arrays.toString(loopsMb));
         }
         return threadCfgs;
     }
@@ -164,6 +158,7 @@ final class DgemmTasks {
         if (cores % 2 != 0) {
             return cores;
         }
-        return cores / 2;
+        // use all cores (for now)
+        return (cores / 2) + (cores / 2);
     }
 }
