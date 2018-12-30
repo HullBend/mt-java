@@ -40,12 +40,12 @@ import java.util.Arrays;
  */
 final class Dgemm4x4 {
 
-    private static final int MR_Height = 4; // 4
-    private static final int NR_Width = 4; // 4
+    static final int MR_Height = 4; // 4
+    static final int NR_Width = 4; // 4
 
-    private static final int MC = 384; // 384
-    private static final int KC = 384; // 384
-    private static final int NC = 4096; // 4096 .. 16384
+    static final int MC = 384; // 384
+    static final int KC = 384; // 384
+    static final int NC = 4096; // 4096 .. 16384
 
     //
     // Packing complete panels from A (i.e. without padding)
@@ -80,7 +80,7 @@ final class Dgemm4x4 {
     //
     // Packing panels from A with padding if required
     //
-    private static void pack_A(int mc, int kc, int A_start, double[] A, int incRowA, int incColA, double[] work) {
+    static void pack_A(int mc, int kc, int A_start, double[] A, int incRowA, int incColA, double[] work) {
 
         final int mp = mc / MR_Height;
         final int _mr = mc % MR_Height;
@@ -110,7 +110,7 @@ final class Dgemm4x4 {
     //
     // Packing panels from B with padding if required
     //
-    private static void pack_B(int kc, int nc, int B_start, double[] B, int incRowB, int incColB, double[] work) {
+    static void pack_B(int kc, int nc, int B_start, double[] B, int incRowB, int incColB, double[] work) {
 
         final int np = nc / NR_Width;
         final int _nr = nc % NR_Width;
@@ -251,7 +251,7 @@ final class Dgemm4x4 {
     // Macro Kernel for the multiplication of blocks of A and B. We assume that
     // these blocks were previously packed to buffers _A and _B.
     //
-    private static int dgemm_macro_kernel(int mc, int nc, int kc, double alpha, double beta, int C_start, double[] C,
+    static int dgemm_macro_kernel(int mc, int nc, int kc, double alpha, double beta, int C_start, double[] C,
             int incRowC, int incColC, double[] _A, double[] _B, double[] AB, double[] workC) {
 
         int micro_kernel_calls = 0;
@@ -341,8 +341,9 @@ final class Dgemm4x4 {
     //
     // Compute C <- beta*C + alpha*A*B
     //
-    static int dgemm(int rowsA, int colsB, int colsA, double alpha, int offA, double[] A, int incRowA, int incColA, int offB, double[] B,
-            int incRowB, int incColB, double beta, int offC, double[] C, int incRowC, int incColC) {
+    static int dgemm(int rowsA, int colsB, int colsA, double alpha, int offA, double[] A, int incRowA, int incColA,
+            int offB, double[] B, int incRowB, int incColB, double beta, int offC, double[] C, int incRowC,
+            int incColC) {
 
         int micro_kernel_calls = 0;
 
@@ -358,6 +359,12 @@ final class Dgemm4x4 {
         final int _mc = rowsA % MC;
         final int _nc = colsB % NC;
         final int _kc = colsA % KC;
+
+        // check whether we can parallelize the computation
+        if ((mb > 1 || nb > 1) && DgemmTasks.availableCores() > 1) {
+            return Dgemm4x4Parallel.dgemm(nb, kb, mb, _nc, _kc, _mc, alpha, offA, A, incRowA, incColA, offB, B, incRowB,
+                    incColB, beta, offC, C, incRowC, incColC);
+        }
 
         //
         // Local buffers for storing panels from A, B and C
