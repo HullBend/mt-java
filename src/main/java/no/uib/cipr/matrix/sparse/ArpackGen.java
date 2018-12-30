@@ -167,7 +167,7 @@ public class ArpackGen {
         double[] workd = new double[3 * n];
         // private work array
         double[] workl = new double[3*ncv * ncv + 6*ncv];
-        int[] ipntr = new int[11];
+        int[] ipntr = new int[14];
 
         int i = 0;
         while (true) {
