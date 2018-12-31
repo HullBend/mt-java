@@ -3,9 +3,9 @@ package org.netlib.blas;
 //
 // Compute A *= alpha
 //
-public final class Gescal {
+final class Gescal {
 
-    public static void gescal(int m, int n, double alpha, int A_start, double[] A, int incRowA, int incColA) {
+    static void gescal(int m, int n, double alpha, int A_start, double[] A, int incRowA, int incColA) {
         if (alpha == 1.0 || m <= 0 || n <= 0) {
             return;
         }

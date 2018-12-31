@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Gepack {
+final class Gepack {
 
-    public static void gepack_A(int mc, int kc, int A_start, double[] A, int incRowA, int incColA, double[] buffer) {
+    static void gepack_A(int mc, int kc, int A_start, double[] A, int incRowA, int incColA, double[] buffer) {
         final int mp = mc / BlockSizes.MR;
         final int mr_ = mc % BlockSizes.MR;
 

@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Mtrlmm {
+final class Mtrlmm {
 
-    public static void mtrlmm(int mc, int nc, double alpha, double[] A_, double[] B_, int B_start, double[] B,
+    static void mtrlmm(int mc, int nc, double alpha, double[] A_, double[] B_, int B_start, double[] B,
             int incRowB, int incColB, double[] AB, double[] workC) {
 
         final int mp = (mc + BlockSizes.MR - 1) / BlockSizes.MR;

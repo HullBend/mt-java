@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Trlmm {
+final class Trlmm {
 
-    public static void trlmm(int m, int n, double alpha, boolean unitDiag, int A_start, double[] A, int incRowA,
+    static void trlmm(int m, int n, double alpha, boolean unitDiag, int A_start, double[] A, int incRowA,
             int incColA, int B_start, double[] B, int incRowB, int incColB) {
 
         if (alpha == 0.0) {

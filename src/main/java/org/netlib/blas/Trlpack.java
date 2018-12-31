@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Trlpack {
+final class Trlpack {
 
-    public static void trlpack(int mc, boolean unit, int L_start, double[] L, int incRowL, int incColL,
+    static void trlpack(int mc, boolean unit, int L_start, double[] L, int incRowL, int incColL,
             double[] buffer) {
         final int mp = mc / BlockSizes.MR;
         final int mr_ = mc % BlockSizes.MR;

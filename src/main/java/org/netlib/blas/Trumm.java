@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Trumm {
+final class Trumm {
 
-    public static void trumm(int m, int n, double alpha, boolean unitDiag, int A_start, double[] A, int incRowA,
+    static void trumm(int m, int n, double alpha, boolean unitDiag, int A_start, double[] A, int incRowA,
             int incColA, int B_start, double[] B, int incRowB, int incColB) {
 
         if (alpha == 0.0) {

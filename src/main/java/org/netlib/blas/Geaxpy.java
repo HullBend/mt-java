@@ -3,9 +3,9 @@ package org.netlib.blas;
 //
 // Compute Y += alpha*X
 //
-public final class Geaxpy {
+final class Geaxpy {
 
-    public static void geaxpy(int m, int n, double alpha, int X_start, double[] X, int incRowX, int incColX,
+    static void geaxpy(int m, int n, double alpha, int X_start, double[] X, int incRowX, int incColX,
             int Y_start, double[] Y, int incRowY, int incColY) {
         if (m <= 0 || n <= 0 || alpha == 0.0) {
             return;

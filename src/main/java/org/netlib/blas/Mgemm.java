@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Mgemm {
+final class Mgemm {
 
-    public static void mgemm(int mc, int nc, int kc, double alpha, double[] A_, double[] B_, double beta, int C_start,
+    static void mgemm(int mc, int nc, int kc, double alpha, double[] A_, double[] B_, double beta, int C_start,
             double[] C, int incRowC, int incColC, double[] AB, double[] workC) {
 
         final int mp = (mc + BlockSizes.MR - 1) / BlockSizes.MR;

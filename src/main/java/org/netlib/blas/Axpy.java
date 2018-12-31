@@ -3,9 +3,9 @@ package org.netlib.blas;
 //
 // Compute Y += alpha*X
 //
-public final class Axpy {
+final class Axpy {
 
-    public static void axpy(int n, double alpha, double[] x, int xOff, int incX, double[] y, int yOff, int incY) {
+    static void axpy(int n, double alpha, double[] x, int xOff, int incX, double[] y, int yOff, int incY) {
         if (n <= 0 || alpha == 0.0) {
             return;
         }

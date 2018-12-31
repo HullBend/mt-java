@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Trupack {
+final class Trupack {
 
-    public static void trupack(int mc, boolean unit, int U_start, double[] U, int incRowU, int incColU,
+    static void trupack(int mc, boolean unit, int U_start, double[] U, int incRowU, int incColU,
             double[] buffer) {
         final int mp = mc / BlockSizes.MR;
         final int mr_ = mc % BlockSizes.MR;

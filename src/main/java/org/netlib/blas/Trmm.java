@@ -1,8 +1,8 @@
 package org.netlib.blas;
 
-public final class Trmm {
+final class Trmm {
 
-    public static void trmm(boolean leftSide, boolean lowerTriang, boolean transA, boolean unitDiag, int m, int n,
+    static void trmm(boolean leftSide, boolean lowerTriang, boolean transA, boolean unitDiag, int m, int n,
             double alpha, double[] A, int _a_offset, int lda, double[] B, int _b_offset, int ldb) {
 
         if (leftSide) {

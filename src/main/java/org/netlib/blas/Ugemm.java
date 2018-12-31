@@ -2,12 +2,12 @@ package org.netlib.blas;
 
 import java.util.Arrays;
 
-public final class Ugemm {
+final class Ugemm {
 
     //
     // Buffered variant. Used for zero padded panels.
     //
-    public static void ugemm(int mr, int nr, int kc, double alpha, int A_start, double[] A, int B_start, double[] B,
+    static void ugemm(int mr, int nr, int kc, double alpha, int A_start, double[] A, int B_start, double[] B,
             double beta, int C_start, double[] C, int incRowC, int incColC, double[] AB, double[] workC) {
 
         ugemm(kc, alpha, A_start, A, B_start, B, 0.0, 0, workC, 1, BlockSizes.MR, AB);
@@ -18,7 +18,7 @@ public final class Ugemm {
     //
     // Micro kernel for multiplying panels from A and B. Unbuffered variant.
     //
-    public static void ugemm(int kc, double alpha, int A_start, double[] A, int B_start, double[] B, double beta,
+    static void ugemm(int kc, double alpha, int A_start, double[] A, int B_start, double[] B, double beta,
             int C_start, double[] C, int incRowC, int incColC, double[] AB) {
 
         // clear buffer
