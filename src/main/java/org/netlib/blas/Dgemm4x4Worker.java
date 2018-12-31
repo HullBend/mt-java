@@ -122,10 +122,8 @@ final class Dgemm4x4Worker implements Callable<Integer> {
         final int mbhi = m_mbhi;
         final boolean mbfull = m_mbfull;
 
-        // XXX remove
-        System.out.println(
-                "computation on " + Thread.currentThread().getName() + " - loop : " + m_loop + " , tasks: " + m_tasks);
-        // XXX debug
+//        System.out.println(
+//                "computation on " + Thread.currentThread().getName() + " - loop : " + m_loop + " , tasks: " + m_tasks);
 
         for (int j = nblo; j < nbhi; ++j) {
             int nc = (_nc == 0 || nbfull || (!nbfull && j != nbhi - 1)) ? Dgemm4x4.NC : _nc;
