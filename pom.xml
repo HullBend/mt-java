@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.hullbend</groupId>
 	<artifactId>mt-java</artifactId>
-	<version>1.1.0-SNAPSHOT</version>
+	<version>1.1.0</version>
 	<name>Matrix Toolkits for Java</name>
 	<description>Matrix data structures, linear solvers, least squares methods, eigenvalue,
  and singular value decompositions. For larger random dense matrices (above ~ 350 x 350)
