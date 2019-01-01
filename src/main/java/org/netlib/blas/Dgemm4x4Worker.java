@@ -15,7 +15,9 @@ final class Dgemm4x4Worker implements Callable<Integer> {
     // private final boolean m_kbfull;
     private final boolean m_mbfull;
 
+    @SuppressWarnings("unused")
     private final String m_loop;
+    @SuppressWarnings("unused")
     private final int m_tasks;
 
     // the whole rest
