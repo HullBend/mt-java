@@ -115,7 +115,7 @@ public class NativeRefBLAS extends com.github.fommil.netlib.BLAS {
 //  dgemv_offsets(trans, m, n, alpha, a, _a_offset, lda, x, _x_offset, incx, beta, y, _y_offset, incy);
 //  }
 
-  private native void dgemv_offsets(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
+//  private native void dgemv_offsets(java.lang.String trans, int m, int n, double alpha, double[] a, int _a_offset, int lda, double[] x, int _x_offset, int incx, double beta, double[] y, int _y_offset, int incy);
 
   @Override
   public native void dger(int m, int n, double alpha, double[] x, int incx, double[] y, int incy, double[] a, int lda);
