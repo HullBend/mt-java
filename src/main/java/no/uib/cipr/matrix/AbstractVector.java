@@ -49,9 +49,9 @@ import java.util.Iterator;
  */
 public abstract class AbstractVector implements Vector, Serializable {
 
-	private static final long serialVersionUID = -4995750100526109717L;
+    private static final long serialVersionUID = -4995750100526109717L;
 
-	/**
+    /**
      * Size of the vector
      */
     protected int size;
@@ -235,6 +235,7 @@ public abstract class AbstractVector implements Vector, Serializable {
     @Override
     public String toString() {
         // Output into coordinate format. Indices start from 1 instead of 0
+        @SuppressWarnings("resource")
         Formatter out = new Formatter();
 
         out.format("%10d %19d\n", size, Matrices.cardinality(this));
