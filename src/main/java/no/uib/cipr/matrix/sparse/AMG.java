@@ -465,8 +465,8 @@ public class AMG implements Preconditioner {
             int[] diagind = new int[A.numRows()];
 
             for (int i = 0; i < A.numRows(); ++i) {
-                diagind[i] = no.uib.cipr.matrix.sparse.Arrays.binarySearch(
-                        colind, i, rowptr[i], rowptr[i + 1]);
+                diagind[i] = Arrays.binarySearch(
+                        colind, rowptr[i], rowptr[i + 1], i);
                 if (diagind[i] < 0)
                     throw new RuntimeException(
                             "Matrix is missing a diagonal entry on row "

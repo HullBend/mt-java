@@ -128,8 +128,8 @@ public class ILU implements Preconditioner {
         int[] diagind = new int[m];
 
         for (int k = 0; k < m; ++k) {
-            diagind[k] = Arrays.binarySearch(colind, k, rowptr[k],
-                    rowptr[k + 1]);
+            diagind[k] = java.util.Arrays.binarySearch(colind, rowptr[k],
+                    rowptr[k + 1], k);
 
             if (diagind[k] < 0)
                 throw new RuntimeException("Missing diagonal entry on row "

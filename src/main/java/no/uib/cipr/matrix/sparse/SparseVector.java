@@ -177,7 +177,7 @@ public class SparseVector extends AbstractVector implements ISparseVector {
     public double get(int index) {
         check(index);
 
-        int in = Arrays.binarySearch(this.index, index, 0, used);
+        int in = java.util.Arrays.binarySearch(this.index, 0, used, index);
         if (in >= 0)
             return data[in];
         return 0;

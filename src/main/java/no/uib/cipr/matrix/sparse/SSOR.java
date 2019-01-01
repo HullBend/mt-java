@@ -133,8 +133,8 @@ public class SSOR implements Preconditioner {
 
         // Find the indices to the diagonal entries
         for (int k = 0; k < n; ++k) {
-            diagind[k] = Arrays.binarySearch(colind, k, rowptr[k],
-                    rowptr[k + 1]);
+            diagind[k] = java.util.Arrays.binarySearch(colind, rowptr[k],
+                    rowptr[k + 1], k);
             if (diagind[k] < 0)
                 throw new RuntimeException("Missing diagonal on row " + (k + 1));
         }

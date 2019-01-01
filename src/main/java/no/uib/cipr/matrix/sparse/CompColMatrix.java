@@ -359,8 +359,8 @@ public class CompColMatrix extends AbstractMatrix {
     public double get(int row, int column) {
         check(row, column);
 
-        int index = no.uib.cipr.matrix.sparse.Arrays.binarySearch(rowIndex,
-                row, columnPointer[column], columnPointer[column + 1]);
+        int index = Arrays.binarySearch(rowIndex,
+                columnPointer[column], columnPointer[column + 1], row);
 
         if (index >= 0)
             return data[index];
@@ -372,8 +372,8 @@ public class CompColMatrix extends AbstractMatrix {
      * Finds the insertion index
      */
     private int getIndex(int row, int column) {
-        int i = no.uib.cipr.matrix.sparse.Arrays.binarySearch(rowIndex, row,
-                columnPointer[column], columnPointer[column + 1]);
+        int i = Arrays.binarySearch(rowIndex,
+                columnPointer[column], columnPointer[column + 1], row);
 
         if (i >= 0 && rowIndex[i] == row)
             return i;

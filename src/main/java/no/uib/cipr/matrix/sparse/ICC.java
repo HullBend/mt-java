@@ -142,8 +142,8 @@ public class ICC implements Preconditioner {
         int[] diagind = new int[m];
 
         for (int k = 0; k < m; ++k) {
-            diagind[k] = no.uib.cipr.matrix.sparse.Arrays.binarySearch(colind,
-                    k, rowptr[k], rowptr[k + 1]);
+            diagind[k] = Arrays.binarySearch(colind,
+                    rowptr[k], rowptr[k + 1], k);
 
             if (diagind[k] < 0)
                 throw new RuntimeException("Missing diagonal entry on row "

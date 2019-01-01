@@ -210,8 +210,8 @@ public class ILUT implements Preconditioner {
     }
 
     private static int findDiagonalIndex(SparseVector v, int k) {
-        return no.uib.cipr.matrix.sparse.Arrays.binarySearch(v.getIndex(), k,
-                0, v.getUsed());
+        return Arrays.binarySearch(v.getIndex(),
+                0, v.getUsed(), k);
     }
 
     /**
