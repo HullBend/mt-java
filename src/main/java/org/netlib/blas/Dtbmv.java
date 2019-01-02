@@ -7,36 +7,36 @@ public final class Dtbmv
     public static void dtbmv(String s, String s1, String s2, int i, int j, double ad[], int k, int l, 
             double ad1[], int i1, int j1)
     {
-        byte byte0 = 0;
+        int byte0 = 0;
         int i8 = 0;
         boolean flag = false;
         byte0 = 0;
-        if(Lsame.lsame(s, "U") ^ true && Lsame.lsame(s, "L") ^ true)
+        if (!Lsame.lsame(s, "U") && !Lsame.lsame(s, "L"))
             byte0 = 1;
         else
-        if((Lsame.lsame(s1, "N") ^ true && Lsame.lsame(s1, "T") ^ true) && Lsame.lsame(s1, "C") ^ true)
+        if ((!Lsame.lsame(s1, "N") && !Lsame.lsame(s1, "T")) && !Lsame.lsame(s1, "C"))
             byte0 = 2;
         else
-        if(Lsame.lsame(s2, "U") ^ true && Lsame.lsame(s2, "N") ^ true)
+        if (!Lsame.lsame(s2, "U") && !Lsame.lsame(s2, "N"))
             byte0 = 3;
         else
-        if(i < 0)
+        if (i < 0)
             byte0 = 4;
         else
-        if(j < 0)
+        if (j < 0)
             byte0 = 5;
         else
-        if(l < j + 1)
+        if (l < j + 1)
             byte0 = 7;
         else
-        if(j1 == 0)
+        if (j1 == 0)
             byte0 = 9;
-        if(byte0 != 0)
+        if (byte0 != 0)
         {
             Xerbla.xerbla("DTBMV ", byte0);
             return;
         }
-        if(i == 0)
+        if (i == 0)
             return;
         flag = Lsame.lsame(s2, "N");
         if(j1 <= 0)
@@ -52,9 +52,9 @@ public final class Dtbmv
                 if(j1 == 1)
                 {
                     int k4 = 1;
-                    for(int j10 = (i - 1) + 1; j10 > 0; j10--)
+                    for(int j10 = i; j10 > 0; j10--)
                     {
-                        if(ad1[(k4 - 1) + i1] != 0.0D)
+                        if(ad1[(k4 - 1) + i1] != 0.0)
                         {
                             double d1 = ad1[(k4 - 1) + i1];
                             int j8 = k7 - k4;
@@ -75,9 +75,9 @@ public final class Dtbmv
                 {
                     int k6 = i8;
                     int l4 = 1;
-                    for(int k10 = (i - 1) + 1; k10 > 0; k10--)
+                    for(int k10 = i; k10 > 0; k10--)
                     {
-                        if(ad1[(k6 - 1) + i1] != 0.0D)
+                        if(ad1[(k6 - 1) + i1] != 0.0)
                         {
                             double d2 = ad1[(k6 - 1) + i1];
                             int k3 = i8;
@@ -106,7 +106,7 @@ public final class Dtbmv
                 int i5 = i;
                 for(int l10 = ((1 - i) + -1) / -1; l10 > 0; l10--)
                 {
-                    if(ad1[(i5 - 1) + i1] != 0.0D)
+                    if(ad1[(i5 - 1) + i1] != 0.0)
                     {
                         double d3 = ad1[(i5 - 1) + i1];
                         int l8 = 1 - i5;
@@ -118,7 +118,7 @@ public final class Dtbmv
                         }
 
                         if(flag)
-                            ad1[(i5 - 1) + i1] = ad1[(i5 - 1) + i1] * ad[(1 - 1) + (i5 - 1) * l + k];
+                            ad1[(i5 - 1) + i1] = ad1[(i5 - 1) + i1] * ad[(i5 - 1) * l + k];
                     }
                     i5--;
                 }
@@ -130,7 +130,7 @@ public final class Dtbmv
                 int j5 = i;
                 for(int i11 = ((1 - i) + -1) / -1; i11 > 0; i11--)
                 {
-                    if(ad1[(l6 - 1) + i1] != 0.0D)
+                    if(ad1[(l6 - 1) + i1] != 0.0)
                     {
                         double d4 = ad1[(l6 - 1) + i1];
                         int l3 = i8;
@@ -208,7 +208,7 @@ public final class Dtbmv
         if(j1 == 1)
         {
             int i6 = 1;
-            for(int l11 = (i - 1) + 1; l11 > 0; l11--)
+            for(int l11 = i; l11 > 0; l11--)
             {
                 double d7 = ad1[(i6 - 1) + i1];
                 int l9 = 1 - i6;
@@ -229,14 +229,14 @@ public final class Dtbmv
         {
             int j7 = i8;
             int j6 = 1;
-            for (int i12 = (i - 1) + 1; i12 > 0; i12--)
+            for (int i12 = i; i12 > 0; i12--)
             {
                 double d8 = ad1[(j7 - 1) + i1];
                 i8 += j1;
                 int j4 = i8;
                 int i10 = 1 - j6;
                 if (flag)
-                    d8 *= ad[(1 - 1) + (j6 - 1) * l + k];
+                    d8 *= ad[(j6 - 1) * l + k];
                 int j3 = j6 + 1;
                 for (int i14 = (Math.min(i, j6 + j) - (j6 + 1)) + 1; i14 > 0; i14--)
                 {

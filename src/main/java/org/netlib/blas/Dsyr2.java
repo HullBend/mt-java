@@ -7,13 +7,13 @@ public final class Dsyr2
     public static void dsyr2(String s, int i, double d, double ad[], int j, int k, double ad1[], 
             int l, int i1, double ad2[], int j1, int k1)
     {
-        byte byte0 = 0;
+        int byte0 = 0;
         int l4 = 0;
         int i5 = 0;
         int j5 = 0;
         int k5 = 0;
         byte0 = 0;
-        if(Lsame.lsame(s, "U") ^ true && Lsame.lsame(s, "L") ^ true)
+        if (!Lsame.lsame(s, "U") && !Lsame.lsame(s, "L"))
             byte0 = 1;
         else
         if(i < 0)
@@ -32,7 +32,7 @@ public final class Dsyr2
             Xerbla.xerbla("DSYR2 ", byte0);
             return;
         }
-        if((i == 0) || (d == 0.0D))
+        if((i == 0) || (d == 0.0))
             return;
         if((k != 1) || (i1 != 1))
         {
@@ -52,14 +52,14 @@ public final class Dsyr2
             if((k == 1) && (i1 == 1))
             {
                 int l3 = 1;
-                for(int l5 = (i - 1) + 1; l5 > 0; l5--)
+                for(int l5 = i; l5 > 0; l5--)
                 {
-                    if((ad[(l3 - 1) + j] != 0.0D) || (ad1[(l3 - 1) + l] != 0.0D))
+                    if((ad[(l3 - 1) + j] != 0.0) || (ad1[(l3 - 1) + l] != 0.0))
                     {
                         double d2 = d * ad1[(l3 - 1) + l];
                         double d7 = d * ad[(l3 - 1) + j];
                         int l1 = 1;
-                        for(int l6 = (l3 - 1) + 1; l6 > 0; l6--)
+                        for(int l6 = l3; l6 > 0; l6--)
                         {
                             ad2[(l1 - 1) + (l3 - 1) * k1 + j1] = ad2[(l1 - 1) + (l3 - 1) * k1 + j1] + ad[(l1 - 1) + j] * d2 + ad1[(l1 - 1) + l] * d7;
                             l1++;
@@ -72,16 +72,16 @@ public final class Dsyr2
             } else
             {
                 int i4 = 1;
-                for(int i6 = (i - 1) + 1; i6 > 0; i6--)
+                for(int i6 = i; i6 > 0; i6--)
                 {
-                    if((ad[(l4 - 1) + j] != 0.0D) || (ad1[(i5 - 1) + l] != 0.0D))
+                    if((ad[(l4 - 1) + j] != 0.0) || (ad1[(i5 - 1) + l] != 0.0))
                     {
                         double d3 = d * ad1[(i5 - 1) + l];
                         double d8 = d * ad[(l4 - 1) + j];
                         int l2 = j5;
                         int j3 = k5;
                         int i2 = 1;
-                        for(int i7 = (i4 - 1) + 1; i7 > 0; i7--)
+                        for(int i7 = i4; i7 > 0; i7--)
                         {
                             ad2[(i2 - 1) + (i4 - 1) * k1 + j1] = ad2[(i2 - 1) + (i4 - 1) * k1 + j1] + ad[(l2 - 1) + j] * d3 + ad1[(j3 - 1) + l] * d8;
                             l2 += k;
@@ -100,9 +100,9 @@ public final class Dsyr2
         if((k == 1) && (i1 == 1))
         {
             int j4 = 1;
-            for(int j6 = (i - 1) + 1; j6 > 0; j6--)
+            for(int j6 = i; j6 > 0; j6--)
             {
-                if((ad[(j4 - 1) + j] != 0.0D) || (ad1[(j4 - 1) + l] != 0.0D))
+                if((ad[(j4 - 1) + j] != 0.0) || (ad1[(j4 - 1) + l] != 0.0))
                 {
                     double d4 = d * ad1[(j4 - 1) + l];
                     double d9 = d * ad[(j4 - 1) + j];
@@ -120,9 +120,9 @@ public final class Dsyr2
         } else
         {
             int k4 = 1;
-            for (int k6 = (i - 1) + 1; k6 > 0; k6--)
+            for (int k6 = i; k6 > 0; k6--)
             {
-                if ((ad[(l4 - 1) + j] != 0.0D) || (ad1[(i5 - 1) + l] != 0.0D))
+                if ((ad[(l4 - 1) + j] != 0.0) || (ad1[(i5 - 1) + l] != 0.0))
                 {
                     double d5 = d * ad1[(i5 - 1) + l];
                     double d10 = d * ad[(l4 - 1) + j];

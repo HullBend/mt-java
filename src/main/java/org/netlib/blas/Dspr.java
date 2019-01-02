@@ -7,11 +7,11 @@ public final class Dspr
     public static void dspr(String s, int i, double d, double ad[], int j, int k, double ad1[], 
             int l)
     {
-        byte byte0 = 0;
+        int byte0 = 0;
         int k4 = 0;
         int l4 = 0;
         byte0 = 0;
-        if(Lsame.lsame(s, "U") ^ true && Lsame.lsame(s, "L") ^ true)
+        if (!Lsame.lsame(s, "U") && !Lsame.lsame(s, "L"))
             byte0 = 1;
         else
         if(i < 0)
@@ -24,7 +24,7 @@ public final class Dspr
             Xerbla.xerbla("DSPR  ", byte0);
             return;
         }
-        if((i == 0) || (d == 0.0D))
+        if((i == 0) || (d == 0.0))
             return;
         if(k <= 0)
             l4 = 1 - (i - 1) * k;
@@ -37,9 +37,9 @@ public final class Dspr
             if(k == 1)
             {
                 int i2 = 1;
-                for(int i5 = (i - 1) + 1; i5 > 0; i5--)
+                for(int i5 = i; i5 > 0; i5--)
                 {
-                    if(ad[(i2 - 1) + j] != 0.0D)
+                    if(ad[(i2 - 1) + j] != 0.0)
                     {
                         double d2 = d * ad[(i2 - 1) + j];
                         int k3 = k4;
@@ -60,9 +60,9 @@ public final class Dspr
             {
                 int i3 = l4;
                 int j2 = 1;
-                for(int j5 = (i - 1) + 1; j5 > 0; j5--)
+                for(int j5 = i; j5 > 0; j5--)
                 {
-                    if(ad[(i3 - 1) + j] != 0.0D)
+                    if(ad[(i3 - 1) + j] != 0.0)
                     {
                         double d3 = d * ad[(i3 - 1) + j];
                         int k1 = l4;
@@ -85,9 +85,9 @@ public final class Dspr
         if(k == 1)
         {
             int k2 = 1;
-            for(int k5 = (i - 1) + 1; k5 > 0; k5--)
+            for(int k5 = i; k5 > 0; k5--)
             {
-                if(ad[(k2 - 1) + j] != 0.0D)
+                if(ad[(k2 - 1) + j] != 0.0)
                 {
                     double d4 = d * ad[(k2 - 1) + j];
                     int i4 = k4;
@@ -108,9 +108,9 @@ public final class Dspr
         {
             int j3 = l4;
             int l2 = 1;
-            for (int l5 = (i - 1) + 1; l5 > 0; l5--)
+            for (int l5 = i; l5 > 0; l5--)
             {
-                if (ad[(j3 - 1) + j] != 0.0D)
+                if (ad[(j3 - 1) + j] != 0.0)
                 {
                     double d5 = d * ad[(j3 - 1) + j];
                     int l1 = j3;

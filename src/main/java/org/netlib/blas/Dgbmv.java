@@ -8,7 +8,7 @@ public final class Dgbmv
             int i1, int j1, double ad1[], int k1, int l1, double d1, 
             double ad2[], int i2, int j2)
     {
-        byte byte0 = 0;
+        int byte0 = 0;
         int l7 = 0;
         int i8 = 0;
         int j8 = 0;
@@ -68,7 +68,7 @@ public final class Dgbmv
                 if (d1 == 0.0)
                 {
                     int k2 = 1;
-                    for (int i9 = (l8 - 1) + 1; i9 > 0; i9--)
+                    for (int i9 = l8; i9 > 0; i9--)
                     {
                         ad2[(k2 - 1) + i2] = 0.0;
                         k2++;
@@ -77,7 +77,7 @@ public final class Dgbmv
                 } else
                 {
                     int l2 = 1;
-                    for (int j9 = (l8 - 1) + 1; j9 > 0; j9--)
+                    for (int j9 = l8; j9 > 0; j9--)
                     {
                         ad2[(l2 - 1) + i2] = d1 * ad2[(l2 - 1) + i2];
                         l2++;
@@ -89,7 +89,7 @@ public final class Dgbmv
                 int l4 = j8;
                 if (d1 == 0.0)
                 {
-                    for (int k9 = (l8 - 1) + 1; k9 > 0; k9--)
+                    for (int k9 = l8; k9 > 0; k9--)
                     {
                         ad2[(l4 - 1) + i2] = 0.0;
                         l4 += j2;
@@ -97,7 +97,7 @@ public final class Dgbmv
 
                 } else
                 {
-                    for (int l9 = (l8 - 1) + 1; l9 > 0; l9--)
+                    for (int l9 = l8; l9 > 0; l9--)
                     {
                         ad2[(l4 - 1) + i2] = d1 * ad2[(l4 - 1) + i2];
                         l4 += j2;
@@ -114,7 +114,7 @@ public final class Dgbmv
             if (j2 == 1)
             {
                 int j5 = 1;
-                for (int i10 = (j - 1) + 1; i10 > 0; i10--)
+                for (int i10 = j; i10 > 0; i10--)
                 {
                     if (ad1[(j6 - 1) + k1] != 0.0)
                     {
@@ -135,7 +135,7 @@ public final class Dgbmv
             } else
             {
                 int k5 = 1;
-                for (int j10 = (j - 1) + 1; j10 > 0; j10--)
+                for (int j10 = j; j10 > 0; j10--)
                 {
                     if (ad1[(j6 - 1) + k1] != 0.0)
                     {
@@ -164,7 +164,7 @@ public final class Dgbmv
             if (l1 == 1)
             {
                 int l5 = 1;
-                for (int k10 = (j - 1) + 1; k10 > 0; k10--)
+                for (int k10 = j; k10 > 0; k10--)
                 {
                     double d5 = 0.0;
                     int j7 = l7 - l5;
@@ -183,7 +183,7 @@ public final class Dgbmv
             } else
             {
                 int i6 = 1;
-                for (int l10 = (j - 1) + 1; l10 > 0; l10--)
+                for (int l10 = j; l10 > 0; l10--)
                 {
                     double d6 = 0.0;
                     int k4 = i8;

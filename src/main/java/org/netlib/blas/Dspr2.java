@@ -7,14 +7,14 @@ public final class Dspr2
     public static void dspr2(String s, int i, double d, double ad[], int j, int k, double ad1[], 
             int l, int i1, double ad2[], int j1)
     {
-        byte byte0 = 0;
+        int byte0 = 0;
         int i4 = 0;
         int j4 = 0;
         int k5 = 0;
         int l5 = 0;
         int i6 = 0;
         byte0 = 0;
-        if(Lsame.lsame(s, "U") ^ true && Lsame.lsame(s, "L") ^ true)
+        if (!Lsame.lsame(s, "U") && !Lsame.lsame(s, "L"))
             byte0 = 1;
         else
         if(i < 0)
@@ -30,7 +30,7 @@ public final class Dspr2
             Xerbla.xerbla("DSPR2 ", byte0);
             return;
         }
-        if((i == 0) || (d == 0.0D))
+        if((i == 0) || (d == 0.0))
             return;
         if((k != 1) || (i1 != 1))
         {
@@ -51,15 +51,15 @@ public final class Dspr2
             if((k == 1) && (i1 == 1))
             {
                 int i3 = 1;
-                for(int j6 = (i - 1) + 1; j6 > 0; j6--)
+                for(int j6 = i; j6 > 0; j6--)
                 {
-                    if((ad[(i3 - 1) + j] != 0.0D) || (ad1[(i3 - 1) + l] != 0.0D))
+                    if((ad[(i3 - 1) + j] != 0.0) || (ad1[(i3 - 1) + l] != 0.0))
                     {
                         double d2 = d * ad1[(i3 - 1) + l];
                         double d7 = d * ad[(i3 - 1) + j];
                         int k4 = k5;
                         int k1 = 1;
-                        for(int j7 = (i3 - 1) + 1; j7 > 0; j7--)
+                        for(int j7 = i3; j7 > 0; j7--)
                         {
                             ad2[(k4 - 1) + j1] = ad2[(k4 - 1) + j1] + ad[(k1 - 1) + j] * d2 + ad1[(k1 - 1) + l] * d7;
                             k4++;
@@ -74,9 +74,9 @@ public final class Dspr2
             } else
             {
                 int j3 = 1;
-                for(int k6 = (i - 1) + 1; k6 > 0; k6--)
+                for(int k6 = i; k6 > 0; k6--)
                 {
-                    if((ad[(i4 - 1) + j] != 0.0D) || (ad1[(j4 - 1) + l] != 0.0D))
+                    if((ad[(i4 - 1) + j] != 0.0) || (ad1[(j4 - 1) + l] != 0.0))
                     {
                         double d3 = d * ad1[(j4 - 1) + l];
                         double d8 = d * ad[(i4 - 1) + j];
@@ -103,9 +103,9 @@ public final class Dspr2
         if((k == 1) && (i1 == 1))
         {
             int k3 = 1;
-            for(int l6 = (i - 1) + 1; l6 > 0; l6--)
+            for(int l6 = i; l6 > 0; l6--)
             {
-                if((ad[(k3 - 1) + j] != 0.0D) || (ad1[(k3 - 1) + l] != 0.0D))
+                if((ad[(k3 - 1) + j] != 0.0) || (ad1[(k3 - 1) + l] != 0.0))
                 {
                     double d4 = d * ad1[(k3 - 1) + l];
                     double d9 = d * ad[(k3 - 1) + j];
@@ -126,9 +126,9 @@ public final class Dspr2
         } else
         {
             int l3 = 1;
-            for (int i7 = (i - 1) + 1; i7 > 0; i7--)
+            for (int i7 = i; i7 > 0; i7--)
             {
-                if ((ad[(i4 - 1) + j] != 0.0D) || (ad1[(j4 - 1) + l] != 0.0D))
+                if ((ad[(i4 - 1) + j] != 0.0) || (ad1[(j4 - 1) + l] != 0.0))
                 {
                     double d5 = d * ad1[(j4 - 1) + l];
                     double d10 = d * ad[(i4 - 1) + j];

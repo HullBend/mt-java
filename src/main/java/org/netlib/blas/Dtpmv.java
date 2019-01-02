@@ -7,38 +7,37 @@ public final class Dtpmv
     public static void dtpmv(String s, String s1, String s2, int i, double ad[], int j, double ad1[], int k, 
             int l)
     {
-        byte byte0 = 0;
+        int byte0 = 0;
         int i9 = 0;
         boolean flag = false;
-        byte0 = 0;
-        if(Lsame.lsame(s, "U") ^ true && Lsame.lsame(s, "L") ^ true)
+        if (!Lsame.lsame(s, "U") && !Lsame.lsame(s, "L"))
             byte0 = 1;
         else
-        if((Lsame.lsame(s1, "N") ^ true && Lsame.lsame(s1, "T") ^ true) && Lsame.lsame(s1, "C") ^ true)
+        if ((!Lsame.lsame(s1, "N") && !Lsame.lsame(s1, "T")) && !Lsame.lsame(s1, "C"))
             byte0 = 2;
         else
-        if(Lsame.lsame(s2, "U") ^ true && Lsame.lsame(s2, "N") ^ true)
+        if (!Lsame.lsame(s2, "U") && !Lsame.lsame(s2, "N"))
             byte0 = 3;
         else
-        if(i < 0)
+        if (i < 0)
             byte0 = 4;
         else
-        if(l == 0)
+        if (l == 0)
             byte0 = 7;
-        if(byte0 != 0)
+        if (byte0 != 0)
         {
             Xerbla.xerbla("DTPMV ", byte0);
             return;
         }
-        if(i == 0)
+        if (i == 0)
             return;
         flag = Lsame.lsame(s2, "N");
-        if(l <= 0)
+        if (l <= 0)
             i9 = 1 - (i - 1) * l;
         else
-        if(l != 1)
+        if (l != 1)
             i9 = 1;
-        if(Lsame.lsame(s1, "N"))
+        if (Lsame.lsame(s1, "N"))
         {
             if(Lsame.lsame(s, "U"))
             {
@@ -46,14 +45,14 @@ public final class Dtpmv
                 if(l == 1)
                 {
                     int i3 = 1;
-                    for(int j9 = (i - 1) + 1; j9 > 0; j9--)
+                    for(int j9 = i; j9 > 0; j9--)
                     {
-                        if(ad1[(i3 - 1) + k] != 0.0D)
+                        if(ad1[(i3 - 1) + k] != 0.0)
                         {
                             double d1 = ad1[(i3 - 1) + k];
                             int i6 = i8;
                             int i1 = 1;
-                            for(int j11 = (i3 - 1 - 1) + 1; j11 > 0; j11--)
+                            for(int j11 = i3 - 1; j11 > 0; j11--)
                             {
                                 ad1[(i1 - 1) + k] = ad1[(i1 - 1) + k] + d1 * ad[(i6 - 1) + j];
                                 i6++;
@@ -71,9 +70,9 @@ public final class Dtpmv
                 {
                     int i5 = i9;
                     int j3 = 1;
-                    for(int k9 = (i - 1) + 1; k9 > 0; k9--)
+                    for(int k9 = i; k9 > 0; k9--)
                     {
-                        if(ad1[(i5 - 1) + k] != 0.0D)
+                        if(ad1[(i5 - 1) + k] != 0.0)
                         {
                             double d2 = ad1[(i5 - 1) + k];
                             int i2 = i9;
@@ -102,7 +101,7 @@ public final class Dtpmv
                     int k3 = i;
                     for(int l9 = ((1 - i) + -1) / -1; l9 > 0; l9--)
                     {
-                        if(ad1[(k3 - 1) + k] != 0.0D)
+                        if(ad1[(k3 - 1) + k] != 0.0)
                         {
                             double d3 = ad1[(k3 - 1) + k];
                             int k6 = j8;
@@ -128,7 +127,7 @@ public final class Dtpmv
                     int l3 = i;
                     for(int i10 = ((1 - i) + -1) / -1; i10 > 0; i10--)
                     {
-                        if(ad1[(j5 - 1) + k] != 0.0D)
+                        if(ad1[(j5 - 1) + k] != 0.0)
                         {
                             double d4 = ad1[(j5 - 1) + k];
                             int j2 = i9;
@@ -230,7 +229,7 @@ public final class Dtpmv
             {
                 int l5 = i9;
                 int l4 = 1;
-                for (int i11 = (i - 1) + 1; i11 > 0; i11--)
+                for (int i11 = i; i11 > 0; i11--)
                 {
                     double d8 = ad1[(l5 - 1) + k];
                     int l2 = l5;

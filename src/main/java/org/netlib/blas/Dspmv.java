@@ -7,12 +7,12 @@ public final class Dspmv
     public static void dspmv(String s, int i, double d, double ad[], int j, double ad1[], int k, 
             int l, double d1, double ad2[], int i1, int j1)
     {
-        byte byte0 = 0;
+        int byte0 = 0;
         int j7 = 0;
         int k7 = 0;
         int l7 = 0;
         byte0 = 0;
-        if(Lsame.lsame(s, "U") ^ true && Lsame.lsame(s, "L") ^ true)
+        if (!Lsame.lsame(s, "U") && !Lsame.lsame(s, "L"))
             byte0 = 1;
         else
         if(i < 0)
@@ -21,14 +21,14 @@ public final class Dspmv
         if(l == 0)
             byte0 = 6;
         else
-        if(j1 == 0)
+        if (j1 == 0)
             byte0 = 9;
-        if(byte0 != 0)
+        if (byte0 != 0)
         {
             Xerbla.xerbla("DSPMV ", byte0);
             return;
         }
-        if((i == 0) || ((d == 0.0D) && (d1 == 1.0D)))
+        if ((i == 0) || ((d == 0.0) && (d1 == 1.0)))
             return;
         if(l > 0)
             k7 = 1;
@@ -38,22 +38,22 @@ public final class Dspmv
             l7 = 1;
         else
             l7 = 1 - (i - 1) * j1;
-        if(d1 != 1.0D)
+        if(d1 != 1.0)
             if(j1 == 1)
             {
-                if(d1 == 0.0D)
+                if(d1 == 0.0)
                 {
                     int k1 = 1;
-                    for(int i8 = (i - 1) + 1; i8 > 0; i8--)
+                    for(int i8 = i; i8 > 0; i8--)
                     {
-                        ad2[(k1 - 1) + i1] = 0.0D;
+                        ad2[(k1 - 1) + i1] = 0.0;
                         k1++;
                     }
 
                 } else
                 {
                     int l1 = 1;
-                    for(int j8 = (i - 1) + 1; j8 > 0; j8--)
+                    for(int j8 = i; j8 > 0; j8--)
                     {
                         ad2[(l1 - 1) + i1] = d1 * ad2[(l1 - 1) + i1];
                         l1++;
@@ -63,17 +63,17 @@ public final class Dspmv
             } else
             {
                 int k3 = l7;
-                if(d1 == 0.0D)
+                if(d1 == 0.0)
                 {
-                    for(int k8 = (i - 1) + 1; k8 > 0; k8--)
+                    for(int k8 = i; k8 > 0; k8--)
                     {
-                        ad2[(k3 - 1) + i1] = 0.0D;
+                        ad2[(k3 - 1) + i1] = 0.0;
                         k3 += j1;
                     }
 
                 } else
                 {
-                    for(int l8 = (i - 1) + 1; l8 > 0; l8--)
+                    for(int l8 = i; l8 > 0; l8--)
                     {
                         ad2[(k3 - 1) + i1] = d1 * ad2[(k3 - 1) + i1];
                         k3 += j1;
@@ -81,21 +81,21 @@ public final class Dspmv
 
                 }
             }
-        if(d == 0.0D)
+        if (d == 0.0)
             return;
         j7 = 1;
-        if(Lsame.lsame(s, "U"))
+        if (Lsame.lsame(s, "U"))
         {
             if((l == 1) && (j1 == 1))
             {
                 int j4 = 1;
-                for(int i9 = (i - 1) + 1; i9 > 0; i9--)
+                for(int i9 = i; i9 > 0; i9--)
                 {
                     double d3 = d * ad1[(j4 - 1) + k];
-                    double d8 = 0.0D;
+                    double d8 = 0.0;
                     int j6 = j7;
                     int k2 = 1;
-                    for(int i10 = (j4 - 1 - 1) + 1; i10 > 0; i10--)
+                    for(int i10 = j4 - 1; i10 > 0; i10--)
                     {
                         ad2[(k2 - 1) + i1] = ad2[(k2 - 1) + i1] + d3 * ad[(j6 - 1) + j];
                         d8 += ad[(j6 - 1) + j] * ad1[(k2 - 1) + k];
@@ -113,10 +113,10 @@ public final class Dspmv
                 int j5 = k7;
                 int l5 = l7;
                 int k4 = 1;
-                for(int j9 = (i - 1) + 1; j9 > 0; j9--)
+                for(int j9 = i; j9 > 0; j9--)
                 {
                     double d4 = d * ad1[(j5 - 1) + k];
-                    double d9 = 0.0D;
+                    double d9 = 0.0;
                     int i3 = k7;
                     int l3 = l7;
                     int k6 = j7;
@@ -141,10 +141,10 @@ public final class Dspmv
         if((l == 1) && (j1 == 1))
         {
             int l4 = 1;
-            for(int k9 = (i - 1) + 1; k9 > 0; k9--)
+            for(int k9 = i; k9 > 0; k9--)
             {
                 double d5 = d * ad1[(l4 - 1) + k];
-                double d10 = 0.0D;
+                double d10 = 0.0;
                 ad2[(l4 - 1) + i1] = ad2[(l4 - 1) + i1] + d5 * ad[(j7 - 1) + j];
                 int l6 = j7 + 1;
                 int l2 = l4 + 1;
@@ -166,10 +166,10 @@ public final class Dspmv
             int k5 = k7;
             int i6 = l7;
             int i5 = 1;
-            for (int l9 = (i - 1) + 1; l9 > 0; l9--)
+            for (int l9 = i; l9 > 0; l9--)
             {
                 double d6 = d * ad1[(k5 - 1) + k];
-                double d11 = 0.0D;
+                double d11 = 0.0;
                 ad2[(i6 - 1) + i1] = ad2[(i6 - 1) + i1] + d6 * ad[(j7 - 1) + j];
                 int j3 = k5;
                 int i4 = i6;
