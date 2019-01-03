@@ -29,10 +29,10 @@ label0:
             i8 = 0;
             j8 = 0;
             int k8 = 0;
-            double d2 = 0.0D;
-            double d5 = 0.0D;
-            d7 = 0.0D;
-            d8 = 0.0D;
+            double d2 = 0.0;
+            double d5 = 0.0;
+            d7 = 0.0;
+            d8 = 0.0;
             intw2.val = 0;
             i8 = j + k + 1;
             l7 = i8 + l;
@@ -63,13 +63,13 @@ label0:
             if(i == 1)
                 intw1.val = 0;
             d8 = d * ad5[(j8 - 1) + j2];
-            ad5[(j8 - 1) + j2] = 0.0D;
+            ad5[(j8 - 1) + j2] = 0.0;
             d5 = ad3[(j8 - 1) + l1];
             i5 = j;
             for(int l8 = ((1 - j) + -1) / -1; l8 > 0; l8--)
             {
                 ad1[((i5 + 1) - 1) + j1] = d * ad5[(i5 - 1) + j2];
-                ad5[(i5 - 1) + j2] = 0.0D;
+                ad5[(i5 - 1) + j2] = 0.0;
                 ad3[((i5 + 1) - 1) + l1] = ad3[(i5 - 1) + l1];
                 ad[((i5 + 1) - 1) + i1] = ad[(i5 - 1) + i1];
                 ai2[((i5 + 1) - 1) + k3] = ai2[(i5 - 1) + k3] + 1;
@@ -81,7 +81,7 @@ label0:
             for(int i9 = (l7 - k8) + 1; i9 > 0; i9--)
             {
                 ad1[(i5 - 1) + j1] = d1 * ad3[(i5 - 1) + l1];
-                ad3[(i5 - 1) + l1] = 0.0D;
+                ad3[(i5 - 1) + l1] = 0.0;
                 i5++;
             }
 
@@ -116,7 +116,7 @@ label0:
 
             d2 = Dlamch.dlamch("Epsilon");
             d7 = Math.max(Math.abs(d), Math.abs(d1));
-            d7 = 8D * 8D * d2 * Math.max(Math.abs(ad[(i8 - 1) + i1]), d7);
+            d7 = 8.0 * 8.0 * d2 * Math.max(Math.abs(ad[(i8 - 1) + i1]), d7);
             intw.val = 1;
             k7 = i8 + 1;
             i6 = 2;
@@ -213,8 +213,8 @@ label0:
 
         }
         Dcopy.dcopy(i8 - intw.val, ad7, ((intw.val + 1) - 1) + l2, 1, ad, ((intw.val + 1) - 1) + i1, 1);
-        ad7[(1 - 1) + l2] = 0.0D;
-        double d4 = d7 / 2D;
+        ad7[l2] = 0.0;
+        double d4 = d7 / 2.0;
         if(Math.abs(ad7[(2 - 1) + l2]) <= d4)
             ad7[(2 - 1) + l2] = d4;
         if(l7 > i8)
@@ -222,23 +222,23 @@ label0:
             ad1[(1 - 1) + j1] = Dlapy2.dlapy2(d8, ad1[(l7 - 1) + j1]);
             if(ad1[(1 - 1) + j1] <= d7)
             {
-                doublew.val = 1.0D;
-                doublew1.val = 0.0D;
+                doublew.val = 1.0;
+                doublew1.val = 0.0;
                 ad1[(1 - 1) + j1] = d7;
             } else
             {
-                doublew.val = d8 / ad1[(1 - 1) + j1];
-                doublew1.val = -(ad1[(l7 - 1) + j1] / ad1[(1 - 1) + j1]);
+                doublew.val = d8 / ad1[j1];
+                doublew1.val = -(ad1[(l7 - 1) + j1] / ad1[j1]);
             }
             Drot.drot(1, ad3, (l7 - 1) + l1, 1, ad3, l1, 1, doublew.val, doublew1.val);
             Drot.drot(1, ad5, (l7 - 1) + j2, 1, ad5, j2, 1, doublew.val, doublew1.val);
         } else
         if(Math.abs(d8) <= d7)
-            ad1[(1 - 1) + j1] = d7;
+            ad1[j1] = d7;
         else
-            ad1[(1 - 1) + j1] = d8;
-        Dcopy.dcopy(intw.val - 1, ad2, (2 - 1) + k1, 1, ad1, (2 - 1) + j1, 1);
-        Dcopy.dcopy(i8 - 1, ad4, (2 - 1) + i2, 1, ad3, (2 - 1) + l1, 1);
-        Dcopy.dcopy(i8 - 1, ad6, (2 - 1) + k2, 1, ad5, (2 - 1) + j2, 1);
+            ad1[j1] = d8;
+        Dcopy.dcopy(intw.val - 1, ad2, 1 + k1, 1, ad1, 1 + j1, 1);
+        Dcopy.dcopy(i8 - 1, ad4, 1 + i2, 1, ad3, 1 + l1, 1);
+        Dcopy.dcopy(i8 - 1, ad6, 1 + k2, 1, ad5, 1 + j2, 1);
     }
 }

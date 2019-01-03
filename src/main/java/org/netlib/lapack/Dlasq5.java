@@ -8,8 +8,8 @@ public final class Dlasq5
             doubleW doublew1, doubleW doublew2, doubleW doublew3, doubleW doublew4, doubleW doublew5, boolean flag)
     {
         int i1 = 0;
-        double d1 = 0.0D;
-        double d2 = 0.0D;
+        double d1 = 0.0;
+        double d2 = 0.0;
         if(j - i - 1 <= 0)
             return;
         i1 = (4 * i + l) - 3;
@@ -71,7 +71,7 @@ public final class Dlasq5
                 for(int j2 = ((4 * (j - 3) - 4 * i) + 4) / 4; j2 > 0; j2--)
                 {
                     ad[(i1 - 2 - 1) + k] = d1 + ad[(i1 - 1 - 1) + k];
-                    if(d1 < 0.0D)
+                    if(d1 < 0.0)
                         return;
                     ad[(i1 - 1) + k] = ad[((i1 + 1) - 1) + k] * (ad[(i1 - 2) + k] / ad[(i1 - 3) + k]);
                     d1 = ad[((i1 + 1) - 1) + k] * (d1 / ad[(i1 - 3) + k]) - d;
@@ -86,7 +86,7 @@ public final class Dlasq5
                 for(int k2 = ((4 * (j - 3) - 4 * i) + 4) / 4; k2 > 0; k2--)
                 {
                     ad[(i1 - 3 - 1) + k] = d1 + ad[(i1 - 1) + k];
-                    if(d1 < 0.0D)
+                    if(d1 < 0.0)
                         return;
                     ad[(i1 - 2) + k] = ad[((i1 + 2) - 1) + k] * (ad[(i1 - 1) + k] / ad[(i1 - 4) + k]);
                     d1 = ad[((i1 + 2) - 1) + k] * (d1 / ad[(i1 - 4) + k]) - d;
@@ -101,7 +101,7 @@ public final class Dlasq5
             i1 = 4 * (j - 2) - l;
             int k1 = (i1 + 2 * l) - 1;
             ad[(i1 - 3) + k] = doublew5.val + ad[(k1 - 1) + k];
-            if(doublew5.val < 0.0)
+            if (doublew5.val < 0.0)
                 return;
             ad[(i1 - 1) + k] = ad[((k1 + 2) - 1) + k] * (ad[(k1 - 1) + k] / ad[(i1 - 3) + k]);
             doublew4.val = ad[((k1 + 2) - 1) + k] * (doublew5.val / ad[(i1 - 3) + k]) - d;

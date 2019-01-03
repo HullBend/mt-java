@@ -26,7 +26,7 @@ public final class Dlasdt
         for(int j3 = (intw.val - 2) + 1; j3 > 0; j3--)
         {
             int k1 = 0;
-            for(int k3 = (j2 - 1) + 1; k3 > 0; k3--)
+            for(int k3 = j2; k3 > 0; k3--)
             {
                 l1 += 2;
                 i2 += 2;

@@ -18,13 +18,13 @@ public final class Dorgbr
         flag1 = Lsame.lsame(s, "Q");
         l3 = Math.min(i, j);
         flag = l1 == -1;
-        if(flag1 ^ true && Lsame.lsame(s, "P") ^ true)
+        if (!flag1 && !Lsame.lsame(s, "P"))
             intw.val = -1;
         else
         if(i < 0)
             intw.val = -2;
         else
-        if(((j < 0) || (flag1 && ((j > i) || (j < Math.min(i, k))))) || (flag1 ^ true && ((i > j) || (i < Math.min(j, k)))))
+        if(((j < 0) || (flag1 && ((j > i) || (j < Math.min(i, k))))) || (!flag1 && ((i > j) || (i < Math.min(j, k)))))
             intw.val = -3;
         else
         if(k < 0)
@@ -33,7 +33,7 @@ public final class Dorgbr
         if(i1 < Math.max(1, i))
             intw.val = -6;
         else
-        if((l1 < Math.max(1, l3)) && flag ^ true)
+        if (l1 < Math.max(1, l3) && !flag)
             intw.val = -9;
         if(intw.val == 0)
         {
@@ -52,9 +52,9 @@ public final class Dorgbr
         }
         if(flag)
             return;
-        if((i == 0) || (j == 0))
+        if(i == 0 || j == 0)
         {
-            ad2[(1 - 1) + k1] = 1;
+            ad2[k1] = 1;
             return;
         }
         if(flag1)
@@ -87,7 +87,7 @@ public final class Dorgbr
                 }
 
                 if(i > 1)
-                    Dorgqr.dorgqr(i - 1, i - 1, i - 1, ad, (2 - 1) + (2 - 1) * i1 + l, i1, ad1, j1, ad2, k1, l1, intw1);
+                    Dorgqr.dorgqr(i - 1, i - 1, i - 1, ad, 1 + i1 + l, i1, ad1, j1, ad2, k1, l1, intw1);
             }
         } else
         if(k < j)
@@ -97,14 +97,14 @@ public final class Dorgbr
         {
             ad[l] = 1.0;
             int k2 = 2;
-            for(int l4 = (j - 2) + 1; l4 > 0; l4--)
+            for(int l4 = j - 1; l4 > 0; l4--)
             {
                 ad[(k2 - 1) + l] = 0.0;
                 k2++;
             }
 
             int j3 = 2;
-            for(int i5 = (j - 2) + 1; i5 > 0; i5--)
+            for(int i5 = j - 1; i5 > 0; i5--)
             {
                 int l2 = j3 - 1;
                 for(int k5 = ((2 - (j3 - 1)) + -1) / -1; k5 > 0; k5--)
@@ -113,7 +113,7 @@ public final class Dorgbr
                     l2--;
                 }
 
-                ad[(1 - 1) + (j3 - 1) * i1 + l] = 0.0;
+                ad[(j3 - 1) * i1 + l] = 0.0;
                 j3++;
             }
 

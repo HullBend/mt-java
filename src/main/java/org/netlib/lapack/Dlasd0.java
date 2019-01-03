@@ -22,8 +22,8 @@ public final class Dlasd0
         int j7 = 0;
         int k7 = 0;
         intW intw2 = new intW(0);
-        doubleW doublew = new doubleW(0.0D);
-        doubleW doublew1 = new doubleW(0.0D);
+        doubleW doublew = new doubleW(0.0);
+        doubleW doublew1 = new doubleW(0.0);
         intw.val = 0;
         if(i < 0)
             intw.val = -1;
@@ -74,7 +74,7 @@ public final class Dlasd0
                 return;
             int i5 = (i4 + j8) - 2;
             int k5 = 1;
-            for(int i11 = (l7 - 1) + 1; i11 > 0; i11--)
+            for(int i11 = l7; i11 > 0; i11--)
             {
                 ai[((i5 + k5) - 1) + j2] = k5;
                 k5++;
@@ -90,9 +90,9 @@ public final class Dlasd0
                 return;
             i5 = i4 + k3;
             k5 = 1;
-            for(int j11 = (i9 - 1) + 1; j11 > 0; j11--)
+            for(int j11 = i9; j11 > 0; j11--)
             {
-                ai[((i5 + k5) - 1 - 1) + j2] = k5;
+                ai[((i5 + k5) - 2) + j2] = k5;
                 k5++;
             }
 
@@ -110,7 +110,7 @@ public final class Dlasd0
                 i6 = 1;
             } else
             {
-                l5 = (int)Math.pow(2, j6 - 1);
+                l5 = (int)Math.pow(2.0, j6 - 1.0);
                 i6 = 2 * l5 - 1;
             }
             int i3 = l5;

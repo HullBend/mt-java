@@ -21,7 +21,7 @@ public final class Dlasd3
         int l7 = 0;
         int i8 = 0;
         int j8 = 0;
-        double d = 0.0D;
+        double d = 0.0;
         intw.val = 0;
         if(i < 1)
             intw.val = -1;
@@ -61,7 +61,7 @@ public final class Dlasd3
         {
             ad[(1 - 1) + i1] = Math.abs(ad7[k4]);
             Dcopy.dcopy(j7, ad6, k3, l3, ad5, i3, j3);
-            if(ad7[(1 - 1) + k4] > 0.0D)
+            if(ad7[(1 - 1) + k4] > 0.0)
             {
                 Dcopy.dcopy(k7, ad4, k2, 1, ad3, i2, 1);
             } else
@@ -85,7 +85,7 @@ public final class Dlasd3
 
         Dcopy.dcopy(l, ad7, k4, 1, ad1, j1, 1);
         d = Dnrm2.dnrm2(l, ad7, k4, 1);
-        Dlascl.dlascl("G", 0, 0, d, 1.0D, l, 1, ad7, k4, l, intw);
+        Dlascl.dlascl("G", 0, 0, d, 1.0, l, 1, ad7, k4, l, intw);
         d *= d;
         k5 = 1;
         for(int i9 = (l - 1) + 1; i9 > 0; i9--)
@@ -146,7 +146,7 @@ public final class Dlasd3
 
         if(l == 2)
         {
-            Dgemm.dgemm("N", "N", k7, l, l, 1.0D, ad4, k2, l2, ad1, j1, k1, 0.0D, ad3, i2, j2);
+            Dgemm.dgemm("N", "N", k7, l, l, 1.0, ad4, k2, l2, ad1, j1, k1, 0.0, ad3, i2, j2);
         } else
         {
             if(ai1[(1 - 1) + j4] > 0)
@@ -172,12 +172,12 @@ public final class Dlasd3
             Dgemm.dgemm("N", "N", j, l, l4, 1.0, ad4, (i8 - 1) + (i7 - 1) * l2 + k2, l2, ad1, (i7 - 1) + j1, k1, 0.0, ad3, (i8 - 1) + i2, j2);
         }
         i5 = 1;
-        for(int l9 = (l - 1) + 1; l9 > 0; l9--)
+        for(int l9 = l; l9 > 0; l9--)
         {
             double d3 = Dnrm2.dnrm2(l, ad5, (i5 - 1) * j3 + i3, 1);
             ad1[(i5 - 1) + j1] = ad5[(i5 - 1) * j3 + i3] / d3;
             int j6 = 2;
-            for(int k11 = (l - 2) + 1; k11 > 0; k11--)
+            for(int k11 = l - 1; k11 > 0; k11--)
             {
                 int l6 = ai[(j6 - 1) + i4];
                 ad1[(i5 - 1) + (j6 - 1) * k1 + j1] = ad5[(l6 - 1) + (i5 - 1) * j3 + i3] / d3;
@@ -189,20 +189,20 @@ public final class Dlasd3
 
         if(l == 2)
         {
-            Dgemm.dgemm("N", "N", l, j7, l, 1.0D, ad1, j1, k1, ad6, k3, l3, 0.0D, ad5, i3, j3);
+            Dgemm.dgemm("N", "N", l, j7, l, 1.0, ad1, j1, k1, ad6, k3, l3, 0.0, ad5, i3, j3);
             return;
         }
         i7 = 1 + ai1[j4];
-        Dgemm.dgemm("N", "N", l, l7, i7, 1.0D, ad1, j1, k1, ad6, k3, l3, 0.0D, ad5, i3, j3);
+        Dgemm.dgemm("N", "N", l, l7, i7, 1.0, ad1, j1, k1, ad6, k3, l3, 0.0, ad5, i3, j3);
         i7 = 2 + ai1[j4] + ai1[1 + j4];
         if(i7 <= l3)
-            Dgemm.dgemm("N", "N", l, l7, ai1[(3 - 1) + j4], 1.0D, ad1, (i7 - 1) * k1 + j1, k1, ad6, (i7 - 1) + k3, l3, 1.0D, ad5, i3, j3);
+            Dgemm.dgemm("N", "N", l, l7, ai1[(3 - 1) + j4], 1.0, ad1, (i7 - 1) * k1 + j1, k1, ad6, (i7 - 1) + k3, l3, 1.0, ad5, i3, j3);
         i7 = ai1[j4] + 1;
         j8 = j + k;
         if(i7 > 1)
         {
             int j5 = 1;
-            for(int i10 = (l - 1) + 1; i10 > 0; i10--)
+            for(int i10 = l; i10 > 0; i10--)
             {
                 ad1[(j5 - 1) + (i7 - 1) * k1 + j1] = ad1[(j5 - 1) + j1];
                 j5++;
@@ -217,7 +217,7 @@ public final class Dlasd3
 
         }
         l4 = 1 + ai1[1 + j4] + ai1[2 + j4];
-        Dgemm.dgemm("N", "N", l, j8, l4, 1.0D, ad1, (i7 - 1) * k1 + j1, k1, ad6, (i7 - 1) + (i8 - 1) * l3 + k3, l3, 0.0D, ad5, (i8 - 1) * j3 + i3, j3);
+        Dgemm.dgemm("N", "N", l, j8, l4, 1.0, ad1, (i7 - 1) * k1 + j1, k1, ad6, (i7 - 1) + (i8 - 1) * l3 + k3, l3, 0.0, ad5, (i8 - 1) * j3 + i3, j3);
     }
 
     private static void dlasd4_adapter(int i, int j, double ad[], int k, double ad1[], int l, double ad2[], int i1, 

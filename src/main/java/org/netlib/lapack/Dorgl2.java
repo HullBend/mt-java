@@ -37,12 +37,12 @@ public final class Dorgl2
                 int j2 = k + 1;
                 for(int j3 = (i - (k + 1)) + 1; j3 > 0; j3--)
                 {
-                    ad[(j2 - 1) + (i2 - 1) * i1 + l] = 0.0D;
+                    ad[(j2 - 1) + (i2 - 1) * i1 + l] = 0.0;
                     j2++;
                 }
 
                 if((i2 > k) && (i2 <= i))
-                    ad[(i2 - 1) + (i2 - 1) * i1 + l] = 1.0D;
+                    ad[(i2 - 1) + (i2 - 1) * i1 + l] = 1.0;
                 i2++;
             }
 
@@ -54,16 +54,16 @@ public final class Dorgl2
             {
                 if(l1 < i)
                 {
-                    ad[(l1 - 1) + (l1 - 1) * i1 + l] = 1.0D;
+                    ad[(l1 - 1) + (l1 - 1) * i1 + l] = 1.0;
                     Dlarf.dlarf("Right", i - l1, (j - l1) + 1, ad, (l1 - 1) + (l1 - 1) * i1 + l, i1, ad1[(l1 - 1) + j1], ad, ((l1 + 1) - 1) + (l1 - 1) * i1 + l, i1, ad2, k1);
                 }
                 Dscal.dscal(j - l1, -ad1[(l1 - 1) + j1], ad, (l1 - 1) + ((l1 + 1) - 1) * i1 + l, i1);
             }
-            ad[(l1 - 1) + (l1 - 1) * i1 + l] = 1.0D - ad1[(l1 - 1) + j1];
+            ad[(l1 - 1) + (l1 - 1) * i1 + l] = 1.0 - ad1[(l1 - 1) + j1];
             int k2 = 1;
-            for(int k3 = (l1 - 1 - 1) + 1; k3 > 0; k3--)
+            for(int k3 = l1 - 1; k3 > 0; k3--)
             {
-                ad[(l1 - 1) + (k2 - 1) * i1 + l] = 0.0D;
+                ad[(l1 - 1) + (k2 - 1) * i1 + l] = 0.0;
                 k2++;
             }
 

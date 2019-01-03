@@ -33,8 +33,8 @@ public final class Dlasda
         int l14 = 0;
         int k15 = 0;
         int j16 = 0;
-        doubleW doublew = new doubleW(0.0D);
-        doubleW doublew1 = new doubleW(0.0D);
+        doubleW doublew = new doubleW(0.0);
+        doubleW doublew1 = new doubleW(0.0);
         intw.val = 0;
         if((i < 0) || (i > 1))
             intw.val = -1;
@@ -97,23 +97,23 @@ public final class Dlasda
             int i15 = 1;
             if(i == 0)
             {
-                Dlaset.dlaset("A", k12, k12, 0.0D, 1.0D, ad11, (j14 - 1) + j5, l14);
+                Dlaset.dlaset("A", k12, k12, 0.0, 1.0, ad11, (j14 - 1) + j5, l14);
                 Dlasdq.dlasdq("U", i15, k11, k12, i14, k10, ad, (i12 - 1) + i1, ad1, (i12 - 1) + j1, ad11, (j14 - 1) + j5, l14, ad11, (k14 - 1) + j5, k11, ad11, (k14 - 1) + j5, k11, ad11, (k14 - 1) + j5, intw);
                 int j8 = j14 + k11 * l14;
                 Dcopy.dcopy(k12, ad11, (j14 - 1) + j5, 1, ad11, (l15 - 1) + j5, 1);
                 Dcopy.dcopy(k12, ad11, (j8 - 1) + j5, 1, ad11, (k16 - 1) + j5, 1);
             } else
             {
-                Dlaset.dlaset("A", k11, k11, 0.0D, 1.0D, ad2, (i12 - 1) + (1 - 1) * l1 + k1, l1);
-                Dlaset.dlaset("A", k12, k12, 0.0D, 1.0D, ad3, (i12 - 1) + (1 - 1) * l1 + i2, l1);
-                Dlasdq.dlasdq("U", i15, k11, k12, k11, k10, ad, (i12 - 1) + i1, ad1, (i12 - 1) + j1, ad3, (i12 - 1) + (1 - 1) * l1 + i2, l1, ad2, (i12 - 1) + (1 - 1) * l1 + k1, l1, ad2, (i12 - 1) + (1 - 1) * l1 + k1, l1, ad11, (j14 - 1) + j5, intw);
-                Dcopy.dcopy(k12, ad3, (i12 - 1) + (1 - 1) * l1 + i2, 1, ad11, (l15 - 1) + j5, 1);
+                Dlaset.dlaset("A", k11, k11, 0.0, 1.0, ad2, (i12 - 1) + k1, l1);
+                Dlaset.dlaset("A", k12, k12, 0.0, 1.0, ad3, (i12 - 1) + i2, l1);
+                Dlasdq.dlasdq("U", i15, k11, k12, k11, k10, ad, (i12 - 1) + i1, ad1, (i12 - 1) + j1, ad3, (i12 - 1) + i2, l1, ad2, (i12 - 1) + k1, l1, ad2, (i12 - 1) + k1, l1, ad11, (j14 - 1) + j5, intw);
+                Dcopy.dcopy(k12, ad3, (i12 - 1) + i2, 1, ad11, (l15 - 1) + j5, 1);
                 Dcopy.dcopy(k12, ad3, (i12 - 1) + (k12 - 1) * l1 + i2, 1, ad11, (k16 - 1) + j5, 1);
             }
             if(intw.val != 0)
                 return;
             i9 = 1;
-            for(int k17 = (k11 - 1) + 1; k17 > 0; k17--)
+            for(int k17 = k11; k17 > 0; k17--)
             {
                 ai4[((j7 + i9) - 1) + k5] = i9;
                 i9++;
@@ -129,15 +129,15 @@ public final class Dlasda
             int l13 = l12 + i15;
             if(i == 0)
             {
-                Dlaset.dlaset("A", l13, l13, 0.0D, 1.0D, ad11, (j14 - 1) + j5, l14);
+                Dlaset.dlaset("A", l13, l13, 0.0, 1.0, ad11, (j14 - 1) + j5, l14);
                 Dlasdq.dlasdq("U", i15, l12, l13, i14, k10, ad, (j13 - 1) + i1, ad1, (j13 - 1) + j1, ad11, (j14 - 1) + j5, l14, ad11, (k14 - 1) + j5, l12, ad11, (k14 - 1) + j5, l12, ad11, (k14 - 1) + j5, intw);
                 int k8 = j14 + (l13 - 1) * l14;
                 Dcopy.dcopy(l13, ad11, (j14 - 1) + j5, 1, ad11, (l15 - 1) + j5, 1);
                 Dcopy.dcopy(l13, ad11, (k8 - 1) + j5, 1, ad11, (k16 - 1) + j5, 1);
             } else
             {
-                Dlaset.dlaset("A", l12, l12, 0.0D, 1.0D, ad2, (j13 - 1) + k1, l1);
-                Dlaset.dlaset("A", l13, l13, 0.0D, 1.0D, ad3, (j13 - 1) + i2, l1);
+                Dlaset.dlaset("A", l12, l12, 0.0, 1.0, ad2, (j13 - 1) + k1, l1);
+                Dlaset.dlaset("A", l13, l13, 0.0, 1.0, ad3, (j13 - 1) + i2, l1);
                 Dlasdq.dlasdq("U", i15, l12, l13, l12, k10, ad, (j13 - 1) + i1, ad1, (j13 - 1) + j1, ad3, (j13 - 1) + i2, l1, ad2, (j13 - 1) + k1, l1, ad2, (j13 - 1) + k1, l1, ad11, (j14 - 1) + j5, intw);
                 Dcopy.dcopy(l13, ad3, (j13 - 1) + i2, 1, ad11, (l15 - 1) + j5, 1);
                 Dcopy.dcopy(l13, ad3, (j13 - 1) + (l13 - 1) * l1 + i2, 1, ad11, (k16 - 1) + j5, 1);
@@ -145,7 +145,7 @@ public final class Dlasda
             if(intw.val != 0)
                 return;
             i9 = 1;
-            for(int l17 = (l12 - 1) + 1; l17 > 0; l17--)
+            for(int l17 = l12; l17 > 0; l17--)
             {
                 ai4[((j7 + i9) - 1) + k5] = i9;
                 i9++;
@@ -154,7 +154,7 @@ public final class Dlasda
             l5++;
         }
 
-        i9 = (int)Math.pow(2, intw2.val);
+        i9 = (int) Math.pow(2.0, intw2.val);
         l9 = intw2.val;
         for(int j17 = ((1 - intw2.val) + -1) / -1; j17 > 0; j17--)
         {
@@ -167,7 +167,7 @@ public final class Dlasda
                 k9 = 1;
             } else
             {
-                j9 = (int)Math.pow(2, l9 - 1);
+                j9 = (int) Math.pow(2.0, l9 - 1);
                 k9 = 2 * j9 - 1;
             }
             int i6 = j9;

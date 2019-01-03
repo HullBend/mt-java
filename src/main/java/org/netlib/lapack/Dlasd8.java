@@ -46,7 +46,7 @@ public final class Dlasd8
             return;
         }
         l2 = 1;
-        for(int l4 = (j - 1) + 1; l4 > 0; l4--)
+        for(int l4 = j; l4 > 0; l4--)
         {
             ad6[(l2 - 1) + j2] = Dlamc3.dlamc3(ad6[(l2 - 1) + j2], ad6[(l2 - 1) + j2]) - ad6[(l2 - 1) + j2];
             l2++;
@@ -71,7 +71,7 @@ public final class Dlasd8
             ad4[(k4 - 1) + k1] = -ad7[(k4 - 1) + k2];
             ad5[(k4 - 1) + l1] = -ad7[((k4 + 1) - 1) + k2];
             l2 = 1;
-            for(int l5 = (k4 - 1 - 1) + 1; l5 > 0; l5--)
+            for(int l5 = k4 - 1; l5 > 0; l5--)
             {
                 ad7[((j4 + l2) - 1) + k2] = (ad7[((j4 + l2) - 1) + k2] * ad7[(l2 - 1) + k2] * ad7[((l3 + l2) - 1) + k2]) / (ad6[(l2 - 1) + j2] - ad6[(k4 - 1) + j2]) / (ad6[(l2 - 1) + j2] + ad6[(k4 - 1) + j2]);
                 l2++;
@@ -88,14 +88,14 @@ public final class Dlasd8
         }
 
         l2 = 1;
-        for(int j5 = (j - 1) + 1; j5 > 0; j5--)
+        for(int j5 = j; j5 > 0; j5--)
         {
             ad1[(l2 - 1) + l] = Util.dsign(Math.sqrt(Math.abs(ad7[((j4 + l2) - 1) + k2])), ad1[(l2 - 1) + l]);
             l2++;
         }
 
         k4 = 1;
-        for(int k5 = (j - 1) + 1; k5 > 0; k5--)
+        for(int k5 = j; k5 > 0; k5--)
         {
             double d1 = ad4[(k4 - 1) + k1];
             double d4 = ad[(k4 - 1) + k];

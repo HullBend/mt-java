@@ -26,7 +26,7 @@ public final class Dlasd1
         int l5 = 0;
         int i6 = 0;
         int j6 = 0;
-        double d = 0.0D;
+        double d = 0.0;
         intw.val = 0;
         if(i < 1)
             intw.val = -1;
@@ -55,7 +55,7 @@ public final class Dlasd1
         l2 = k3 + j6;
         l3 = l2 + j6;
         d = Math.max(Math.abs(doublew.val), Math.abs(doublew1.val));
-        ad[((i + 1) - 1) + l] = 0.0D;
+        ad[((i + 1) - 1) + l] = 0.0;
         i3 = 1;
         for(int i7 = (j6 - 1) + 1; i7 > 0; i7--)
         {
@@ -64,7 +64,7 @@ public final class Dlasd1
             i3++;
         }
 
-        Dlascl.dlascl("G", 0, 0, d, 1.0D, j6, 1, ad, l, j6, intw);
+        Dlascl.dlascl("G", 0, 0, d, 1.0, j6, 1, ad, l, j6, intw);
         doublew.val = doublew.val / d;
         doublew1.val = doublew1.val / d;
         Dlasd2.dlasd2(i, j, k, intw1, ad, l, ad3, (i5 - 1) + k2, doublew.val, doublew1.val, ad1, i1, j1, ad2, k1, l1, ad3, (j4 - 1) + k2, ad3, (k4 - 1) + k2, k5, ad3, (l4 - 1) + k2, l5, ai1, (l3 - 1) + j2, ai1, (j3 - 1) + j2, ai1, (k3 - 1) + j2, ai, i2, ai1, (l2 - 1) + j2, intw);
@@ -75,7 +75,7 @@ public final class Dlasd1
             return;
         } else
         {
-            Dlascl.dlascl("G", 0, 0, 1.0D, d, j6, 1, ad, l, j6, intw);
+            Dlascl.dlascl("G", 0, 0, 1.0, d, j6, 1, ad, l, j6, intw);
             int k6 = intw1.val;
             int l6 = j6 - intw1.val;
             Dlamrg.dlamrg(k6, l6, ad, l, 1, -1, ai, i2);

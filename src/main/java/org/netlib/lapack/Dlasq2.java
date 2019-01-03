@@ -24,29 +24,29 @@ label0:
             intw5 = new intW(0);
             int j3 = 0;
             intW intw6 = new intW(0);
-            double d = 0.0D;
-            doubleW doublew = new doubleW(0.0D);
-            doubleW doublew1 = new doubleW(0.0D);
-            doubleW doublew2 = new doubleW(0.0D);
-            doubleW doublew3 = new doubleW(0.0D);
-            doubleW doublew4 = new doubleW(0.0D);
-            doubleW doublew5 = new doubleW(0.0D);
-            doubleW doublew6 = new doubleW(0.0D);
-            double d2 = 0.0D;
-            double d6 = 0.0D;
-            double d10 = 0.0D;
-            doubleW doublew7 = new doubleW(0.0D);
-            double d17 = 0.0D;
-            doubleW doublew8 = new doubleW(0.0D);
-            doubleW doublew9 = new doubleW(0.0D);
-            double d23 = 0.0D;
-            double d24 = 0.0D;
-            d25 = 0.0D;
-            double d26 = 0.0D;
+            double d = 0.0;
+            doubleW doublew = new doubleW(0.0);
+            doubleW doublew1 = new doubleW(0.0);
+            doubleW doublew2 = new doubleW(0.0);
+            doubleW doublew3 = new doubleW(0.0);
+            doubleW doublew4 = new doubleW(0.0);
+            doubleW doublew5 = new doubleW(0.0);
+            doubleW doublew6 = new doubleW(0.0);
+            double d2 = 0.0;
+            double d6 = 0.0;
+            double d10 = 0.0;
+            doubleW doublew7 = new doubleW(0.0);
+            double d17 = 0.0;
+            doubleW doublew8 = new doubleW(0.0);
+            doubleW doublew9 = new doubleW(0.0);
+            double d23 = 0.0;
+            double d24 = 0.0;
+            d25 = 0.0;
+            double d26 = 0.0;
             intw.val = 0;
             d10 = Dlamch.dlamch("Precision");
             d17 = Dlamch.dlamch("Safe minimum");
-            d23 = d10 * 100D;
+            d23 = d10 * 100.0;
             d24 = Math.pow(d23, 2);
             if(i < 0)
             {
@@ -58,7 +58,7 @@ label0:
                 return;
             if(i == 1)
             {
-                if(ad[(1 - 1) + j] < 0.0D)
+                if(ad[(1 - 1) + j] < 0.0)
                 {
                     intw.val = -201;
                     Xerbla.xerbla("DLASQ2", 2);

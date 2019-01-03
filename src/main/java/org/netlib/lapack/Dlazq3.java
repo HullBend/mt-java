@@ -54,10 +54,10 @@ label2:
             }
             if(ad[(k1 - 5 - 1) + j] > ad[(k1 - 3 - 1) + j] * d9)
             {
-                d5 = 0.5D * ((ad[(k1 - 7 - 1) + j] - ad[(k1 - 3 - 1) + j]) + ad[(k1 - 5 - 1) + j]);
+                d5 = 0.5 * ((ad[(k1 - 7 - 1) + j] - ad[(k1 - 3 - 1) + j]) + ad[(k1 - 5 - 1) + j]);
                 double d3 = ad[(k1 - 3 - 1) + j] * (ad[(k1 - 5 - 1) + j] / d5);
                 if(d3 <= d5)
-                    d3 = ad[(k1 - 3 - 1) + j] * (ad[(k1 - 5 - 1) + j] / (d5 * (1.0D + Math.sqrt(1.0D + d3 / d5))));
+                    d3 = ad[(k1 - 3 - 1) + j] * (ad[(k1 - 5 - 1) + j] / (d5 * (1.0 + Math.sqrt(1.0 + d3 / d5))));
                 else
                     d3 = ad[(k1 - 3 - 1) + j] * (ad[(k1 - 5 - 1) + j] / (d5 + Math.sqrt(d5) * Math.sqrt(d5 + d3)));
                 d5 = ad[(k1 - 7 - 1) + j] + (d3 + ad[(k1 - 5 - 1) + j]);
@@ -70,7 +70,7 @@ label2:
         } while(true);
 label3:
         {
-            if(((doublew.val <= 0.0D) || (intw.val < j1)) && (1.5D * ad[((4 * i + k) - 3 - 1) + j] < ad[((4 * intw.val + k) - 3 - 1) + j]))
+            if(((doublew.val <= 0.0) || (intw.val < j1)) && (1.5 * ad[((4 * i + k) - 3 - 1) + j] < ad[((4 * intw.val + k) - 3 - 1) + j]))
             {
                 int l = 4 * (i + intw.val);
                 int i1 = 4 * i;
@@ -100,9 +100,9 @@ label3:
                 ad[((4 * intw.val + k) - 1 - 1) + j] = Util.min(ad[((4 * intw.val + k) - 1 - 1) + j], ad[((4 * i + k) - 1 - 1) + j], ad[((4 * i + k + 3) - 1) + j]);
                 ad[(4 * intw.val - k - 1) + j] = Util.min(ad[(4 * intw.val - k - 1) + j], ad[(4 * i - k - 1) + j], ad[(((4 * i - k) + 4) - 1) + j]);
                 doublew3.val = Util.max(doublew3.val, ad[((4 * i + k) - 3 - 1) + j], ad[((4 * i + k + 1) - 1) + j]);
-                doublew.val = 0.0D;
+                doublew.val = 0.0;
             }
-            if((doublew.val < 0.0D) || (d4 * doublew3.val < Util.min(ad[((4 * intw.val + k) - 1 - 1) + j], ad[((4 * intw.val + k) - 9 - 1) + j], doublew5.val + ad[(4 * intw.val - k - 1) + j])))
+            if((doublew.val < 0.0) || (d4 * doublew3.val < Util.min(ad[((4 * intw.val + k) - 1 - 1) + j], ad[((4 * intw.val + k) - 9 - 1) + j], doublew5.val + ad[(4 * intw.val - k - 1) + j])))
             {
                 Dlazq4.dlazq4(i, intw.val, ad, j, k, j1, doublew.val, doublew4.val, doublew5.val, doublew6.val, doublew7.val, doublew8.val, doublew9, intw4, doublew10);
                 do
@@ -110,40 +110,40 @@ label3:
                     Dlasq5.dlasq5(i, intw.val, ad, j, k, doublew9.val, doublew, doublew4, doublew5, doublew6, doublew7, doublew8, flag);
                     intw3.val = intw3.val + ((intw.val - i) + 2);
                     intw2.val = intw2.val + 1;
-                    if((doublew.val >= 0.0D) && (doublew4.val > 0.0D))
+                    if((doublew.val >= 0.0) && (doublew4.val > 0.0))
                         break label3;
-                    if((((doublew.val < 0.0D) && (doublew4.val > 0.0D)) && (ad[(4 * (intw.val - 1) - k - 1) + j] < d8 * (doublew1.val + doublew7.val))) && (Math.abs(doublew6.val) < d8 * doublew1.val))
+                    if((((doublew.val < 0.0) && (doublew4.val > 0.0)) && (ad[(4 * (intw.val - 1) - k - 1) + j] < d8 * (doublew1.val + doublew7.val))) && (Math.abs(doublew6.val) < d8 * doublew1.val))
                     {
-                        ad[(((4 * (intw.val - 1) - k) + 2) - 1) + j] = 0.0D;
-                        doublew.val = 0.0D;
+                        ad[(((4 * (intw.val - 1) - k) + 2) - 1) + j] = 0.0;
+                        doublew.val = 0.0;
                         break label3;
                     }
-                    if(doublew.val < 0.0D)
+                    if(doublew.val < 0.0)
                     {
                         intw1.val = intw1.val + 1;
                         if(intw4.val < -22)
-                            doublew9.val = 0.0D;
+                            doublew9.val = 0.0;
                         else
-                        if(doublew4.val > 0.0D)
+                        if(doublew4.val > 0.0)
                         {
-                            doublew9.val = (doublew9.val + doublew.val) * (1.0D - 2D * d);
+                            doublew9.val = (doublew9.val + doublew.val) * (1.0 - 2.0 * d);
                             intw4.val = intw4.val - 11;
                         } else
                         {
-                            doublew9.val = 0.25D * doublew9.val;
+                            doublew9.val = 0.25 * doublew9.val;
                             intw4.val = intw4.val - 12;
                         }
                         continue;
                     }
                     if(doublew.val == doublew.val)
                         break;
-                    doublew9.val = 0.0D;
+                    doublew9.val = 0.0;
                 } while(true);
             }
             Dlasq6.dlasq6(i, intw.val, ad, j, k, doublew, doublew4, doublew5, doublew6, doublew7, doublew8);
             intw3.val = intw3.val + ((intw.val - i) + 2);
             intw2.val = intw2.val + 1;
-            doublew9.val = 0.0D;
+            doublew9.val = 0.0;
         }
         if(doublew9.val < doublew1.val)
         {

@@ -101,7 +101,7 @@ public final class Dlasdq
                 ad[(k3 - 1) + j1] = doublew1.val;
                 ad1[(k3 - 1) + k1] = doublew2.val * ad[((k3 + 1) - 1) + j1];
                 ad[((k3 + 1) - 1) + j1] = doublew.val * ad[((k3 + 1) - 1) + j1];
-                if(flag)
+                if (flag)
                 {
                     ad5[(k3 - 1) + j3] = doublew.val;
                     ad5[((j + k3) - 1) + j3] = doublew2.val;

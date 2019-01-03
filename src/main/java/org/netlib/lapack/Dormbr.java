@@ -23,7 +23,7 @@ public final class Dormbr
         flag1 = Lsame.lsame(s1, "L");
         flag3 = Lsame.lsame(s2, "N");
         flag2 = j2 == -1;
-        if(flag1)
+        if (flag1)
         {
             i4 = i;
             j4 = j;
@@ -82,9 +82,9 @@ public final class Dormbr
             return;
         }
 
-        if(flag2)
+        if (flag2)
             return;
-        ad3[(1 - 1) + i2] = 1;
+        ad3[i2] = 1;
         if((i == 0) || (j == 0))
             return;
         if(flag)

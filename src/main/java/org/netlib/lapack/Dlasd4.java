@@ -109,7 +109,7 @@ label0:
                 doublew1.val = d56 / (ad[(i - 1) + k] + Math.sqrt(ad[(i - 1) + k] * ad[(i - 1) + k] + d56));
                 doublew.val = ad[(i - 1) + k] + doublew1.val;
                 l2 = 1;
-                for(int i4 = (i - 1) + 1; i4 > 0; i4--)
+                for (int i4 = (i - 1) + 1; i4 > 0; i4--)
                 {
                     ad2[(l2 - 1) + i1] = ad[(l2 - 1) + k] - ad[(j - 1) + k] - doublew1.val;
                     ad3[(l2 - 1) + j1] = ad[(l2 - 1) + k] + ad[(j - 1) + k] + doublew1.val;
@@ -120,7 +120,7 @@ label0:
                 d52 = 0.0;
                 d48 = 0.0;
                 l2 = 1;
-                for(int j4 = k1; j4 > 0; j4--)
+                for (int j4 = k1; j4 > 0; j4--)
                 {
                     d57 = ad1[(l2 - 1) + l] / (ad2[(l2 - 1) + i1] * ad3[(l2 - 1) + j1]);
                     d52 += ad1[(l2 - 1) + l] * d57;
@@ -148,11 +148,11 @@ label0:
                 if(d19 == 0.0)
                     doublew1.val = d - doublew.val * doublew.val;
                 else
-                if(d4 >= 0.0)
+                if (d4 >= 0.0)
                     doublew1.val = (d4 + Math.sqrt(Math.abs(d4 * d4 - 4.0 * d13 * d19))) / (2.0 * d19);
                 else
                     doublew1.val = (2.0 * d13) / (d4 - Math.sqrt(Math.abs(d4 * d4 - 4.0 * d13 * d19)));
-                if(d75 * doublew1.val > 0.0)
+                if (d75 * doublew1.val > 0.0)
                     doublew1.val = -(d75 / (d27 + d26));
                 d57 = doublew1.val - d41;
                 if(d57 > d)
@@ -160,7 +160,7 @@ label0:
                 d56 += doublew1.val;
                 doublew1.val = doublew1.val / (doublew.val + Math.sqrt(doublew1.val + doublew.val * doublew.val));
                 l2 = 1;
-                for(int k4 = i; k4 > 0; k4--)
+                for (int k4 = i; k4 > 0; k4--)
                 {
                     ad2[(l2 - 1) + i1] = ad2[(l2 - 1) + i1] - doublew1.val;
                     ad3[(l2 - 1) + j1] = ad3[(l2 - 1) + j1] + doublew1.val;
@@ -222,7 +222,7 @@ label0:
                     d52 = 0.0;
                     d48 = 0.0;
                     l2 = 1;
-                    for (int j8 = (k1 - 1) + 1; j8 > 0; j8--)
+                    for (int j8 = k1; j8 > 0; j8--)
                     {
                         d57 = ad1[(l2 - 1) + l] / (ad3[(l2 - 1) + j1] * ad2[(l2 - 1) + i1]);
                         d52 += ad1[(l2 - 1) + l] * d57;

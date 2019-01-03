@@ -19,7 +19,7 @@ public final class Dorgqr {
 		intw.val = 0;
 		l4 = 32;
 		k4 = Math.max(1, j) * l4;
-		ad2[(1 - 1) + k1] = k4;
+		ad2[k1] = k4;
 		flag = l1 == -1;
 		if (i < 0)
 			intw.val = -1;
@@ -29,7 +29,7 @@ public final class Dorgqr {
 			intw.val = -3;
 		else if (i1 < Math.max(1, i))
 			intw.val = -5;
-		else if ((l1 < Math.max(1, j)) && flag ^ true)
+		else if ((l1 < Math.max(1, j)) && !flag)
 			intw.val = -8;
 		if (intw.val != 0) {
 			Xerbla.xerbla("DORGQR", -intw.val);
@@ -38,7 +38,7 @@ public final class Dorgqr {
 		if (flag)
 			return;
 		if (j <= 0) {
-			ad2[(1 - 1) + k1] = 1;
+			ad2[k1] = 1;
 			return;
 		}
 		i5 = 2;
@@ -61,7 +61,7 @@ public final class Dorgqr {
 			for (int k5 = (j - (l3 + 1)) + 1; k5 > 0; k5--) {
 				int i2 = 1;
 				for (int i6 = (l3 - 1) + 1; i6 > 0; i6--) {
-					ad[(i2 - 1) + (i3 - 1) * i1 + l] = 0.0D;
+					ad[(i2 - 1) + (i3 - 1) * i1 + l] = 0.0;
 					i2++;
 				}
 
@@ -95,7 +95,7 @@ public final class Dorgqr {
 				for (int j6 = ((j2 + k2) - 1 - j2) + 1; j6 > 0; j6--) {
 					int i4 = 1;
 					for (int k6 = (j2 - 1 - 1) + 1; k6 > 0; k6--) {
-						ad[(i4 - 1) + (j3 - 1) * i1 + l] = 0.0D;
+						ad[(i4 - 1) + (j3 - 1) * i1 + l] = 0.0;
 						i4++;
 					}
 
@@ -106,6 +106,6 @@ public final class Dorgqr {
 			}
 
 		}
-		ad2[(1 - 1) + k1] = l2;
+		ad2[k1] = l2;
 	}
 }

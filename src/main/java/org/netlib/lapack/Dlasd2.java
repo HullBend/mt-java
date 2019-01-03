@@ -36,11 +36,11 @@ label0:
             k8 = 0;
             l8 = 0;
             i9 = 0;
-            d2 = 0.0D;
-            double d3 = 0.0D;
-            d6 = 0.0D;
-            d9 = 0.0D;
-            d10 = 0.0D;
+            d2 = 0.0;
+            double d3 = 0.0;
+            d6 = 0.0;
+            d9 = 0.0;
+            d10 = 0.0;
             intw1.val = 0;
             if(i < 1)
                 intw1.val = -1;
@@ -89,7 +89,7 @@ label0:
             }
 
             j5 = 2;
-            for(int l9 = (l8 - 2) + 1; l9 > 0; l9--)
+            for(int l9 = l8 - 1; l9 > 0; l9--)
             {
                 ai4[(j5 - 1) + k4] = 1;
                 j5++;
@@ -110,7 +110,7 @@ label0:
             }
 
             j5 = 2;
-            for(int k10 = (k8 - 2) + 1; k10 > 0; k10--)
+            for(int k10 = k8 - 1; k10 > 0; k10--)
             {
                 ad4[(j5 - 1) + j2] = ad[(ai3[(j5 - 1) + j4] - 1) + l];
                 ad5[(j5 - 1) + (1 - 1) * l2 + k2] = ad1[(ai3[(j5 - 1) + j4] - 1) + i1];
@@ -120,7 +120,7 @@ label0:
 
             Dlamrg.dlamrg(i, j, ad4, 1 + j2, 1, 1, ai1, 1 + l3);
             j5 = 2;
-            for(int l10 = (k8 - 2) + 1; l10 > 0; l10--)
+            for(int l10 = k8 - 1; l10 > 0; l10--)
             {
                 int l5 = 1 + ai1[(j5 - 1) + l3];
                 ad[(j5 - 1) + l] = ad4[(l5 - 1) + j2];
@@ -135,7 +135,7 @@ label0:
             intw.val = 1;
             i8 = k8 + 1;
             l6 = 2;
-            for(int i11 = (k8 - 2) + 1; i11 > 0; i11--)
+            for(int i11 = k8 - 1; i11 > 0; i11--)
             {
                 if(Math.abs(ad1[(l6 - 1) + i1]) <= d9)
                 {
@@ -172,7 +172,7 @@ label0:
                     d2 /= d8;
                     d6 = -(d6 / d8);
                     ad1[(l6 - 1) + i1] = d8;
-                    ad1[(l7 - 1) + i1] = 0.0D;
+                    ad1[(l7 - 1) + i1] = 0.0;
                     int k6 = ai3[((ai1[(l7 - 1) + l3] + 1) - 1) + j4];
                     int i6 = ai3[((ai1[(l6 - 1) + l3] + 1) - 1) + j4];
                     if(k6 <= l8)
@@ -209,19 +209,19 @@ label0:
         }
 
         i7 = 2;
-        for(int k11 = (k8 - 2) + 1; k11 > 0; k11--)
+        for(int k11 = k8 - 1; k11 > 0; k11--)
         {
             int l4 = ai4[(i7 - 1) + k4];
             ai5[l4 - 1] = ai5[l4 - 1] + 1;
             i7++;
         }
 
-        ai6[1 - 1] = 2;
-        ai6[2 - 1] = 2 + ai5[1 - 1];
-        ai6[3 - 1] = ai6[2 - 1] + ai5[2 - 1];
-        ai6[4 - 1] = ai6[3 - 1] + ai5[3 - 1];
+        ai6[0] = 2;
+        ai6[1] = 2 + ai5[0];
+        ai6[2] = ai6[1] + ai5[1];
+        ai6[3] = ai6[2] + ai5[2];
         i7 = 2;
-        for(int l11 = (k8 - 2) + 1; l11 > 0; l11--)
+        for(int l11 = k8 - 1; l11 > 0; l11--)
         {
             int j7 = ai[(i7 - 1) + k3];
             int i5 = ai4[(j7 - 1) + k4];
@@ -231,7 +231,7 @@ label0:
         }
 
         i7 = 2;
-        for(int i12 = (k8 - 2) + 1; i12 > 0; i12--)
+        for(int i12 = k8 - 1; i12 > 0; i12--)
         {
             int k7 = ai[(i7 - 1) + k3];
             ad4[(i7 - 1) + j2] = ad[(k7 - 1) + l];
@@ -243,17 +243,17 @@ label0:
             i7++;
         }
 
-        ad4[j2] = 0.0D;
-        double d5 = d9 / 2D;
-        if(Math.abs(ad4[(2 - 1) + j2]) <= d5)
-            ad4[(2 - 1) + j2] = d5;
+        ad4[j2] = 0.0;
+        double d5 = d9 / 2.0;
+        if(Math.abs(ad4[1 + j2]) <= d5)
+            ad4[1 + j2] = d5;
         if(j8 > k8)
         {
-            ad1[(1 - 1) + i1] = Dlapy2.dlapy2(d10, ad1[(j8 - 1) + i1]);
-            if(ad1[(1 - 1) + i1] <= d9)
+            ad1[i1] = Dlapy2.dlapy2(d10, ad1[(j8 - 1) + i1]);
+            if(ad1[i1] <= d9)
             {
-                d2 = 1.0D;
-                d6 = 0.0D;
+                d2 = 1.0;
+                d6 = 0.0;
                 ad1[i1] = d9;
             } else
             {
@@ -262,16 +262,16 @@ label0:
             }
         } else
         if(Math.abs(d10) <= d9)
-            ad1[(1 - 1) + i1] = d9;
+            ad1[i1] = d9;
         else
-            ad1[(1 - 1) + i1] = d10;
+            ad1[i1] = d10;
         Dcopy.dcopy(intw.val - 1, ad5, 1 + k2, 1, ad1, 1 + i1, 1);
-        Dlaset.dlaset("A", k8, 1, 0.0D, 0.0D, ad5, k2, l2);
-        ad5[(l8 - 1) + k2] = 1.0D;
+        Dlaset.dlaset("A", k8, 1, 0.0, 0.0, ad5, k2, l2);
+        ad5[(l8 - 1) + k2] = 1.0;
         if(j8 > k8)
         {
             int k5 = 1;
-            for(int j12 = (l8 - 1) + 1; j12 > 0; j12--)
+            for(int j12 = l8; j12 > 0; j12--)
             {
                 ad3[(j8 - 1) + (k5 - 1) * i2 + l1] = -(d6 * ad3[(l8 - 1) + (k5 - 1) * i2 + l1]);
                 ad6[(k5 - 1) * j3 + i3] = d2 * ad3[(l8 - 1) + (k5 - 1) * i2 + l1];
@@ -299,7 +299,7 @@ label0:
             Dlacpy.dlacpy("A", k8 - intw.val, j8, ad6, ((intw.val + 1) - 1) + i3, j3, ad3, ((intw.val + 1) - 1) + l1, i2);
         }
         i7 = 1;
-        for(int l12 = (4 - 1) + 1; l12 > 0; l12--)
+        for (int l12 = 4; l12 > 0; l12--)
         {
             ai4[(i7 - 1) + k4] = ai5[i7 - 1];
             i7++;

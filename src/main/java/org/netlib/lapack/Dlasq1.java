@@ -77,7 +77,7 @@ public final class Dlasq1
         if(intw.val == 0)
         {
             int j1 = 1;
-            for(int j2 = (i - 1) + 1; j2 > 0; j2--)
+            for(int j2 = i; j2 > 0; j2--)
             {
                 ad[(j1 - 1) + j] = Math.sqrt(ad2[(j1 - 1) + l]);
                 j1++;

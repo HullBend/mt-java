@@ -35,7 +35,7 @@ public final class Dorglq
         if(i1 < Math.max(1, i))
             intw.val = -5;
         else
-        if((l1 < Math.max(1, i)) && flag ^ true)
+        if((l1 < Math.max(1, i)) && !flag)
             intw.val = -8;
         if(intw.val != 0)
         {
@@ -46,7 +46,7 @@ public final class Dorglq
             return;
         if(i <= 0)
         {
-            ad2[(1 - 1) + k1] = 1;
+            ad2[k1] = 1;
             return;
         }
         i5 = 2;
@@ -71,12 +71,12 @@ public final class Dorglq
             k3 = ((k - j5 - 1) / l4) * l4;
             l3 = Math.min(k, k3 + l4);
             int i3 = 1;
-            for(int k5 = (l3 - 1) + 1; k5 > 0; k5--)
+            for(int k5 = l3; k5 > 0; k5--)
             {
                 int i2 = l3 + 1;
                 for(int i6 = (i - (l3 + 1)) + 1; i6 > 0; i6--)
                 {
-                    ad[(i2 - 1) + (i3 - 1) * i1 + l] = 0.0D;
+                    ad[(i2 - 1) + (i3 - 1) * i1 + l] = 0.0;
                     i2++;
                 }
 
@@ -102,7 +102,7 @@ public final class Dorglq
                 }
                 Dorgl2.dorgl2(k2, (j - j2) + 1, k2, ad, (j2 - 1) + (j2 - 1) * i1 + l, i1, ad1, (j2 - 1) + j1, ad2, k1, intw1);
                 int j3 = 1;
-                for(int j6 = (j2 - 2) + 1; j6 > 0; j6--)
+                for(int j6 = j2 - 1; j6 > 0; j6--)
                 {
                     int i4 = j2;
                     for(int k6 = ((j2 + k2) - 1 - j2) + 1; k6 > 0; k6--)
