@@ -4,59 +4,57 @@ import org.netlib.err.Xerbla;
 
 public final class Dsyr2k
 {
-    public static void dsyr2k(String s, String s1, int i, int j, double d, double ad[], int k, 
-            int l, double ad1[], int i1, int j1, double d1, double ad2[], 
-            int k1, int l1)
-    {
-        int byte0 = 0;
+	public static void dsyr2k(String uplo, String trans, int n, int k, double alpha, double[] a, int _a_offset, int lda,
+			double[] b, int _b_offset, int ldb, double beta, double[] c, int _c_offset, int ldc) {
+
         int i8 = 0;
         boolean flag3 = false;
-        if (Lsame.lsame(s1, "N"))
-            i8 = i;
+        if (Lsame.lsame(trans, "N"))
+            i8 = n;
         else
-            i8 = j;
-        flag3 = Lsame.lsame(s, "U");
-        byte0 = 0;
-        if (!flag3 && !Lsame.lsame(s, "L"))
+            i8 = k;
+        flag3 = Lsame.lsame(uplo, "U");
+        int byte0 = 0;
+        if (!flag3 && !Lsame.lsame(uplo, "L"))
             byte0 = 1;
         else
-        if ((!Lsame.lsame(s1, "N") && !Lsame.lsame(s1, "T")) && !Lsame.lsame(s1, "C"))
+        if ((!Lsame.lsame(trans, "N") && !Lsame.lsame(trans, "T")) && !Lsame.lsame(trans, "C"))
             byte0 = 2;
         else
-        if (i < 0)
+        if (n < 0)
             byte0 = 3;
         else
-        if (j < 0)
+        if (k < 0)
             byte0 = 4;
         else
-        if (l < Math.max(1, i8))
+        if (lda < Math.max(1, i8))
             byte0 = 7;
         else
-        if (j1 < Math.max(1, i8))
+        if (ldb < Math.max(1, i8))
             byte0 = 9;
         else
-        if (l1 < Math.max(1, i))
+        if (ldc < Math.max(1, n))
             byte0 = 12;
         if (byte0 != 0)
         {
             Xerbla.xerbla("DSYR2K", byte0);
             return;
         }
-        if ((i == 0) || (((d == 0.0) || (j == 0)) && (d1 == 1.0)))
+        if ((n == 0) || (((alpha == 0.0) || (k == 0)) && (beta == 1.0)))
             return;
-        if(d == 0.0)
+        if(alpha == 0.0)
         {
             if(flag3)
             {
-                if(d1 == 0.0)
+                if(beta == 0.0)
                 {
                     int i5 = 1;
-                    for(int j8 = i; j8 > 0; j8--)
+                    for(int j8 = n; j8 > 0; j8--)
                     {
                         int i2 = 1;
                         for(int j10 = i5; j10 > 0; j10--)
                         {
-                            ad2[(i2 - 1) + (i5 - 1) * l1 + k1] = 0.0;
+                            c[(i2 - 1) + (i5 - 1) * ldc + _c_offset] = 0.0;
                             i2++;
                         }
 
@@ -66,12 +64,12 @@ public final class Dsyr2k
                 } else
                 {
                     int j5 = 1;
-                    for(int k8 = i; k8 > 0; k8--)
+                    for(int k8 = n; k8 > 0; k8--)
                     {
                         int j2 = 1;
                         for(int k10 = j5; k10 > 0; k10--)
                         {
-                            ad2[(j2 - 1) + (j5 - 1) * l1 + k1] = d1 * ad2[(j2 - 1) + (j5 - 1) * l1 + k1];
+                            c[(j2 - 1) + (j5 - 1) * ldc + _c_offset] = beta * c[(j2 - 1) + (j5 - 1) * ldc + _c_offset];
                             j2++;
                         }
 
@@ -80,15 +78,15 @@ public final class Dsyr2k
 
                 }
             } else
-            if(d1 == 0.0)
+            if(beta == 0.0)
             {
                 int k5 = 1;
-                for(int l8 = i; l8 > 0; l8--)
+                for(int l8 = n; l8 > 0; l8--)
                 {
                     int k2 = k5;
-                    for(int l10 = (i - k5) + 1; l10 > 0; l10--)
+                    for(int l10 = (n - k5) + 1; l10 > 0; l10--)
                     {
-                        ad2[(k2 - 1) + (k5 - 1) * l1 + k1] = 0.0;
+                        c[(k2 - 1) + (k5 - 1) * ldc + _c_offset] = 0.0;
                         k2++;
                     }
 
@@ -98,12 +96,12 @@ public final class Dsyr2k
             } else
             {
                 int l5 = 1;
-                for(int i9 = i; i9 > 0; i9--)
+                for(int i9 = n; i9 > 0; i9--)
                 {
                     int l2 = l5;
-                    for(int i11 = (i - l5) + 1; i11 > 0; i11--)
+                    for(int i11 = (n - l5) + 1; i11 > 0; i11--)
                     {
-                        ad2[(l2 - 1) + (l5 - 1) * l1 + k1] = d1 * ad2[(l2 - 1) + (l5 - 1) * l1 + k1];
+                        c[(l2 - 1) + (l5 - 1) * ldc + _c_offset] = beta * c[(l2 - 1) + (l5 - 1) * ldc + _c_offset];
                         l2++;
                     }
 
@@ -113,44 +111,44 @@ public final class Dsyr2k
             }
             return;
         }
-        if (Lsame.lsame(s1, "N"))
+        if (Lsame.lsame(trans, "N"))
         {
             if(flag3)
             {
                 int i6 = 1;
-                for(int j9 = i; j9 > 0; j9--)
+                for(int j9 = n; j9 > 0; j9--)
                 {
-                    if(d1 == 0.0)
+                    if(beta == 0.0)
                     {
                         int i3 = 1;
                         for(int j11 = i6; j11 > 0; j11--)
                         {
-                            ad2[(i3 - 1) + (i6 - 1) * l1 + k1] = 0.0;
+                            c[(i3 - 1) + (i6 - 1) * ldc + _c_offset] = 0.0;
                             i3++;
                         }
 
                     } else
-                    if(d1 != 1.0)
+                    if(beta != 1.0)
                     {
                         int j3 = 1;
                         for(int k11 = i6; k11 > 0; k11--)
                         {
-                            ad2[(j3 - 1) + (i6 - 1) * l1 + k1] = d1 * ad2[(j3 - 1) + (i6 - 1) * l1 + k1];
+                            c[(j3 - 1) + (i6 - 1) * ldc + _c_offset] = beta * c[(j3 - 1) + (i6 - 1) * ldc + _c_offset];
                             j3++;
                         }
 
                     }
                     int i7 = 1;
-                    for(int l11 = j; l11 > 0; l11--)
+                    for(int l11 = k; l11 > 0; l11--)
                     {
-                        if((ad[(i6 - 1) + (i7 - 1) * l + k] != 0.0) || (ad1[(i6 - 1) + (i7 - 1) * j1 + i1] != 0.0))
+                        if((a[(i6 - 1) + (i7 - 1) * lda + _a_offset] != 0.0) || (b[(i6 - 1) + (i7 - 1) * ldb + _b_offset] != 0.0))
                         {
-                            double d3 = d * ad1[(i6 - 1) + (i7 - 1) * j1 + i1];
-                            double d8 = d * ad[(i6 - 1) + (i7 - 1) * l + k];
+                            double d3 = alpha * b[(i6 - 1) + (i7 - 1) * ldb + _b_offset];
+                            double d8 = alpha * a[(i6 - 1) + (i7 - 1) * lda + _a_offset];
                             int k3 = 1;
                             for(int j13 = i6; j13 > 0; j13--)
                             {
-                                ad2[(k3 - 1) + (i6 - 1) * l1 + k1] = ad2[(k3 - 1) + (i6 - 1) * l1 + k1] + ad[(k3 - 1) + (i7 - 1) * l + k] * d3 + ad1[(k3 - 1) + (i7 - 1) * j1 + i1] * d8;
+                                c[(k3 - 1) + (i6 - 1) * ldc + _c_offset] = c[(k3 - 1) + (i6 - 1) * ldc + _c_offset] + a[(k3 - 1) + (i7 - 1) * lda + _a_offset] * d3 + b[(k3 - 1) + (i7 - 1) * ldb + _b_offset] * d8;
                                 k3++;
                             }
 
@@ -164,39 +162,39 @@ public final class Dsyr2k
             } else
             {
                 int j6 = 1;
-                for(int k9 = i; k9 > 0; k9--)
+                for(int k9 = n; k9 > 0; k9--)
                 {
-                    if(d1 == 0.0)
+                    if(beta == 0.0)
                     {
                         int l3 = j6;
-                        for(int i12 = (i - j6) + 1; i12 > 0; i12--)
+                        for(int i12 = (n - j6) + 1; i12 > 0; i12--)
                         {
-                            ad2[(l3 - 1) + (j6 - 1) * l1 + k1] = 0.0;
+                            c[(l3 - 1) + (j6 - 1) * ldc + _c_offset] = 0.0;
                             l3++;
                         }
 
                     } else
-                    if(d1 != 1.0)
+                    if(beta != 1.0)
                     {
                         int i4 = j6;
-                        for(int j12 = (i - j6) + 1; j12 > 0; j12--)
+                        for(int j12 = (n - j6) + 1; j12 > 0; j12--)
                         {
-                            ad2[(i4 - 1) + (j6 - 1) * l1 + k1] = d1 * ad2[(i4 - 1) + (j6 - 1) * l1 + k1];
+                            c[(i4 - 1) + (j6 - 1) * ldc + _c_offset] = beta * c[(i4 - 1) + (j6 - 1) * ldc + _c_offset];
                             i4++;
                         }
 
                     }
                     int j7 = 1;
-                    for(int k12 = j; k12 > 0; k12--)
+                    for(int k12 = k; k12 > 0; k12--)
                     {
-                        if((ad[(j6 - 1) + (j7 - 1) * l + k] != 0.0) || (ad1[(j6 - 1) + (j7 - 1) * j1 + i1] != 0.0))
+                        if((a[(j6 - 1) + (j7 - 1) * lda + _a_offset] != 0.0) || (b[(j6 - 1) + (j7 - 1) * ldb + _b_offset] != 0.0))
                         {
-                            double d4 = d * ad1[(j6 - 1) + (j7 - 1) * j1 + i1];
-                            double d9 = d * ad[(j6 - 1) + (j7 - 1) * l + k];
+                            double d4 = alpha * b[(j6 - 1) + (j7 - 1) * ldb + _b_offset];
+                            double d9 = alpha * a[(j6 - 1) + (j7 - 1) * lda + _a_offset];
                             int j4 = j6;
-                            for(int k13 = (i - j6) + 1; k13 > 0; k13--)
+                            for(int k13 = (n - j6) + 1; k13 > 0; k13--)
                             {
-                                ad2[(j4 - 1) + (j6 - 1) * l1 + k1] = ad2[(j4 - 1) + (j6 - 1) * l1 + k1] + ad[(j4 - 1) + (j7 - 1) * l + k] * d4 + ad1[(j4 - 1) + (j7 - 1) * j1 + i1] * d9;
+                                c[(j4 - 1) + (j6 - 1) * ldc + _c_offset] = c[(j4 - 1) + (j6 - 1) * ldc + _c_offset] + a[(j4 - 1) + (j7 - 1) * lda + _a_offset] * d4 + b[(j4 - 1) + (j7 - 1) * ldb + _b_offset] * d9;
                                 j4++;
                             }
 
@@ -212,7 +210,7 @@ public final class Dsyr2k
         if(flag3)
         {
             int k6 = 1;
-            for(int l9 = i; l9 > 0; l9--)
+            for(int l9 = n; l9 > 0; l9--)
             {
                 int k4 = 1;
                 for(int l12 = (k6 - 1) + 1; l12 > 0; l12--)
@@ -220,17 +218,17 @@ public final class Dsyr2k
                     double d5 = 0.0;
                     double d10 = 0.0;
                     int k7 = 1;
-                    for(int l13 = j; l13 > 0; l13--)
+                    for(int l13 = k; l13 > 0; l13--)
                     {
-                        d5 += ad[(k7 - 1) + (k4 - 1) * l + k] * ad1[(k7 - 1) + (k6 - 1) * j1 + i1];
-                        d10 += ad1[(k7 - 1) + (k4 - 1) * j1 + i1] * ad[(k7 - 1) + (k6 - 1) * l + k];
+                        d5 += a[(k7 - 1) + (k4 - 1) * lda + _a_offset] * b[(k7 - 1) + (k6 - 1) * ldb + _b_offset];
+                        d10 += b[(k7 - 1) + (k4 - 1) * ldb + _b_offset] * a[(k7 - 1) + (k6 - 1) * lda + _a_offset];
                         k7++;
                     }
 
-                    if(d1 == 0.0)
-                        ad2[(k4 - 1) + (k6 - 1) * l1 + k1] = d * d5 + d * d10;
+                    if(beta == 0.0)
+                        c[(k4 - 1) + (k6 - 1) * ldc + _c_offset] = alpha * d5 + alpha * d10;
                     else
-                        ad2[(k4 - 1) + (k6 - 1) * l1 + k1] = d1 * ad2[(k4 - 1) + (k6 - 1) * l1 + k1] + d * d5 + d * d10;
+                        c[(k4 - 1) + (k6 - 1) * ldc + _c_offset] = beta * c[(k4 - 1) + (k6 - 1) * ldc + _c_offset] + alpha * d5 + alpha * d10;
                     k4++;
                 }
 
@@ -240,25 +238,25 @@ public final class Dsyr2k
         } else
         {
             int l6 = 1;
-            for (int i10 = i; i10 > 0; i10--)
+            for (int i10 = n; i10 > 0; i10--)
             {
                 int l4 = l6;
-                for (int i13 = (i - l6) + 1; i13 > 0; i13--)
+                for (int i13 = (n - l6) + 1; i13 > 0; i13--)
                 {
                     double d6 = 0.0;
                     double d11 = 0.0;
                     int l7 = 1;
-                    for (int i14 = j; i14 > 0; i14--)
+                    for (int i14 = k; i14 > 0; i14--)
                     {
-                        d6 += ad[(l7 - 1) + (l4 - 1) * l + k] * ad1[(l7 - 1) + (l6 - 1) * j1 + i1];
-                        d11 += ad1[(l7 - 1) + (l4 - 1) * j1 + i1] * ad[(l7 - 1) + (l6 - 1) * l + k];
+                        d6 += a[(l7 - 1) + (l4 - 1) * lda + _a_offset] * b[(l7 - 1) + (l6 - 1) * ldb + _b_offset];
+                        d11 += b[(l7 - 1) + (l4 - 1) * ldb + _b_offset] * a[(l7 - 1) + (l6 - 1) * lda + _a_offset];
                         l7++;
                     }
 
-                    if (d1 == 0.0)
-                        ad2[(l4 - 1) + (l6 - 1) * l1 + k1] = d * d6 + d * d11;
+                    if (beta == 0.0)
+                        c[(l4 - 1) + (l6 - 1) * ldc + _c_offset] = alpha * d6 + alpha * d11;
                     else
-                        ad2[(l4 - 1) + (l6 - 1) * l1 + k1] = d1 * ad2[(l4 - 1) + (l6 - 1) * l1 + k1] + d * d6 + d * d11;
+                        c[(l4 - 1) + (l6 - 1) * ldc + _c_offset] = beta * c[(l4 - 1) + (l6 - 1) * ldc + _c_offset] + alpha * d6 + alpha * d11;
                     l4++;
                 }
 
